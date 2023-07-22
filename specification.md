@@ -1,12 +1,12 @@
+# Specification
+
 This file explains all information pertaining to this project and its implementation.
 
----
----
 ## Definition of Terms
 
 ### Prompt
 
-A prompt is the query asked in a [question](#question). **It is a string that must always end with a question mark**. Examples include _`"What is the height of the Eiffel Tower?"`_, _`"Who was the 23rd president of the United States?"`_ and _`"The father of computer science is?"`_.
+A prompt is the query asked in a [question](#question). **It is a string that must always end with a question mark**. Examples include `"What is the height of the Eiffel Tower?"`, `"Who was the 23rd president of the United States?"` and `"The father of computer science is?"`.
 
 ### Question
 
@@ -29,16 +29,18 @@ An example would be:
 
 ### Quiz
 A quiz is an object containing:
-- A quiz name,
+- An optional quiz name,
 - An optional [category](#category) id,
+- A background image,
 - An associated level, and
 - An array of [questions](#question).
 
-All questions in a quiz have the same level. An example of a quiz is:
+If a quiz has no name, it must have a category id, and vice versa. All questions in a quiz have the same level. An example of a quiz is:
 
 ```json
 {
   "name": "Pretty Paintings",
+  "backgroundImage": "pretty-painting.jpg",
   "category": null,
   "level": 2,
   "questions": []
@@ -66,22 +68,32 @@ The success rate of a user is defined as the average of all their [quiz results]
 The quiz result is a percentage of the number of questions answered right, over the number of questions answered.
 
 ---
----
 ## API Routes
 
 The following list defines the endpoints that are expected by the client.
+
+#### - `/user/create`
 
 #### - `/user/login`
 
 #### - `/user/stats`
 
-`GET` Request that returns the metrics of the user's performance. The metrics are the number of Quizzes played, the stars earned and the [success rate](#success-rate). Response should have the shape:
+Protected `GET` Request that returns the metrics of the user's performance. The metrics are the number of [Quizzes](#quiz) played, the stars earned and the [success rate](#success-rate). Response should have the shape:
 
 ```json
 {
   "quizzesPlayed": 7,
   "stars": 230,
   "successRate": 72.9
+}
+```
+
+#### - `/user/stats/update`
+`PUT` endpoint that updates user metrics. It is fired after the end of every [quiz](#quiz) session. Request has the shape:
+```json
+{
+  "quizResult": 75.3,
+  "starsEarned": 10,
 }
 ```
 
@@ -123,10 +135,9 @@ if rapid fire has already been played, and
 }
 ```
 
-
 ### `/rapid-fire/result`
 
-`POST` endpoint to return the results of the rapid fire 
+`POST` endpoint to return the results of the rapid fire.
 
 
 
