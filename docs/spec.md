@@ -41,7 +41,7 @@ If a quiz has no name, it must have a category id, and vice versa. All questions
 {
   "name": "Pretty Paintings",
   "backgroundImage": "pretty-painting.jpg",
-  "category": null,
+  "categoryID": null,
   "level": 2,
   "questions": []
 }
@@ -57,6 +57,7 @@ A category is a broad topic or subject description. The defined categories are:
 6. Chemistry
 7. Pop Culture
 8. Technology 
+Each category has an ID from 1-8.
 
 ### Level
 The level of a [question](#question) or [quiz](#quiz) is a number from 0 - 5 that indicates the difficulty associated with it. For example, a question with level 0 is very easy, while a question with 5 is extremely difficult. 
@@ -99,14 +100,16 @@ Protected `GET` Request that returns the metrics of the user's performance. The 
 
 #### - `/categories/${id}/${level}`
 
-`GET` endpoint to retrieve 20 random [questions](#question) in any of the [categories](#category) based on difficulty. Response should have the shape.
-```json
-{
-  "category": "Language",
-  "level": 2,
-  "questions": []
-}
-```
+- If request has method `GET`
+  - Assert that category with id `id` exists.
+  - Assert that level is a number between 0 and 5.
+  - Let `quizObject` be a new quiz object.
+  - Set its category ID to`id`.
+  - Set its name to null.
+  - Set its `questions` to an array of 20 random questions from the defined category.
+  - Set its `backgroundImage` to the defined category's associated image.
+  - Set its level to the defined level.
+  - Return `quizObject`.
 
 ### - `/special`
 `GET` endpoint that returns a list of special [quizzes](#quiz) for the day. Response should have the shape.
@@ -126,7 +129,7 @@ Protected `GET` Request that returns the metrics of the user's performance. The 
   "questions": null
 }
 ```
-if rapid fire has already been played, and 
+Otherwise:
 
 ```
 {
@@ -135,9 +138,9 @@ if rapid fire has already been played, and
 }
 ```
 
-### `/rapid-fire/result`
+### `/rapid-fire/completed`
 
-`POST` endpoint to return the results of the rapid fire.
+`POST` endpoint to signify that the rapid fire is done for the day. Subsequent GET requests to [`/rapid-fire/questions`](#rapid-fire-questions) on the same day should return an object with `isAllowed` set to false. 
 
 
 
