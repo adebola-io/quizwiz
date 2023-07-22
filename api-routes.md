@@ -1,8 +1,8 @@
 This file explains all information pertaining to this project and its implementation.
 
 ---
-## Definition of Terms
 ---
+## Definition of Terms
 
 ### Prompt
 
@@ -37,8 +37,8 @@ A quiz is an object containing:
 The level of a [question](#question) or [quiz](#quiz) is a number from 0 - 5 that indicates the difficulty associated with it. For example, a question with level 0 is very easy, while a question with 5 is extremely difficult. 
 
 ---
-## API Routes
 ---
+## API Routes
 
 The following list defines the endpoints that are expected by the client.
 
