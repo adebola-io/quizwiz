@@ -105,12 +105,9 @@ To return a list of random [questions](#question), given a `number`, a specified
 2. Let `categoryList` be an array of [categories](#category). 
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
 4. While the length of `questions` is less than `number`:
-	1. For each category in `categoryList`:
-		1. For each topic under category:
+	1. For each topic in each category in `categoryList`:
 			1. ​Select 3 random questions from the specified level.
-			2. For each question $q$:
-				1. If the length of `questions` is equal to `number`, return a shuffled version of `questions`.
-				2. Else, add $q$ to `questions`.
+			2. For each question $q$, If the length of `questions` is equal to `number`, return a shuffled version of `questions`. Else, add $q$ to `questions`.
 5. Return a shuffled version of `questions`.
 
 
