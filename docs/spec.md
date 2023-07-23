@@ -36,7 +36,7 @@ A quiz is an object containing:
 - An optional quiz name,
 - An optional [category](#category) id,
 - A background image,
-- An associated level, and
+- An associated [level](#level), and
 - An array of [questions](#question).
 
 If a quiz has no name, it must have a category id, and vice versa. All questions in a quiz have the same level. An example of a quiz is:
@@ -44,7 +44,7 @@ If a quiz has no name, it must have a category id, and vice versa. All questions
 ```json
 {
   "name": "Pretty Paintings",
-  "backgroundImage": "pretty-painting.jpg",
+  "backgroundImage": "pretty_painting.jpg",
   "categoryID": null,
   "level": 2,
   "questions": []
@@ -61,7 +61,7 @@ A category is a broad topic or subject description. The defined categories are:
 6. Technology.
 
 Each category has an ID from 1-6.
-Categories each have subtopics. A subtopic consists of 25 [questions](#question) for each [level](#level) from 0 - 5.
+Categories each have subtopics. A subtopic consists of 25 [questions](#question) for each [level](#level) from 0 - 4.
 
 ### Level
 The level of a [question](#question) or [quiz](#quiz) is a number from 0 - 4 that indicates its perceived difficulty. For example, a question with level 0 is very easy, while a question with 4 is extremely difficult. 
@@ -106,7 +106,7 @@ $QR = \frac{\sum_{n=1}^{correct} n}{\sum_{n=1}^{total} n} \times 100$
 ### Random Questions 
 To return a list of random [questions](#question), given a `number`, a specified `level` and an optional `category`:
 1. Let `questions` be a new list or array.
-2. Let `categoryList` be an array of categories. 
+2. Let `categoryList` be an array of [categories](#category). 
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
 4. While the length of `questions` is less than `number`:
 	1. For each category in `categoryList`:
@@ -143,7 +143,6 @@ This route is protected. Only users should be able to access it.
   successRate
 }
 ```
-
 
 
 #### - `/user/${userid}/stats/update`
