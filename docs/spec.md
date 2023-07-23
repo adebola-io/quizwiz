@@ -104,9 +104,9 @@ To return a list of random [questions](#question), given a `number`, a specified
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
 4. While the length of `questions` is less than `number`:
   1. For each topic in each category in `categoryList`:
-    1. ​Select 3 random questions from the specified level.
-    2. For each question `q`; if the length of `questions` is equal to `number`, return a shuffled version of `questions`. 
-    3. Else, add `q` to `questions`.
+    - Select 3 random questions from the specified level.
+    - For each question `q`; if the length of `questions` is equal to `number`, return a shuffled version of `questions`. 
+    - Else, add `q` to `questions`.
 5. Return a shuffled version of `questions`.
 
 
