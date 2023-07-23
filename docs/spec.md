@@ -91,12 +91,10 @@ To validate a given username:
 The success rate of a [user](#user) is defined as the average of all their [quiz results](#quiz-result).
 
 
-
 ### Quiz Result
 The result of a quiz is a percentage of the number of [questions](#questions) answered right, over the number of questions answered.
 
 $QR = \frac{\sum_{n=1}^{correct} n}{\sum_{n=1}^{total} n} \times 100$
-
 
 
 ### Random Questions 
@@ -105,9 +103,10 @@ To return a list of random [questions](#question), given a `number`, a specified
 2. Let `categoryList` be an array of [categories](#category). 
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
 4. While the length of `questions` is less than `number`:
-	1. For each topic in each category in `categoryList`:<br>
-			1. ​Select 3 random questions from the specified level.
-			2. For each question `q`; if the length of `questions` is equal to `number`, return a shuffled version of `questions`. Else, add `q` to `questions`.
+  1. For each topic in each category in `categoryList`:
+    1. ​Select 3 random questions from the specified level.
+    2. For each question `q`; if the length of `questions` is equal to `number`, return a shuffled version of `questions`. 
+    3. Else, add `q` to `questions`.
 5. Return a shuffled version of `questions`.
 
 
