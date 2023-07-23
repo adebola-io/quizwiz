@@ -33,19 +33,15 @@ An example would be:
 
 ### Quiz
 A quiz is an object containing:
-- An optional quiz name,
-- An optional [category](#category) id,
-- A background image,
+- A quiz name,
 - An associated [level](#level), and
 - An array of [questions](#question).
 
-If a quiz has no name, it must have a category id, and vice versa. All questions in a quiz have the same level. An example of a quiz is:
+All questions in a quiz have the same level. An example of a quiz is:
 
 ```json
 {
   "name": "Pretty Paintings",
-  "backgroundImage": "pretty_painting.jpg",
-  "categoryID": null,
   "level": 2,
   "questions": []
 }
@@ -172,10 +168,8 @@ This route is protected. Only users should be able to access it.
 3. Assert that `level` is a number between 0 and 4, else the request is invalid. 
 4. Let the defined [category](#category) be the category with an ID that equals `id`.
 5. Let `quizObject` be a new quiz object.
-	  - Set its category ID to `id`.
-	  - Set its name to null.
+	  - Set its name to the name of the defined category.
 	  - Set its `questions` to an array of 20 [random questions](#random-questions) from the defined category, which have a level equal to `level`.
-	  - Set its `backgroundImage` to the defined category's [associated image](#associated-image) .
 	  - Set its `level` to the defined `level`.
 6. Return `quizObject`.
 
