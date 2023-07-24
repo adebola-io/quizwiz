@@ -10,6 +10,7 @@
    "license": "MIT",
    "dependencies": {
       "bcrypt": "^5.1.0",
-      "colors": "^1.4.0"
+      "colors": "^1.4.0",
+      "jsonwebtoken": "^8.5.1"
    }
 }
