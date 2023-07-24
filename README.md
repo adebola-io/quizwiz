@@ -11,15 +11,15 @@
 
 This is the repository for Group 3 of the CSC 420 Software Engineering project.
 
-
 ## Design 🖌
+
 The design for this project is hosted on Figma [here](https://www.figma.com/file/AUoDWCLv80ZajCBgePszki/CSC-420---Project?type=design&node-id=0%3A1&mode=design&t=dHfWTuMj0kdoQkOx-1).
 
 ## Development 🖥
 
-### Front-end 
+### Front-end
 
-The front-end is (to be) written using React and Tailwind. Node and NPM/Yarn must be installed to preview it.  To run the frontend locally, cd into the `frontend/` folder and run 
+The front-end is (to be) written using React and Tailwind. Node and NPM/Yarn must be installed to preview it. To run the frontend locally, cd into the `frontend/` folder and run
 
 ```shell
 npm install
@@ -30,7 +30,8 @@ followed by
 ```shell
 npm run dev
 ```
-to start the local dev server. 
+
+to start the local dev server.
 
 ### Back-end
 
@@ -40,13 +41,13 @@ A simple temporary back-end is present in the `/backend/placeholder/` folder. To
 npm install
 ```
 
-and then 
+and then
 
 ```shell
 node index.js
 ```
 
-to start the Node.js server. 
+to start the Node.js server.
 
 ## Deployment 🚀
 

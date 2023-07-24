@@ -1,0 +1,88 @@
+{
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "type": "object",
+   "properties": {
+      "title": {
+         "type": "string"
+      },
+      "category": {
+         "type": "string",
+         "enum": [
+            "History and Politics",
+            "Language and Literature",
+            "Mathematics",
+            "Pop Culture",
+            "Sports",
+            "Technology"
+         ]
+      },
+      "level0": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/question"
+         }
+      },
+      "level1": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/question"
+         }
+      },
+      "level2": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/question"
+         }
+      },
+      "level3": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/question"
+         }
+      },
+      "level4": {
+         "type": "array",
+         "items": {
+            "$ref": "#/definitions/question"
+         }
+      }
+   },
+   "required": [
+      "title",
+      "category",
+      "level0",
+      "level1",
+      "level2",
+      "level3",
+      "level4"
+   ],
+   "definitions": {
+      "question": {
+         "type": "object",
+         "properties": {
+            "prompt": {
+               "type": "string"
+            },
+            "options": {
+               "type": "array",
+               "items": {
+                  "type": "string"
+               },
+               "minItems": 4,
+               "maxItems": 4
+            },
+            "level": {
+               "type": "integer",
+               "minimum": 0,
+               "maximum": 4
+            },
+            "correctAnswer": {
+               "type": "integer",
+               "minimum": 0,
+               "maximum": 3
+            }
+         },
+         "required": ["prompt", "options", "level", "correctAnswer"]
+      }
+   }
+}

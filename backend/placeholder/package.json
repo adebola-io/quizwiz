@@ -7,5 +7,9 @@
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "keywords": [],
-   "license": "MIT"
+   "license": "MIT",
+   "dependencies": {
+      "bcrypt": "^5.1.0",
+      "colors": "^1.4.0"
+   }
 }
