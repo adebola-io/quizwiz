@@ -1,0 +1,15 @@
+@import "./animations.css";
+
+:root {
+   --global-padding-left: 3.75rem;
+}
+
+.lines {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/lines-background.png);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

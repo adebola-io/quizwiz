@@ -1,0 +1,15 @@
+.animate-scroll-left {
+   --x: -800%;
+   animation: infinite-scroll infinite linear 5000ms;
+}
+
+.animate-scroll-right {
+   --x: 800%;
+   animation: infinite-scroll infinite linear 5000ms;
+}
+
+@keyframes infinite-scroll {
+   100% {
+      transform: translateX(var(--x));
+   }
+}
