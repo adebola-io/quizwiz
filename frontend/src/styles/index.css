@@ -1,13 +1,23 @@
 @import "./animations.css";
 
 :root {
+   --white: #ffffff;
    --global-padding-left: 3.75rem;
+   --green-charcoal: #2f3e46;
+   --green-feldgrau: #446461;
+   --green-ash-gray: #cad2c5;
 }
 
 .lines {
    background-size: cover;
    background-position: center;
    background-image: url(../assets/lines-background.png);
+}
+
+.backgrounds_sign_in {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/signin-background.png);
 }
 
 @tailwind base;

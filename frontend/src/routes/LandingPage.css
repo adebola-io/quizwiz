@@ -2,8 +2,8 @@
    display: flex;
    height: 31.75rem;
    flex-direction: column;
-   justify-content: end;
-   align-items: end;
+   justify-content: flex-end;
+   align-items: flex-end;
    flex-shrink: 0;
    align-self: stretch;
    color: var(--green-charcoal, #2f3e46);

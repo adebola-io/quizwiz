@@ -1,15 +1,112 @@
-.animate-scroll-left {
-   --x: -800%;
-   animation: infinite-scroll infinite linear 5000ms;
+/* Keyframes */
+@keyframes fade-in {
+   0% {
+      transform: translateX(var(--start));
+      opacity: 0;
+   }
 }
 
-.animate-scroll-right {
-   --x: 800%;
-   animation: infinite-scroll infinite linear 5000ms;
+@keyframes drop-from-top {
+   0% {
+      transform: translateY(-30%);
+   }
+}
+
+@keyframes squeeze {
+   0% {
+      transform: scale(1.05);
+      opacity: 0;
+   }
+}
+
+@keyframes expand {
+   0% {
+      transform: scale(0.9);
+   }
+}
+
+@keyframes pop {
+   0% {
+      transform: scale(0.9);
+      opacity: 0;
+   }
+   70% {
+      transform: scale(1.05);
+   }
 }
 
 @keyframes infinite-scroll {
    100% {
-      transform: translateX(var(--x));
+      transform: translateX(var(--end));
    }
+}
+
+/* Classnames */
+
+.animate-fade-in-from-left,
+.animate-fade-in-from-right {
+   animation-name: fade-in;
+}
+
+.effect-item-0 {
+   animation-duration: 500ms;
+}
+.effect-item-1 {
+   animation-duration: 700ms;
+}
+.effect-item-2 {
+   animation-duration: 900ms;
+}
+.effect-item-3 {
+   animation-duration: 1100ms;
+}
+.effect-item-4 {
+   animation-duration: 1300ms;
+}
+
+.animate-fade-in-from-right.effect-item-0 {
+   --start: 7vw;
+}
+.animate-fade-in-from-right.effect-item-1 {
+   --start: 8vw;
+}
+.animate-fade-in-from-right.effect-item-2 {
+   --start: 9vw;
+}
+.animate-fade-in-from-right.effect-item-3 {
+   --start: 10vw;
+}
+.animate-fade-in-from-right.effect-item-4 {
+   --start: 11vw;
+}
+
+.animate-fade-in-from-left.effect-item-0 {
+   --start: -7vw;
+}
+.animate-fade-in-from-left.effect-item-1 {
+   --start: -8vw;
+}
+.animate-fade-in-from-left.effect-item-2 {
+   --start: -9vw;
+}
+.animate-fade-in-from-left.effect-item-3 {
+   --start: -10vw;
+}
+.animate-fade-in-from-left.effect-item-4 {
+   --start: -11vw;
+}
+
+.animate-squeeze {
+   animation: squeeze 700ms;
+}
+.animate-pop {
+   animation: pop 750ms;
+}
+.animate-expand {
+   animation: expand 400ms;
+}
+
+.animate-infinite-scroll {
+   --end: -48%;
+   animation: infinite-scroll 8000ms infinite linear;
 }

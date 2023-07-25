@@ -6,7 +6,11 @@ export function LandingPageDiagrams() {
          <QuestionBackground />
          <Eclipse top="-23.5rem" right="-22.5625rem" />
          <Eclipse bottom="-22.4375rem" left="-23.75rem" />
-         <img src={shape} className="z-[2]" alt="0" />
+         <img
+            src={shape}
+            className="z-[2] animate-pop hover:rotate-[-20deg] duration-500"
+            alt="0"
+         />
       </section>
    );
 }
@@ -30,23 +34,24 @@ function Eclipse(
 }
 
 function QuestionBackground() {
+   const a = Array(8).fill(null);
+   const b = Array(30).fill(null);
    return (
       <div className="absolute rotate-3 z-0 w-full h-full overflow-hidden">
-         {Array(8)
-            .fill(null)
-            .map(() => (
-               <div className={`gap-5 flex h-[8.91319rem]`}>
-                  {Array(20)
-                     .fill(null)
-                     .map(() => (
-                        <span
-                           className={` text-green-hookers-green font-poppins text-[6.5288rem] [font-weight:700]`}
-                        >
-                           ?
-                        </span>
-                     ))}
-               </div>
-            ))}
+         {a.map((_, index) => (
+            <div
+               key={index}
+               className={`gap-5 animate-infinite-scroll flex h-[8.91319rem]`}
+            >
+               {b.map(() => (
+                  <span
+                     className={` text-green-hookers-green font-poppins text-[6.5288rem] [font-weight:700]`}
+                  >
+                     ?
+                  </span>
+               ))}
+            </div>
+         ))}
       </div>
    );
 }

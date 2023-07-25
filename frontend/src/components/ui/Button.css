@@ -1,40 +1,54 @@
 .app_button {
+   display: flex;
    justify-content: center;
    align-items: center;
    text-align: center;
    font-family: Avenir Next LT Pro;
    font-style: normal;
    font-weight: 700;
-   color: var(--green-ash-gray, #cad2c5);
+   border-style: solid;
+   border-color: var(--green-charcoal, #2f3e46);
    line-height: normal;
    transition-duration: 300ms;
 }
+
+.app_button.filled:hover,
+.app_button.outlined:hover {
+   transform: scale(0.95) translateX(-3%);
+   box-shadow: 0 0 0 0;
+}
+
+/* Size */
 .app_button.normal {
-   display: inline-flex;
    height: 3.78581rem;
    padding: 0.53319rem 2.25rem;
    gap: 0.53319rem;
-   flex-shrink: 0;
    font-size: 1.22438rem;
    border-radius: 0.4375rem;
-   border: 3.413px solid var(--green-charcoal, #2f3e46);
-   background: var(--green-feldgrau, #446461);
+   border-width: 3.413px;
    box-shadow: -4px 4px 0px 0px rgba(53, 79, 82, 0.78);
 }
 .app_button.okay {
-   display: flex;
    height: 2.94488rem;
    padding: 0.41475rem 1.75019rem;
    gap: 0.41475rem;
    font-size: 0.95238rem;
    border-radius: 0.34031rem;
-   border: 2.655px solid var(--green-charcoal, #2f3e46);
-   background: var(--green-feldgrau, #446461);
+   border-width: 2.655px;
    box-shadow: -3.111483097076416px 3.111483097076416px 0px 0px
       rgba(53, 79, 82, 0.78);
 }
 
-.app_button:hover {
-   transform: scale(0.95) translateX(-3%);
-   box-shadow: 0 0 0 0;
+/* Variants */
+.app_button.filled {
+   background: var(--green-feldgrau, #446461);
+   color: var(--green-ash-gray, #cad2c5);
+}
+.app_button.outlined {
+   background: transparent;
+   color: var(--green-charcoal, #2f3e46);
+}
+.app_button.outlined:hover {
+   background-color: var(--green-charcoal, #2f3e46);
+   color: var(--green-ash-gray, #cad2c5);
 }
