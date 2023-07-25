@@ -44,7 +44,7 @@ npm install
 and then
 
 ```shell
-node index.js
+npm start
 ```
 
 to start the Node.js server.

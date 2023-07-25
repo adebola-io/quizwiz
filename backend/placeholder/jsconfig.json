@@ -1,5 +1,11 @@
 {
    "compilerOptions": {
-      "types": ["../../frontend/src/types"]
+      "target": "ES2015",
+      "allowJs": true,
+      "alwaysStrict": true,
+      "moduleResolution": "nodenext",
+      "resolveJsonModule": true,
+      "checkJs": true,
+      "typeRoots": ["./src/types/global.d.ts"]
    }
 }

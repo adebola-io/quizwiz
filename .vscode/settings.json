@@ -2,7 +2,7 @@
    "json.schemas": [
       {
          "fileMatch": ["/backend/categories/**/*.json"],
-         "url": "./backend/schema.json"
+         "url": "./backend/json/topic-schema.json"
       }
    ]
 }

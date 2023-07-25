@@ -22,7 +22,6 @@
    -  [Success Response](#success-response)
    -  [Server Errors](#server-errors)
       -  [Malformed Requests](#malformed-requests)
-      -  [Invalid Routes](#invalid-routes)
       -  [Invalid Parameters](#invalid-parameters)
       -  [Not Found](#not-found)
       -  [Parameter Conflicts](#parameter-conflicts)
@@ -32,8 +31,8 @@
       -  [- `/user/login`](#--userlogin)
       -  [- `/user/stats`](#--userstats)
       -  [- `/user/stats/update`](#--userstatsupdate)
-      -  [- `/categories/{id}/{level}`](#--categoriesidlevel)
-      -  [- `/random/{level}`](#--randomlevel)
+      -  [- `/categories/:id/:level`](#--categoriesidlevel)
+      -  [- `/random/:level`](#--randomlevel)
       -  [- `/rpdfire/questions`](#--rpdfirequestions)
       -  [- `/rpdfire/completed`](#--rpdfirecompleted)
 
@@ -187,17 +186,13 @@ The error codes are used to specify to the client what went wrong with a request
 
 A malformed request error occurs when a request is sent with a wrong method or an invalid body.
 
-#### Invalid Routes
-
-An invalid route error occurs when a client tries to access a URL route that is not defined in this document.
-
 #### Invalid Parameters
 
 An invalid parameter error occurs if the username, email or password of a user is not valid. The 3 scenarios have their own individual error codes.
 
 #### Not Found
 
-A not found error occurs when a resource cannot be found: whether a username cannot be found in a database, or a category with an id does not exist, etc.
+A not found error occurs when a resource cannot be found: such as a route, a username in a database, a category with an id, etc.
 
 #### Parameter Conflicts
 
@@ -205,14 +200,13 @@ A parameter conflict error occurs if a user with the same email or username alre
 
 | ERROR TYPE              | CODE |
 | ----------------------- | ---- |
-| INVALID_ROUTE           | 0    |
-| MALFORMED_REQUEST       | 1    |
-| INVALID_USERNAME        | 2    |
-| INVALID_PASSWORD        | 3    |
-| INVALID_EMAIL           | 4    |
-| EMAIL_ALREADY_EXISTS    | 5    |
-| USERNAME_ALREADY_EXISTS | 6    |
-| NOT_FOUND               | 7    |
+| MALFORMED_REQUEST       | 0    |
+| INVALID_USERNAME        | 1    |
+| INVALID_PASSWORD        | 2    |
+| INVALID_EMAIL           | 3    |
+| EMAIL_ALREADY_EXISTS    | 4    |
+| USERNAME_ALREADY_EXISTS | 5    |
+| NOT_FOUND               | 6    |
 
 ### API Endpoints
 
@@ -319,7 +313,7 @@ This route is protected. Only users should be able to access it.
 5. Increase the user's stars by `starsEarned`.
 6. Return a [success response](#success-response).
 
-#### - `/categories/{id}/{level}`
+#### - `/categories/:id/:level`
 
 1. If the request method is not GET, return a [malformed request](#malformed-requests) error.
 2. If `id` is not a number between 1 and 6, return a [not found](#not-found) error.
@@ -331,7 +325,7 @@ This route is protected. Only users should be able to access it.
    -  Set its `level` to the defined `level`.
 6. Return `quizObject`.
 
-#### - `/random/{level}`
+#### - `/random/:level`
 
 1. If the request method is not GET, return a [malformed request](#malformed-requests) error
 2. If `level` is not a number between 0 and 4, return a [not found](#not-found) error.
