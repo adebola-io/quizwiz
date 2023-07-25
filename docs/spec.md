@@ -207,6 +207,7 @@ A parameter conflict error occurs if a user with the same email or username alre
 | EMAIL_ALREADY_EXISTS    | 4    |
 | USERNAME_ALREADY_EXISTS | 5    |
 | NOT_FOUND               | 6    |
+| UNAUTHORIZED            | 7    |
 
 ### API Endpoints
 

@@ -8,7 +8,7 @@ type _IncomingMessage = import("http").IncomingMessage;
 declare global {
   declare module apigen {
     type ServerError = ServerError;
-    interface IncomingMessage extends _IncomingMessage {
+    interface Request extends _IncomingMessage {
       body: any;
       params: {};
     }
@@ -30,7 +30,7 @@ declare global {
     };
 
     type RequestHandler = (
-      req: IncomingMessage,
+      req: Request,
       res: Response,
     ) => unknown;
 
@@ -38,6 +38,11 @@ declare global {
 
     interface Response extends ServerResponse {
       contentType: ContentType;
+    }
+
+    interface Middleware {
+      errorHandler: ErrorHandler;
+      protect: Protector;
     }
 
     interface ErrorHandler {
@@ -55,7 +60,7 @@ declare global {
     }
 
     interface Protector {
-      (req: IncomingMessage);
+      (req: Request);
     }
   }
 
@@ -70,7 +75,7 @@ declare global {
     stars: number;
   }
 
-  interface CreateUserResponse {
+  interface UserSession {
     username: string;
     token: string;
   }

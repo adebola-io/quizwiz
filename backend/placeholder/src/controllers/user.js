@@ -2,13 +2,13 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("../db");
 const { utils, ServerError } = require("../lib");
-const { ERROR_TYPES } = require("../middleware");
+const { ERROR_TYPES, JWT_SECRET } = require("../constants");
 
 require("colors");
 
 /**
  * Adds a new user.
- * @param {apigen.IncomingMessage} req Server request.
+ * @param {apigen.Request} req Server request.
  * @throws {apigen.ServerError}
  */
 function addNewUser(req) {
@@ -47,7 +47,7 @@ function addNewUser(req) {
       stars: 0,
       successRate: 0,
    };
-   /**@type {CreateUserResponse} */
+   /**@type {UserSession} */
    let response = {
       username: user.username,
       token: generateUserToken(user.id),
@@ -59,16 +59,82 @@ function addNewUser(req) {
 
 /**
  * Deletes user from database.
- * @param {apigen.IncomingMessage} req Server request.
+ * @param {apigen.Request} req Server request.
+ * @throws {apigen.ServerError}
  */
-function deleteUser(req) {}
+function deleteUser(req) {
+   if (req.method !== "DELETE") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+
+   const users = db.getUsers();
+   /**@type {User} */
+   const user = req["user"];
+   users.remove(user.id);
+   console.log(`User with username ${user.username} deleted.`.yellow);
+   return { success: true };
+}
+
+/**
+ * Log in a user.
+ * @param {apigen.Request} req Server Request
+ * @throws {apigen.ServerError}
+ */
+function loginUser(req) {
+   if (req.method !== "POST") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+   const { username, email, password } = req.body;
+   if (typeof username !== "string" && typeof email !== "string") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+   const users = db.getUsers();
+   const user = users.find(
+      (user) => user.username === username || user.emailAddress === email
+   );
+   if (!user) {
+      throw new ServerError(ERROR_TYPES.NOT_FOUND, 404);
+   }
+   if (!bcrypt.compareSync(password, user.password)) {
+      throw new ServerError(ERROR_TYPES.INVALID_PASSWORD, 401);
+   }
+   /** @type {UserSession} */
+   const response = {
+      username,
+      token: generateUserToken(user.id),
+   };
+   console.log(`User "${username}" logged in.`.blue);
+   return response;
+}
+
+/**
+ * Returns the metrics of a user so far.
+ * @param {apigen.Request} req
+ * @throws {apigen.ServerError}
+ */
+function getUserStats(req) {
+   if (req.method !== "GET") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+   /**@type {User} */
+   const user = req["user"];
+   let quizzesPlayed = user.quizzesPlayed;
+   let stars = user.stars;
+   let successRate = user.successRate;
+   console.log(`GET /user/stats for "${user.username}"`);
+   return {
+      quizzesPlayed,
+      stars,
+      successRate,
+   };
+}
 
 /**
  * Generate a user token.
  * @param {string} id
  */
 function generateUserToken(id) {
-   return jwt.sign({ id }, process.env.JWT_SECRET || "SOME_STRING", {
+   return jwt.sign({ id }, JWT_SECRET, {
       expiresIn: "20d",
    });
 }
@@ -76,4 +142,6 @@ function generateUserToken(id) {
 module.exports = {
    addNewUser,
    deleteUser,
+   loginUser,
+   getUserStats,
 };
