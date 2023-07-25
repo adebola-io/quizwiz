@@ -130,6 +130,27 @@ function getUserStats(req) {
 }
 
 /**
+ * Updates the metrics of a user.
+ * @param {apigen.Request} req
+ * @throws {apigen.ServerError}
+ */
+function updateStats(req) {
+   if (req.method !== "PUT") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+   const { quizResult, starsEarned } = req.body;
+   if (typeof quizResult !== "number" || typeof starsEarned !== "number") {
+      throw new ServerError(ERROR_TYPES.MALFORMED_REQUEST);
+   }
+   /**@type {User} */
+   const user = req["user"];
+   user.quizzesPlayed += 1;
+   user.successRate = (quizResult + user.successRate) / user.quizzesPlayed;
+   user.stars += starsEarned;
+   return { success: true };
+}
+
+/**
  * Generate a user token.
  * @param {string} id
  */
@@ -144,4 +165,5 @@ module.exports = {
    deleteUser,
    loginUser,
    getUserStats,
+   updateStats,
 };

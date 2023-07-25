@@ -9,6 +9,7 @@ class UserList {
     * @private
     */
    idMap = new Map();
+   mutationCounter = 0;
    /**
     * The items in memory.
     * @type {User[]}
@@ -34,9 +35,13 @@ class UserList {
    [Symbol.iterator]() {
       return this.items[Symbol.iterator]();
    }
-   update() {
-      if (this.baseFile)
-         fs.writeFileSync(this.baseFile, JSON.stringify(this.items));
+   /**
+    * Update the JSON file.
+    */
+   writeToDisc() {
+      console.log("Updating baseFile...".magenta);
+      fs.writeFileSync(this.baseFile, JSON.stringify(this.items));
+      this.mutationCounter = 0;
    }
    /**
     * Finds a user in the list.
@@ -45,10 +50,6 @@ class UserList {
    find(predicate) {
       return this.items.find(predicate);
    }
-   /**
-    *
-    */
-   get() {}
    /**
     * Sets the JSON file on the disk where users should be stored or retrieved from.
     * @param {fs.PathLike} baseFile
@@ -71,7 +72,6 @@ class UserList {
     */
    add(user) {
       this.items.push(user);
-      this.update();
    }
    /**
     * Removes a user from the database.
@@ -80,7 +80,6 @@ class UserList {
    remove(id) {
       this.items = this.items.filter((user) => user.id !== id);
       this.idMap.delete(id);
-      this.update();
    }
    /**
     * Creates a new user ID.

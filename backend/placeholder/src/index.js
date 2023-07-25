@@ -4,6 +4,7 @@ const {
    deleteUser,
    loginUser,
    getUserStats,
+   updateStats,
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -48,7 +49,11 @@ db.prepare().then(() => {
          },
          "/user/stats/update": {
             protected: true,
-            handler: function (req, res) {},
+            handler: function (req, res) {
+               const data = updateStats(req);
+               res.statusCode = 204;
+               return data;
+            },
          },
          "/categories/:id/:level": function () {},
          "/random/:level": function () {},
@@ -67,3 +72,12 @@ db.prepare().then(() => {
       `Mock Server is listening at http://localhost:${PORT}.`.green.bold
    );
 });
+
+function gracefulShutDown() {
+   console.log("Shutting down...".grey);
+   const users = db.getUsers();
+   users.writeToDisc();
+   process.exit(0);
+}
+process.on("SIGTERM", gracefulShutDown);
+process.on("SIGINT", gracefulShutDown);
