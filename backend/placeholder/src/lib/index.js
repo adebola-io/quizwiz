@@ -21,6 +21,10 @@ class APIGenerator {
     */
    protector;
    /**
+    * Request delay.
+    */
+   delay = 0;
+   /**
     * @private
     * @param {apigen.Request} req
     * @param {apigen.Response} res
@@ -31,61 +35,72 @@ class APIGenerator {
       res.setHeader("Access-Control-Allow-Headers", "*");
       req.on("data", (chunk) => (body += chunk));
       req.on("end", () => {
-         try {
-            req.body = JSON.parse(body || "{}");
-         } catch {
-            const error = new ServerError(ERROR_TYPES.MALFORMED_REQUEST, 400);
-            this.handleError(res, error);
-            return;
-         }
-         const paths = req.url.split("/").filter(Boolean);
-
-         let current = this.root;
-         // Account for root URL.
-         if (paths.length === 0) paths.push("");
-         for (let i = 0; i < paths.length; i++) {
-            let path = paths[i];
-            if (!current.children[path]) {
-               /// Try generic parameters.
-               let parameterName = Object.keys(current.children).find((path) =>
-                  path.startsWith(":")
-               );
-               if (parameterName) {
-                  req.params = req.params || {};
-                  req.params[parameterName.slice(1)] = path;
-                  path = parameterName;
-               } else {
-                  const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
-                  this.handleError(res, error);
-                  break;
-               }
-            }
-            current = current.children[path];
-            if (i === paths.length - 1) {
-               if (!current.handler) {
-                  const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
-                  this.handleError(res, error);
-                  break;
-               }
-               try {
-                  if (current.protected) {
-                     this.protector?.(req);
-                  }
-                  const response = current.handler(req, res);
-                  if (response) this.sendData({ res, data: response });
-               } catch (error) {
-                  const handlerResult = this.handleError(res, error);
-                  if (handlerResult.feedback) {
-                     this.sendData({ res, data: handlerResult.feedback });
-                  }
-                  if (handlerResult.fatal) {
-                     throw error;
-                  }
-               }
-            }
-         }
-         res.end();
+         if (this.delay > 0) {
+            setTimeout(() => this.executeRequest(req, res, body), this.delay);
+         } else this.executeRequest(req, res, body);
       });
+   }
+   /**
+    * Execute a request.
+    * @param {apigen.Request} req
+    * @param {apigen.Response} res
+    * @param {string} body
+    */
+   executeRequest(req, res, body) {
+      try {
+         req.body = JSON.parse(body || "{}");
+      } catch {
+         const error = new ServerError(ERROR_TYPES.MALFORMED_REQUEST, 400);
+         this.handleError(res, error);
+         return;
+      }
+      const paths = req.url.split("/").filter(Boolean);
+
+      let current = this.root;
+      // Account for root URL.
+      if (paths.length === 0) paths.push("");
+      for (let i = 0; i < paths.length; i++) {
+         let path = paths[i];
+         if (!current.children[path]) {
+            /// Try generic parameters.
+            let parameterName = Object.keys(current.children).find((path) =>
+               path.startsWith(":")
+            );
+            if (parameterName) {
+               req.params = req.params || {};
+               req.params[parameterName.slice(1)] = path;
+               path = parameterName;
+            } else {
+               const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
+               this.handleError(res, error);
+               break;
+            }
+         }
+         current = current.children[path];
+         if (i === paths.length - 1) {
+            if (!current.handler) {
+               const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
+               this.handleError(res, error);
+               break;
+            }
+            try {
+               if (current.protected) {
+                  this.protector?.(req);
+               }
+               const response = current.handler(req, res);
+               if (response) this.sendData({ res, data: response });
+            } catch (error) {
+               const handlerResult = this.handleError(res, error);
+               if (handlerResult.feedback) {
+                  this.sendData({ res, data: handlerResult.feedback });
+               }
+               if (handlerResult.fatal) {
+                  throw error;
+               }
+            }
+         }
+      }
+      res.end();
    }
    /**
     *
