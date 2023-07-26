@@ -10,6 +10,7 @@ const config: Config = {
         "heat-wave": "#ff7a00",
         "fine-purple": "#c20275",
         "royal-red": "#c00073",
+        "error-red": "#930202",
         purple: {
           "raisin-black": "#1a1423",
           "english-violet": "#3d314a",
@@ -38,9 +39,10 @@ const config: Config = {
         "3xl": "7.625rem",
       },
       fontFamily: {
-        poppins: "Poppins",
+        poppins: "Poppins, sans-serif",
         "eras-bold": "Eras Bold ITC, sans-serif",
-        "avenir-next-lt-pro": "Avenir Next LT Pro",
+        "avenir-next-lt-pro": '"Avenir Next LT Pro", sans-serif',
+        "avenir-next-lt-pro-bold": '"Avenir Next LT Pro Bold", sans-serif',
       },
       boxShadow: {
         "image-depth":

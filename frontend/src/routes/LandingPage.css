@@ -1,18 +1,16 @@
 .landing_page_headline_text {
    display: flex;
-   height: 31.75rem;
    flex-direction: column;
-   justify-content: flex-end;
+   justify-content: center;
    align-items: flex-end;
    flex-shrink: 0;
    align-self: stretch;
-   color: var(--green-charcoal, #2f3e46);
    text-align: right;
-   font-family: Avenir Next LT Pro;
    font-size: 7.625rem;
    font-style: normal;
    font-weight: 700;
    line-height: 8.3125rem;
+   @apply font-avenir-next-lt-pro-bold text-green-charcoal;
 }
 .landing_page_headline_text .first {
    line-height: 8.3125rem; /* 109.016% */

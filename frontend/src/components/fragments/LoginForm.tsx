@@ -1,10 +1,9 @@
-import { Button } from "../ui";
-import { Input } from "../ui/Input";
+import { Button, Input } from "../ui";
 
 export function LoginForm() {
    return (
       <form className="w-full pr-[--global-padding-left]">
-         <h1 className="animate-fade-in-from-right effect-item-0 text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro text-[4.6875rem]">
+         <h1 className="animate-fade-in-from-right effect-item-0 text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-[4.6875rem]">
             Sign In to Use App.
          </h1>
          <div className="flex flex-col w-full">

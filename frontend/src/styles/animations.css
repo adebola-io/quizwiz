@@ -12,7 +12,24 @@
    }
 }
 
+@keyframes drop-from-top-bounce {
+   0% {
+      transform: translateY(-30%);
+      opacity: 0;
+   }
+   80% {
+      transform: translateY(10%);
+   }
+}
+
 @keyframes squeeze {
+   0% {
+      transform: scale(1.05);
+      opacity: 0;
+   }
+}
+
+@keyframes condense {
    0% {
       transform: scale(1.05);
       opacity: 0;
@@ -105,8 +122,14 @@
 .animate-expand {
    animation: expand 400ms;
 }
+.animate-condense {
+   animation: condense 500ms;
+}
 
 .animate-infinite-scroll {
    --end: -48%;
    animation: infinite-scroll 8000ms infinite linear;
+}
+.animate-drop-from-top-bounce {
+   animation: drop-from-top-bounce 400ms;
 }

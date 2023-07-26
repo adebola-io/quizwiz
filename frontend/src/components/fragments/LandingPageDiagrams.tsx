@@ -43,8 +43,9 @@ function QuestionBackground() {
                key={index}
                className={`gap-5 animate-infinite-scroll flex h-[8.91319rem]`}
             >
-               {b.map(() => (
+               {b.map((_, index) => (
                   <span
+                     key={index}
                      className={` text-green-hookers-green font-poppins text-[6.5288rem] [font-weight:700]`}
                   >
                      ?

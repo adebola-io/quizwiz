@@ -7,7 +7,7 @@ export function LandingPage() {
    return (
       <>
          <Header />
-         <main className="flex h-screen">
+         <main className="page_with_header flex h-screen">
             <LandingPageDiagrams />
             <section className="flex pl-[3.75rem] flex-col gap-[0.94rem] items-end pr-[--global-padding-left] justify-center lines w-[50%] h-full">
                <div className="landing_page_headline_text animate-fade-in-from-left effect-item-0">
@@ -24,7 +24,7 @@ export function LandingPage() {
                   something for every inquisitive soul.
                </p>
                <div className="flex gap-[1.4375rem] animate-fade-in-from-left effect-item-2">
-                  <Button as="link" to="/login">
+                  <Button as="link" to="/sign-up">
                      Get Started
                   </Button>
                   <Button variant="outlined">Learn More</Button>

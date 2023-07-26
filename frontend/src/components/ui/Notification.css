@@ -1,0 +1,32 @@
+.app_notification_container {
+   position: fixed;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.app_notification_container.under {
+   bottom: 0;
+}
+.app_notification {
+   border-radius: 8px;
+   border: 3px solid;
+   padding: 10px 60px;
+   max-width: 40vw;
+   text-align: center;
+   margin-top: 20px;
+   animation: drop-from-top-bounce 400ms;
+   font-size: 13px;
+   font-family: Poppins;
+   @apply shadow-components/smaller-shadow;
+}
+.app_notification.error {
+   background-color: var(--error-red);
+   color: var(--white);
+   border-color: var(--error-red);
+}
+.app_notification.success {
+   background-color: #496e5c;
+   font-weight: bold;
+   color: white;
+   border-color: var(--green-charcoal);
+}

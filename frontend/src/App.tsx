@@ -1,14 +1,18 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "@/hooks";
 import { LandingPage } from "@/routes";
+import { getAuthService } from "@/services";
+import { Navigate } from "react-router-dom";
 
 /**
  * Entry to Quiz App.
  */
 function App() {
-   const authService = useAuth();
+   return <Portal />;
+}
+
+function Portal() {
+   const authService = getAuthService();
    if (authService.status.isAuthenticated) {
-      return <Navigate to={"/home"} />;
+      return <Navigate to="/home" />;
    }
    return <LandingPage />;
 }

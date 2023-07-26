@@ -1,3 +1,4 @@
+@import "./fonts.css";
 @import "./animations.css";
 
 :root {
@@ -5,7 +6,10 @@
    --global-padding-left: 3.75rem;
    --green-charcoal: #2f3e46;
    --green-feldgrau: #446461;
+   --green-viridian: #6b917e;
    --green-ash-gray: #cad2c5;
+   --error-red: #930202;
+   --header-height: 6.75rem;
 }
 
 .lines {
@@ -18,6 +22,10 @@
    background-size: cover;
    background-position: center;
    background-image: url(../assets/signin-background.png);
+}
+
+.page_with_header {
+   padding-top: var(--header-height);
 }
 
 @tailwind base;

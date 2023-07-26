@@ -1,38 +1,12 @@
-import { FormEvent, useState } from "react";
-import { Button, Input } from "../ui";
-
-interface ErrorObject {
-   username?: string;
-   email?: string;
-   password?: string;
-}
+import { useSignUp } from "@/hooks";
+import { Button, Input, Loader } from "@/components/ui";
 
 export function SignUpForm() {
-   const [errors, setErrors] = useState<ErrorObject>({});
-   function handleSubmit(event: FormEvent) {
-      setErrors({});
-      const newErrorObject: ErrorObject = {};
-      event.preventDefault();
-      const { username, email, password } = event.target as unknown as {
-         [key in "username" | "email" | "password"]: HTMLInputElement;
-      };
-      if (username.value.length === 0) {
-         newErrorObject.username = "Username required.";
-      }
-      if (email.value.length === 0) {
-         newErrorObject.email = "Email required.";
-      }
-      if (password.value.length === 0) {
-         newErrorObject.password = "Password required.";
-      }
-      setErrors(newErrorObject);
-   }
+   const { submitter, errors, isLoading } = useSignUp();
+
    return (
-      <form
-         onSubmit={handleSubmit}
-         className="w-full pr-[--global-padding-left]"
-      >
-         <h1 className="animate-fade-in-from-right text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro text-[4.6875rem]">
+      <form onSubmit={submitter} className="w-full pr-[--global-padding-left]">
+         <h1 className="animate-fade-in-from-right text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-[3.6875rem]">
             Create Account to Get Started.
          </h1>
          <div className="flex flex-col w-full">
@@ -60,6 +34,14 @@ export function SignUpForm() {
                type="password"
                placeholder="Password"
             />
+            <Input
+               error={errors.confirmPassword}
+               containerClassName="animate-fade-in-from-right effect-item-4"
+               className="w-full"
+               id="confirmPassword"
+               type="password"
+               placeholder="Confirm Password"
+            />
             <Button
                type="submit"
                variant="override"
@@ -73,7 +55,20 @@ export function SignUpForm() {
                }}
                className="hover:brightness-90 animate-fade-in-from-right effect-item-4"
             >
-               Create Account
+               {isLoading ? (
+                  <Loader
+                     className="animate-pop"
+                     style={{
+                        animationDuration: "300ms",
+                     }}
+                     size={40}
+                     variant="outlined"
+                     color="white"
+                     shadow={false}
+                  />
+               ) : (
+                  "Create Account"
+               )}
             </Button>
          </div>
       </form>
