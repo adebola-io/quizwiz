@@ -28,9 +28,9 @@ function main() {
       const api = new APIGenerator();
       let delay = process.argv.find((arg) => arg.startsWith("--delay="));
       if (delay) {
-         delay = delay.slice(7);
+         delay = delay.slice(8);
          api.delay = parseInt(delay);
-         logger.inform(`API request delay set to ${delay}ms`);
+         logger.inform(`API request delay set to ${delay}ms.`);
       }
       api.useMiddleware({
          errorHandler,
