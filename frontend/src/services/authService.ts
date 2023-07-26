@@ -1,23 +1,32 @@
-import { ENDPOINTS, USER_TOKEN } from "@/constants";
+import { ENDPOINTS, USER_TOKEN_IDENT } from "@/constants";
 
 export class AuthService {
   status = {
-    token: null as string | null,
+    token: null,
     isAuthenticated: false,
-  };
+    username: null,
+  } as ({
+    token: string;
+    isAuthenticated: true;
+    username: string;
+  } | {
+    token: null;
+    isAuthenticated: false;
+    username: null;
+  });
 
   async setup() {
     (window as unknown as { __authService__: AuthService }).__authService__ =
       this;
-    const token = localStorage.getItem(USER_TOKEN);
-    if (token === null) {
+    const stored = localStorage.getItem(USER_TOKEN_IDENT);
+    if (stored === null) {
       return;
     }
-    if (await this.validateToken(token)) {
-      this.status.isAuthenticated = true;
-      this.status.token = token;
+    const status: typeof this.status = JSON.parse(stored);
+    if (status.token && await this.validateToken(status.token)) {
+      this.status = status;
     } else {
-      localStorage.removeItem(USER_TOKEN);
+      localStorage.removeItem(USER_TOKEN_IDENT);
     }
   }
   /**
@@ -40,11 +49,13 @@ export class AuthService {
     return isValid;
   }
 
-  async updateToken(token: string) {
-    if (await this.validateToken(token)) {
-      this.status.token = token;
-      this.status.isAuthenticated = true;
-      localStorage.setItem(USER_TOKEN, token);
+  async updateStatus(status: typeof this.status) {
+    if (!status.token) {
+      return false;
+    }
+    if (await this.validateToken(status.token)) {
+      this.status = status;
+      localStorage.setItem(USER_TOKEN_IDENT, JSON.stringify(this.status));
       return true;
     }
     return false;

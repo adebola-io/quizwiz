@@ -18,4 +18,4 @@ export const ENDPOINTS = {
   RAPID_FIRE_COMPLETED: `${ENDPOINT_ROOT}/rpdfire/completed`,
 };
 
-export const USER_TOKEN = "app-auth";
+export const USER_TOKEN_IDENT = "app-auth";

@@ -6,19 +6,20 @@ export interface UserAuthService {
   } | { token: string; isAuthenticated: true };
 }
 
-export interface ErrorObject {
-  username?: string;
-  email?: string;
-  password?: string;
-  confirmPassword?: string;
-}
-
 export interface UserCreationParams {
   username: string;
   emailAddress: string;
   password: string;
   confirmPassword: string;
 }
+
+export type LoginParams = {
+  email: string;
+  password: string;
+} | {
+  username: string;
+  password: string;
+};
 
 export interface UserSession {
   username: string;
@@ -33,3 +34,4 @@ export interface RequestError {
 export type NotificationType = "error" | "success" | "info";
 
 export type Level = 0 | 1 | 2 | 3 | 4;
+export type FormObject = { [keyof: string]: HTMLInputElement };
