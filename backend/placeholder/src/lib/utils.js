@@ -61,10 +61,47 @@ function isValidEmail(emailAddress) {
    return true;
 }
 
+/**
+ * @template T
+ * Select a number of random items from an array
+ * @param {T[]} array
+ * @param {number} number MUST be less than or eqiual to the size of the array.
+ * @returns {T[]}
+ */
+function selectRandom(array, number) {
+   /**@type {number[]} */
+   const indexes = [];
+   const selected = [];
+
+   while (selected.length < number) {
+      const select = parseFloat((Math.random() * 100).toFixed()) % array.length;
+      if (indexes.includes(select)) {
+         continue;
+      }
+      indexes.push(select);
+      selected.push(array[select]);
+   }
+   return selected;
+}
+
+/**
+ * @template T
+ * Returns a shuffled version of an array.
+ * @param {T[]} array
+ * @returns {T[]}
+ */
+function shuffle(array) {
+   return selectRandom(array, array.length);
+}
+
+console.log(selectRandom([1, 2, 3, 4, 5, 6, 7, 8, 9], 9));
+
 module.exports = {
    isAlphabetic,
    isNumeric,
    isValidEmail,
    isValidPassword,
    isValidUsername,
+   selectRandom,
+   shuffle,
 };

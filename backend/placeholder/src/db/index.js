@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { selectRandom, shuffle } = require("../lib/utils");
 
 /**
  * An in-memory representation of users.
@@ -101,21 +102,130 @@ class UserList {
       return id;
    }
 }
+class QuestionData {
+   /**
+    * @type {{ [key in Categories]: Category;}}
+    */
+   categories = {
+      "history-politics-and-geography": {
+         topics: [],
+      },
+      "language-and-literature": {
+         topics: [],
+      },
+      mathematics: {
+         topics: [],
+      },
+      "pop-culture": {
+         topics: [],
+      },
+      sports: {
+         topics: [],
+      },
+      technology: {
+         topics: [],
+      },
+   };
+   /**
+    * Get a list of random questions.
+    * @param {RandomQuestionParams} options
+    */
+   random({ categoryName, number, level }) {
+      /**@type {Question[]} */
+      let questions = [];
+      /** @type {Category[]} */
+      let categoryList = [];
+      if (categoryName) {
+         categoryList.push(this.categories[categoryName]);
+      } else {
+         categoryList.push(...Object.values(this.categories));
+      }
+      while (questions.length < number) {
+         for (const category of categoryList) {
+            for (const topic of category.topics) {
+               const randomQuestions = selectRandom(topic[`level${level}`], 3);
+               for (let randomQuestion of randomQuestions) {
+                  if (questions.length === number) return shuffle(questions);
+                  while (questions.includes(randomQuestion)) {
+                     randomQuestion = selectRandom(
+                        topic[`level${level}`],
+                        1
+                     )[0];
+                  }
+                  questions.push(randomQuestion);
+               }
+            }
+         }
+      }
+      return shuffle(questions);
+   }
+   /**
+    * Load quiz data into memory.
+    * @param {fs.PathLike} categoryFolder
+    */
+   load(categoryFolder) {
+      const categories = fs
+         .readdirSync(categoryFolder)
+         .filter((folder) =>
+            fs.lstatSync(`${categoryFolder}/${folder}`).isDirectory()
+         );
+      for (const category of categories) {
+         const topics = fs.readdirSync(`${categoryFolder}/${category}`);
+         for (const topic of topics) {
+            const topicFile = fs
+               .readFileSync(`${categoryFolder}/${category}/${topic}`)
+               .toString();
+            const topicObject = JSON.parse(topicFile);
+            questionData.categories[category].topics.push(topicObject);
+         }
+      }
+   }
+   /**
+    * Counts the number of quiz questions available.
+    * @param {Categories} categoryName
+    */
+   count(categoryName = undefined) {
+      let sum = 0;
+      for (const [name, category] of Object.entries(this.categories)) {
+         if (categoryName && categoryName !== name) {
+            continue;
+         }
+         for (const topic of category.topics) {
+            sum +=
+               topic.level0.length +
+               topic.level1.length +
+               topic.level2.length +
+               topic.level3.length +
+               topic.level4.length;
+         }
+      }
+      return sum;
+   }
+}
 
 const users = new UserList();
+const questionData = new QuestionData();
 /**
  * Prepare JSON mock database for users.
  */
 async function prepare() {
    users.setBaseFile("src/db/users.json");
-   console.log("Mock Database is ready.".cyan);
-   return users;
+
+   console.log("Mock User Database is ready.".cyan);
+
+   questionData.load("../categories");
+
+   console.log(`${questionData.count()} quiz questions available.`.cyan);
 }
 function getUsers() {
    return users;
 }
+function getQuestions() {
+   return questionData;
+}
 
 module.exports = {
    getUsers,
+   getQuestions,
    prepare,
 };

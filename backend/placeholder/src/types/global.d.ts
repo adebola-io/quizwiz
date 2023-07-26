@@ -75,6 +75,40 @@ declare global {
     stars: number;
   }
 
+  type Categories =
+    | "history-politics-and-geography"
+    | "language-and-literature"
+    | "mathematics"
+    | "pop-culture"
+    | "sports"
+    | "technology";
+
+  type Level = 0 | 1 | 2 | 3 | 4;
+  type LevelProperty = `level${Level}`;
+
+  type Topic =
+    & { title: string }
+    & {
+      [key in LevelProperty]: Question[];
+    };
+
+  interface RandomQuestionParams {
+    number: number;
+    level: Level;
+    categoryName?: Categories;
+  }
+
+  interface Question {
+    id: string;
+    prompt: string;
+    options: string[];
+    correctAnswer: 0 | 1 | 2 | 3;
+    level: Level;
+  }
+  interface Category {
+    topics: Array<Topic>;
+  }
+
   interface UserSession {
     username: string;
     token: string;

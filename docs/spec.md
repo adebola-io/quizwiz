@@ -51,6 +51,7 @@ A prompt is the query asked in a [question](#question). **It is a string that mu
 
 A question is an object containing:
 
+-  a unique identifier,
 -  a [prompt](#prompt),
 -  an option array. Each option is a string.
 -  a [level](#level), and
@@ -60,6 +61,7 @@ An example would be:
 
 ```json
 {
+   "id": "ab5hhr589uve4",
    "prompt": "What is 2 + 2?",
    "options": ["4", "5", "6", "7"],
    "level": 0,
@@ -164,7 +166,10 @@ To return a list of random [questions](#question), given a `number`, a specified
 
       -  For each of these random questions:
 
-         -  If the length of `questions` is equal to `number`, return a shuffled version of `questions`. Else, add the question to `questions`.
+         -  If the length of `questions` is equal to `number`, return a shuffled version of `questions`.
+         -  Else while question is already in `questions`:
+            -  Replace question with another random question.
+         -  Add question to `questions`.
 
 5. Return a shuffled version of `questions`.
 
