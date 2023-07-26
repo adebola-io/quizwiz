@@ -1,7 +1,6 @@
 import { Header, Sidebar } from "@/components/global";
 import { Loader } from "@/components/ui";
-import { getAuthService, getUserStats } from "@/services";
-import { useQuery } from "@tanstack/react-query";
+import { getAuthService } from "@/services";
 import { Navigate } from "react-router-dom";
 
 /**
@@ -9,10 +8,6 @@ import { Navigate } from "react-router-dom";
  * User homepage.
  */
 export function Home() {
-   const { isLoading, isError, data } = useQuery({
-      queryKey: ["userStats"],
-      queryFn: getUserStats,
-   });
    const authService = getAuthService();
    if (!authService.status.isAuthenticated) {
       return <Navigate to="/" />;
@@ -20,17 +15,11 @@ export function Home() {
    return (
       <>
          <Header loggedIn username={authService.status.username} />
-         <main className="page-with-header pl-[--sidebar-width]">
-            <Sidebar />
-            {isLoading ? (
-               <div className="w-full h-full flex items-center justify-center">
-                  <Loader />
-               </div>
-            ) : (
-               <>
-                  <div className="flex justify-between"></div>
-               </>
-            )}
+         <Sidebar />
+         <main className="page_with_header pl-[--sidebar-width]">
+            <div className="w-full h-[calc(100vh-var(--header-height))] flex items-center justify-center">
+               <Loader />
+            </div>
          </main>
       </>
    );
