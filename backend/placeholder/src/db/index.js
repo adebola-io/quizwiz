@@ -82,6 +82,9 @@ class UserList {
       this.items = this.items.filter((user) => user.id !== id);
       this.idMap.delete(id);
    }
+   clear() {
+      this.items = [];
+   }
    /**
     * Creates a new user ID.
     */

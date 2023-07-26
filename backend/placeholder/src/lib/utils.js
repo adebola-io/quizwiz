@@ -94,8 +94,6 @@ function shuffle(array) {
    return selectRandom(array, array.length);
 }
 
-console.log(selectRandom([1, 2, 3, 4, 5, 6, 7, 8, 9], 9));
-
 module.exports = {
    isAlphabetic,
    isNumeric,

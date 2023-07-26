@@ -12,7 +12,7 @@ const errorHandler = ({ res, error }) => {
    res.statusCode = status;
    res.contentType = "application/json";
    let message = getErrorMessage(type, error.data);
-   console.log(`Failed Request: ${message}.`.red);
+   console.log(`Failed Request to ${res.req.url}: ${message}`.red);
    return {
       fatal: false,
       feedback: { message, code: type },
@@ -27,28 +27,28 @@ const errorHandler = ({ res, error }) => {
 function getErrorMessage(type, data = undefined) {
    switch (type) {
       case ERROR_TYPES.MALFORMED_REQUEST: {
-         return `The request body has an invalid shape, or the request method is incorrect`;
+         return `The request body has an invalid shape, or the request method is incorrect.`;
       }
       case ERROR_TYPES.INVALID_EMAIL: {
-         return `Invalid email`;
+         return `Invalid email.`;
       }
       case ERROR_TYPES.INVALID_USERNAME: {
-         return `Invalid username`;
+         return `Invalid username.`;
       }
       case ERROR_TYPES.INVALID_PASSWORD: {
-         return `Invalid Password`;
+         return `Invalid Password.`;
       }
       case ERROR_TYPES.EMAIL_ALREADY_EXISTS: {
-         return `Email already exists`;
+         return `This email is already in use.`;
       }
       case ERROR_TYPES.USERNAME_ALREADY_EXISTS: {
-         return `Username already exists`;
+         return `This username is already in use.`;
       }
       case ERROR_TYPES.NOT_FOUND: {
-         return `Resource not found`;
+         return `Resource not found.`;
       }
       case ERROR_TYPES.UNAUTHORIZED: {
-         return `Authentication required`;
+         return `Authentication required.`;
       }
    }
 }
@@ -59,14 +59,14 @@ function getErrorMessage(type, data = undefined) {
  */
 const protect = (req) => {
    const error = new ServerError(ERROR_TYPES.UNAUTHORIZED, 401);
-   const { auth } = req.headers;
-   if (!auth || typeof auth !== "string") {
+   const { authorization } = req.headers;
+   if (!authorization || typeof authorization !== "string") {
       throw error;
    }
-   if (!auth.startsWith("Token ")) {
+   if (!authorization.startsWith("Token ")) {
       throw error;
    }
-   const token = auth.slice(6);
+   const token = authorization.slice(6);
    const decoded = jwt.verify(token, JWT_SECRET);
    req["user"] = getUsers().find((user) => user.id === decoded["id"]);
    if (req["user"] === undefined) {

@@ -53,7 +53,9 @@ function addNewUser(req) {
       token: generateUserToken(user.id),
    };
    users.add(user);
-   console.log(`New user with username "${username}" created.`.blue);
+   console.log(
+      `New user with username "${username}" created.`.underline.magenta.bold
+   );
    return response;
 }
 
@@ -71,7 +73,9 @@ function deleteUser(req) {
    /**@type {User} */
    const user = req["user"];
    users.remove(user.id);
-   console.log(`User with username ${user.username} deleted.`.yellow);
+   console.log(
+      `User with username ${user.username} deleted.`.underline.yellow.bold
+   );
    return { success: true };
 }
 
@@ -103,7 +107,7 @@ function loginUser(req) {
       username,
       token: generateUserToken(user.id),
    };
-   console.log(`User "${username}" logged in.`.blue);
+   console.log(`User "${username}" logged in.`.underline.blue.bold);
    return response;
 }
 
@@ -121,7 +125,7 @@ function getUserStats(req) {
    let quizzesPlayed = user.quizzesPlayed;
    let stars = user.stars;
    let successRate = user.successRate;
-   console.log(`GET /user/stats for "${user.username}"`);
+   console.log(`GET /user/stats for "${user.username}"`.underline.cyan.bold);
    return {
       quizzesPlayed,
       stars,

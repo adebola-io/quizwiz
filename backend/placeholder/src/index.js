@@ -15,6 +15,12 @@ require("colors");
 console.clear();
 
 db.prepare().then(() => {
+   if (process.argv.includes("--clear-db")) {
+      console.log("--clear-db option found, Removing all users.".yellow);
+      const users = db.getUsers();
+      users.clear();
+      users.writeToDisc();
+   }
    const api = new APIGenerator();
    api.delay = 3000;
    api.useMiddleware({

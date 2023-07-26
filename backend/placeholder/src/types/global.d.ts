@@ -83,8 +83,26 @@ declare global {
     | "sports"
     | "technology";
 
-  type Level = 0 | 1 | 2 | 3 | 4;
   type LevelProperty = `level${Level}`;
+
+  interface Category {
+    topics: Array<Topic>;
+  }
+
+  interface Question {
+    id: string;
+    prompt: string;
+    options: string[];
+    correctAnswer: 0 | 1 | 2 | 3;
+    level: Level;
+  }
+
+  interface UserSession {
+    username: string;
+    token: string;
+  }
+
+  type Level = 0 | 1 | 2 | 3 | 4;
 
   type Topic =
     & { title: string }
@@ -96,22 +114,6 @@ declare global {
     number: number;
     level: Level;
     categoryName?: Categories;
-  }
-
-  interface Question {
-    id: string;
-    prompt: string;
-    options: string[];
-    correctAnswer: 0 | 1 | 2 | 3;
-    level: Level;
-  }
-  interface Category {
-    topics: Array<Topic>;
-  }
-
-  interface UserSession {
-    username: string;
-    token: string;
   }
 
   type ErrorType = number;

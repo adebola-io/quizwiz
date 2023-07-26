@@ -31,8 +31,16 @@ class APIGenerator {
     */
    handler(req, res) {
       let body = "";
+      // Disable cors.
       res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Access-Control-Allow-Headers", "*");
+      res.setHeader("Access-Control-Allow-Methods", "*");
+      if (req.method === "OPTIONS") {
+         res.writeHead(200);
+         res.end();
+         return;
+      }
+
       req.on("data", (chunk) => (body += chunk));
       req.on("end", () => {
          if (this.delay > 0) {
