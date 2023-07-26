@@ -89,7 +89,7 @@ All questions in a quiz have the same level. An example of a quiz is:
 
 ### Category
 
-A category is a broad topic or subject description. The defined categories are:
+A category is a broad subject description. All the categories are stored in the `/backend/categories` folder. The defined categories are:
 
 1. History, Politics & Geography
 2. Language & Literature

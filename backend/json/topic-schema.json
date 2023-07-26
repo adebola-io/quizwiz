@@ -60,8 +60,12 @@
       "question": {
          "type": "object",
          "properties": {
+            "id": {
+               "type": "string"
+            },
             "prompt": {
                "type": "string"
+               "pattern": "^.+\\?$"
             },
             "options": {
                "type": "array",
@@ -82,7 +86,7 @@
                "maximum": 3
             }
          },
-         "required": ["prompt", "options", "level", "correctAnswer"]
+         "required": ["id", "prompt", "options", "level", "correctAnswer"]
       }
    }
 }
