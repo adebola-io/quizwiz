@@ -1,5 +1,6 @@
 node_modules
 .env
 prompts/
+log/
 
 users.json

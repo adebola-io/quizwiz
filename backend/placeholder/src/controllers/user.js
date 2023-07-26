@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const db = require("../db");
 const { utils, ServerError } = require("../lib");
 const { ERROR_TYPES, JWT_SECRET } = require("../constants");
+const logger = require("../lib/logger");
 
 require("colors");
 
@@ -53,9 +54,7 @@ function addNewUser(req) {
       token: generateUserToken(user.id),
    };
    users.add(user);
-   console.log(
-      `New user with username "${username}" created.`.underline.magenta.bold
-   );
+   logger.success(`New user with username "${username}" created.`.underline);
    return response;
 }
 
@@ -73,9 +72,7 @@ function deleteUser(req) {
    /**@type {User} */
    const user = req["user"];
    users.remove(user.id);
-   console.log(
-      `User with username ${user.username} deleted.`.underline.yellow.bold
-   );
+   logger.warn(`User with username ${user.username} deleted.`);
    return { success: true };
 }
 
@@ -107,7 +104,7 @@ function loginUser(req) {
       username,
       token: generateUserToken(user.id),
    };
-   console.log(`User "${username}" logged in.`.underline.blue.bold);
+   logger.inform(`User "${username}" logged in.`.underline);
    return response;
 }
 
@@ -125,7 +122,7 @@ function getUserStats(req) {
    let quizzesPlayed = user.quizzesPlayed;
    let stars = user.stars;
    let successRate = user.successRate;
-   console.log(`GET /user/stats for "${user.username}"`.underline.cyan.bold);
+   logger.inform(`GET /user/stats for "${user.username}"`.underline);
    return {
       quizzesPlayed,
       stars,

@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const { ERROR_TYPES, JWT_SECRET } = require("../constants");
 const { ServerError } = require("../lib");
 const { getUsers } = require("../db");
+const logger = require("../lib/logger");
 require("colors");
 
 /**
@@ -12,7 +13,7 @@ const errorHandler = ({ res, error }) => {
    res.statusCode = status;
    res.contentType = "application/json";
    let message = getErrorMessage(type, error.data);
-   console.log(`Failed Request to ${res.req.url}: ${message}`.red);
+   logger.error(`Failed Request to ${res.req.url}: ${message}`.red);
    return {
       fatal: false,
       feedback: { message, code: type },

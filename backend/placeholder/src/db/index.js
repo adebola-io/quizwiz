@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { selectRandom, shuffle } = require("../lib/utils");
+const logger = require("../lib/logger");
 
 /**
  * An in-memory representation of users.
@@ -40,7 +41,6 @@ class UserList {
     * Update the JSON file.
     */
    writeToDisc() {
-      console.log("Updating baseFile...".magenta);
       fs.writeFileSync(this.baseFile, JSON.stringify(this.items));
       this.mutationCounter = 0;
    }
@@ -57,7 +57,7 @@ class UserList {
     */
    setBaseFile(baseFile) {
       if (!fs.existsSync(baseFile)) {
-         console.log("Users JSON file is not present. Creating...".green);
+         logger.warn("Users JSON file is not present. Creating..");
          fs.createWriteStream(baseFile);
          fs.writeFileSync(baseFile, "[]");
       }
