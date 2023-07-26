@@ -89,7 +89,7 @@ All questions in a quiz have the same level. An example of a quiz is:
 
 A category is a broad topic or subject description. The defined categories are:
 
-1. History & Politics
+1. History, Politics & Geography
 2. Language & Literature
 3. Sports
 4. Mathematics
