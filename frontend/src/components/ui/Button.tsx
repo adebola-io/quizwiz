@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Property } from "csstype";
 import "./Button.css";
+import { MouseEvent } from "react";
 
 type ButtonProps = {
    children: React.ReactNode;
@@ -15,6 +16,7 @@ type ButtonProps = {
    width?: Property.Width;
    /** Predefined styling for the button */
    variant?: "override" | "outlined" | "filled";
+   onClick?(event: MouseEvent): void;
 } & (
    | {
         as?: "button";
@@ -36,6 +38,7 @@ export function Button(props: ButtonProps) {
    } ${props.className}`;
    return props.as === "link" ? (
       <Link
+         onClick={props.onClick}
          style={{
             height: props.height,
             width: props.width,
@@ -48,6 +51,7 @@ export function Button(props: ButtonProps) {
       </Link>
    ) : (
       <button
+         onClick={props.onClick}
          type={props.type ?? "button"}
          style={{
             height: props.height,

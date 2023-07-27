@@ -36,7 +36,7 @@ export function Header(props: HeaderProps) {
  */
 function Logo() {
    return (
-      <span className="text-green-dark-slate-gray font-bold font-eras-bold text-[2.081713rem] text-center [font-style:normal] [line-height:normal]">
+      <span className="logo_text text-green-dark-slate-gray font-bold font-eras-bold text-[2.081713rem] text-center [font-style:normal] [line-height:normal]">
          QuizApp
       </span>
    );

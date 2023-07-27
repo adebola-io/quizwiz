@@ -1,3 +1,2 @@
-export * from "./useSignUp";
+export * from "./useFormValidator";
 export * from "./useNotification";
-export * from "./useLogin";

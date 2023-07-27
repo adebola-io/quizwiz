@@ -1,17 +1,35 @@
-import { useLogin, useNotification } from "@/hooks";
+import { useFormValidator, useNotification } from "@/hooks";
 import { Button, Input, Loader } from "@/components/ui";
 import { useState } from "react";
 import { FormObject, LoginParams } from "@/types";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "@/services";
 
+interface LoginErrorObject {
+   usernameOrEmail?: string;
+   password?: string;
+}
+
 export function LoginForm() {
-   const validator = useLogin();
    const [isLoading, setIsLoading] = useState(false);
    const navigate = useNavigate();
    const notifyUser = useNotification();
+   const validator = useFormValidator(function (event) {
+      event.preventDefault();
+      const { usernameOrEmail, password } =
+         event.target as unknown as FormObject;
+      const errors: LoginErrorObject = {};
 
-   validator.next = (e) => {
+      if (usernameOrEmail.value.length === 0) {
+         errors.usernameOrEmail = "Please provide a username.";
+      }
+      if (password.value.length === 0) {
+         errors.password = "Please provide a password.";
+      }
+      return errors;
+   });
+
+   validator.onValidate = (e) => {
       setIsLoading(true);
       const { usernameOrEmail, password } = e.target as unknown as FormObject;
       // TODO: Perform more thorough check.

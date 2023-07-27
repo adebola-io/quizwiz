@@ -1,17 +1,72 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useNotification, useSignUp } from "@/hooks";
+import { useNotification, useFormValidator } from "@/hooks";
 import { Button, Input, Loader } from "@/components/ui";
 import { createNewUser } from "@/services";
 import { FormObject } from "@/types";
 
+interface SignUpErrorObject {
+   username?: string;
+   email?: string;
+   password?: string;
+   confirmPassword?: string;
+}
+
 export function SignUpForm() {
    const [isLoading, setIsLoading] = useState(false);
-   const validator = useSignUp();
+
    const navigate = useNavigate();
    const notifyUser = useNotification();
 
-   validator.next = (e) => {
+   const validator = useFormValidator(function (event) {
+      event.preventDefault();
+      const errors: SignUpErrorObject = {};
+      const { username, email, password, confirmPassword } =
+         event.target as unknown as FormObject;
+      password.type = "password";
+
+      // Usernames
+      if (username.value.length === 0) {
+         errors.username = "Username required.";
+      } else if (/[0-9]/.test(username.value[0])) {
+         errors.username = "Usernames cannot start with numbers.";
+      } else if (!/^[a-z_][a-z_0-9]+$/.test(username.value)) {
+         errors.username =
+            "Usernames must be lowercase alphanumeric characters or underscores.";
+      }
+      // Emails
+      if (email.value.length === 0) {
+         errors.email = "Email required.";
+      } else if (!email.checkValidity()) {
+         errors.email = "Enter a valid email.";
+      }
+
+      /// Passwords
+      if (password.value.length === 0) {
+         errors.password = "Password required.";
+      } else if (
+         !(
+            /[0-9]/.test(password.value) &&
+            /[a-z]/.test(password.value) &&
+            /[A-Z]/.test(password.value)
+         )
+      ) {
+         errors.password =
+            "Passwords should contain digits and letters (upper and lower case).";
+         showPasswordBriefly(password);
+      } else if (password.value.length < 7) {
+         errors.password = "Try a longer password.";
+         showPasswordBriefly(password);
+      } else if (password.value !== confirmPassword.value) {
+         errors.confirmPassword = "Passwords do not match!";
+         showPasswordBriefly(password);
+         showPasswordBriefly(confirmPassword);
+      }
+
+      return errors;
+   });
+
+   validator.onValidate = (e) => {
       const { username, email, password, confirmPassword } =
          e.target as unknown as FormObject;
       setIsLoading(true);
@@ -99,4 +154,11 @@ export function SignUpForm() {
          </div>
       </form>
    );
+}
+
+function showPasswordBriefly(password: HTMLInputElement) {
+   password.type = "text";
+   setTimeout(() => {
+      password.type = "password";
+   }, 3000);
 }

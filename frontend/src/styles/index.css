@@ -1,6 +1,10 @@
 @import "./fonts.css";
 @import "./animations.css";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
    --white: #ffffff;
    --global-padding-left: 3.75rem;
@@ -11,6 +15,16 @@
    --error-red: #930202;
    --header-height: 6.75rem;
    --sidebar-width: 7.4375rem;
+}
+/* For squished screens. */
+@media (aspect-ratio > 1) {
+   :root {
+      --header-height: 4.5rem;
+      --global-padding-left: 6rem;
+   }
+   .logo_text {
+      font-size: 1.7rem;
+   }
 }
 
 .lines {
@@ -28,7 +42,3 @@
 .page_with_header {
    padding-top: var(--header-height);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

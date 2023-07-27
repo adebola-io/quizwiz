@@ -12,8 +12,10 @@
    line-height: 8.3125rem;
    @apply font-avenir-next-lt-pro-bold text-green-charcoal;
 }
-.landing_page_headline_text .first {
-   line-height: 8.3125rem; /* 109.016% */
+@media (aspect-ratio > 1) {
+   .landing_page_headline_text {
+      line-height: 9.4rem;
+   }
 }
 .landing_page_headline_text .second {
    background: linear-gradient(100deg, #6b917e 0%, #446461 100%);
