@@ -16,6 +16,9 @@
   - [Validating Usernames](#validating-usernames)
   - [Validating Emails](#validating-emails)
   - [Validating Passwords](#validating-passwords)
+  - [Email Links](#email-links)
+    - [Verify email link](#verify-email-link)
+    - [reset password email link](#reset-password-email-link)
   - [Success Rate](#success-rate)
   - [Quiz Result](#quiz-result)
   - [Collecting Random Questions](#collecting-random-questions)
@@ -26,7 +29,10 @@
     - [- `BaseUrl`](#--baseurl)
     - [- POST `/api/v1/user/create`](#--post-apiv1usercreate)
     - [- POST `/api/v1/user/login`](#--post-apiv1userlogin)
-    - [- PATCH `/api/v1/user/verify_email/:token`](#--patch-apiv1userverify_emailtoken)
+    - [- PATCH `/api/v1/user/verify_email/:oneTimeToken`](#--patch-apiv1userverify_emailonetimetoken)
+    - [- POST `/api/v1/user/resend_email`](#--post-apiv1userresend_email)
+    - [- POST `/api/v1/user/forgot_password`](#--post-apiv1userforgot_password)
+    - [- POST `/api/v1/user/reset_password/:oneTimeToken`](#--post-apiv1userreset_passwordonetimetoken)
 
 ## Definition of Terms
 
@@ -140,6 +146,14 @@ To validate a given password:
 3. If the password does not contains one uppercase and one lowercase letter, return false.
 4. Return true.
 
+### Email Links
+
+#### Verify email link
+<https://csc420quiz.vercel.app/verify_email/?token=${oneTimeToken}>
+
+#### reset password email link
+<https://csc420quiz.vercel.app/reset_password/?token=${oneTimeToken}>
+
 ### Success Rate
 
 The success rate of a [user](#user) is defined as the average of all their [quiz results](#quiz-result).
@@ -229,7 +243,7 @@ return erorr response with message being "Invalid {{ key not provided }}" .
 7. If a [user](#user) with the username already exists, return error response with message being "{{ username }} already exist".
 8. If a user with the email already exists, return error response with message being "{{ email }} already exist".
 9. Create user in database and set initial values.
-10. Return a response with the shape:
+10. Send verification email and return a response with the shape:
     
 ```json
 {
@@ -266,6 +280,7 @@ return erorr response with message being "Invalid {{ key not provided }}" .
    ```
 
    return erorr response with message being "Email/Username and Password must be provided" .
+   
 3. If the username does not exist in the database, return erorr response with message being "Invalid email/username or password".
 4. If the username exists but the passwords do not match, rreturn erorr response with message being "Invalid email/username or password".
 5. Return a response with the shape:
@@ -290,15 +305,75 @@ return erorr response with message being "Invalid {{ key not provided }}" .
     }
 }
 ```
+   where the token is used for authentication of subsequent user requests.
 
-#### - PATCH `/api/v1/user/verify_email/:token`
+#### - PATCH `/api/v1/user/verify_email/:oneTimeToken`
 
 1. If the request method is not PATCH, return error response with message being "{route} is not a valid route".
-2. If `:token` is invalid or has expired, return erorr response with message being "token expired, kindly request a new one".
+2. If `:oneTimeToken` is invalid or has expired, return erorr response with message being "token expired, kindly request a new one".
 3. Return a response with the shape:
 ```json
 {
     "status": "success",
     "message": "Email successfully activated"
+}
+```
+
+#### - POST `/api/v1/user/resend_email`
+
+1. If the request method is not POST, return error response with message being "{route} is not a valid route".
+2. If the request body does not have the shape:
+   ```json
+   {
+      "email": "string",
+   }
+      return erorr response with message being "Invalid email" .
+3. If [user](#user) is not in the db, return erorr response with message being "User not found"".
+4.  If [emailConfirmation](#user) is true, return erorr response with message being "Your account is already activated".
+5. Send email and Return a response with the shape:
+```json
+{
+    "status": "success",
+    "message": "Verification email sent successfully!"
+}
+```
+
+#### - POST `/api/v1/user/forgot_password`
+
+1. If the request method is not POST, return error response with message being "{route} is not a valid route".
+2. If the request body does not have the shape:
+```json
+   {
+      "email": "string",
+   }
+```
+return erorr response with message being "Invalid email" .
+3. If [user](#user) is not in the db, return erorr response with message being "User not found"".
+4. Send email and Return a response with the shape:
+```json
+{
+    "status": "success",
+    "message": "Message sent to your email, kindly check"
+}
+```
+#### - POST `/api/v1/user/reset_password/:oneTimeToken`
+
+1. If the request method is not POST, return error response with message being "{route} is not a valid route".
+2. If `:oneTimeToken` is invalid or has expired, return erorr response with message being "Invalid or expired token".
+3. If the request body does not have the shape:
+   ```json
+   {
+      "password": "string",
+      "confirmPassword": "string"
+   }
+   ```
+   return erorr response with message being "Invalid password / Password not provided" .
+4. If the [password is not valid](#validating-passwords), return error response with message being "Invalid password / Password not provided".
+5. If the confirmPassword is not equal to password, return error response with message being "Passwords do not match / Confirm Password not provided".
+6. Return a response with the shape:
+```json
+{
+    "status": "success",
+    "message": "Password was reset successfully"
 }
 ```
