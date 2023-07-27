@@ -4,37 +4,37 @@
 
 ## Table of Contents
 
--  [Table of Contents](#table-of-contents)
--  [Definition of Terms](#definition-of-terms)
-   -  [Prompt](#prompt)
-   -  [Question](#question)
-   -  [Quiz](#quiz)
-   -  [Category](#category)
-   -  [Level](#level)
-   -  [User](#user)
--  [Algorithms](#algorithms)
-   -  [Validating Usernames](#validating-usernames)
-   -  [Validating Passwords](#validating-passwords)
-   -  [Success Rate](#success-rate)
-   -  [Quiz Result](#quiz-result)
-   -  [Collecting Random Questions](#collecting-random-questions)
--  [Server API](#server-api)
-   -  [Success Response](#success-response)
-   -  [Server Errors](#server-errors)
-      -  [Malformed Requests](#malformed-requests)
-      -  [Invalid Parameters](#invalid-parameters)
-      -  [Not Found](#not-found)
-      -  [Parameter Conflicts](#parameter-conflicts)
-   -  [API Endpoints](#api-endpoints)
-      -  [- `/user/create`](#--usercreate)
-      -  [- `/user/delete`](#--userdelete)
-      -  [- `/user/login`](#--userlogin)
-      -  [- `/user/stats`](#--userstats)
-      -  [- `/user/stats/update`](#--userstatsupdate)
-      -  [- `/categories/:id/:level`](#--categoriesidlevel)
-      -  [- `/random/:level`](#--randomlevel)
-      -  [- `/rpdfire/questions`](#--rpdfirequestions)
-      -  [- `/rpdfire/completed`](#--rpdfirecompleted)
+- [Table of Contents](#table-of-contents)
+- [Definition of Terms](#definition-of-terms)
+  - [Prompt](#prompt)
+  - [Question](#question)
+  - [Quiz](#quiz)
+  - [Category](#category)
+  - [Level](#level)
+  - [User](#user)
+- [Algorithms](#algorithms)
+  - [Validating Usernames](#validating-usernames)
+  - [Validating Passwords](#validating-passwords)
+  - [Success Rate](#success-rate)
+  - [Quiz Result](#quiz-result)
+  - [Collecting Random Questions](#collecting-random-questions)
+- [Server API](#server-api)
+  - [Success Response](#success-response)
+  - [Server Errors](#server-errors)
+    - [Malformed Requests](#malformed-requests)
+    - [Invalid Parameters](#invalid-parameters)
+    - [Not Found](#not-found)
+    - [Parameter Conflicts](#parameter-conflicts)
+  - [API Endpoints](#api-endpoints)
+    - [- `/user/create`](#--usercreate)
+    - [- `/user/delete`](#--userdelete)
+    - [- `/user/login`](#--userlogin)
+    - [- `/user/stats`](#--userstats)
+    - [- `/user/stats/update`](#--userstatsupdate)
+    - [- `/categories/:id/:level`](#--categoriesidlevel)
+    - [- `/random/:level`](#--randomlevel)
+    - [- `/rpdfire/questions`](#--rpdfirequestions)
+    - [- `/rpdfire/completed`](#--rpdfirecompleted)
 
 ## Definition of Terms
 
@@ -364,5 +364,7 @@ This route is protected. Only users should be able to access it.
 This route is protected. Only users should be able to access it.
 
 1. If the request method is not `POST`, return a [malformed request](#malformed-requests) error.
-2. Set `rapidFireCheckpoint` of the user with id `userid`, to the current day.
-3. Return a [success response](#success-response).
+2. If the request does not have the same shape as a request to [`/user/stats/update`](#userstatsupdate), return a [malformed request](#malformed-requests) error.
+3. Update the user stats, following steps 3-5 in [`/user/stats/update`](#userstatsupdate).
+4. Set `rapidFireCheckpoint` of the user with id `userid`, to the current day.
+5. Return a [success response](#success-response).

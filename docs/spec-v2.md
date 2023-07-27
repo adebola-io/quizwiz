@@ -149,9 +149,11 @@ To validate a given password:
 ### Email Links
 
 #### Verify email link
+
 <https://csc420quiz.vercel.app/verify_email/?token=${oneTimeToken}>
 
 #### reset password email link
+
 <https://csc420quiz.vercel.app/reset_password/?token=${oneTimeToken}>
 
 ### Success Rate
@@ -226,96 +228,95 @@ Error reponses have a status field set to 'fail' or 'error' and a message field.
 #### - POST `/api/v1/user/create`
 
 1. If the request method is not POST, return error response with message being "{route} is not a valid route".
-2.  If the request body does not have the shape:
-   ```json
-   {
-      "username": "string"
-      "email": "string"
-      "password": "string"
-      "confirmPassword": "string"
-   }
-   ```
-return erorr response with message being "Invalid {{ key not provided }}" .
-3. If the [username is not valid](#validating-usernames), return error response with message being "Invalid username".
-4. If the [email is not valid](#validating-emails), return error response with message being "Invalid email".
-5. If the [password is not valid](#validating-passwords), return error response with message being "Invalid password".
-6. If the confirmPassword is not equal to password, return error response with message being "Passwords do not match".
-7. If a [user](#user) with the username already exists, return error response with message being "{{ username }} already exist".
-8. If a user with the email already exists, return error response with message being "{{ email }} already exist".
-9. Create user in database and set initial values.
-10. Send verification email and return a response with the shape:
-    
+2. If the request body does not have the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "registration successful, kindly check your email for next step",
-    "data": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGMxN2NkYTU3ZGFlYmEwODZjYjIxM2EiLCJpYXQiOjE2OTA0MDIwMTQsImV4cCI6MTY5MDQwMjAxNH0.3wuIgX4ORL7bfjFCVS1XPxn3Vh_XiSo-MMEveLnTz_I",
-        "user": {
-            "username": "dejalayo",
-            "email": "dejalayo@gmail.com",
-            "emailConfirmationStatus": false,
-            "quizzesPlayed": 0,
-            "successRate": 0,
-            "stars": 0,
-            "rapidFireCheckpoint": null,
-            "_id": "64c17cda57daeba086cb213a",
-            "createdAt": "2023-07-26T20:06:50.072Z",
-            "updatedAt": "2023-07-26T20:06:50.072Z"
-        }
-    }
+   "username": "string"
+   "email": "string"
+   "password": "string"
+   "confirmPassword": "string"
 }
 ```
-   where the token is used for authentication of subsequent user requests.
+
+return erorr response with message being "Invalid {{ key not provided }}" . 3. If the [username is not valid](#validating-usernames), return error response with message being "Invalid username". 4. If the [email is not valid](#validating-emails), return error response with message being "Invalid email". 5. If the [password is not valid](#validating-passwords), return error response with message being "Invalid password". 6. If the confirmPassword is not equal to password, return error response with message being "Passwords do not match". 7. If a [user](#user) with the username already exists, return error response with message being "{{ username }} already exist". 8. If a user with the email already exists, return error response with message being "{{ email }} already exist". 9. Create user in database and set initial values. 10. Send verification email and return a response with the shape:
+
+```json
+{
+   "status": "success",
+   "message": "registration successful, kindly check your email for next step",
+   "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGMxN2NkYTU3ZGFlYmEwODZjYjIxM2EiLCJpYXQiOjE2OTA0MDIwMTQsImV4cCI6MTY5MDQwMjAxNH0.3wuIgX4ORL7bfjFCVS1XPxn3Vh_XiSo-MMEveLnTz_I",
+      "user": {
+         "username": "dejalayo",
+         "email": "dejalayo@gmail.com",
+         "emailConfirmationStatus": false,
+         "quizzesPlayed": 0,
+         "successRate": 0,
+         "stars": 0,
+         "rapidFireCheckpoint": null,
+         "_id": "64c17cda57daeba086cb213a",
+         "createdAt": "2023-07-26T20:06:50.072Z",
+         "updatedAt": "2023-07-26T20:06:50.072Z"
+      }
+   }
+}
+```
+
+where the token is used for authentication of subsequent user requests.
 
 #### - POST `/api/v1/user/login`
 
 1. If the request method is not POST, return error response with message being "{route} is not a valid route".
-2.  If the request body does not have the shape:
-   ```json
-   {
-      "username": "string",
-      "password": "string"
-   }
-   ```
+2. If the request body does not have the shape:
 
-   return erorr response with message being "Email/Username and Password must be provided" .
-   
+```json
+{
+   "username": "string",
+   "password": "string"
+}
+```
+
+return erorr response with message being "Email/Username and Password must be provided" .
+
 3. If the username does not exist in the database, return erorr response with message being "Invalid email/username or password".
 4. If the username exists but the passwords do not match, rreturn erorr response with message being "Invalid email/username or password".
 5. Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "login successful",
-    "data": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGMxN2NkYTU3ZGFlYmEwODZjYjIxM2EiLCJpYXQiOjE2OTA0MDIzMjcsImV4cCI6MTY5MDQwMjMyN30.pfGEMYIKwlLCHalvieqbvNTvC8ZwyuLJf6ueDh4Aj24",
-        "user": {
-            "_id": "64c17cda57daeba086cb213a",
-            "username": "dejalayo",
-            "email": "dejalayo@gmail.com",
-            "emailConfirmationStatus": false,
-            "quizzesPlayed": 0,
-            "successRate": 0,
-            "stars": 0,
-            "rapidFireCheckpoint": null,
-            "createdAt": "2023-07-26T20:06:50.072Z",
-            "updatedAt": "2023-07-26T20:06:50.072Z"
-        }
-    }
+   "status": "success",
+   "message": "login successful",
+   "data": {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NGMxN2NkYTU3ZGFlYmEwODZjYjIxM2EiLCJpYXQiOjE2OTA0MDIzMjcsImV4cCI6MTY5MDQwMjMyN30.pfGEMYIKwlLCHalvieqbvNTvC8ZwyuLJf6ueDh4Aj24",
+      "user": {
+         "_id": "64c17cda57daeba086cb213a",
+         "username": "dejalayo",
+         "email": "dejalayo@gmail.com",
+         "emailConfirmationStatus": false,
+         "quizzesPlayed": 0,
+         "successRate": 0,
+         "stars": 0,
+         "rapidFireCheckpoint": null,
+         "createdAt": "2023-07-26T20:06:50.072Z",
+         "updatedAt": "2023-07-26T20:06:50.072Z"
+      }
+   }
 }
 ```
-   where the token is used for authentication of subsequent user requests.
+
+where the token is used for authentication of subsequent user requests.
 
 #### - PATCH `/api/v1/user/verify_email/:oneTimeToken`
 
 1. If the request method is not PATCH, return error response with message being "{route} is not a valid route".
 2. If `:oneTimeToken` is invalid or has expired, return erorr response with message being "token expired, kindly request a new one".
 3. Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "Email successfully activated"
+   "status": "success",
+   "message": "Email successfully activated"
 }
 ```
 
@@ -328,13 +329,15 @@ return erorr response with message being "Invalid {{ key not provided }}" .
       "email": "string",
    }
       return erorr response with message being "Invalid email" .
+   ```
 3. If [user](#user) is not in the db, return erorr response with message being "User not found"".
-4.  If [emailConfirmation](#user) is true, return erorr response with message being "Your account is already activated".
+4. If [emailConfirmation](#user) is true, return erorr response with message being "Your account is already activated".
 5. Send email and Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "Verification email sent successfully!"
+   "status": "success",
+   "message": "Verification email sent successfully!"
 }
 ```
 
@@ -342,20 +345,22 @@ return erorr response with message being "Invalid {{ key not provided }}" .
 
 1. If the request method is not POST, return error response with message being "{route} is not a valid route".
 2. If the request body does not have the shape:
-```json
-   {
-      "email": "string",
-   }
-```
-return erorr response with message being "Invalid email" .
-3. If [user](#user) is not in the db, return erorr response with message being "User not found"".
-4. Send email and Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "Message sent to your email, kindly check"
+   "email": "string"
 }
 ```
+
+return erorr response with message being "Invalid email" . 3. If [user](#user) is not in the db, return erorr response with message being "User not found"". 4. Send email and Return a response with the shape:
+
+```json
+{
+   "status": "success",
+   "message": "Message sent to your email, kindly check"
+}
+```
+
 #### - POST `/api/v1/user/reset_password/:oneTimeToken`
 
 1. If the request method is not POST, return error response with message being "{route} is not a valid route".
@@ -371,9 +376,10 @@ return erorr response with message being "Invalid email" .
 4. If the [password is not valid](#validating-passwords), return error response with message being "Invalid password / Password not provided".
 5. If the confirmPassword is not equal to password, return error response with message being "Passwords do not match / Confirm Password not provided".
 6. Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "Password was reset successfully"
+   "status": "success",
+   "message": "Password was reset successfully"
 }
 ```
