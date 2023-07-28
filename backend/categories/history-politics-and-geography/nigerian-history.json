@@ -1,8 +1,130 @@
 {
    "title": "Nigerian History",
    "category": "History and Politics",
-   "level0": [],
-   "level1": [],
+   "level0": [
+      {
+         "prompt": "Approximately, how many ethnic groups are there in Nigeria?",
+         "options": ["100", "150", "200", "250"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following ethnic group(s) is/are considered as major ethnic group(s) in Nigeria?",
+         "options": ["Hausa-Fulani", "Yoruba", "Igbo", "All of the above"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "The most widely spoken language in Nigeria is?",
+         "options": ["English", "Yoruba", "Hausa", "Igbo"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Nigeria got independence on 1 October 1960 from?",
+         "options": ["British Rule", "United States", "Egypt", "Belgium and France"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Nigerian civil war was lasted from _____ to _____.?",
+         "options": ["1965, 1968", "1967, 1970", "1969, 1972", "1971, 1974"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following statement(s) is/are true about Nigeria?",
+         "options": ["Africa is world’s second-largest continent by area", "Africa is world’s second-largest continent by population", "Nigeria is Africa’s largest country by Area", "Both (A) and (B)"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "How many members states are there in the African Union?",
+         "options": ["45", "50", "55", "60"],
+         "correctAnswer":2,
+         "level": 0
+      },
+      {
+         "prompt": "Who is the current Minister for Foreign Affairs?",
+         "options": ["Aminu Bashir Wali", "Geoffrey Onyeama", "Viola Onwuliri", "Zainab Ahmed"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "The largest city in Africa is?",
+         "options": ["Lagos", "Cairo", "Johannesburg", "Addis Ababa"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Nigeria has a coastline of about _____ kilometer on the Gulf of Guinea.",
+         "options": ["953", "753", "853", "1053"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+   ],
+   "level1": [
+      {
+         "prompt": "Since independence in 1960, Nigeria remained under military rule for about _____ years.",
+         "options": ["13", "23", "33", "43"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "After regaining democracy in 1999, who became president of Nigeria?",
+         "options": ["Muhammadu Buhari", "Olusegun Obasanjo", "Umaru Musa Yar’Adua", "Abdulsalami Abubakar"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Goodluck Jonathan remained president of Nigeria from _____ to _____.?",
+         "options": ["2010, 2015", "2010, 2017", "2012, 2017", "2012, 2018"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "How many colors are there in the national flag of Nigeria??",
+         "options": ["2", "3", "4", "5"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Militant organization Boko Haram was founded in?",
+         "options": ["1996", "1998", "2000", "2002"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Bakassi Peninsula was transferred from Nigeria to Cameroon on 14 August?",
+         "options": ["1990", "1996", "2000", "2008"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which gulf is present in the South of Nigeria?",
+         "options": ["Persian Gulf", "Gulf of Guinea", "Gulf of Oman", "Persian Gulf"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which West African state is located in the West of Nigeria?",
+         "options": ["Congo", "Somalia", "Sudan", "Benin"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Nigeria shares its Eastern Border with which country?",
+         "options": ["Cameroon", "Niger", "Mali", "Libya"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "How many states are in Nigeria?",
+         "options": ["26", "36", "46", "56"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+   ],
    "level2": [],
    "level3": [],
    "level4": []
