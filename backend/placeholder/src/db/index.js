@@ -350,7 +350,9 @@ class TokenProvider {
          ).toFixed(2)} minutes.`
       );
       token.timeout = setTimeout(() => {
-         logger.important(`Token with id ${token.id} invalidated.`);
+         logger.important(
+            `Token with id ${token.id} has expired and been invalidated.`
+         );
          this.currentTokens.delete(token);
       }, this.tokenLifetime);
       return token;
