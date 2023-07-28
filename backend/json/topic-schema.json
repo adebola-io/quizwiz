@@ -64,7 +64,7 @@
                "type": "string"
             },
             "prompt": {
-               "type": "string"
+               "type": "string",
                "pattern": "^.+\\?$"
             },
             "options": {
@@ -86,7 +86,7 @@
                "maximum": 3
             }
          },
-         "required": ["id", "prompt", "options", "level", "correctAnswer"]
+         "required": ["prompt", "options", "level", "correctAnswer"]
       }
    }
 }
