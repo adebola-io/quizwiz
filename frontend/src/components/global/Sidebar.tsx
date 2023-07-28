@@ -3,7 +3,7 @@ import { useState } from "react";
 export function Sidebar() {
    const expanded = useState(false);
    return (
-      <div className="fixed z-9 left-0 h-screen pt-[--header-height]">
+      <div className="fixed z-[9] left-0 h-screen pt-[--header-height]">
          <aside
             style={{
                width: expanded[0] ? "30vw" : "var(--sidebar-width)",

@@ -5,6 +5,7 @@ interface MetricProps {
    icon: React.ReactNode;
    name: string;
    className?: string;
+   percent?: boolean;
 }
 
 /**
@@ -21,8 +22,15 @@ export function Metric(props: MetricProps) {
       <div className={className}>
          <div className="flex items-center h-full w-full justify-between pl-[--home-card-left-padding] pr-[1.8rem] bg-white relative border-[5px] border-green-charcoal border-solid rounded-[1.1rem] ">
             <div className="flex flex-col">
-               <span className="text-[5.0rem] [line-height:1.3] font-avenir-next-lt-pro-bold">
-                  {props.value}
+               <span className="text-[4.6rem] whitespace-nowrap [text-wrap:nowrap] [line-height:1.3] font-avenir-next-lt-pro-bold">
+                  {props.value}{" "}
+                  {props.percent ? (
+                     <span className="inline-block translate-x-[-9px] text-[3rem]">
+                        %
+                     </span>
+                  ) : (
+                     <></>
+                  )}
                </span>
                <span className="font-poppins text-[1.30406rem] font-bold">
                   {props.name}

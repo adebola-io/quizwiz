@@ -18,22 +18,42 @@ export default function Home() {
          <div className="p-[3.125rem_var(--global-padding-left)_0rem_2.5rem]">
             <div className="flex mb-[2.04rem] w-full max-w-[1920px] gap-11">
                <Metric
+                  className="animate-drop-from-top effect-item-0"
                   name="quizzes played"
                   value={user.quizzesPlayed}
                   icon={<QuestionIcon />}
                />
-               <Metric name="stars" value={user.stars} icon={<StarsIcon />} />
+               <Metric
+                  className="animate-drop-from-top effect-item-2"
+                  name="stars"
+                  value={user.stars}
+                  icon={<StarsIcon />}
+               />
                <Metric
                   name="success rate"
-                  value={user.successRate.toFixed(2)}
+                  className="animate-drop-from-top effect-item-4"
+                  value={user.successRate.toFixed(1)}
+                  percent
                   icon={<CheckMark />}
                />
             </div>
-            <Banner className="mb-[2.04rem]" rightCornerImage={RpdFireBanner}>
+            <Banner
+               className="mb-[2.04rem] animate-fade-in-from-left effect-item-2"
+               rightCornerImage={RpdFireBanner}
+            >
                <h1 className="text-[3.1215rem] mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal">
                   Earn more Stars in a Rapid Fire Quiz.
                </h1>
-               <Button className="w-fit">Get Started</Button>
+               <Button
+                  className="w-fit"
+                  style={{
+                     backgroundColor: "#ffc150",
+                     color: "var(--green-charcoal)",
+                     fontWeight: "bold",
+                  }}
+               >
+                  Get Started
+               </Button>
             </Banner>
             <CategoryList />
          </div>

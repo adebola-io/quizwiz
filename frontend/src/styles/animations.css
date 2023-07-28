@@ -8,7 +8,7 @@
 
 @keyframes drop-from-top {
    0% {
-      transform: translateY(-30%);
+      transform: translateY(var(--start));
    }
 }
 
@@ -64,6 +64,9 @@
 .animate-fade-in-from-right {
    animation-name: fade-in;
 }
+.animate-drop-from-top {
+   animation-name: drop-from-top;
+}
 
 .effect-item-0 {
    animation-duration: 500ms;
@@ -111,6 +114,22 @@
 }
 .animate-fade-in-from-left.effect-item-4 {
    --start: -11vw;
+}
+
+.animate-drop-from-top.effect-item-0 {
+   --start: -30%;
+}
+.animate-drop-from-top.effect-item-1 {
+   --start: -33%;
+}
+.animate-drop-from-top.effect-item-2 {
+   --start: -40%;
+}
+.animate-drop-from-top.effect-item-3 {
+   --start: -45%;
+}
+.animate-drop-from-top.effect-item-4 {
+   --start: -50%;
 }
 
 .animate-squeeze {

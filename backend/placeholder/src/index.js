@@ -103,7 +103,7 @@ function runServer(delay) {
 
    // Others
    api.endpoints({
-      "/categories/:id/:level"() {},
+      "/questions/:categoryId/:level"() {},
       "/random/:level"() {},
       "/rpdfire/questions": {
          protected: true,
