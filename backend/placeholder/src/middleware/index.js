@@ -62,17 +62,27 @@ const protect = (req) => {
    const error = new ServerError("Unauthorized request.", 401);
    const { authorization } = req.headers;
    if (!authorization || typeof authorization !== "string") {
+      console.log(`1: ${authorization}`);
       throw error;
    }
-   if (!authorization.startsWith("Token ")) {
+   if (!authorization.startsWith("Bearer ")) {
+      console.log(`2: ${authorization}`);
       throw error;
    }
-   const token = authorization.slice(6);
-   const decoded = jwt.verify(token, JWT_SECRET);
-   const users = db.getUsers();
-   const record = users.find((record) => record.metadata._id === decoded["id"]);
-   req["user"] = record?.data;
-   if (req["user"] === undefined) {
+   const token = authorization.slice(7);
+   try {
+      const decoded = jwt.verify(token, JWT_SECRET);
+      const users = db.getUsers();
+      const record = users.find(
+         (record) => record.metadata._id === decoded["id"]
+      );
+      req["user"] = record?.data;
+      if (req["user"] === undefined) {
+         console.log(`3: ${authorization}`);
+         throw new ServerError("User not found", 401);
+      }
+   } catch {
+      console.log(`4: ${authorization}`);
       throw error;
    }
 };

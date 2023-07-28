@@ -9,6 +9,7 @@ const {
    resendVerificationEmail,
    handleForgotPassword,
    resetPassword,
+   getUserProfile,
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -39,6 +40,14 @@ function runServer(delay) {
          const session = loginUser(req);
          res.statusCode = 200;
          return session;
+      },
+      "/user/profile": {
+         protected: true,
+         handler(req, res) {
+            const data = getUserProfile(req);
+            res.statusCode = 200;
+            return data;
+         },
       },
       "/user/verify_email/:oneTimeToken": {
          protected: true,

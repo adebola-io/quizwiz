@@ -22,12 +22,12 @@ function addNewUser(req) {
       );
    }
 
-   const { username, emailAddress, password, confirmPassword } = req.body;
+   const { username, email, password, confirmPassword } = req.body;
 
    if (typeof username !== "string" || !utils.isValidUsername(username)) {
       throw new ServerError("Invalid username.");
    }
-   if (typeof emailAddress !== "string" || !utils.isValidEmail(emailAddress)) {
+   if (typeof email !== "string" || !utils.isValidEmail(email)) {
       throw new ServerError("Invalid email.");
    }
    if (typeof password !== "string" || !utils.isValidPassword(password)) {
@@ -45,8 +45,8 @@ function addNewUser(req) {
       if (previousUser.username == username) {
          throw new ServerError(`${username} already exists.`);
       }
-      if (previousUser.emailAddress == emailAddress) {
-         throw new ServerError(`${emailAddress} already exists.`);
+      if (previousUser.emailAddress == email) {
+         throw new ServerError(`${email} already exists.`);
       }
    }
    const hashedPassword = bcrypt.hashSync(password, 10);
@@ -55,7 +55,7 @@ function addNewUser(req) {
    const userData = {
       username,
       password: hashedPassword,
-      emailAddress,
+      emailAddress: email,
       emailConfirmationStatus: false,
       quizzesPlayed: 0,
       rapidFireCheckpoint: null,
@@ -90,6 +90,37 @@ function addNewUser(req) {
    );
 
    return response;
+}
+
+/**
+ * @route "/user/profile"
+ * @param {apigen.Request} req
+ * @return {SucessResponse}
+ */
+function getUserProfile(req) {
+   if (req.method !== "GET") {
+      throw new ServerError(
+         `${req.method} /user/profile is not a valid route.`,
+         401
+      );
+   }
+   const users = db.getUsers();
+   const record = users.find((record) => record.data == req["user"]);
+
+   logger.inform(`User profile for ${record.data.username} retrieved`);
+
+   return {
+      status: "success",
+      message: "User fetched successfully",
+      data: {
+         user: {
+            ...record.data,
+            role: "user",
+            password: undefined,
+            ...record.metadata,
+         },
+      },
+   };
 }
 
 /**
@@ -409,6 +440,7 @@ module.exports = {
    addNewUser,
    deleteUser,
    getUserStats,
+   getUserProfile,
    handleForgotPassword,
    loginUser,
    resendVerificationEmail,
