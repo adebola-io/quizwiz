@@ -34,7 +34,7 @@ export class AuthService {
    * @param token JWT Token
    */
   async validateToken(token: string) {
-    let isValid;
+    let isValid = false;
     try {
       const res = await fetch(ENDPOINTS.USER_STATS, {
         method: "GET",
@@ -49,22 +49,16 @@ export class AuthService {
     return isValid;
   }
 
-  reset() {
-    localStorage.removeItem(USER_TOKEN_IDENT);
-    this.status = {
-      token: null,
-      isAuthenticated: false,
-      username: null,
-    };
-  }
-
-  updateStatus(status: typeof this.status) {
+  async updateStatus(status: typeof this.status) {
     if (!status.token) {
       return false;
     }
-    this.status = status;
-    localStorage.setItem(USER_TOKEN_IDENT, JSON.stringify(this.status));
-    return true;
+    if (await this.validateToken(status.token)) {
+      this.status = status;
+      localStorage.setItem(USER_TOKEN_IDENT, JSON.stringify(this.status));
+      return true;
+    }
+    return false;
   }
 }
 

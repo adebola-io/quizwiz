@@ -1,2 +1,2 @@
 export * from "./useFormValidator";
-export * from "./useNotification";
+export * from "./useAuth";

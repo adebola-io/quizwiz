@@ -30,10 +30,13 @@ export async function createNewUser(values: UserCreationParams) {
     throw new Error((data as RequestError).message);
   }
   const authService = getAuthService();
-  authService.updateStatus({
+  const isUpdated = await authService.updateStatus({
     ...(data as UserSession),
     isAuthenticated: true,
   });
+  if (!isUpdated) {
+    throw new Error("Internal Server Error.");
+  }
 
   return data;
 }
@@ -48,14 +51,13 @@ export async function loginUser(payload: LoginParams) {
     throw new Error((data as RequestError).message);
   }
   const authService = getAuthService();
-  authService.updateStatus({
+  const isUpdated = await authService.updateStatus({
     ...(data as UserSession),
     isAuthenticated: true,
   });
-}
-
-export async function logoutUser() {
-  getAuthService().reset();
+  if (!isUpdated) {
+    throw new Error("Internal Server Error.");
+  }
 }
 
 export async function getUserStats() {

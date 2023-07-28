@@ -1,22 +1,39 @@
+export interface User {
+  _id: string;
+  username: string;
+  email: string;
+  emailConfirmationStatus: boolean;
+  role: string;
+  quizzesPlayed: number;
+  successRate: number;
+  stars: number;
+  rapidFireCheckpoint: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type Stats = Pick<
+  User,
+  "quizzesPlayed" | "rapidFireCheckpoint" | "stars" | "successRate"
+>;
 export interface UserAuthService {
   updateToken(token: string): void;
-  status: {
-    token: null;
-    isAuthenticated: false;
-  } | { token: string; isAuthenticated: true };
+  status:
+    | {
+        token: null;
+        isAuthenticated: false;
+      }
+    | { token: string; isAuthenticated: true };
 }
 
 export interface UserCreationParams {
   username: string;
-  emailAddress: string;
+  email: string;
   password: string;
   confirmPassword: string;
 }
 
 export type LoginParams = {
-  email: string;
-  password: string;
-} | {
   username: string;
   password: string;
 };
@@ -26,9 +43,15 @@ export interface UserSession {
   token: string;
 }
 
+export type ApiResponse<T = any> = {
+  status: "fail" | "success" | "error";
+  message: string;
+  data: T;
+};
+
 export interface RequestError {
   message: string;
-  code: number;
+  status: string;
 }
 
 export type NotificationType = "error" | "success" | "info";

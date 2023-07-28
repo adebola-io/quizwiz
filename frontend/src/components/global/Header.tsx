@@ -22,7 +22,7 @@ export function Header(props: HeaderProps) {
                   {props.username[0].toUpperCase()}
                </div>
             ) : (
-               <Button size="okay" as="link" to="/login">
+               <Button size="okay" as="link" to="/auth/login">
                   Sign In
                </Button>
             )}
