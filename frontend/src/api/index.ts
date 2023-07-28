@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import axios, { AxiosInstance } from "axios";
-import { ENDPOINT_ROOT, USER_TOKEN_IDENT } from "@/constants";
+import { ENDPOINT_ROOT } from "@/constants";
 
 const axiosInstance: AxiosInstance = axios.create({
   baseURL: ENDPOINT_ROOT,
