@@ -40,5 +40,7 @@
 }
 
 .page_with_header {
+   position: relative;
    padding-top: var(--header-height);
+   z-index: -1;
 }
