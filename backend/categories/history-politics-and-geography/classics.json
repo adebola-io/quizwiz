@@ -1,0 +1,340 @@
+{
+   "title": "Classical History",
+   "category": "History and Politics",
+   "level0": [
+      {
+         "prompt": "Who was the king of gods in ancient Greek mythology?",
+         "options": ["Hera", "Zeus", "Poseidon", "Athena"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which city was the capital of the Roman Empire?",
+         "options": ["Athens", "Rome", "Alexandria", "Sparta"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "The famous playwright, William Shakespeare, lived during which historical period?",
+         "options": [
+            "Classical Greece",
+            "Renaissance",
+            "Ancient Egypt",
+            "Middle Ages"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization built the Great Pyramids?",
+         "options": ["Mayans", "Romans", "Egyptians", "Persians"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which river is associated with ancient Mesopotamia?",
+         "options": ["Nile", "Tigris", "Amazon", "Danube"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "What was the ancient Egyptian writing system called?",
+         "options": ["Hieroglyphics", "Cuneiform", "Alphabet", "Runes"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Who was the legendary founder of Rome?",
+         "options": ["Caesar", "Romulus", "Hector", "Odysseus"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "In ancient Rome, what was the name for a person who fought in arenas for public entertainment?",
+         "options": ["Emperor", "Senator", "Gladiator", "Martyr"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which civilization is known for inventing the wheel?",
+         "options": ["Greeks", "Romans", "Mesopotamians", "Persians"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization is known for constructing the Stonehenge?",
+         "options": ["Egyptians", "Mayans", "Celts", "Greeks"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which Roman structure was used for chariot racing and other public events?",
+         "options": ["Pantheon", "Roman Forum", "Circus Maximus", "Colosseum"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "In ancient Egypt, what was the name of the writing material made from reeds?",
+         "options": ["Scrolls", "Parchment", "Tablets", "Papyrus"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization is known for its vast network of roads, often referred to as the 'Silk Roads'?",
+         "options": ["Romans", "Greeks", "Chinese", "Persians"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "What is the name of the famous Roman aqueduct that supplied water to the city of Rome?",
+         "options": [
+            "Appian Way",
+            "Hadrian's Wall",
+            "Pont du Gard",
+            "Aqua Claudia"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization is known for the creation of the first known alphabet?",
+         "options": ["Egyptians", "Phoenicians", "Greeks", "Babylonians"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient city was buried under volcanic ash in 79 CE, preserving many of its buildings and artifacts?",
+         "options": ["Athens", "Sparta", "Rome", "Pompeii"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "The 'Iliad' and the 'Odyssey' are epic poems attributed to which ancient Greek poet?",
+         "options": ["Homer", "Herodotus", "Sappho", "Euripides"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization is known for constructing the city of Machu Picchu?",
+         "options": ["Incas", "Aztecs", "Mayans", "Inuit"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Who was the first pharaoh of ancient Egypt?",
+         "options": ["Cleopatra", "Tutankhamun", "Hatshepsut", "Narmer"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which ancient civilization is known for its military discipline and Spartan warriors?",
+         "options": ["Romans", "Persians", "Spartans", "Greeks"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "In ancient Rome, what is the term used for a governing and military unit?",
+         "options": ["Cohort", "Legion", "Triumvirate", "Praetorian Guard"],
+         "correctAnswer": 1,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "Which of these was a famous Athenian philosopher?",
+         "options": ["Socrates", "Confucius", "Plato", "Aristotle"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which Roman general crossed the Alps with elephants?",
+         "options": ["Julius Caesar", "Hannibal", "Augustus", "Nero"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the first Roman emperor?",
+         "options": ["Julius Caesar", "Nero", "Augustus", "Constantine"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the legendary Trojan prince in Homer's epic poem, the Iliad?",
+         "options": ["Odysseus", "Hector", "Achilles", "Perseus"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the Greek philosopher who taught Alexander the Great?",
+         "options": ["Aristotle", "Socrates", "Plato", "Heraclitus"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "The ancient city of Carthage was a major rival to which ancient civilization?",
+         "options": ["Greece", "Rome", "Persia", "Egypt"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which river was central to the development of ancient Egyptian civilization?",
+         "options": ["Nile", "Tigris", "Euphrates", "Indus"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "The famous 'Code of Hammurabi' is associated with which ancient civilization?",
+         "options": ["Babylonians", "Sumerians", "Hittites", "Assyrians"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the legendary queen of ancient Egypt, known for her beauty and alliances?",
+         "options": ["Cleopatra", "Nefertiti", "Hatshepsut", "Ankhesenamun"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "The Battle of Marathon was fought between the Greeks and which invading empire?",
+         "options": ["Persians", "Romans", "Egyptians", "Huns"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which Roman general famously declared 'Veni, Vidi, Vici' after a quick victory?",
+         "options": [
+            "Julius Caesar",
+            "Marcus Aurelius",
+            "Augustus",
+            "Hannibal"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "What is the name of the ancient Indian epic poem that includes the 'Bhagavad Gita'?",
+         "options": ["Ramayana", "Mahabharata", "Rigveda", "Upanishads"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "In ancient Greece, which city-state was known for its militaristic society?",
+         "options": ["Athens", "Sparta", "Corinth", "Thebes"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the first emperor of the Maurya Empire in ancient India?",
+         "options": [
+            "Ashoka the Great",
+            "Chandragupta Maurya",
+            "Harsha",
+            "Samudragupta"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "The city of Alexandria in Egypt was founded by which famous conqueror?",
+         "options": [
+            "Alexander the Great",
+            "Hannibal",
+            "Julius Caesar",
+            "Cyrus the Great"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which ancient civilization built the city of Teotihuacan in present-day Mexico?",
+         "options": ["Mayans", "Aztecs", "Incas", "Toltecs"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "The 'Pantheon' in Rome was originally built as a temple for which gods?",
+         "options": [
+            "Jupiter and Juno",
+            "Venus and Mars",
+            "Neptune and Minerva",
+            "All of the above"
+         ],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Which ancient Chinese philosopher founded Confucianism?",
+         "options": ["Laozi", "Confucius", "Mencius", "Zhuangzi"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "The 'Hagia Sophia' in Istanbul, Turkey, was originally built as a cathedral during which empire?",
+         "options": [
+            "Byzantine Empire",
+            "Ottoman Empire",
+            "Roman Empire",
+            "Persian Empire"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which ancient civilization is known for constructing the Nazca Lines in Peru?",
+         "options": ["Incas", "Mayans", "Nazcas", "Aztecs"],
+         "correctAnswer": 2,
+         "level": 1
+      }
+   ],
+   "level2": [
+      {
+         "prompt": "What was the name of Alexander the Great's famous horse?",
+         "options": ["Bucephalus", "Pegasus", "Achilles", "Hercules"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What is the name of the ancient Greek war formation where soldiers stood close together with spears and shields?",
+         "options": ["Testudo", "Phalanx", "Centurion", "Legion"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "The famous oracle of Delphi was associated with which Greek god?",
+         "options": ["Apollo", "Zeus", "Hermes", "Athena"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "In Greek mythology, who is the winged horse that was born from the blood of Medusa?",
+         "options": ["Pegasus", "Centaurs", "Griffins", "Hippogriffs"],
+         "correctAnswer": 0,
+         "level": 2
+      }
+   ],
+   "level3": [
+      {
+         "prompt": "Which famous battle in 480 BCE, during the Greco-Persian Wars, was fought against Xerxes I of Persia?",
+         "options": [
+            "Battle of Marathon",
+            "Battle of Thermopylae",
+            "Battle of Salamis",
+            "Battle of Troy"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "The ancient city of Pompeii was destroyed by the eruption of which volcano?",
+         "options": [
+            "Mount Vesuvius",
+            "Mount Etna",
+            "Mount St. Helens",
+            "Mount Olympus"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      }
+   ],
+   "level4": []
+}

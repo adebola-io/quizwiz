@@ -1,16 +1,14 @@
-import { ServerError } from "../middleware/errors";
-
 export {};
 
 type ServerResponse = import("http").ServerResponse;
 type _IncomingMessage = import("http").IncomingMessage;
 
 declare global {
-  declare module apigen {
-    type ServerError = ServerError;
+  module apigen {
+    type ServerError = InstanceType<typeof import("../lib").ServerError>;
     interface Request extends _IncomingMessage {
       body: any;
-      params: {};
+      params: { [keyof: string]: string };
     }
     interface RoutePath {
       /** Function that should handle the request. */
@@ -46,7 +44,9 @@ declare global {
     }
 
     interface ErrorHandler {
-      (options: ErrorHandlerOptions): { fatal: boolean; feedback?: any };
+      (
+        options: ErrorHandlerOptions,
+      ): { fatal: boolean; message?: string };
     }
 
     interface ErrorHandlerOptions {
@@ -64,15 +64,71 @@ declare global {
     }
   }
 
+  interface UserRecord {
+    data: User;
+    metadata: UserMetadata;
+  }
+
+  interface UserMetadata {
+    _id: string;
+    createdAt: ISODateString;
+    updatedAt: ISODateString;
+  }
+
   interface User {
-    id: string;
     username: string;
     password: string;
     emailAddress: string;
+    emailConfirmationStatus: boolean;
     rapidFireCheckpoint: string | null;
     quizzesPlayed: number;
     successRate: number;
     stars: number;
+  }
+
+  interface CreateUserResponse {
+    status: "success";
+    message: "registration successful, kindly check your email for next step";
+    data: {
+      token: string;
+      user: Exclude<User, "password"> & {
+        // username: string;
+        // email: string;
+        // "emailConfirmationStatus": false;
+        // "quizzesPlayed": 0;
+        // "successRate": 0;
+        // "stars": 0;
+        // "rapidFireCheckpoint": null;
+        _id: string;
+        createdAt: ISODateString;
+        updatedAt: ISODateString;
+      };
+    };
+  }
+
+  interface UserStatsResponse {
+    quizzesPlayed: number;
+    stars: number;
+    successRate: number;
+  }
+
+  interface SucessResponse {
+    status: "success";
+    message: string;
+    data?: string | object | Array<any>;
+  }
+
+  interface ErrorResponse {
+    status: "fail" | "error";
+    message: string;
+  }
+
+  interface Token {
+    id: number;
+    type: 0 | 1;
+    value: string;
+    reference: any;
+    timeout?: NodeJS.Timeout;
   }
 
   type Categories =
@@ -97,10 +153,7 @@ declare global {
     level: Level;
   }
 
-  interface UserSession {
-    username: string;
-    token: string;
-  }
+  type ISODateString = string;
 
   type Level = 0 | 1 | 2 | 3 | 4;
 

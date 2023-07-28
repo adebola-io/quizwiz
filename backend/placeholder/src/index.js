@@ -5,6 +5,10 @@ const {
    loginUser,
    getUserStats,
    updateStats,
+   verifyEmail,
+   resendVerificationEmail,
+   handleForgotPassword,
+   resetPassword,
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -13,88 +17,115 @@ const { errorHandler, protect } = require("./middleware");
 
 require("colors");
 
-console.clear();
-function main() {
-   db.prepare().then(() => {
-      if (process.argv.includes("--clear-db")) {
-         logger.warn(
-            "--clear-db option found, Removing all users from JSON file"
-         );
-         const users = db.getUsers();
-         users.clear();
-         users.writeToDisc();
-      }
-
-      const api = new APIGenerator();
-      let delay = process.argv.find((arg) => arg.startsWith("--delay="));
-      if (delay) {
-         delay = delay.slice(8);
-         api.delay = parseInt(delay);
-         logger.inform(`API request delay set to ${delay}ms.`);
-      }
-      api.useMiddleware({
-         errorHandler,
-         protect,
-      });
-      api.endpoints({
-         "/user/create": function (req, res) {
-            const session = addNewUser(req);
-            res.statusCode = 201;
-            return session;
-         },
-         "/user/delete": {
-            protected: true,
-            handler: function (req, res) {
-               const data = deleteUser(req);
-               res.statusCode = 204;
-               return data;
-            },
-         },
-         "/user/login": function (req, res) {
-            const session = loginUser(req);
-            res.statusCode = 200;
-            return session;
-         },
-         "/user/stats": {
-            protected: true,
-            handler: function (req, res) {
-               const stats = getUserStats(req);
-               res.statusCode = 200;
-               return stats;
-            },
-         },
-         "/user/stats/update": {
-            protected: true,
-            handler: function (req, res) {
-               const data = updateStats(req);
-               res.statusCode = 204;
-               return data;
-            },
-         },
-         "/categories/:id/:level": function () {},
-         "/random/:level": function () {},
-         "/rpdfire/questions": {
-            protected: true,
-            handler: function (req, res) {},
-         },
-         "/rpdfire/completed": {
-            protected: true,
-            handler: function (req, res) {},
-         },
-      });
-      api.listen(PORT);
-      console.log();
-      logger.success(`Mock Server is listening at http://localhost:${PORT}.`);
+/**
+ * Starts the local mock backend.
+ * @param {number|undefined} delay API Request delay
+ */
+function runServer(delay) {
+   const api = new APIGenerator();
+   api.useMiddleware({
+      errorHandler,
+      protect,
    });
+
+   // User routes
+   api.endpoints({
+      "/user/create"(req, res) {
+         const session = addNewUser(req);
+         res.statusCode = 201;
+         return session;
+      },
+      "/user/login"(req, res) {
+         const session = loginUser(req);
+         res.statusCode = 200;
+         return session;
+      },
+      "/user/verify_email/:oneTimeToken": {
+         protected: true,
+         handler(req, res) {
+            const data = verifyEmail(req);
+            res.statusCode = 200;
+            return data;
+         },
+      },
+      "/user/resend_email": {
+         protected: true,
+         handler(req, res) {
+            const data = resendVerificationEmail(req);
+            res.statusCode = 200;
+            return data;
+         },
+      },
+      "/user/forgot_password"(req, res) {
+         const data = handleForgotPassword(req);
+         res.statusCode = 200;
+         return data;
+      },
+      "/user/reset_password/:oneTimeToken"(req, res) {
+         const data = resetPassword(req);
+         res.statusCode = 204;
+         return data;
+      },
+      "/user/delete": {
+         protected: true,
+         handler(req, res) {
+            const data = deleteUser(req);
+            res.statusCode = 204;
+            return data;
+         },
+      },
+      "/user/stats": {
+         protected: true,
+         handler(req, res) {
+            const stats = getUserStats(req);
+            res.statusCode = 200;
+            return stats;
+         },
+      },
+      "/user/stats/update": {
+         protected: true,
+         handler(req, res) {
+            const data = updateStats(req);
+            res.statusCode = 204;
+            return data;
+         },
+      },
+   });
+
+   // Others
+   api.endpoints({
+      "/categories/:id/:level"() {},
+      "/random/:level"() {},
+      "/rpdfire/questions": {
+         protected: true,
+         handler(req, res) {},
+      },
+      "/rpdfire/completed": {
+         protected: true,
+         handler(req, res) {},
+      },
+   });
+
+   api.listen(PORT);
+   logger.success(
+      `Setup successful. Mock Server is listening at http://localhost:${PORT}.`
+   );
 }
 
 function gracefulShutDown() {
-   console.log("Shutting down...".grey);
+   logger.important("Shutting down Local Server...");
    const users = db.getUsers();
    users.writeToDisc();
    process.exit(0);
 }
+
+// ----
+console.clear();
+logger.important("Starting Local Server...");
+let delay = parseInt(
+   process.argv.find((arg) => arg.startsWith("--delay="))?.slice(8)
+);
+if (delay) logger.inform(`API request delay set to ${delay}ms.`);
+db.prepare().then(() => runServer(delay));
 process.on("SIGTERM", gracefulShutDown);
 process.on("SIGINT", gracefulShutDown);
-
-main();

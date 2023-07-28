@@ -1,6 +1,5 @@
 const fs = require("fs");
 const http = require("http");
-const { ERROR_TYPES } = require("../constants");
 require("colors");
 
 /**
@@ -58,7 +57,7 @@ class APIGenerator {
       try {
          req.body = JSON.parse(body || "{}");
       } catch {
-         const error = new ServerError(ERROR_TYPES.MALFORMED_REQUEST, 400);
+         const error = new ServerError("Invalid request body.", 400);
          this.handleError(res, error);
          return;
       }
@@ -67,44 +66,51 @@ class APIGenerator {
       let current = this.root;
       // Account for root URL.
       if (paths.length === 0) paths.push("");
+
       for (let i = 0; i < paths.length; i++) {
-         let path = paths[i];
-         if (!current.children[path]) {
-            /// Try generic parameters.
-            let parameterName = Object.keys(current.children).find((path) =>
-               path.startsWith(":")
-            );
-            if (parameterName) {
-               req.params = req.params || {};
-               req.params[parameterName.slice(1)] = path;
-               path = parameterName;
-            } else {
-               const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
-               this.handleError(res, error);
-               break;
+         try {
+            let path = paths[i];
+            if (!current.children[path]) {
+               /// Try generic parameters.
+               let parameterName = Object.keys(current.children).find((path) =>
+                  path.startsWith(":")
+               );
+               if (parameterName) {
+                  req.params = req.params || {};
+                  req.params[parameterName.slice(1)] = path;
+                  path = parameterName;
+               } else {
+                  const error = new ServerError("Route does not exist.", 404);
+                  this.handleError(res, error);
+                  break;
+               }
             }
-         }
-         current = current.children[path];
-         if (i === paths.length - 1) {
-            if (!current.handler) {
-               const error = new ServerError(ERROR_TYPES.NOT_FOUND, 404);
-               this.handleError(res, error);
-               break;
-            }
-            try {
+            current = current.children[path];
+            if (i === paths.length - 1) {
+               if (!current.handler) {
+                  const error = new ServerError("Route does not exist.", 404);
+                  this.handleError(res, error);
+                  break;
+               }
+
                if (current.protected) {
                   this.protector?.(req);
                }
                const response = current.handler(req, res);
                if (response) this.sendData({ res, data: response });
-            } catch (error) {
-               const handlerResult = this.handleError(res, error);
-               if (handlerResult.feedback) {
-                  this.sendData({ res, data: handlerResult.feedback });
-               }
-               if (handlerResult.fatal) {
-                  throw error;
-               }
+            }
+         } catch (error) {
+            const handlerResult = this.handleError(res, error);
+            if (handlerResult.message) {
+               /** @type {ErrorResponse} */
+               const feedback = {
+                  status: "error",
+                  message: handlerResult.message,
+               };
+               this.sendData({ res, data: feedback });
+            }
+            if (handlerResult.fatal) {
+               throw error;
             }
          }
       }
@@ -126,7 +132,7 @@ class APIGenerator {
     * @param {apigen.ServerError} error
     */
    handleError(res, error) {
-      if (!this.errorHandler) {
+      if (!(this.errorHandler && error instanceof ServerError)) {
          throw error;
       }
       return this.errorHandler({ error, res });
@@ -205,13 +211,17 @@ class ServerError extends Error {
    type;
    /**@type {number} */
    status;
+   /**
+    * @type {string|object|Array<unknown>}
+    */
    data;
+   message;
 
-   /**@param {number} type */
-   constructor(type, status = 400) {
-      super("");
-      this.type = type;
+   /**@param {string} message */
+   constructor(message, status = 400) {
+      super(message);
       this.status = status;
+      this.message = message;
    }
 }
 

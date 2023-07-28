@@ -3,4 +3,7 @@ node_modules
 prompts/
 log/
 
+random_test_file.js
+emails.txt
+
 users.json

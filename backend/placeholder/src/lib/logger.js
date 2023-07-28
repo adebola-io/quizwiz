@@ -1,4 +1,4 @@
-const { reset } = require("colors");
+const { reset, bold } = require("colors");
 const { appendFile, existsSync, createWriteStream, mkdirSync } = require("fs");
 
 module.exports = {
@@ -53,7 +53,7 @@ module.exports = {
     * @param {string} message
     */
    success(message) {
-      console.log(`${this.timeStamp().gray} - ${message.green}`);
+      console.log(`${this.timeStamp().gray} - ${bold(message.green)}`);
       this.writeToDisc(message);
    },
    /**
@@ -61,7 +61,6 @@ module.exports = {
     * @param {string} message
     */
    warn(message) {
-      console.clear();
       console.log(`${this.timeStamp().gray} - ${message.yellow}`);
       this.writeToDisc(message);
    },
@@ -71,6 +70,14 @@ module.exports = {
     */
    inform(message) {
       console.log(`${this.timeStamp().gray} - ${message.blue}`);
+      this.writeToDisc(message);
+   },
+   /**
+    * Logs important message to the console.
+    * @param {string} message
+    */
+   important(message) {
+      console.log(`${this.timeStamp().gray} - ${bold(message.magenta)}`);
       this.writeToDisc(message);
    },
 };

@@ -1,6 +1,15 @@
-const fs = require("fs");
 const { selectRandom, shuffle } = require("../lib/utils");
 const logger = require("../lib/logger");
+const {
+   readdirSync,
+   writeFileSync,
+   existsSync,
+   createWriteStream,
+   readFileSync,
+   lstatSync,
+
+   appendFileSync,
+} = require("fs");
 
 /**
  * An in-memory representation of users.
@@ -11,16 +20,15 @@ class UserList {
     * @private
     */
    idMap = new Map();
-   mutationCounter = 0;
    /**
     * The items in memory.
-    * @type {User[]}
+    * @type {UserRecord[]}
     * @private
     */
    items = [];
    /**
     * The JSON file to store the users.
-    * @type {fs.PathLike|undefined}
+    * @type {import("fs").PathLike | undefined}
     * @private
     */
    baseFile;
@@ -41,46 +49,60 @@ class UserList {
     * Update the JSON file.
     */
    writeToDisc() {
-      fs.writeFileSync(this.baseFile, JSON.stringify(this.items));
-      this.mutationCounter = 0;
+      writeFileSync(this.baseFile, JSON.stringify(this.items));
    }
    /**
     * Finds a user in the list.
-    * @param {(user:User)=>boolean} predicate
+    * @param {(userData: UserRecord) => boolean} predicate
     */
    find(predicate) {
       return this.items.find(predicate);
    }
    /**
     * Sets the JSON file on the disk where users should be stored or retrieved from.
-    * @param {fs.PathLike} baseFile
+    * @param {import("fs").PathLike} baseFile
     */
    setBaseFile(baseFile) {
-      if (!fs.existsSync(baseFile)) {
-         logger.warn("Users JSON file is not present. Creating..");
-         fs.createWriteStream(baseFile);
-         fs.writeFileSync(baseFile, "[]");
+      if (!existsSync(baseFile)) {
+         logger.warn(`Users JSON file is not present. Creating ${baseFile}...`);
+         createWriteStream(baseFile);
+         writeFileSync(baseFile, "[]");
       }
       this.baseFile = baseFile;
-      this.items = JSON.parse(fs.readFileSync(baseFile).toString());
-      for (const { id } of this.items) {
-         this.idMap.set(id, true);
+      this.items = JSON.parse(readFileSync(baseFile).toString());
+      for (const { metadata } of this.items) {
+         this.idMap.set(metadata._id, true);
       }
    }
    /**
-    * Adds a new user to the database.
+    * Adds a new user to the database and returns the user's metadata.
     * @param {User} user The user to add.
     */
    add(user) {
-      this.items.push(user);
+      /**@type {UserMetadata} */
+      const metadata = {
+         _id: this.createId(),
+         createdAt: new Date().toISOString(),
+         updatedAt: new Date().toISOString(),
+      };
+      this.items.push({
+         data: user,
+         metadata,
+      });
+      return metadata;
    }
    /**
     * Removes a user from the database.
-    * @param {string} id The ID of the user to remove
+    * @param {User} user The user to remove
     */
-   remove(id) {
-      this.items = this.items.filter((user) => user.id !== id);
-      this.idMap.delete(id);
+   remove(user) {
+      this.items = this.items.filter((record) => {
+         if (record.data === user) {
+            this.idMap.delete(record.metadata._id);
+            return false;
+         }
+         return true;
+      });
    }
    clear() {
       this.items = [];
@@ -164,22 +186,20 @@ class QuestionData {
    }
    /**
     * Load quiz data into memory.
-    * @param {fs.PathLike} categoryFolder
+    * @param {import("fs").PathLike} categoryFolder
     */
    load(categoryFolder) {
-      const categories = fs
-         .readdirSync(categoryFolder)
-         .filter((folder) =>
-            fs.lstatSync(`${categoryFolder}/${folder}`).isDirectory()
-         );
+      const categories = readdirSync(categoryFolder).filter((folder) =>
+         lstatSync(`${categoryFolder}/${folder}`).isDirectory()
+      );
       for (const category of categories) {
-         const topics = fs.readdirSync(`${categoryFolder}/${category}`);
+         const topics = readdirSync(`${categoryFolder}/${category}`);
          for (const topic of topics) {
-            const topicFile = fs
-               .readFileSync(`${categoryFolder}/${category}/${topic}`)
-               .toString();
+            const topicFile = readFileSync(
+               `${categoryFolder}/${category}/${topic}`
+            ).toString();
             const topicObject = JSON.parse(topicFile);
-            questionData.categories[category].topics.push(topicObject);
+            this.categories[category].topics.push(topicObject);
          }
       }
    }
@@ -206,29 +226,180 @@ class QuestionData {
    }
 }
 
-const users = new UserList();
-const questionData = new QuestionData();
-/**
- * Prepare JSON mock database for users.
- */
-async function prepare() {
-   users.setBaseFile("src/db/users.json");
+class EmailService {
+   /**
+    * @type {import("fs").PathLike}
+    * @private
+    */
+   emailFile;
+   /**
+    * Set file that emails will be written to.
+    * @param {import("fs").PathLike} file
+    */
+   setEmailFile(file) {
+      if (!existsSync(file)) {
+         createWriteStream(file);
+         logger.warn(`Email JSON file is not present. Creating ${file}...`);
+      }
+      this.emailFile = file;
+   }
+   /**
+    * Removes all stored emails.
+    */
+   clear() {
+      if (this.emailFile && existsSync(this.emailFile)) {
+         writeFileSync(this.emailFile, "");
+      }
+   }
+   /**
+    * Send an email.
+    * @param {string} address
+    * @param {string} message
+    */
+   sendEmail(address, message) {
+      appendFileSync(
+         this.emailFile,
+         `\n------------------------------
+EMAIL FROM SERVER 
+Sent to ${address}
+Received at ${logger.timeStamp()}
 
-   console.log("Mock User Database is ready.".cyan);
+${message}
 
-   questionData.load("../categories");
+------------------------------\n`
+      );
+      logger.inform(
+         `New Email sent to ${address}, stored in ${this.emailFile}`
+      );
+   }
+}
 
-   console.log(`${questionData.count()} quiz questions available.`.cyan);
+class TokenProvider {
+   ids = 0;
+   /**
+    * How long each token should last, in ms.
+    * @private
+    * @type {number}
+    */
+   tokenLifetime;
+   /**
+    * Current valid tokens
+    * @private
+    * @type {Map<Token, true>}
+    */
+   currentTokens = new Map();
+   /**
+    * Set how long a token should last.
+    * @param {number} tokenLifetime
+    */
+   setLifetime(tokenLifetime) {
+      this.tokenLifetime = tokenLifetime;
+   }
+   /**
+    * Delete a token.
+    * @param {Token} token
+    */
+   deleteToken(token) {
+      if (token.timeout) {
+         clearTimeout(token.timeout);
+      }
+      this.currentTokens.delete(token);
+      logger.inform(`Token with ID ${token.id} cleared.`);
+   }
+   /**
+    * Find a token.
+    * @param {string} value
+    * @param {Token['type']} type
+    * @returns {Token|undefined}
+    */
+   findToken(value, type) {
+      for (const [token] of this.currentTokens) {
+         if (token.value === value && token.type == type) {
+            return token;
+         }
+      }
+   }
+   /**
+    * Check that a token for email verification is valid.
+    * @param {string} value
+    * @param {User} user
+    * @param {Token['type']} type
+    */
+   isValidToken(value, user, type) {
+      const token = this.findToken(value, type);
+      return token && token.reference === user;
+   }
+   /**
+    * Generates and keeps track of a new token.
+    * @param {0|1} type
+    * @param {any} reference
+    */
+   generate(type, reference) {
+      const id = this.ids++;
+      const value = `${Math.random().toString(16) + Math.random().toString(16)}`
+         .split(".")
+         .join("");
+
+      /**@type {Token} */
+      const token = { id, type, reference, value };
+
+      this.currentTokens.set(token, true);
+      logger.inform(
+         `Token with id ${token.id} created, valid for ${(
+            this.tokenLifetime / 60000
+         ).toFixed(2)} minutes.`
+      );
+      token.timeout = setTimeout(() => {
+         logger.important(`Token with id ${token.id} invalidated.`);
+         this.currentTokens.delete(token);
+      }, this.tokenLifetime);
+      return token;
+   }
 }
-function getUsers() {
-   return users;
-}
-function getQuestions() {
-   return questionData;
-}
+
+const users = new UserList(),
+   questionData = new QuestionData(),
+   emailService = new EmailService(),
+   tokenProvider = new TokenProvider();
 
 module.exports = {
-   getUsers,
-   getQuestions,
-   prepare,
+   getUsers() {
+      return users;
+   },
+   getQuestions() {
+      return questionData;
+   },
+   getEmailService() {
+      return emailService;
+   },
+   getTokenProvider() {
+      return tokenProvider;
+   },
+   async prepare() {
+      users.setBaseFile("src/db/users.json");
+      if (process.argv.includes("--clear-db")) {
+         logger.warn(
+            "--clear-db argument found. Removing all users and emails..."
+         );
+         users.clear();
+         emailService.clear();
+         users.writeToDisc();
+      }
+
+      logger.inform(
+         `Mock User Database is ready. ${users.length} user${
+            !users.length || users.length > 2 ? "s are" : " is"
+         } available.`
+      );
+
+      questionData.load("../categories");
+
+      logger.inform(
+         `Question set is ready. ${questionData.count()} questions are available.`
+      );
+
+      tokenProvider.setLifetime(300000);
+
+      emailService.setEmailFile("src/db/emails.txt");
+   },
 };
