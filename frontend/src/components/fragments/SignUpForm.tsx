@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
-import { ApiResponse, FormObject } from "@/types";
+import { FormObject } from "@/types";
 
 interface SignUpErrorObject {
   username?: string;
