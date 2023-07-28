@@ -20,9 +20,9 @@ export interface UserAuthService {
   updateToken(token: string): void;
   status:
     | {
-        token: null;
-        isAuthenticated: false;
-      }
+      token: null;
+      isAuthenticated: false;
+    }
     | { token: string; isAuthenticated: true };
 }
 
@@ -43,7 +43,7 @@ export interface UserSession {
   token: string;
 }
 
-export type ApiResponse<T = any> = {
+export type ApiResponse<T> = {
   status: "fail" | "success" | "error";
   message: string;
   data: T;

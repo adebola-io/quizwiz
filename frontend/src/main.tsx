@@ -8,11 +8,11 @@ import "./styles/index.css";
 const client = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={client}>
-    <AuthProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
-  </QueryClientProvider>
+   <AuthProvider>
+      <QueryClientProvider client={client}>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </QueryClientProvider>
+   </AuthProvider>
 );

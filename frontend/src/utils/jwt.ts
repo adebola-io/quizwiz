@@ -5,7 +5,7 @@ const isValidToken = (accessToken: string) => {
   if (!accessToken) {
     return false;
   }
-  const decoded: any = jwtDecode(accessToken);
+  const decoded: { exp: number } = jwtDecode(accessToken);
   console.log(decoded);
   const currentTime = Date.now() / 1000;
 

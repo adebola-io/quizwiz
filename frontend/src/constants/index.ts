@@ -1,10 +1,12 @@
 import { Level } from "@/types";
 
-const dev = process.env.NODE_ENV !== "production";
+// const dev = process.env.NODE_ENV !== "production";
 
-export const ENDPOINT_ROOT = !dev
-  ? "http://localhost:3010/api/v1"
-  : "https://quiz-app-server-pvx6.onrender.com/api/v1";
+// export const ENDPOINT_ROOT = dev
+//   ? "http://localhost:3010/api/v1"
+//   : "https://quiz-app-server-pvx6.onrender.com/api/v1";
+
+export const ENDPOINT_ROOT = "http://localhost:4174";
 
 export const ENDPOINTS = {
   USER_CREATE: `${ENDPOINT_ROOT}/user/create`,
