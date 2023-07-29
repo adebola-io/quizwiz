@@ -1,9 +1,970 @@
 {
-   "title": "General Knowledge",
-   "category": "Sports",
-   "level0": [],
-   "level1": [],
-   "level2": [],
-   "level3": [],
-   "level4": []
+  "title": "General Knowledge",
+  "category": "Sports",
+  "level0": [
+    {
+      "prompt": "What sport is known as \"the beautiful game\"?",
+      "options": ["Football", "Basketball", "Cricket", "Tennis"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "How many players are there on a standard soccer/football team?",
+      "options": ["11", "5", "9", "7"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which country is famous for originating the sport of cricket?",
+      "options": ["England", "Australia", "India", "Brazil"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the highest score possible in a single game of bowling (10-pin bowling)?",
+      "options": ["100", "300", "200", "400"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport would you perform an ollie and a kickflip?",
+      "options": ["Skateboarding", "Snowboarding", "Surfing", "BMX"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the main objective of the game of rugby?",
+      "options": [
+        "Score goals by kicking a ball through a set of posts",
+        "Score runs by hitting a ball with a bat",
+        "Score touchdowns by carrying the ball into the opponent's end zone",
+        "Score tries by grounding the ball over the opponent's goal line"
+      ],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is known as the \"King of Sports\"?",
+      "options": ["Football", "Rugby", "Cricket", "Baseball"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport would you use a sand wedge and a putter?",
+      "options": ["Golf", "Tennis", "Swimming", "Ice hockey"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is played on a rectangular field with posts at each end?",
+      "options": ["Soccer/football", "Cricket", "Basketball", "Tennis"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In baseball, how many strikes result in a strikeout?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "What is the maximum number of players allowed on the field for a soccer/football team?",
+      "options": ["10", "11", "12", "13"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which of the following sports is played with a shuttlecock?",
+      "options": ["Tennis", "Volleyball", "Badminton", "Table Tennis"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which country is famous for its passion for the sport of rugby?",
+      "options": ["England", "Brazil", "Australia", "New Zealand"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "In basketball, how many points is a free throw worth?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is played with a puck?",
+      "options": ["Soccer/football", "Hockey", "Cricket", "Golf"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport do athletes compete for the Stanley Cup?",
+      "options": ["Baseball", "Hockey", "Skiing", "Tennis"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a small ball called a shuttle?",
+      "options": ["Badminton", "Tennis", "Cricket", "Rugby"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the primary objective in the game of volleyball?",
+      "options": [
+        "Score touchdowns by carrying the ball into the opponent's end zone",
+        "Score goals by kicking a ball through a set of posts",
+        "Hit a ball over a net and into the opponent's court",
+        "Score tries by grounding the ball over the opponent's goal line"
+      ],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport would you perform a slam dunk?",
+      "options": ["Tennis", "Volleyball", "Basketball", "Table Tennis"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is played with a round ball and a club?",
+      "options": ["Golf", "Soccer/football", "Hockey", "Cricket"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport do players attempt to hit a ball over a net with a racket?",
+      "options": ["Badminton", "Tennis", "Volleyball", "Cricket"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which country won the FIFA World Cup in 2014?",
+      "options": ["Germany", "Brazil", "Argentina", "Spain"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the main objective of the game of table tennis?",
+      "options": [
+        "Score goals by kicking a ball through a set of posts",
+        "Score runs by hitting a ball with a bat",
+        "Score points by hitting the ball over the net and into the opponent's side",
+        "Score tries by grounding the ball over the opponent's goal line"
+      ],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is played with a cue and balls on a rectangular table?",
+      "options": ["Soccer/football", "Hockey", "Snooker", "Basketball"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport would you use a bow and arrows?",
+      "options": ["Archery", "Golf", "Tennis", "Cycling"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which country is known for its dominance in the sport of cricket?",
+      "options": ["India", "United States", "Spain", "China"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In basketball, how many points is a three-point shot worth?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is known as the \"Gentleman's Sport\"?",
+      "options": ["Rugby", "Cricket", "Baseball", "Soccer/football"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "What is the official ball used in the sport of basketball?",
+      "options": ["Soccer ball", "Volleyball", "Rugby ball", "Basketball"],
+      "correctAnswer": 3,
+      "level": 0
+    }
+  ],
+  "level1": [
+    {
+      "prompt": "Which city hosted the 2016 Summer Olympics?",
+      "options": [
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "London, United Kingdom",
+        "Sydney, Australia"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Who is considered the greatest Los Angles Lakers player of all time?",
+      "options": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Michael Jordan",
+        "Magic Johnson"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In tennis, what is the term for a score of 40-40?",
+      "options": ["Match point", "Deuce", "Advantage", "Fault"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which horse race is often referred to as \"The Run for the Roses\"?",
+      "options": [
+        "Kentucky Derby",
+        "Melbourne Cup",
+        "Preakness Stakes",
+        "Grand National"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "What is the diameter of a basketball hoop in inches?",
+      "options": ["16 inches", "18 inches", "20 inches", "24 inches"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "Which country hosted the 2016 Summer Olympics?",
+      "options": [
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "London, United Kingdom",
+        "Sydney, Australia"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Who is considered the greatest basketball player of all time?",
+      "options": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Michael Jordan",
+        "Magic Johnson"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In tennis, what is the term for a score of 40-40?",
+      "options": ["Match point", "Deuce", "Advantage", "Fault"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which horse race is often referred to as \"The Run for the Roses\"?",
+      "options": [
+        "Kentucky Derby",
+        "Melbourne Cup",
+        "Preakness Stakes",
+        "Grand National"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "What is the diameter of a basketball hoop in inches?",
+      "options": ["16 inches", "18 inches", "20 inches", "24 inches"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "What is the record for the most points scored in a single NBA basketball game by a player?",
+      "options": ["81 points", "100 points", "72 points", "63 points"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the most medals in the 2016 Summer Olympics?",
+      "options": ["United States", "China", "Great Britain", "Russia"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Who is the only boxer to win world heavyweight titles in three different decades?",
+      "options": [
+        "Muhammad Ali",
+        "Mike Tyson",
+        "Evander Holyfield",
+        "Lennox Lewis"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Name three different swimming strokes contested in the Olympic Games?",
+      "options": [
+        "Freestyle, backstroke, butterfly",
+        "Backstroke, sidestroke, breaststroke",
+        "Freestyle, breaststroke, butterfly",
+        "Sidestroke, butterfly, backstroke"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which Formula 1 driver holds the record for the most World Drivers' Championship titles?",
+      "options": [
+        "Lewis Hamilton",
+        "Michael Schumacher",
+        "Ayrton Senna",
+        "Sebastian Vettel"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In which city did the 2012 Summer Olympics take place?",
+      "options": [
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "London, United Kingdom",
+        "Sydney, Australia"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the 2018 FIFA World Cup?",
+      "options": ["Germany", "Brazil", "France", "Argentina"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In golf, what is the term for a hole played three strokes under par?",
+      "options": ["Albatross", "Eagle", "Birdie", "Bogey"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the most gold medals in the 2012 Summer Olympics?",
+      "options": ["United States", "China", "Great Britain", "Russia"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the NBA?",
+      "options": [
+        "Kareem Abdul-Jabbar",
+        "LeBron James",
+        "Kobe Bryant",
+        "Michael Jordan"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which athlete is nicknamed \"The Fastest Man on Earth\"?",
+      "options": ["Usain Bolt", "Carl Lewis", "Michael Johnson", "Tyson Gay"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country has won the most Olympic gold medals in men's ice hockey?",
+      "options": ["Canada", "United States", "Soviet Union", "Sweden"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "What is the highest possible break in snooker?",
+      "options": ["100", "147", "155", "180"],
+      "correctAnswer": 1,
+      "level": 1
+    }
+  ],
+  "level2": [
+    {
+      "prompt": "Which country won the most medals in the 2016 Summer Olympics?",
+      "options": ["United States", "China", "Great Britain", "Russia"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who is the only boxer to win world heavyweight titles in three different decades?",
+      "options": [
+        "Muhammad Ali",
+        "Mike Tyson",
+        "Evander Holyfield",
+        "Lennox Lewis"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Name three different swimming strokes contested in the Olympic Games?",
+      "options": [
+        "Freestyle, backstroke, butterfly",
+        "Backstroke, sidestroke, breaststroke",
+        "Freestyle, breaststroke, butterfly",
+        "Sidestroke, butterfly, backstroke"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which Formula 1 driver holds the record for the most World Drivers' Championship titles?",
+      "options": [
+        "Lewis Hamilton",
+        "Michael Schumacher",
+        "Ayrton Senna",
+        "Sebastian Vettel"
+      ],
+      "correctAnswer": 1,
+      "level": 2
+    },
+
+    {
+      "prompt": "Which country won the UEFA Euro 2020 soccer championship?",
+      "options": ["France", "Portugal", "Italy", "Germany"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "How many players are there on a standard ice hockey team?",
+      "options": ["6", "5", "7", "8"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In which city did the 2016 Summer Olympics take place?",
+      "options": [
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "London, United Kingdom",
+        "Sydney, Australia"
+      ],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the national sport of Japan?",
+      "options": ["Sumo wrestling", "Kendo", "Baseball", "Karate"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country won the FIFA Women's World Cup in 2019?",
+      "options": ["United States", "Germany", "France", "England"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In which sport can you win the Davis Cup?",
+      "options": ["Soccer/football", "Tennis", "Basketball", "Golf"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "Which country hosted the first Cricket World Cup in 1975?",
+      "options": ["England", "Australia", "India", "West Indies"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the men's singles title at Wimbledon in 2021?",
+      "options": [
+        "Novak Djokovic",
+        "Roger Federer",
+        "Rafael Nadal",
+        "Andy Murray"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the distance of a marathon race in kilometers?",
+      "options": ["26.2 km", "42.2 km", "13.1 km", "30 km"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "Which sport is featured in the movie \"Cool Runnings\"?",
+      "options": ["Bobsleigh", "Ski jumping", "Curling", "Figure skating"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In which city did the 2008 Summer Olympics take place?",
+      "options": [
+        "Beijing, China",
+        "Rio de Janeiro, Brazil",
+        "London, United Kingdom",
+        "Sydney, Australia"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the highest score possible in a single game of American football?",
+      "options": ["7 points", "10 points", "6 points", "8 points"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "Which sport is played with stones and brooms?",
+      "options": ["Curling", "Hockey", "Bobsleigh", "Figure skating"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Summer Olympics?",
+      "options": ["United States", "China", "Russia", "Germany"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In baseball, what is the name for the person who throws the pitch to the batter?",
+      "options": ["Pitcher", "Catcher", "Shortstop", "Outfielder"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which city hosted the 2010 Winter Olympics?",
+      "options": [
+        "Vancouver, Canada",
+        "Salt Lake City, USA",
+        "Turin, Italy",
+        "Sochi, Russia"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the name of the trophy awarded to the winner of the NHL Stanley Cup?",
+      "options": [
+        "Lombardi Trophy",
+        "Vince Lombardi Trophy",
+        "Stanley Cup",
+        "Vezina Trophy"
+      ],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "Which country is known for originating the modern sport of golf?",
+      "options": ["Scotland", "Ireland", "United States", "England"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In which sport can you win the Green Jacket?",
+      "options": ["Golf", "Tennis", "Cricket", "Rugby"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who is the most decorated Olympian of all time, with 28 Olympic medals?",
+      "options": [
+        "Michael Phelps",
+        "Usain Bolt",
+        "Carl Lewis",
+        "Nadia Comaneci"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    }
+  ],
+  "level3": [
+    {
+      "prompt": "Which country won the Copa America soccer tournament in 2021?",
+      "options": ["Argentina", "Brazil", "Uruguay", "Colombia"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "How many players are there on a standard field hockey team?",
+      "options": ["9", "10", "11", "12"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the traditional martial art of Thailand?",
+      "options": ["Karate", "Kung Fu", "Taekwondo", "Muay Thai"],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "Which country won the UEFA Euro 2016 soccer championship?",
+      "options": ["France", "Portugal", "Germany", "Italy"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In which sport can you perform a triple axel?",
+      "options": ["Figure skating", "Snowboarding", "Ski jumping", "Bobsleigh"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Which country hosted the ICC Cricket World Cup in 2019?",
+      "options": ["England", "Australia", "India", "South Africa"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who won the women's singles title at Wimbledon in 2021?",
+      "options": [
+        "Ashleigh Barty",
+        "Simona Halep",
+        "Naomi Osaka",
+        "Serena Williams"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "What is the official size of a soccer/football field in meters?",
+      "options": ["100m x 50m", "105m x 68m", "90m x 45m", "110m x 75m"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In which city did the 2004 Summer Olympics take place?",
+      "options": [
+        "Beijing, China",
+        "Athens, Greece",
+        "Sydney, Australia",
+        "Los Angeles, USA"
+      ],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "How many points is a touchdown worth in American football?",
+      "options": ["3 points", "6 points", "7 points", "2 points"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Winter Olympics?",
+      "options": ["United States", "Russia", "Norway", "Canada"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In baseball, what is the name for the area where the pitcher throws the ball?",
+      "options": ["Bullpen", "Home plate", "Pitcher's mound", "Dugout"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which city hosted the 2014 FIFA World Cup?",
+      "options": ["Brazil", "Germany", "Russia", "South Africa"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "What is the name of the trophy awarded to the winner of the NBA Finals?",
+      "options": [
+        "Lombardi Trophy",
+        "Vince Lombardi Trophy",
+        "O'Brien Trophy",
+        "Stanley Cup"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which country is known for originating the sport of rugby?",
+      "options": ["New Zealand", "Australia", "England", "Ireland"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In which city did the 2000 Summer Olympics take place?",
+      "options": [
+        "Beijing, China",
+        "Athens, Greece",
+        "Sydney, Australia",
+        "Los Angeles, USA"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the official height of an NBA basketball hoop in feet?",
+      "options": ["9 feet", "10 feet", "11 feet", "12 feet"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Which sport is played on the largest pitch/field in terms of area?",
+      "options": [
+        "Soccer/football",
+        "Rugby",
+        "Cricket",
+        "Australian Rules Football"
+      ],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "Which country won the most medals in the 2016 Summer Olympics?",
+      "options": ["United States", "China", "Great Britain", "Russia"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "In which sport can you win the Claret Jug?",
+      "options": ["Golf", "Tennis", "Cricket", "Rugby"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the fastest woman in the world and holds the world record in the 100 meters?",
+      "options": [
+        "Florence Griffith-Joyner",
+        "Marion Jones",
+        "Usain Bolt",
+        "Shelly-Ann Fraser-Pryce"
+      ],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "Which country is known for originating the modern sport of tennis?",
+      "options": ["United States", "France", "Spain", "England"],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "In which sport can you win the Claret Jug?",
+      "options": ["Golf", "Tennis", "Cricket", "Rugby"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the fastest woman in the world and holds the world record in the 100 meters?",
+      "options": [
+        "Florence Griffith-Joyner",
+        "Marion Jones",
+        "Usain Bolt",
+        "Shelly-Ann Fraser-Pryce"
+      ],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "Which country is known for originating the modern sport of tennis?",
+      "options": ["United States", "France", "Spain", "England"],
+      "correctAnswer": 3,
+      "level": 3
+    }
+  ],
+  "level4": [
+    {
+      "prompt": "Which country has won the most FIFA World Cup titles in men's soccer?",
+      "options": ["Brazil", "Germany", "Italy", "Argentina"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which athlete has won the most Olympic gold medals in history?",
+      "options": [
+        "Michael Phelps",
+        "Usain Bolt",
+        "Larisa Latynina",
+        "Carl Lewis"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In which city did the 2018 Winter Olympics take place?",
+      "options": [
+        "Vancouver, Canada",
+        "Salt Lake City, USA",
+        "Pyeongchang, South Korea",
+        "Sochi, Russia"
+      ],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the UEFA European Championship in 2004?",
+      "options": ["Portugal", "Spain", "Germany", "France"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only male player to achieve a Golden Slam in tennis?",
+      "options": [
+        "Rafael Nadal",
+        "Roger Federer",
+        "Novak Djokovic",
+        "Andre Agassi"
+      ],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport can you achieve a perfect score of 10?",
+      "options": [
+        "Gymnastics (vault)",
+        "Diving (platform)",
+        "Figure skating (performance)",
+        "Archery"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country hosted the Rugby World Cup in 2019?",
+      "options": ["New Zealand", "South Africa", "England", "Australia"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the all-time leading goal scorer in international men's soccer?",
+      "options": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Pele",
+        "Miroslav Klose"
+      ],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport is the Ryder Cup contested?",
+      "options": ["Golf", "Tennis", "Cricket", "Rugby"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the most medals in the 2018 Winter Olympics?",
+      "options": ["Norway", "United States", "Germany", "Canada"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who holds the record for the fastest 100 meters in men's athletics?",
+      "options": ["Usain Bolt", "Tyson Gay", "Yohan Blake", "Asafa Powell"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In which city did the 2006 FIFA World Cup take place?",
+      "options": ["Germany", "Brazil", "Italy", "France"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which team has won the most NBA championships?",
+      "options": [
+        "Los Angeles Lakers",
+        "Chicago Bulls",
+        "Boston Celtics",
+        "Golden State Warriors"
+      ],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the youngest player to win the US Open singles title in tennis?",
+      "options": ["Bjorn Borg", "Rafael Nadal", "Pete Sampras", "Andre Agassi"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport can you be awarded a penalty try?",
+      "options": ["Soccer/football", "Rugby", "Cricket", "Hockey"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which country hosted the 2010 FIFA World Cup?",
+      "options": ["Brazil", "Germany", "South Africa", "Russia"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only female tennis player to achieve a Golden Slam?",
+      "options": [
+        "Serena Williams",
+        "Maria Sharapova",
+        "Steffi Graf",
+        "Martina Navratilova"
+      ],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport is the Champions League trophy awarded?",
+      "options": ["Soccer/football", "Basketball", "Cricket", "Golf"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the most gold medals in the 2014 Winter Olympics?",
+      "options": ["Norway", "United States", "Canada", "Russia"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only player to have scored 100 international centuries in cricket?",
+      "options": [
+        "Sachin Tendulkar",
+        "Ricky Ponting",
+        "Brian Lara",
+        "Jacques Kallis"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In which city did the 2016 UEFA Champions League Final take place?",
+      "options": [
+        "Madrid, Spain",
+        "Milan, Italy",
+        "Lisbon, Portugal",
+        "Berlin, Germany"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which athlete is often referred to as the \"Babe Ruth of Track and Field\"?",
+      "options": [
+        "Carl Lewis",
+        "Usain Bolt",
+        "Jesse Owens",
+        "Florence Griffith-Joyner"
+      ],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport can you win the Brownlow Medal?",
+      "options": [
+        "Soccer/football",
+        "Rugby",
+        "Australian Rules Football",
+        "Cricket"
+      ],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the most medals in the 2020 Summer Olympics?",
+      "options": ["United States", "China", "Japan", "Russia"],
+      "correctAnswer": 0,
+      "level": 4
+    }
+  ]
 }
