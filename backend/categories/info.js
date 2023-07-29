@@ -1,6 +1,6 @@
-const json = require("./history-politics-and-geography/classics.json");
-Object.keys(json).forEach((key) => {
+const json = require("./history-politics-and-geography/nigerian-history.json");
+Object.keys(json).forEach((key, index) => {
    if (json[key] instanceof Array) {
-      console.log(json[key].length);
+      console.log(`Level ${index - 2}: ${json[key].length} questions`);
    }
 });
