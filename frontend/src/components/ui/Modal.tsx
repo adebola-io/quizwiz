@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface ModalProps {}
+// interface ModalProps {}
 
 /**
  * A generic modal for questions and user dialog boxes.
