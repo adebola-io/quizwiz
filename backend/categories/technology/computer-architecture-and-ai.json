@@ -112,12 +112,37 @@
       },
       {
          "prompt": "Which of the following is a group of bits that tells the computer to perform a particular operation?",
-         "options": ["Accumulator", "Register" , "Intruction Code" , "None of the above"]
+         "options": ["Accumulator", "Register", "Intruction Code", "None of the above"]
          "correctAnswer": 2
          "level": 0
       },
    ],
-   "level1": [],
+   "level1": [
+      {
+         "prompt": "Where is the document temporarily stored during working on a document on a PC?",
+         "options": ["ROM","CPU","RAM","Flash Memory"],
+         "correctAnswer": 2
+         "level": 0
+      },
+      {
+         "prompt":"Where is the decoded instruction stored?",
+         "options": ["Registers","MDR","PC","IR"]
+         "correctAnswer": 3
+         "level": 0
+      },
+      {
+         "prompt":"What does MMID stand for?",
+         "options": ["Multiple Instruction Memory Data"," Multiple Instruction Multiple Data", "Memory Instruction Multiple Data" , "Memory Information Memory Data"],
+         "correctAnswer": 1
+         "level": 0
+      },
+      {
+         "prompt":
+         "options":
+         "correctAnswer":
+         "level":
+      },
+   ],
    "level2": [],
    "level3": [],
    "level4": []
