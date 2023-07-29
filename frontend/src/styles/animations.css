@@ -12,6 +12,12 @@
    }
 }
 
+@keyframes pull-from-bottom {
+   0% {
+      transform: translateY(var(--start));
+   }
+}
+
 @keyframes drop-from-top-bounce {
    0% {
       transform: translateY(-30%);
@@ -67,6 +73,9 @@
 .animate-drop-from-top {
    animation-name: drop-from-top;
 }
+.animate-pull-from-bottom {
+   animation-name: pull-from-bottom;
+}
 
 .effect-item-0 {
    animation-duration: 500ms;
@@ -82,6 +91,12 @@
 }
 .effect-item-4 {
    animation-duration: 1300ms;
+}
+.effect-item-5 {
+   animation-duration: 1500ms;
+}
+.effect-item-6 {
+   animation-duration: 1700ms;
 }
 
 .animate-fade-in-from-right.effect-item-0 {
@@ -130,6 +145,28 @@
 }
 .animate-drop-from-top.effect-item-4 {
    --start: -50%;
+}
+
+.animate-pull-from-bottom.effect-item-0 {
+   --start: 30%;
+}
+.animate-pull-from-bottom.effect-item-1 {
+   --start: 33%;
+}
+.animate-pull-from-bottom.effect-item-2 {
+   --start: 40%;
+}
+.animate-pull-from-bottom.effect-item-3 {
+   --start: 45%;
+}
+.animate-pull-from-bottom.effect-item-4 {
+   --start: 50%;
+}
+.animate-pull-from-bottom.effect-item-5 {
+   --start: 45%;
+}
+.animate-pull-from-bottom.effect-item-6 {
+   --start: 50%;
 }
 
 .animate-squeeze {

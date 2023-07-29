@@ -11,9 +11,9 @@ interface BannerProps {
  */
 export function Banner(props: BannerProps) {
    const classNames = clsxm(
-      "relative [--bg-offset-x:-0.8%] [--bg-offset-y:5%] duration-300 text-green-dark-slate-gray",
+      "relative [--bg-offset-x:-0.5%] [--bg-offset-y:4%] duration-300 text-green-dark-slate-gray",
       " before:block before:absolute before:translate-x-[--bg-offset-x] before:translate-y-[--bg-offset-y] before:[content:''] before:rounded-[0.5625rem] before:border-green-charcoal before:border-[4px] before:bg-green-cambridge-blue before:border-solid before:w-full before:h-full before:duration-500",
-      " hover:[--bg-offset-x:-0.5%] hover:[--bg-offset-y:3%] hover:scale-[0.99]",
+      " hover:[--bg-offset-x:-0.3%] hover:[--bg-offset-y:2%] hover:scale-[0.99]",
       props.className
    );
    return (
