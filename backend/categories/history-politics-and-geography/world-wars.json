@@ -1,7 +1,13 @@
 {
    "title": "World Wars",
    "category": "History and Politics",
-   "level0": [],
+   "level0": [ {
+         "prompt": "Which event triggered the start of World War I?",
+         "options": ["Assassination of Archduke Franz Ferdinand", "Invasion of Poland", "Bombing of Pearl Harbor", "Signing of the Treaty of Versailles"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+   ],
    "level1": [],
    "level2": [],
    "level3": [],
