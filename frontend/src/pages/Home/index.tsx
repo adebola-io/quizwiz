@@ -1,8 +1,8 @@
 import { Banner, Button, Metric } from "@/components/ui";
 import { useAuth } from "@/hooks";
 import RpdFireBanner from "@/assets/RapidFireBanner.png";
-import "./Home.css";
 import { CategoryList } from "@/components/fragments";
+import "./Home.css";
 
 /**
  * @protected
@@ -14,50 +14,52 @@ export default function Home() {
       return <></>;
    }
    return (
-      <main className="page_with_header lines min-h-screen pl-[--sidebar-width]">
-         <div className="p-[3.125rem_var(--global-padding-left)_0rem_2.5rem]">
-            <div className="flex mb-[2.04rem] w-full max-w-[1920px] gap-11">
-               <Metric
-                  className="animate-drop-from-top effect-item-0"
-                  name="quizzes played"
-                  value={user.quizzesPlayed}
-                  icon={<QuestionIcon />}
-               />
-               <Metric
-                  className="animate-drop-from-top effect-item-2"
-                  name="stars"
-                  value={user.stars}
-                  icon={<StarsIcon />}
-               />
-               <Metric
-                  name="success rate"
-                  className="animate-drop-from-top effect-item-4"
-                  value={user.successRate.toFixed(1)}
-                  percent
-                  icon={<CheckMark />}
-               />
-            </div>
-            <Banner
-               className="mb-[2.04rem] animate-fade-in-from-left effect-item-2"
-               rightCornerImage={RpdFireBanner}
-            >
-               <h1 className="text-[3.1215rem] mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal">
-                  Earn more Stars in a Rapid Fire Quiz.
-               </h1>
-               <Button
-                  className="w-fit"
-                  style={{
-                     backgroundColor: "#ffc150",
-                     color: "var(--green-charcoal)",
-                     fontWeight: "bold",
-                  }}
+      <>
+         <main className="page_with_header lines min-h-screen pl-[--sidebar-width]">
+            <div className="p-[3.125rem_var(--global-padding-left)_0rem_2.5rem]">
+               <div className="flex mb-[2.04rem] w-full max-w-[1920px] gap-11">
+                  <Metric
+                     className="animate-drop-from-top effect-item-0"
+                     name="quizzes played"
+                     value={user.quizzesPlayed}
+                     icon={<QuestionIcon />}
+                  />
+                  <Metric
+                     className="animate-drop-from-top effect-item-2"
+                     name="stars"
+                     value={user.stars}
+                     icon={<StarsIcon />}
+                  />
+                  <Metric
+                     name="success rate"
+                     className="animate-drop-from-top effect-item-4"
+                     value={user.successRate.toFixed(1)}
+                     percent
+                     icon={<CheckMark />}
+                  />
+               </div>
+               <Banner
+                  className="mb-[2.04rem] animate-fade-in-from-left effect-item-2"
+                  rightCornerImage={RpdFireBanner}
                >
-                  Get Started
-               </Button>
-            </Banner>
-            <CategoryList />
-         </div>
-      </main>
+                  <h1 className="text-[3.1215rem] mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal">
+                     Earn more Stars in a Rapid Fire Quiz.
+                  </h1>
+                  <Button
+                     className="w-fit"
+                     style={{
+                        backgroundColor: "#ffc150",
+                        color: "var(--green-charcoal)",
+                        fontWeight: "bold",
+                     }}
+                  >
+                     Get Started
+                  </Button>
+               </Banner>
+               <CategoryList />
+            </div>
+         </main>
+      </>
    );
 }
 

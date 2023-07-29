@@ -62,11 +62,9 @@ const protect = (req) => {
    const error = new ServerError("Unauthorized request.", 401);
    const { authorization } = req.headers;
    if (!authorization || typeof authorization !== "string") {
-      console.log(`1: ${authorization}`);
       throw error;
    }
    if (!authorization.startsWith("Bearer ")) {
-      console.log(`2: ${authorization}`);
       throw error;
    }
    const token = authorization.slice(7);
@@ -78,11 +76,9 @@ const protect = (req) => {
       );
       req["user"] = record?.data;
       if (req["user"] === undefined) {
-         console.log(`3: ${authorization}`);
          throw new ServerError("User not found", 401);
       }
    } catch {
-      console.log(`4: ${authorization}`);
       throw error;
    }
 };

@@ -1,3 +1,5 @@
+import { MouseEventHandler, ReactNode } from "react";
+
 export interface User {
    _id: string;
    username: string;
@@ -60,6 +62,7 @@ export type Level = 0 | 1 | 2 | 3 | 4;
 export type FormObject = { [keyof: string]: HTMLInputElement };
 
 interface CategoryData {
+   id: number;
    MainIcon: React.FC;
    BoxIcon: React.FC;
    gradient: string;
@@ -77,3 +80,16 @@ export type CategoryName =
 export type CategoryStore = {
    [key in CategoryName]: CategoryData;
 };
+
+export interface ModalProps {
+   children: ReactNode;
+   className?: string;
+   /**
+    * Event that should occur if the close button is clicked.
+    * Should ideally be a handle to remove the modal from the screen.
+    */
+   onClose: MouseEventHandler;
+   /** Modal styles */
+   style?: React.CSSProperties;
+   closeButtonRef: React.RefObject<HTMLButtonElement>;
+}

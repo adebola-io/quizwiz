@@ -25,6 +25,17 @@ function Loadable<T extends JSX.IntrinsicAttributes>(Component: React.FC<T>) {
    };
 }
 
+// Guest
+const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
+
+// Auth
+const LoginOrSignUpPage = Loadable(
+   lazy(() => import("../pages/LoginOrSignUpPage"))
+);
+
+// Protected
+const Home = Loadable(lazy(() => import("../pages/Home")));
+
 export default function Router() {
    return useRoutes([
       {
@@ -72,17 +83,7 @@ export default function Router() {
          ),
          children: [{ element: <LandingPage />, index: true }],
       },
+
       { path: "*", element: <Navigate to="/404" replace /> },
    ]);
 }
-
-// Guest
-const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
-
-// Auth
-const LoginOrSignUpPage = Loadable(
-   lazy(() => import("../pages/LoginOrSignUpPage"))
-);
-
-// Protected
-const Home = Loadable(lazy(() => import("../pages/Home")));

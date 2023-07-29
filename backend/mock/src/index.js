@@ -1,3 +1,4 @@
+const { readFileSync } = require("fs");
 const { PORT } = require("./constants");
 const {
    addNewUser,
@@ -27,6 +28,16 @@ function runServer(delay) {
    api.useMiddleware({
       errorHandler,
       protect,
+   });
+
+   // UI.
+   api.endpoints({
+      "/"(_, res) {
+         res.contentType = "text/html";
+         const html = readFileSync("src/html/index.html").toString();
+         logger.inform("Home visited.");
+         return html;
+      },
    });
 
    // User routes
