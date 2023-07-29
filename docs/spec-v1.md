@@ -31,10 +31,10 @@
     - [- `/user/login`](#--userlogin)
     - [- `/user/stats`](#--userstats)
     - [- `/user/stats/update`](#--userstatsupdate)
-    - [- `/categories/:id/:level`](#--categoriesidlevel)
-    - [- `/random/:level`](#--randomlevel)
-    - [- `/rpdfire/questions`](#--rpdfirequestions)
-    - [- `/rpdfire/completed`](#--rpdfirecompleted)
+    - [- `/category/get/:id/:level`](#--categorygetidlevel)
+    - [- `/question/random/:level`](#--questionrandomlevel)
+    - [- GET `/question/rpdfire`](#--get-questionrpdfire)
+    - [- `question/rpdfire/completed`](#--questionrpdfirecompleted)
 
 ## Definition of Terms
 
@@ -319,7 +319,7 @@ This route is protected. Only users should be able to access it.
 5. Increase the user's stars by `starsEarned`.
 6. Return a [success response](#success-response).
 
-#### - `/categories/:id/:level`
+#### - `/category/get/:id/:level`
 
 1. If the request method is not GET, return a [malformed request](#malformed-requests) error.
 2. If `id` is not a number between 1 and 6, return a [not found](#not-found) error.
@@ -331,14 +331,14 @@ This route is protected. Only users should be able to access it.
    -  Set its `level` to the defined `level`.
 6. Return `quizObject`.
 
-#### - `/random/:level`
+#### - `/question/random/:level`
 
 1. If the request method is not GET, return a [malformed request](#malformed-requests) error
 2. If `level` is not a number between 0 and 4, return a [not found](#not-found) error.
 3. let `questions` be an array of 20 [random questions](#collecting-random-questions) which have a level equal to `level`.
 4. Return `questions`.
 
-#### - `/rpdfire/questions`
+#### - GET `/question/rpdfire`
 
 This route is protected. Only users should be able to access it.
 
@@ -359,7 +359,7 @@ This route is protected. Only users should be able to access it.
    ```
    with the array set to `questions`.
 
-#### - `/rpdfire/completed`
+#### - `question/rpdfire/completed`
 
 This route is protected. Only users should be able to access it.
 
