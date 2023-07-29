@@ -9,7 +9,7 @@
          "level": 0
       },
       {
-         "prompt": "Which of the following is the world's 6th largest country?",
+         "prompt": "What is the world's 5th largest country by population?",
          "options": ["India", "Taiwan", "Pakistan", "Nigeria"],
          "correctAnswer": 2,
          "level": 0
@@ -53,11 +53,10 @@
       },
       {
          "prompt": "What is the traditional martial art of Japan?",
-         "options": ["Kung Fu", "Judo", "Taekwondo", "Karate"],
+         "options": ["Kung Fu", "Tai Chi", "Taekwondo", "Karate"],
          "correctAnswer": 3,
          "level": 0
       },
-
       {
          "prompt": "Can you accurately describe the flag of Japan?",
          "options": [
@@ -172,14 +171,12 @@
          "correctAnswer": 0,
          "level": 1
       },
-
       {
          "prompt": "Who was the first Emperor of the Mongol Empire?",
          "options": ["Kublai Khan", "Attila the Hun", "Timur", "Genghis Khan"],
          "correctAnswer": 3,
          "level": 1
       },
-
       {
          "prompt": "Which Asian country is the only one to have a land border with Africa?",
          "options": ["Yemen", "Oman", "Egypt", "Turkey"],
@@ -480,7 +477,7 @@
          "level": 3
       },
       {
-         "prompt": "The largest republic of Russia entirely in Asia:",
+         "prompt": "The largest republic of Russia entirely in Asia?",
          "options": [
             "Kazakh Republic",
             "Republic of Sakha (Yakutia)",
@@ -528,7 +525,7 @@
          "prompt": "The Abbasid Caliphate was one of the great dynasties of the Muslim Empire. For approximately how long did it reign?",
          "options": ["2,000 years", "1,000 years", "500 years", "1,500 years"],
          "correctAnswer": 2,
-         "level": 1
+         "level": 3
       },
       {
          "prompt": "Which Asian country hosted the 2020 Summer Olympic Games?",

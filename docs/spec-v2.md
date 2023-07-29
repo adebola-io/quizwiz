@@ -150,11 +150,11 @@ To validate a given password:
 
 #### Verify email link
 
-<https://csc420quiz.vercel.app/verify_email/?token=${oneTimeToken}>
+<https://csc420quiz.vercel.app/verify_email?token=${oneTimeToken}>
 
 #### reset password email link
 
-<https://csc420quiz.vercel.app/reset_password/?token=${oneTimeToken}>
+<https://csc420quiz.vercel.app/reset_password?token=${oneTimeToken}>
 
 ### Success Rate
 
