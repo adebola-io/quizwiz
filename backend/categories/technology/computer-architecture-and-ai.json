@@ -1,7 +1,38 @@
 {
    "title": "Computer Architecture and AI",
    "category": "Technology",
-   "level0": [],
+   "level0": [
+      {
+         "prompt": "Who developed the basic architecture of computers?",
+         "options": ["Blaise Pascal", "Charles Babbage", "John Von Neuman", "None of the above"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following allows simultaneous write and read operations?",
+         "options": ["ROM", "EPROM" , "RAM" , "VROM"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following is not considered as a peripheral device?",
+         "options": ["CPU", "Keyboard" , "Monitor" , "All of the above"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following computer memory is the fastest?",
+         "options": ["Register", "Harddisk" , "RAM" , "None of the above"]
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following operations is/are performed by the ALU?",
+         "options": ["Data Manipulation", "Exponential" , "Squareroot" , ""
+         "correctAnswer":
+         "level":
+      },
+   ],
    "level1": [],
    "level2": [],
    "level3": [],
