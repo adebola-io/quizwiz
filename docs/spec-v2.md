@@ -33,6 +33,11 @@
     - [- POST `/api/v1/user/resend_email`](#--post-apiv1userresend_email)
     - [- POST `/api/v1/user/forgot_password`](#--post-apiv1userforgot_password)
     - [- POST `/api/v1/user/reset_password/:oneTimeToken`](#--post-apiv1userreset_passwordonetimetoken)
+    - [- PUT `/user/stats/update`](#--put-userstatsupdate)
+    - [- GET `/category/get/:id/:level`](#--get-categorygetidlevel)
+    - [- GET `/question/random/:level`](#--get-questionrandomlevel)
+    - [- GET `/question/rpdfire`](#--get-questionrpdfire)
+    - [- POST `question/rpdfire/completed`](#--post-questionrpdfirecompleted)
 
 ## Definition of Terms
 
@@ -381,5 +386,112 @@ return erorr response with message being "Invalid email" . 3. If [user](#user) i
 {
    "status": "success",
    "message": "Password was reset successfully"
+}
+```
+
+#### - PUT `/user/stats/update`
+
+This route is protected. Only users should be able to access it.
+
+1. If the request method is not PUT, return error response with message being "{route} is not a valid route".
+2. If the request body does not have the below shape:
+
+   ```json
+   {
+      "quizResult": 56.5,
+      "starsEarned": 4
+   }
+   ```
+   return erorr response with message being ""quizResult" is required" or  ""starsEarned" is required".
+
+   > **note**: `starsEarned` can be a negative value.
+
+3. if `quizResult` is not an integer or a stringified integer, "quizResult" must be a number
+4. if `starsEarned` is not an integer or a stringified integer, "starsEarned" must be a number.
+5.  Increase the user's `quizzesPlayed` value by 1.
+6. Recalculate the user's success rate by adding `quizResult` to the former `successRate` multiplied by former `quizzesPlayed`, and dividing the sum by new `quizzesPlayed`.
+8. Increase the user's stars by `starsEarned`.
+9. Return a response with the shape:
+
+```json
+{
+    "status": "success",
+    "message": "User stats updated successfully"
+}
+```
+
+#### - GET `/category/get/:id/:level`
+
+1. If the request method is not GET, return error response with message being "{route} is not a valid route".
+2. If `id` is not a number between 1 and 6, return error with message "categoryId must be from 1 to 6".
+3. If `level` is not a number between 0 and 4, return error with message "level must be from 0 to 4".
+4. Let the defined [category](#category) be the category with an ID that equals `id`.
+5. Let `quizObject` be a new quiz object.
+   -  Set its name to the name of the defined category.
+   -  Set its `questions` to an array of 20 [random questions](#collecting-random-questions) from the defined category, which have a level equal to `level`.
+   -  Set its `level` to the defined `level`.
+6. Return response with shape 
+ ```json
+{
+    "status": "success",
+    "message": "Quiz fetched successfully",
+    "data":{
+      "quiz": "quizObject"
+    }
+}
+```
+
+#### - GET `/question/random/:level`
+
+1. If the request method is not GET, return error response with message being "{route} is not a valid route".
+2. If `level` is not a number between 0 and 4, return error with message "level must be from 0 to 4".
+3. let `questions` be an array of 20 [random questions](#collecting-random-questions) which have a level equal to `level`.
+4. Return response with shape 
+ ```json
+{
+    "status": "success",
+    "message": "Questions fetched successfully",
+    "data":{
+      "questions": "questions"
+    }
+}
+```
+
+#### - GET `/question/rpdfire`
+
+This route is protected. Only users should be able to access it.
+
+1. If the request method is not GET, return error response with message being "{route} is not a valid route".
+2. Let `questions` be an empty array.
+3. If the `rapidFireCheckpoint` of the user is _not_ set to the current day,
+   -  Let `rfQuestionsL0` be an array of 15 [random questions](#collecting-random-questions) that have the level 0.
+   -  Let `rfQuestionsL1` be an array of 30 [random questions](#collecting-random-questions) that have the level 1.
+   -  Let `rfQuestionsL2` be an array of 45 [random questions](#collecting-random-questions) that have the level 2.
+   -  Let `rfQuestionsL3` be an array of 60 [random questions](#collecting-random-questions) that have the level 3.
+   -  Let `rfQuestionsL4` be an array of 75 [random questions](#collecting-random-questions) that have the level 4.
+   -  Concatenate and flatten all the above arrays into `questions`.
+4. Return response with shape 
+ ```json
+{
+    "status": "success",
+    "message": "Questions fetched successfully",
+    "data":{
+      "questions": "questions"
+    }
+}
+```
+
+#### - POST `question/rpdfire/completed`
+
+This route is protected. Only users should be able to access it.
+
+1. If the request method is not `POST`, return error response with message being "{route} is not a valid route.
+2. repeat 2-7 in [`/user/stats/update`](#userstatsupdate).
+3. Set `rapidFireCheckpoint` of the user with id `userid`, to the current day.
+4. Return a response with the shape:
+```json
+{
+    "status": "success",
+    "message": "Rapid fire completed successfully"
 }
 ```
