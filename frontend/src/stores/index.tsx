@@ -4,6 +4,7 @@ import {
    ReactNode,
    RefObject,
    useEffect,
+   useMemo,
    useRef,
    useSyncExternalStore,
 } from "react";
@@ -19,11 +20,11 @@ interface ModalCloseOptions {
 }
 
 interface ModalOpenOptions {
-   // /**
-   //  * Whether or not the modal should close if the user clicks outside it.
-   //  * @default false
-   //  */
-   // closeOnClickOutside?: boolean;
+   /**
+    * Whether or not the modal should close if the user clicks outside it.
+    * @default true
+    */
+   closeOnClickOutside?: boolean;
    // /**
    //  * Whether or not the modal should impose a route change.
    //  * @default false
@@ -38,7 +39,6 @@ type ModalPropsUpdate = Partial<
 interface ModalManager {
    /**
     * The content of the modal.
-    * Chnaging it is like setting state. Doing so in a component will lead to infinite renders.
     */
    data: ReactNode;
    /**
@@ -59,9 +59,10 @@ interface ModalManager {
  */
 class ModalStore extends EventTarget {
    isOpen = false;
-   private content = null as ReactNode;
-   ref = null as RefObject<HTMLDivElement> | null;
+   content = null as ReactNode;
    initialProps = {} as ModalPropsUpdate;
+   closeOnClickOutside = true;
+   closeButtonRef = null as RefObject<HTMLButtonElement> | null;
    props: ModalPropsUpdate;
    private manager: ModalManager;
 
@@ -88,12 +89,11 @@ class ModalStore extends EventTarget {
             }
             outerThis.update();
          },
-         open() {
+         open(options) {
             outerThis.isOpen = true;
+            outerThis.closeOnClickOutside =
+               options?.closeOnClickOutside || true;
             outerThis.update();
-            // outerThis.closeOnOutsideClick =
-            //    outerThis.closeOnOutsideClick.bind(modalStore);
-            // window.addEventListener("click", outerThis.closeOnOutsideClick);
          },
          morph(props) {
             outerThis.props = props;
@@ -107,20 +107,11 @@ class ModalStore extends EventTarget {
     * Triggers an external store update.
     */
    private update() {
+      // Changes object reference.
       this.manager = { ...this.manager };
+
       this.dispatchEvent(new Event("update"));
    }
-
-   /**
-    * Listener for outer click events.
-    */
-   // private closeOnOutsideClick(event: MouseEvent) {
-   //    const { target } = event as unknown as { target: HTMLDivElement };
-   //    if (!(this.ref && target.contains(this.ref.current))) {
-   //       this.manager.close();
-   //       window.removeEventListener("click", this.closeOnOutsideClick);
-   //    }
-   // }
 
    /**
     * Required `subscribe()` function.
@@ -151,32 +142,34 @@ interface ModalProviderProps {
  * Wrapper for modal users.
  */
 export function ModalProvider(props: ModalProviderProps) {
+   const { children } = props;
+
+   const childrenMemoized = useMemo(() => children, [children]);
    const modalSnapshot = useSyncExternalStore(
       modalStore.subscribe.bind(modalStore),
       modalStore.getSnapshot.bind(modalStore)
    );
-   const modalRef = useRef<HTMLDivElement>(null);
    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
    useEffect(() => {
-      modalStore.ref = modalRef;
+      modalStore.closeButtonRef = closeButtonRef;
    }, []);
 
    return (
       <>
          {modalStore.isOpen ? (
             <Modal
-               ref={modalRef}
+               closeOnClickOutside={modalStore.closeOnClickOutside}
                closeButtonRef={closeButtonRef}
                onClose={() => modalSnapshot.close()}
                {...modalStore.props}
             >
-               {modalSnapshot.data}
+               {modalStore.content}
             </Modal>
          ) : (
             <></>
          )}
-         {props.children}
+         {childrenMemoized}
       </>
    );
 }
