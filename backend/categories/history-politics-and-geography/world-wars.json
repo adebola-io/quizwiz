@@ -159,7 +159,38 @@
          "level": 0
       },
    ],
-   "level2": [],
+   "level2": [
+      {
+         "prompt": "During World War II, which country was known for its "Blitzkrieg" military strategy?",
+         "options": ["Germany", "Nigeria", "United States", "Japan"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+       {
+         "prompt": "What was the main cause of World War I?",
+         "options": ["Imperialism", "Nationalism", "Communism", "Fascism"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which country was the first to use tanks during World War I?",
+         "options": ["Germany", "United Kingdom", "United States", "France"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+       {
+         "prompt": "What was the name of the German air force during World War II?",
+         "options": ["Royal Air Force (RAF)", "Luftwaffe", "Red Army", "Wehrmacht"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which country was not occupied by Germany during World War II?",
+         "options": ["France", "Poland", " Norway", "Switzerland"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+   ],
    "level3": [],
    "level4": []
 }
