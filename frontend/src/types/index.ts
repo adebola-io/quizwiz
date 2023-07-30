@@ -60,16 +60,17 @@ export type NotificationType = "error" | "success" | "info";
 
 export type Level = 0 | 1 | 2 | 3 | 4;
 export type FormObject = { [keyof: string]: HTMLInputElement };
+export type ImageImport = string;
 
 interface CategoryData {
    id: number;
-   MainIcon: React.FC;
+   MainIcon: ImageImport;
    BoxIcon: React.FC;
    gradient: string;
 }
 
 export type CategoryName =
-   | "Random"
+   | "Random Quiz"
    | "Mathematics"
    | "Language & Literature"
    | "History, Politics & Geography"
@@ -92,4 +93,8 @@ export interface ModalProps {
    /** Modal styles */
    style?: React.CSSProperties;
    closeButtonRef: React.RefObject<HTMLButtonElement>;
+   /**
+    * Whether or not the modal should close if the user clicks outside it.
+    */
+   closeOnClickOutside?: boolean;
 }

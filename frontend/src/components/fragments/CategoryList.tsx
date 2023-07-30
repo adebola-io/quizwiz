@@ -8,7 +8,7 @@ export function CategoryList() {
          </h2>
          <div className="flex items-center justify-between">
             <Category
-               name="Random"
+               name="Random Quiz"
                className="animate-pull-from-bottom effect-item-0"
             />
             <Category
