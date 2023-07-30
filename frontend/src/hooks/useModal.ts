@@ -6,7 +6,7 @@ import { modalStore } from "@/stores";
  * ```tsx
  * function Button() {
  *    const modal = useModal();
- *    modal.data = <>Hello world.</>;
+ *    modal.setContent(<>Hello world.</>);
  *
  *    return (
  *       <button onClick={()=>modal.open()}>
