@@ -90,7 +90,6 @@ class ModalStore extends EventTarget {
             outerThis.isOpen = true;
             outerThis.closeOnClickOutside =
                options?.closeOnClickOutside || true;
-            console.log(outerThis.content);
             outerThis.update();
          },
          morph(props) {
