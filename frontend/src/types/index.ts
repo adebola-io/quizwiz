@@ -51,10 +51,9 @@ export type ApiResponse<T> = {
    data: T;
 };
 
-export interface RequestError {
-   message: string;
-   status: string;
-}
+export type RequestError = {
+   response: { data: ApiResponse<null> };
+};
 
 export type NotificationType = "error" | "success" | "info";
 

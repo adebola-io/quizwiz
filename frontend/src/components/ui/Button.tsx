@@ -18,6 +18,8 @@ type ButtonProps = {
    width?: Property.Width;
    /** Predefined styling for the button */
    variant?: "override" | "outlined" | "filled";
+   /** Predefined styling for the button */
+   loaderColor?: string;
    isLoading?: boolean;
    disabled?: boolean;
    onClick?(event: MouseEvent): void;
@@ -37,14 +39,14 @@ type ButtonProps = {
  * Generic button component.
  */
 export function Button(props: ButtonProps) {
+   const disabled = props.isLoading || props.disabled;
+
    const className = clsxm(
       "app_button",
       props.size ?? "normal",
       props.variant ?? "filled",
       props.className
    );
-
-   const disabled = props.isLoading || props.disabled;
 
    return props.as === "link" ? (
       <Link
@@ -79,7 +81,7 @@ export function Button(props: ButtonProps) {
                }}
                size={40}
                variant="outlined"
-               color="white"
+               color={props.loaderColor ?? "white"}
                shadow={false}
             />
          ) : (

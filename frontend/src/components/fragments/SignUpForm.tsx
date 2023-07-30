@@ -78,7 +78,7 @@ export function SignUpForm() {
       })
          .then(() => {
             toast.success(
-               "egistration successful, kindly check your email for next step"
+               "registration successful, kindly check your email for next step"
             );
             navigate("/dashboard/home");
          })
