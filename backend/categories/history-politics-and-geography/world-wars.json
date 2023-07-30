@@ -37,14 +37,14 @@
          "level": 0
       },
       {
-         "prompt": "Which World War I treaty imposed heavy reparations on Germany and led to economic hardships in the country?",
+         "prompt": "Who was the leader of Nazi Germany during World War II?",
          "options": [
-            "Treaty of Versailles",
-            "Treaty of Brest-Litovsk",
-            "Treaty of Trianon",
-            "Treaty of Saint-Germain"
+            "Winston Churchill",
+            "Joseph Stalin",
+            "Adolf Hitler",
+            "Benito Mussolini"
          ],
-         "correctAnswer": 0,
+         "correctAnswer": 2,
          "level": 0
       },
       {
@@ -54,14 +54,14 @@
          "level": 0
       },
       {
-         "prompt": "What was the code name for the Allied invasion of Normandy during World War II?",
+         "prompt": "What was the main cause of World War II??",
          "options": [
-            "Operation Barbarossa",
-            "Operation Market Garden",
-            "Operation Desert Storm",
-            "Operation Overlord"
+            "Economic recession",
+            "Imperialism",
+            "Russian Revolution",
+            "Treaty of Tordesillas"
          ],
-         "correctAnswer": 3,
+         "correctAnswer": 1,
          "level": 0
       },
       {
