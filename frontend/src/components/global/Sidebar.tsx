@@ -63,7 +63,7 @@ function Settings() {
    const [showTooltip, setShowtoolTip] = useState(false);
 
    function openLogoutModal() {
-      modal.data = <Logout />;
+      modal.setContent(<Logout />);
       modal.morph({
          className: "aspect-auto min-h-[max-content] max-w-[44vw]"
       });

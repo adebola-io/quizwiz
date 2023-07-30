@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks";
 import { Button } from "../ui";
-import { useModal } from "@/hooks/useModal";
+import { useModal } from "@/hooks";
 
 export function Logout() {
    const navigate = useNavigate();

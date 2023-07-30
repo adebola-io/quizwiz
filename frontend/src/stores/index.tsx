@@ -38,9 +38,9 @@ type ModalPropsUpdate = Partial<
 
 interface ModalManager {
    /**
-    * The content of the modal.
+    * Sets the content of the modal.
     */
-   data: ReactNode;
+   setContent(value: ReactNode): void;
    /**
     * Opens a modal.
     * @param options Modal options.
@@ -72,14 +72,11 @@ class ModalStore extends EventTarget {
       this.props = this.initialProps;
       // Create a new modal manager.
       this.manager = {
-         set data(value: ReactNode) {
+         setContent(value: ReactNode) {
             outerThis.content = value;
             if (outerThis.isOpen) {
                outerThis.update();
             }
-         },
-         get data() {
-            return outerThis.content;
          },
          close(options) {
             outerThis.isOpen = false;
@@ -93,6 +90,7 @@ class ModalStore extends EventTarget {
             outerThis.isOpen = true;
             outerThis.closeOnClickOutside =
                options?.closeOnClickOutside || true;
+            console.log(outerThis.content);
             outerThis.update();
          },
          morph(props) {

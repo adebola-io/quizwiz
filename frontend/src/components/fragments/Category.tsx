@@ -1,5 +1,5 @@
 import { categories } from "@/data";
-import { useModal } from "@/hooks/useModal";
+import { useModal } from "@/hooks";
 import { clsxm } from "@/utils/clsxm";
 import { QuestionStart } from ".";
 
@@ -17,7 +17,7 @@ export function Category(props: CategoryProps) {
    const modal = useModal();
 
    function openQuiz() {
-      modal.data = (
+      modal.setContent(
          <>
             <Eclipses name={props.name} />
             <QuestionStart name={props.name} />
