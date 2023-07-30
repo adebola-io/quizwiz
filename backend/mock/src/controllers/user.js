@@ -364,33 +364,33 @@ function resetPassword(req) {
    };
 }
 
-/**
- * Returns the metrics of a user so far.
- * @protected
- * @route "/user/stats"
- * @param {apigen.Request} req
- * @throws {apigen.ServerError}
- * @return {UserStatsResponse}
- */
-function getUserStats(req) {
-   if (req.method !== "GET") {
-      throw new ServerError(
-         `${req.method} /user/stats is not a valid route.`,
-         401
-      );
-   }
-   /**@type {User} */
-   const user = req["user"];
-   let quizzesPlayed = user.quizzesPlayed;
-   let stars = user.stars;
-   let successRate = user.successRate;
-   logger.inform(`GET /user/stats for "${user.username}"`);
-   return {
-      quizzesPlayed,
-      stars,
-      successRate,
-   };
-}
+// /**
+//  * Returns the metrics of a user so far.
+//  * @protected
+//  * @route "/user/stats"
+//  * @param {apigen.Request} req
+//  * @throws {apigen.ServerError}
+//  * @return {UserStatsResponse}
+//  */
+// function getUserStats(req) {
+//    if (req.method !== "GET") {
+//       throw new ServerError(
+//          `${req.method} /user/stats is not a valid route.`,
+//          401
+//       );
+//    }
+//    /**@type {User} */
+//    const user = req["user"];
+//    let quizzesPlayed = user.quizzesPlayed;
+//    let stars = user.stars;
+//    let successRate = user.successRate;
+//    logger.inform(`GET /user/stats for "${user.username}"`);
+//    return {
+//       quizzesPlayed,
+//       stars,
+//       successRate,
+//    };
+// }
 
 /**
  * Updates the metrics of a user.
@@ -439,7 +439,7 @@ function generateUserToken(id) {
 module.exports = {
    addNewUser,
    deleteUser,
-   getUserStats,
+   // getUserStats,
    getUserProfile,
    handleForgotPassword,
    loginUser,

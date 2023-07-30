@@ -168,8 +168,49 @@ function getRapidFireQuestions(req) {
    };
 }
 
+/**
+ * Completes rapid fire questions.
+ * @protected
+ * @route `"/question/rpdfire/completed"`
+ * @param {apigen.Request} req Server request.
+ * @throws {apigen.ServerError}
+ * @return {SucessResponse}
+ */
+function completeRapidFire(req) {
+   if (req.method !== "POST") {
+      throw new ServerError(
+         `${req.method} /question/rdpfire/completed is not a valid route.`,
+         401
+      );
+   }
+
+   const { quizResult, starsEarned } = req.body;
+   if (typeof quizResult !== "number") {
+      throw new ServerError("Invalid quiz result.");
+   }
+   if (typeof starsEarned !== "number") {
+      throw new ServerError("Invalid stars earned.");
+   }
+   /**@type {User} */
+   const user = req["user"];
+   user.quizzesPlayed += 1;
+   user.successRate = (quizResult + user.successRate) / user.quizzesPlayed;
+   user.stars += starsEarned;
+   logger.inform(
+      `Rapid fire played. Metrics for user "${user.username}" updated.`
+   );
+
+   user.rapidFireCheckpoint = new Date().toISOString();
+
+   return {
+      status: "success",
+      message: "Rapid fire completed successfully",
+   };
+}
+
 module.exports = {
    getCategoryQuestions,
    getRandomQuestions,
    getRapidFireQuestions,
+   completeRapidFire,
 };

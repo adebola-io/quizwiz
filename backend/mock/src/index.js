@@ -4,7 +4,7 @@ const {
    addNewUser,
    deleteUser,
    loginUser,
-   getUserStats,
+   // getUserStats,
    updateStats,
    verifyEmail,
    resendVerificationEmail,
@@ -14,6 +14,7 @@ const {
    getCategoryQuestions,
    getRandomQuestions,
    getRapidFireQuestions,
+   completeRapidFire,
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -95,14 +96,14 @@ function runServer(delay) {
                return data;
             },
          },
-         "/user/stats": {
-            protected: true,
-            handler(req, res) {
-               const stats = getUserStats(req);
-               res.statusCode = 200;
-               return stats;
-            },
-         },
+         // "/user/stats": {
+         //    protected: true,
+         //    handler(req, res) {
+         //       const stats = getUserStats(req);
+         //       res.statusCode = 200;
+         //       return stats;
+         //    },
+         // },
          "/user/stats/update": {
             protected: true,
             handler(req, res) {
@@ -132,9 +133,13 @@ function runServer(delay) {
                return data;
             },
          },
-         "/rpdfire/completed": {
+         "/question/rpdfire/completed": {
             protected: true,
-            handler(req, res) {},
+            handler(req, res) {
+               const data = completeRapidFire(req);
+               res.statusCode = 204;
+               return data;
+            },
          },
       });
 
@@ -147,7 +152,7 @@ function runServer(delay) {
 function gracefulShutDown() {
    logger.important("Shutting down Local Server...");
    const users = db.getUsers();
-   users.writeToDisc();
+   users.writeToDisk();
    process.exit(0);
 }
 

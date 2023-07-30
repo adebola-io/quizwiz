@@ -48,7 +48,7 @@ class UserList {
    /**
     * Update the JSON file.
     */
-   writeToDisc() {
+   writeToDisk() {
       writeFileSync(this.baseFile, JSON.stringify(this.items));
    }
    /**
@@ -73,6 +73,12 @@ class UserList {
       for (const { metadata } of this.items) {
          this.idMap.set(metadata._id, true);
       }
+
+      // Write to disk every thirty minutes.
+      setInterval(() => {
+         logger.inform("Writing users to disk.");
+         this.writeToDisk();
+      }, 1800000);
    }
    /**
     * Adds a new user to the database and returns the user's metadata.
@@ -392,7 +398,7 @@ module.exports = {
          );
          users.clear();
          emailService.clear();
-         users.writeToDisc();
+         users.writeToDisk();
       }
 
       logger.inform(
