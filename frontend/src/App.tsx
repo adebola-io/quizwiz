@@ -14,8 +14,8 @@ function App() {
                style: {
                   padding: "16px",
                   borderRadius: "4px",
-                  maxWidth: "100%",
-               },
+                  maxWidth: "100%"
+               }
             }}
          />
          <Router />

@@ -36,7 +36,7 @@ export function LoginForm() {
       // TODO: Perform more thorough check.
       const payload: LoginParams = {
          username: usernameOrEmail.value,
-         password: password.value,
+         password: password.value
       };
 
       login(payload)
@@ -85,7 +85,7 @@ export function LoginForm() {
                   backgroundColor: "var(--green-feldgrau)",
                   borderWidth: "4px",
                   height: "4.125rem",
-                  marginBottom: "1.36rem",
+                  marginBottom: "1.36rem"
                }}
                className="hover:brightness-90 animate-fade-in-from-right effect-item-3"
                isLoading={isLoading}

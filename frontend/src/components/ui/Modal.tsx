@@ -14,7 +14,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
       closeButtonRef,
       style,
       children,
-      className,
+      className
    } = props;
 
    const dialogRef = useRef<ElementRef<"dialog">>(null);
@@ -48,17 +48,17 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
                [
                   {
                      opacity: 1,
-                     transform: "scale(1)",
+                     transform: "scale(1)"
                   },
                   {
                      opacity: 1,
                      transform: "scale(1.1)",
-                     offset: 0.3,
+                     offset: 0.3
                   },
                   {
                      opacity: 0,
-                     transform: "scale(0.7)",
-                  },
+                     transform: "scale(0.7)"
+                  }
                ],
                { duration: 400 }
             );

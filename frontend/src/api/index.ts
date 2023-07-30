@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 import { ENDPOINT_ROOT } from "@/constants";
 
 const axiosInstance: AxiosInstance = axios.create({
-   baseURL: ENDPOINT_ROOT,
+   baseURL: ENDPOINT_ROOT
 });
 
 axiosInstance.interceptors.request.use((config) => {
@@ -12,7 +12,7 @@ axiosInstance.interceptors.request.use((config) => {
       (config as unknown as { headers: { [keyof: string]: string } }).headers =
          {
             Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
          };
    }
    return config;

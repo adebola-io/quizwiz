@@ -37,7 +37,7 @@ export function QuestionStart(props: QuizStartProps) {
          <h3
             style={
                {
-                  backgroundImage: category.gradient,
+                  backgroundImage: category.gradient
                } as React.CSSProperties
             }
             className={headingClassnames}
@@ -55,7 +55,7 @@ export function QuestionStart(props: QuizStartProps) {
                      className={levelClassnames}
                      style={{
                         background: isSelected ? level.theme : undefined,
-                        color: expertIsSelected ? "white" : "black",
+                        color: expertIsSelected ? "white" : "black"
                      }}
                      onClick={() => setSelectedLevel(index)}
                   >
