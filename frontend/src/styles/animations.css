@@ -28,6 +28,12 @@
    }
 }
 
+@keyframes spin-custom {
+   100% {
+      rotate: 360deg;
+   }
+}
+
 @keyframes squeeze {
    0% {
       transform: scale(1.05);
@@ -65,7 +71,7 @@
 }
 
 /* Classnames */
-
+.animate-fade-in,
 .animate-fade-in-from-left,
 .animate-fade-in-from-right {
    animation-name: fade-in;
@@ -75,6 +81,11 @@
 }
 .animate-pull-from-bottom {
    animation-name: pull-from-bottom;
+}
+.animate-spin-custom {
+   animation-name: spin-custom;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
 }
 
 .effect-item-0 {
@@ -99,6 +110,9 @@
    animation-duration: 1700ms;
 }
 
+.animate-fade-in {
+   --start: 0;
+}
 .animate-fade-in-from-right.effect-item-0 {
    --start: 7vw;
 }

@@ -1,3 +1,5 @@
+import { MouseEventHandler, ReactNode } from "react";
+
 export interface User {
    _id: string;
    username: string;
@@ -58,15 +60,17 @@ export type NotificationType = "error" | "success" | "info";
 
 export type Level = 0 | 1 | 2 | 3 | 4;
 export type FormObject = { [keyof: string]: HTMLInputElement };
+export type ImageImport = string;
 
 interface CategoryData {
-   MainIcon: React.FC;
+   id: number;
+   MainIcon: ImageImport;
    BoxIcon: React.FC;
    gradient: string;
 }
 
 export type CategoryName =
-   | "Random"
+   | "Random Quiz"
    | "Mathematics"
    | "Language & Literature"
    | "History, Politics & Geography"
@@ -77,3 +81,20 @@ export type CategoryName =
 export type CategoryStore = {
    [key in CategoryName]: CategoryData;
 };
+
+export interface ModalProps {
+   children: ReactNode;
+   className?: string;
+   /**
+    * Event that should occur if the close button is clicked.
+    * Should ideally be a handle to remove the modal from the screen.
+    */
+   onClose: MouseEventHandler;
+   /** Modal styles */
+   style?: React.CSSProperties;
+   closeButtonRef: React.RefObject<HTMLButtonElement>;
+   /**
+    * Whether or not the modal should close if the user clicks outside it.
+    */
+   closeOnClickOutside?: boolean;
+}

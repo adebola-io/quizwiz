@@ -1,66 +1,97 @@
 {
    "title": "World Wars",
    "category": "History and Politics",
-   "level0": [ {
+   "level0": [
+      {
          "prompt": "Which event triggered the start of World War I?",
-         "options": ["Assassination of Archduke Franz Ferdinand", "Invasion of Poland", "Bombing of Pearl Harbor", "Signing of the Treaty of Versailles"],
+         "options": [
+            "Assassination of Archduke Franz Ferdinand",
+            "Invasion of Poland",
+            "Bombing of Pearl Harbor",
+            "Signing of the Treaty of Versailles"
+         ],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "In which year did World War I end?",
          "options": ["1914", "1917", "1918", "1919"],
          "correctAnswer": 2,
          "level": 0
       },
-       {
+      {
          "prompt": "Which country was the first to use chemical weapons during World War I?",
          "options": ["Germany", "France", "United States", "Russia"],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "Which battle is considered one of the bloodiest of World War I?",
-         "options": ["Battle of the Somme", "Battle of Stalingrad", "Battle of Dunkirk", "Battle of Midway"],
+         "options": [
+            "Battle of the Somme",
+            "Battle of Stalingrad",
+            "Battle of Dunkirk",
+            "Battle of Midway"
+         ],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "Which World War I treaty imposed heavy reparations on Germany and led to economic hardships in the country?",
-         "options": ["Treaty of Versailles", "Treaty of Brest-Litovsk", "Treaty of Trianon", "Treaty of Saint-Germain"],
+         "options": [
+            "Treaty of Versailles",
+            "Treaty of Brest-Litovsk",
+            "Treaty of Trianon",
+            "Treaty of Saint-Germain"
+         ],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "Which country remained neutral during most of World War II?",
          "options": ["United States", "France", "Switzerland", "Italy"],
          "correctAnswer": 2,
          "level": 0
       },
-       {
+      {
          "prompt": "What was the code name for the Allied invasion of Normandy during World War II?",
-         "options": ["Operation Barbarossa", "Operation Market Garden", "Operation Desert Storm", "Operation Overlord"],
+         "options": [
+            "Operation Barbarossa",
+            "Operation Market Garden",
+            "Operation Desert Storm",
+            "Operation Overlord"
+         ],
          "correctAnswer": 3,
          "level": 0
       },
-       {
+      {
          "prompt": "Which city was the first target of an atomic bomb during World War II?",
          "options": ["Hiroshima", "Berlin", "Nagasaki", "Tokyo"],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "What event triggered the United States' entry into World War II?",
-         "options": ["Bombing of London", "Attack on Pearl Harbor", "Invasion of Poland", "Sinking of the Lusitania"],
+         "options": [
+            "Bombing of London",
+            "Attack on Pearl Harbor",
+            "Invasion of Poland",
+            "Sinking of the Lusitania"
+         ],
          "correctAnswer": 1,
          "level": 0
       },
-       {
+      {
          "prompt": "Which two countries were the primary Axis Powers during World War II?",
-         "options": ["Germany and Italy", "Germany and France", "Italy and Japan", "Germany and Japan"],
+         "options": [
+            "Germany and Italy",
+            "Germany and France",
+            "Italy and Japan",
+            "Germany and Japan"
+         ],
          "correctAnswer": 3,
          "level": 0
-      },
+      }
    ],
    "level1": [],
    "level2": [],

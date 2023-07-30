@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider } from "@/contexts/AuthContext";
+import { ModalProvider } from "@/stores";
 import App from "./App";
 import "./styles/index.css";
 
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
    <AuthProvider>
       <QueryClientProvider client={client}>
          <BrowserRouter>
-            <App />
+            <ModalProvider>
+               <App />
+            </ModalProvider>
          </BrowserRouter>
       </QueryClientProvider>
    </AuthProvider>

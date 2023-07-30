@@ -8,6 +8,7 @@
 :root {
    --white: #ffffff;
    --global-padding-left: 3.75rem;
+   --modal-padding: 3.75rem;
    --green-charcoal: #2f3e46;
    --green-feldgrau: #446461;
    --green-viridian: #6b917e;

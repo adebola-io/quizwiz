@@ -25,6 +25,17 @@ function Loadable<T extends JSX.IntrinsicAttributes>(Component: React.FC<T>) {
    };
 }
 
+// Guest
+const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
+
+// Auth
+const LoginOrSignUpPage = Loadable(
+   lazy(() => import("../pages/LoginOrSignUpPage"))
+);
+
+// Protected
+const Home = Loadable(lazy(() => import("../pages/Home")));
+
 export default function Router() {
    return useRoutes([
       {
@@ -36,7 +47,7 @@ export default function Router() {
                   <GuestGuard>
                      <LoginOrSignUpPage />
                   </GuestGuard>
-               ),
+               )
             },
             {
                path: "sign-up",
@@ -44,9 +55,9 @@ export default function Router() {
                   <GuestGuard>
                      <LoginOrSignUpPage />
                   </GuestGuard>
-               ),
-            },
-         ],
+               )
+            }
+         ]
       },
 
       // Protected Routes
@@ -58,9 +69,12 @@ export default function Router() {
             </AuthGuard>
          ),
          children: [
-            { element: <Navigate to="/dashboard/home" replace />, index: true },
-            { path: "home", element: <Home /> },
-         ],
+            {
+               element: <Navigate to="/dashboard/home" replace />,
+               index: true
+            },
+            { path: "home", element: <Home /> }
+         ]
       },
 
       {
@@ -70,19 +84,9 @@ export default function Router() {
                <GuestLayout />
             </GuestGuard>
          ),
-         children: [{ element: <LandingPage />, index: true }],
+         children: [{ element: <LandingPage />, index: true }]
       },
-      { path: "*", element: <Navigate to="/404" replace /> },
+
+      { path: "*", element: <Navigate to="/404" replace /> }
    ]);
 }
-
-// Guest
-const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
-
-// Auth
-const LoginOrSignUpPage = Loadable(
-   lazy(() => import("../pages/LoginOrSignUpPage"))
-);
-
-// Protected
-const Home = Loadable(lazy(() => import("../pages/Home")));
