@@ -156,6 +156,7 @@ class QuestionData {
     * @param {RandomQuestionParams} options
     */
    random({ categoryName, number, level }) {
+      logger.inform("retrieving random questions...");
       /**@type {Question[]} */
       let questions = [];
       /** @type {Category[]} */
@@ -165,13 +166,19 @@ class QuestionData {
       } else {
          categoryList.push(...Object.values(this.categories));
       }
-      while (questions.length < number) {
+      let MAX_ITERATION_COUNT = 3000;
+      while (questions.length < number && MAX_ITERATION_COUNT--) {
          for (const category of categoryList) {
             for (const topic of category.topics) {
                const randomQuestions = selectRandom(topic[`level${level}`], 3);
                for (let randomQuestion of randomQuestions) {
                   if (questions.length === number) return shuffle(questions);
-                  while (questions.includes(randomQuestion)) {
+                  while (
+                     questions.includes(randomQuestion) &&
+                     topic[`level${level}`].find(
+                        (question) => !questions.includes(question)
+                     )
+                  ) {
                      randomQuestion = selectRandom(
                         topic[`level${level}`],
                         1

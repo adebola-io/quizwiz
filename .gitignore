@@ -24,6 +24,8 @@ dist-ssr
 *.local
 vite.config.ts.timestamp-*
 
+pnpm-lock.yaml*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

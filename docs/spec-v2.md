@@ -178,7 +178,8 @@ To return a list of random [questions](#question), given a `number`, a specified
 1. Let `questions` be a new list or array.
 2. Let `categoryList` be an array of [categories](#category).
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
-4. While the length of `questions` is less than `number`:
+4. Implementations can determine a MAX_ITERATION_COUNT, to prevent forever loops on insufficient topics and levels.
+5. While the length of `questions` is less than `number` and MAX_ITERATION_COUNT has not been surpassed:
 
    -  For each topic in each category in `categoryList`:
 
@@ -191,7 +192,7 @@ To return a list of random [questions](#question), given a `number`, a specified
             -  Replace question with another random question.
          -  Add question to `questions`.
 
-5. Return a shuffled version of `questions`.
+6. Return a shuffled version of `questions`.
 
 ---
 
@@ -402,21 +403,22 @@ This route is protected. Only users should be able to access it.
       "starsEarned": 4
    }
    ```
-   return erorr response with message being ""quizResult" is required" or  ""starsEarned" is required".
+
+   return erorr response with message being ""quizResult" is required" or ""starsEarned" is required".
 
    > **note**: `starsEarned` can be a negative value.
 
 3. if `quizResult` is not an integer or a stringified integer, "quizResult" must be a number
 4. if `starsEarned` is not an integer or a stringified integer, "starsEarned" must be a number.
-5.  Increase the user's `quizzesPlayed` value by 1.
+5. Increase the user's `quizzesPlayed` value by 1.
 6. Recalculate the user's success rate by adding `quizResult` to the former `successRate` multiplied by former `quizzesPlayed`, and dividing the sum by new `quizzesPlayed`.
-8. Increase the user's stars by `starsEarned`.
-9. Return a response with the shape:
+7. Increase the user's stars by `starsEarned`.
+8. Return a response with the shape:
 
 ```json
 {
-    "status": "success",
-    "message": "User stats updated successfully"
+   "status": "success",
+   "message": "User stats updated successfully"
 }
 ```
 
@@ -430,14 +432,15 @@ This route is protected. Only users should be able to access it.
    -  Set its name to the name of the defined category.
    -  Set its `questions` to an array of 20 [random questions](#collecting-random-questions) from the defined category, which have a level equal to `level`.
    -  Set its `level` to the defined `level`.
-6. Return response with shape 
- ```json
+6. Return response with shape
+
+```json
 {
-    "status": "success",
-    "message": "Quiz fetched successfully",
-    "data":{
+   "status": "success",
+   "message": "Quiz fetched successfully",
+   "data": {
       "quiz": "quizObject"
-    }
+   }
 }
 ```
 
@@ -446,14 +449,15 @@ This route is protected. Only users should be able to access it.
 1. If the request method is not GET, return error response with message being "{route} is not a valid route".
 2. If `level` is not a number between 0 and 4, return error with message "level must be from 0 to 4".
 3. let `questions` be an array of 20 [random questions](#collecting-random-questions) which have a level equal to `level`.
-4. Return response with shape 
- ```json
+4. Return response with shape
+
+```json
 {
-    "status": "success",
-    "message": "Questions fetched successfully",
-    "data":{
+   "status": "success",
+   "message": "Questions fetched successfully",
+   "data": {
       "questions": "questions"
-    }
+   }
 }
 ```
 
@@ -470,14 +474,15 @@ This route is protected. Only users should be able to access it.
    -  Let `rfQuestionsL3` be an array of 60 [random questions](#collecting-random-questions) that have the level 3.
    -  Let `rfQuestionsL4` be an array of 75 [random questions](#collecting-random-questions) that have the level 4.
    -  Concatenate and flatten all the above arrays into `questions`.
-4. Return response with shape 
- ```json
+4. Return response with shape
+
+```json
 {
-    "status": "success",
-    "message": "Questions fetched successfully",
-    "data":{
+   "status": "success",
+   "message": "Questions fetched successfully",
+   "data": {
       "questions": "questions"
-    }
+   }
 }
 ```
 
@@ -489,9 +494,10 @@ This route is protected. Only users should be able to access it.
 2. repeat 2-7 in [`/user/stats/update`](#userstatsupdate).
 3. Set `rapidFireCheckpoint` of the user with id `userid`, to the current day.
 4. Return a response with the shape:
+
 ```json
 {
-    "status": "success",
-    "message": "Rapid fire completed successfully"
+   "status": "success",
+   "message": "Rapid fire completed successfully"
 }
 ```
