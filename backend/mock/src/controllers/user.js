@@ -38,15 +38,15 @@ function addNewUser(req) {
       !utils.isValidPassword(password) ||
       confirmPassword !== password
    ) {
-      throw new ServerError("Passwords do not match");
+      throw new ServerError("Passwords do not match", 401);
    }
    const users = db.getUsers();
    for (const { data: previousUser } of users) {
       if (previousUser.username == username) {
-         throw new ServerError(`${username} already exists.`);
+         throw new ServerError(`${username} already exists.`, 401);
       }
       if (previousUser.emailAddress == email) {
-         throw new ServerError(`${email} already exists.`);
+         throw new ServerError(`${email} already exists.`, 401);
       }
    }
    const hashedPassword = bcrypt.hashSync(password, 10);
