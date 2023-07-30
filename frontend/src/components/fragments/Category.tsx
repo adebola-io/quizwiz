@@ -24,7 +24,7 @@ export function Category(props: CategoryProps) {
          </>
       );
       modal.morph({
-         className: "aspect-auto min-h-[max-content] max-w-[44vw]",
+         className: "aspect-auto min-h-[max-content] max-w-[44vw]"
       });
       modal.open();
    }

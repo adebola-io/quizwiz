@@ -26,7 +26,7 @@ function Eclipse(
    return (
       <div
          style={{
-            ...props,
+            ...props
          }}
          className={`absolute z-2 w-[43.75rem] aspect-square bg-green-viridian border-[5px] border-solid border-green-charcoal shadow-image-depth rounded-[50%]`}
       ></div>

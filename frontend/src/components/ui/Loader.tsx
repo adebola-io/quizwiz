@@ -20,13 +20,13 @@ interface LoaderStyles {
 export function Loader(props: LoaderProps) {
    const size = props.size ?? 60;
    const centerCircleStyles: React.CSSProperties = {
-      borderWidth: `${(size / 20).toFixed(2)}px`,
+      borderWidth: `${(size / 20).toFixed(2)}px`
    };
    const frameCircleStyles: React.CSSProperties = {
-      borderWidth: `${(size / 20).toFixed(2)}px`,
+      borderWidth: `${(size / 20).toFixed(2)}px`
    };
    const spinningCircleStyles: React.CSSProperties = {
-      borderWidth: `${(size / 30).toFixed(2)}px`,
+      borderWidth: `${(size / 30).toFixed(2)}px`
    };
    const shadow = props.shadow === undefined || props.shadow;
    const styles: LoaderStyles =
@@ -34,39 +34,39 @@ export function Loader(props: LoaderProps) {
          ? {
               centerCircle: {
                  borderColor: props.color,
-                 ...centerCircleStyles,
+                 ...centerCircleStyles
               },
               frameCircle: {
                  borderColor: props.color,
-                 ...frameCircleStyles,
+                 ...frameCircleStyles
               },
               spinningCircle: {
                  borderColor: props.color,
-                 ...spinningCircleStyles,
-              },
+                 ...spinningCircleStyles
+              }
            }
          : {
               centerCircle: {
                  background: "var(--green-viridian)",
                  borderColor: "var(--green-charcoal)",
-                 ...centerCircleStyles,
+                 ...centerCircleStyles
               },
               frameCircle: {
                  background: "white",
                  borderColor: "var(--green-charcoal)",
-                 ...frameCircleStyles,
+                 ...frameCircleStyles
               },
               spinningCircle: {
                  background: "var(--green-viridian)",
                  borderColor: "var(--green-charcoal)",
-                 ...spinningCircleStyles,
-              },
+                 ...spinningCircleStyles
+              }
            };
    return (
       <div
          style={{
             width: props.size ? `${size}px` : undefined,
-            ...(props.style ?? {}),
+            ...(props.style ?? {})
          }}
          className={`w-[60px] ${
             shadow ? "shadow-components/shadow" : ""

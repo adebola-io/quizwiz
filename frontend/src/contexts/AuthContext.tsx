@@ -21,7 +21,7 @@ type AuthAction =
 const initialState: AuthState = {
    isAuthenticated: false,
    isInitialized: false,
-   user: null,
+   user: null
 };
 
 const handlers: Record<
@@ -34,7 +34,7 @@ const handlers: Record<
          ...state,
          isAuthenticated,
          isInitialized: true,
-         user,
+         user
       };
    },
    LOGIN: (state, action) => {
@@ -43,7 +43,7 @@ const handlers: Record<
       return {
          ...state,
          isAuthenticated,
-         user,
+         user
       };
    },
    LOGOUT: (state, action) => {
@@ -57,9 +57,9 @@ const handlers: Record<
       return {
          ...state,
          isAuthenticated,
-         user,
+         user
       };
-   },
+   }
 };
 
 const reducer = (state: AuthState, action: AuthAction) =>
@@ -75,7 +75,7 @@ const AuthContext = createContext<AuthContextValue>({
    ...initialState,
    login: () => Promise.resolve(),
    logout: () => Promise.resolve(),
-   signup: () => Promise.resolve(),
+   signup: () => Promise.resolve()
 });
 
 interface AuthProviderProps {
@@ -102,16 +102,16 @@ function AuthProvider({ children }: AuthProviderProps) {
                   type: "INITIALIZE",
                   payload: {
                      isAuthenticated: true,
-                     user,
-                  },
+                     user
+                  }
                });
             } else {
                dispatch({
                   type: "INITIALIZE",
                   payload: {
                      isAuthenticated: false,
-                     user: null,
-                  },
+                     user: null
+                  }
                });
             }
          } catch (err: unknown) {
@@ -120,8 +120,8 @@ function AuthProvider({ children }: AuthProviderProps) {
                type: "INITIALIZE",
                payload: {
                   isAuthenticated: false,
-                  user: null,
-               },
+                  user: null
+               }
             });
          }
       };
@@ -140,8 +140,8 @@ function AuthProvider({ children }: AuthProviderProps) {
          type: "LOGIN",
          payload: {
             user,
-            isAuthenticated: true,
-         },
+            isAuthenticated: true
+         }
       });
    };
 
@@ -157,8 +157,8 @@ function AuthProvider({ children }: AuthProviderProps) {
          type: "REGISTER",
          payload: {
             isAuthenticated: true,
-            user,
-         },
+            user
+         }
       });
    };
 
@@ -166,7 +166,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       setSession(null);
       dispatch({
          type: "LOGOUT",
-         payload: { user: null, isAuthenticated: false },
+         payload: { user: null, isAuthenticated: false }
       });
    };
 
@@ -176,7 +176,7 @@ function AuthProvider({ children }: AuthProviderProps) {
             ...state,
             login,
             logout,
-            signup,
+            signup
          }}
       >
          {children}

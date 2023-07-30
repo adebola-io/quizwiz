@@ -47,7 +47,7 @@ export default function Router() {
                   <GuestGuard>
                      <LoginOrSignUpPage />
                   </GuestGuard>
-               ),
+               )
             },
             {
                path: "sign-up",
@@ -55,9 +55,9 @@ export default function Router() {
                   <GuestGuard>
                      <LoginOrSignUpPage />
                   </GuestGuard>
-               ),
-            },
-         ],
+               )
+            }
+         ]
       },
 
       // Protected Routes
@@ -69,9 +69,12 @@ export default function Router() {
             </AuthGuard>
          ),
          children: [
-            { element: <Navigate to="/dashboard/home" replace />, index: true },
-            { path: "home", element: <Home /> },
-         ],
+            {
+               element: <Navigate to="/dashboard/home" replace />,
+               index: true
+            },
+            { path: "home", element: <Home /> }
+         ]
       },
 
       {
@@ -81,9 +84,9 @@ export default function Router() {
                <GuestLayout />
             </GuestGuard>
          ),
-         children: [{ element: <LandingPage />, index: true }],
+         children: [{ element: <LandingPage />, index: true }]
       },
 
-      { path: "*", element: <Navigate to="/404" replace /> },
+      { path: "*", element: <Navigate to="/404" replace /> }
    ]);
 }

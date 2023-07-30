@@ -5,7 +5,7 @@
    <a aria-label="last commit" href="https://github.com/adebola-io/quiz-app/commits/main"> 
       <img alt="" src="https://img.shields.io/github/last-commit/adebola-io/quiz-app.svg"> 
    </a>
-   <a href="https://GitHub.com/adebola-io/quiz-app"><img src="https://img.shields.io/badge/contributors-4-ee8449"/></a>
+   <a href="https://GitHub.com/adebola-io/quiz-app"><img src="https://img.shields.io/badge/contributors-7-ee8449"/></a>
    <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PR(s)-welcome-brightgreen.svg?style=flat-square" alt="Make a pull request."></a>
  </p>
 
@@ -17,7 +17,7 @@ The design for this project is hosted on Figma [here](https://www.figma.com/file
 
 ## Development 🖥
 
-### Front-end
+### Front-end 
 
 The front-end is (to be) written using React and Tailwind. Node and NPM/Yarn must be installed to preview it. To run the frontend locally, cd into the `frontend/` folder and run
 
@@ -33,9 +33,10 @@ npm run dev
 
 to start the local dev server.
 
+
 ### Back-end
 
-A simple temporary back-end is present in the `/backend/mock/` folder. To run it, cd into the folder and run:
+A simple development back-end is present in the `/backend/mock/` folder. To run it, cd into the folder and run:
 
 ```
 npm install
@@ -48,6 +49,14 @@ npm start
 ```
 
 to start the Node.js server.
+
+To see the code for the main back-end, visit [here](https://github.com/Matec12/quiz-app-backend).
+
+
+## Documentation 📜
+
+Relevant documentation files can be viewed in the [`docs`](https://github.com/adebola-io/quiz-app/tree/main/docs) folder. 
+
 
 ## Deployment 🚀
 

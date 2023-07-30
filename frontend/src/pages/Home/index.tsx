@@ -50,7 +50,7 @@ export default function Home() {
                      style={{
                         backgroundColor: "#ffc150",
                         color: "var(--green-charcoal)",
-                        fontWeight: "bold",
+                        fontWeight: "bold"
                      }}
                   >
                      Get Started

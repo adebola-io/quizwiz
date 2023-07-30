@@ -110,7 +110,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-random-quiz, linear-gradient(180deg, #00A486 0%, #836AEB 100%))",
+         "var(--gradients-random-quiz, linear-gradient(180deg, #00A486 0%, #836AEB 100%))"
    },
    "History, Politics & Geography": {
       id: 1,
@@ -215,7 +215,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-history, linear-gradient(180deg, #FFC700 0%, #00D1FF 100%))",
+         "var(--gradients-history, linear-gradient(180deg, #FFC700 0%, #00D1FF 100%))"
    },
    Mathematics: {
       id: 4,
@@ -320,7 +320,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-math, linear-gradient(317deg, #CC2BC6 0%, #E9A219 100%))",
+         "var(--gradients-math, linear-gradient(317deg, #CC2BC6 0%, #E9A219 100%))"
    },
    Sports: {
       id: 3,
@@ -425,7 +425,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-sports, linear-gradient(213deg, #4572E7 0%, #004E70 100%))",
+         "var(--gradients-sports, linear-gradient(213deg, #4572E7 0%, #004E70 100%))"
    },
    "Language & Literature": {
       id: 2,
@@ -530,7 +530,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-language, linear-gradient(135deg, #0775DB 0%, #28B6CA 100%))",
+         "var(--gradients-language, linear-gradient(135deg, #0775DB 0%, #28B6CA 100%))"
    },
    Technology: {
       id: 6,
@@ -635,7 +635,7 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-technology, linear-gradient(222deg, #D600C0 0%, #623DCC 100%))",
+         "var(--gradients-technology, linear-gradient(222deg, #D600C0 0%, #623DCC 100%))"
    },
    "Pop Culture": {
       id: 5,
@@ -740,8 +740,8 @@ export const categories: CategoryStore = {
          );
       },
       gradient:
-         "var(--gradients-pop-culture, linear-gradient(180deg, #ED75A8 0%, #DB4A4A 100%))",
-   },
+         "var(--gradients-pop-culture, linear-gradient(180deg, #ED75A8 0%, #DB4A4A 100%))"
+   }
 };
 
 interface LevelObject {
@@ -751,22 +751,22 @@ interface LevelObject {
 export const levels: LevelObject[] = [
    {
       name: "Beginner",
-      theme: "#B9C0F9",
+      theme: "#B9C0F9"
    },
    {
       name: "Standard",
-      theme: "#FFC7E8",
+      theme: "#FFC7E8"
    },
    {
       name: "Simple",
-      theme: "#B5FFB4",
+      theme: "#B5FFB4"
    },
    {
       name: "Complex",
-      theme: "#FFE2AB",
+      theme: "#FFE2AB"
    },
    {
       name: "Expert",
-      theme: "#00625C",
-   },
+      theme: "#00625C"
+   }
 ];

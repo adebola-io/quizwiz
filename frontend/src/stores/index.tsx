@@ -6,7 +6,7 @@ import {
    useEffect,
    useMemo,
    useRef,
-   useSyncExternalStore,
+   useSyncExternalStore
 } from "react";
 import { Modal } from "@/components/ui";
 import { ModalProps } from "@/types";
@@ -100,7 +100,7 @@ class ModalStore extends EventTarget {
             if (outerThis.isOpen) {
                outerThis.update();
             }
-         },
+         }
       };
    }
    /**

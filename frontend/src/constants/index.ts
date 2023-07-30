@@ -1,12 +1,8 @@
 import { Level } from "@/types";
 
-// const dev = process.env.NODE_ENV !== "production";
+export const ENDPOINT_ROOT = "https://quiz-app-server-pvx6.onrender.com/api/v1";
 
-// export const ENDPOINT_ROOT = dev
-//   ? "http://localhost:3010/api/v1"
-//   : "https://quiz-app-server-pvx6.onrender.com/api/v1";
-
-export const ENDPOINT_ROOT = "http://localhost:4174";
+// export const ENDPOINT_ROOT = "http://localhost:4174";
 
 export const ENDPOINTS = {
    USER_CREATE: `${ENDPOINT_ROOT}/user/create`,
@@ -21,7 +17,7 @@ export const ENDPOINTS = {
       return `${ENDPOINT_ROOT}/random/${level}`;
    },
    RAPID_FIRE_QUESTIONS: `${ENDPOINT_ROOT}/rpdfire/questions`,
-   RAPID_FIRE_COMPLETED: `${ENDPOINT_ROOT}/rpdfire/completed`,
+   RAPID_FIRE_COMPLETED: `${ENDPOINT_ROOT}/rpdfire/completed`
 };
 
 export const USER_TOKEN_IDENT = "app-auth";
