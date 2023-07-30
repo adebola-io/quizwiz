@@ -5,7 +5,7 @@
    <a aria-label="last commit" href="https://github.com/adebola-io/quiz-app/commits/main"> 
       <img alt="" src="https://img.shields.io/github/last-commit/adebola-io/quiz-app.svg"> 
    </a>
-   <a href="https://GitHub.com/adebola-io/quiz-app"><img src="https://img.shields.io/badge/contributors-4-ee8449"/></a>
+   <a href="https://GitHub.com/adebola-io/quiz-app"><img src="https://img.shields.io/badge/contributors-7-ee8449"/></a>
    <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PR(s)-welcome-brightgreen.svg?style=flat-square" alt="Make a pull request."></a>
  </p>
 
