@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useModal } from "@/hooks/useModal";
 import { Tooltip } from "../ui/Tooltip";
+import { Logout } from "../fragments/Logout";
 
 export function Sidebar() {
    const expanded = useState(false);
@@ -57,17 +59,19 @@ function SidebarToggle(props: {
 }
 
 function Settings() {
+   const modal = useModal();
    const [showTooltip, setShowtoolTip] = useState(false);
 
-   function handleTooltipContentClick() {
-      alert("Tooltip content clicked!");
+   function openLogoutModal() {
+      modal.data = <Logout />;
+      modal.morph({
+         className: "aspect-auto min-h-[max-content] max-w-[44vw]"
+      });
+      modal.open();
    }
 
    return (
-      <Tooltip
-         content="Log out"
-         onContentClick={handleTooltipContentClick}
-      >
+      <Tooltip content="Log out" onContentClick={openLogoutModal}>
          <div
             style={{
                rotate: showTooltip ? "30deg" : "none"
