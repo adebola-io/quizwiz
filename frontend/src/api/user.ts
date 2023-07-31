@@ -7,7 +7,6 @@ import { toast } from "react-hot-toast";
  * communicate with resend email service.
  * @route "/user/verify_email"
  * @param payload
- * @returns {ApiResponse}
  */
 
 const _resendEmailRequest = async (

@@ -72,13 +72,12 @@ function Settings() {
 
    return (
       <Tooltip content="Log out" onContentClick={openLogoutModal}>
-         <div
-            style={{
-               rotate: showTooltip ? "30deg" : "none"
-            }}
-            className="cursor-pointer brightness-95 duration-300"
-         >
+         <div className="cursor-pointer brightness-95">
             <svg
+               style={{
+                  rotate: showTooltip ? "30deg" : "none"
+               }}
+               className="duration-300"
                onClick={() => setShowtoolTip(!showTooltip)}
                xmlns="http://www.w3.org/2000/svg"
                width="69"

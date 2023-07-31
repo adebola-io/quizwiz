@@ -45,14 +45,17 @@ export interface UserSession {
    token: string;
 }
 
-export type ApiResponse<T> = {
-   status: "fail" | "success" | "error";
+export type ApiResponse<
+   T,
+   status extends "fail" | "success" | "error" = "success"
+> = {
+   status: status;
    message: string;
    data: T;
 };
 
 export type RequestError = {
-   response: { data: ApiResponse<null> };
+   response: { data: ApiResponse<null, "fail" | "error"> };
 };
 
 export type NotificationType = "error" | "success" | "info";
@@ -97,3 +100,9 @@ export interface ModalProps {
     */
    closeOnClickOutside?: boolean;
 }
+
+export interface Quiz {}
+
+export type CategoryResponse = ApiResponse<{
+   quiz: Quiz;
+}>;
