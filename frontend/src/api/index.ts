@@ -26,9 +26,6 @@ axiosInstance.interceptors.response.use(
       if (error.response.status === 401) {
          toast.error(error.response.data.message);
          localStorage.removeItem("accessToken");
-         return Promise.reject(new Error(error.response.data.message));
-      } else if (error.response.status === 504) {
-         return Promise.reject(new Error("Network timeout try again"));
       }
       return Promise.reject(error);
    }

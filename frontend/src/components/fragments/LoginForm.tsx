@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
-import { FormObject, LoginParams } from "@/types";
+import { FormObject, LoginParams, RequestError } from "@/types";
+import { AxiosError } from "axios";
 
 interface LoginErrorObject {
    usernameOrEmail?: string;
@@ -41,13 +42,19 @@ export function LoginForm() {
 
       login(payload)
          .then(() => navigate("/dashboard/home"))
-         .catch((err) => {
-            toast.error(
-               err.response
-                  ? err.response.data.message
-                  : "Something went wrong. Please try again."
-            );
-         })
+         .catch(
+            (
+               err: AxiosError<RequestError["response"]["data"]> | RequestError
+            ) => {
+               if (err.response === undefined && err instanceof AxiosError) {
+                  toast.error(err?.message);
+               } else {
+                  toast.error(
+                     err?.response?.data.message ?? "Something went wrong"
+                  );
+               }
+            }
+         )
          .finally(() => setIsLoading(false));
    };
 

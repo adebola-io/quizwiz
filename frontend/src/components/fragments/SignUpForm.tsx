@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
-import { FormObject } from "@/types";
+import { FormObject, RequestError } from "@/types";
 
 interface SignUpErrorObject {
    username?: string;
@@ -82,7 +82,7 @@ export function SignUpForm() {
             );
             navigate("/dashboard/home");
          })
-         .catch((err) => toast.error(err.message))
+         .catch((err: RequestError) => toast.error(err.response.data.message))
          .finally(() => setIsLoading(false));
    };
 

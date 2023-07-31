@@ -43,10 +43,10 @@ function addNewUser(req) {
    const users = db.getUsers();
    for (const { data: previousUser } of users) {
       if (previousUser.username == username) {
-         throw new ServerError(`${username} already exists.`, 401);
+         throw new ServerError(`${username} already exists.`, 400);
       }
       if (previousUser.email == email) {
-         throw new ServerError(`${email} already exists.`, 401);
+         throw new ServerError(`${email} already exists.`, 400);
       }
    }
    const hashedPassword = bcrypt.hashSync(password, 10);
@@ -171,15 +171,15 @@ function loginUser(req) {
       (user) => user.data.username === username || user.data.email === email
    );
    if (!record) {
-      throw new ServerError("Invalid email, username or password.", 404);
+      throw new ServerError("Invalid email, username or password.", 400);
    }
    if (!bcrypt.compareSync(password, record.data.password)) {
-      throw new ServerError("Invalid email, username or password.", 401);
+      throw new ServerError("Invalid email, username or password.", 400);
    }
    /**@type {CreateUserResponse} */
    let response = {
       status: "success",
-      message: "registration successful, kindly check your email for next step",
+      message: "Login Successful",
       data: {
          token: generateUserToken(record.metadata._id),
          //@ts-ignore
