@@ -75,7 +75,7 @@ declare global {
    interface User {
       username: string;
       password: string;
-      emailAddress: string;
+      email: string;
       emailConfirmationStatus: boolean;
       rapidFireCheckpoint: string | null;
       quizzesPlayed: number;

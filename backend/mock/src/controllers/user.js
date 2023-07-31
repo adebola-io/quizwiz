@@ -45,7 +45,7 @@ function addNewUser(req) {
       if (previousUser.username == username) {
          throw new ServerError(`${username} already exists.`, 401);
       }
-      if (previousUser.emailAddress == email) {
+      if (previousUser.email == email) {
          throw new ServerError(`${email} already exists.`, 401);
       }
    }
@@ -55,7 +55,7 @@ function addNewUser(req) {
    const userData = {
       username,
       password: hashedPassword,
-      emailAddress: email,
+      email: email,
       emailConfirmationStatus: false,
       quizzesPlayed: 0,
       rapidFireCheckpoint: null,
@@ -85,7 +85,7 @@ function addNewUser(req) {
       userData
    );
    emailService.sendEmail(
-      userData.emailAddress,
+      userData.email,
       `Welcome to QuizApp. To verify your email, use the token ${value}.`
    );
 
@@ -161,14 +161,14 @@ function loginUser(req) {
          401
       );
    }
-   const { username, email, password } = req.body;
-   if (typeof username !== "string" && typeof email !== "string") {
+   const { username, password } = req.body;
+   let email = utils.isValidEmail(username) ? username : undefined;
+   if (typeof username !== "string") {
       throw new ServerError("Email/Username and Password must be provided.");
    }
    const users = db.getUsers();
    const record = users.find(
-      (user) =>
-         user.data.username === username || user.data.emailAddress === email
+      (user) => user.data.username === username || user.data.email === email
    );
    if (!record) {
       throw new ServerError("Invalid email, username or password.", 404);
@@ -269,7 +269,7 @@ function resendVerificationEmail(req) {
    const emailService = db.getEmailService();
    const { value } = tokenProvider.generate(TOKENS.EMAIL_VERIFICATION, user);
    emailService.sendEmail(
-      user.emailAddress,
+      user.email,
       `To verify your email, use the token ${value}.`
    );
    return {
@@ -297,9 +297,7 @@ function handleForgotPassword(req) {
       throw new ServerError("Invalid email.");
    }
    const users = db.getUsers();
-   const user = users.find(
-      (record) => record.data.emailAddress === email
-   )?.data;
+   const user = users.find((record) => record.data.email === email)?.data;
    if (!user) {
       throw new ServerError("User not found.", 401);
    }
@@ -307,7 +305,7 @@ function handleForgotPassword(req) {
    const tokenProvider = db.getTokenProvider();
    const { value } = tokenProvider.generate(TOKENS.PASSWORD_RESET, email);
    emailService.sendEmail(
-      user.emailAddress,
+      user.email,
       `To change your password, use the token "${value}".`
    );
    return {
@@ -350,9 +348,7 @@ function resetPassword(req) {
       );
    }
    const users = db.getUsers();
-   const record = users.find(
-      (record) => record.data.emailAddress === token.reference
-   );
+   const record = users.find((record) => record.data.email === token.reference);
    record.data.password = bcrypt.hashSync(password, 10);
    record.metadata.updatedAt = new Date().toISOString();
    tokenProvider.deleteToken(token);

@@ -29,6 +29,7 @@ require("colors");
  */
 function runServer(delay) {
    const api = new APIGenerator();
+   api.delay = delay;
    api.useMiddleware({
       errorHandler,
       protect,
