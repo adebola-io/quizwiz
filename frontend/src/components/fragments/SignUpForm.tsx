@@ -89,9 +89,9 @@ export function SignUpForm() {
    return (
       <form
          onSubmit={validator.submitter}
-         className="w-full pr-[--global-padding-left]"
+         className="w-full lg:pr-[--global-padding-left]"
       >
-         <h1 className="animate-fade-in-from-right text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-[3.6875rem]">
+         <h1 className="animate-fade-in-from-right text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-xl 2xl:text-[3.6875rem] mb-5">
             Create Account to Get Started.
          </h1>
          <div className="flex flex-col w-full">
