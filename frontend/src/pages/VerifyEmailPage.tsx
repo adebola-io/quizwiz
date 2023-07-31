@@ -13,7 +13,7 @@ export default function VerifyEmailPage() {
    const token = pathname.split("/")[3];
    const { user } = useAuth();
    const [count, { startCountdown, resetCountdown }] = useCountdown({
-      countStart: 5,
+      countStart: 30,
       intervalMs: 1000
    });
    const { mutate: resend, isLoading, isSuccess } = useResendEmailMutation();
@@ -34,6 +34,7 @@ export default function VerifyEmailPage() {
       } else {
          verify(token);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [token, isSuccess]);
 
    return (
