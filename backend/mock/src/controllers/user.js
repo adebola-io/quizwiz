@@ -60,7 +60,7 @@ function addNewUser(req) {
       quizzesPlayed: 0,
       rapidFireCheckpoint: null,
       stars: 0,
-      successRate: 0,
+      successRate: 0
    };
 
    const metadata = users.add(userData);
@@ -74,9 +74,9 @@ function addNewUser(req) {
          user: {
             ...userData,
             password: undefined,
-            ...metadata,
-         },
-      },
+            ...metadata
+         }
+      }
    };
    const tokenProvider = db.getTokenProvider();
    const emailService = db.getEmailService();
@@ -88,6 +88,7 @@ function addNewUser(req) {
       userData.email,
       `Welcome to QuizApp. To verify your email, use the token ${value}.`
    );
+   logger.inform(`Visit http://localhost:5173/dashboard/verify-email/${value}`);
 
    return response;
 }
@@ -117,9 +118,9 @@ function getUserProfile(req) {
             ...record.data,
             role: "user",
             password: undefined,
-            ...record.metadata,
-         },
-      },
+            ...record.metadata
+         }
+      }
    };
 }
 
@@ -183,8 +184,8 @@ function loginUser(req) {
       data: {
          token: generateUserToken(record.metadata._id),
          //@ts-ignore
-         user: { ...record.data, password: undefined, ...record.metadata },
-      },
+         user: { ...record.data, password: undefined, ...record.metadata }
+      }
    };
    logger.inform(`User "${username}" logged in.`);
    return response;
@@ -233,7 +234,7 @@ function verifyEmail(req) {
 
    return {
       status: "success",
-      message: "Email successfully activated.",
+      message: "Email successfully activated."
    };
 }
 
@@ -272,9 +273,12 @@ function resendVerificationEmail(req) {
       user.email,
       `To verify your email, use the token ${value}.`
    );
+
+   logger.inform(`Visit http://localhost:5173/dashboard/verify-email/${value}`);
+
    return {
       status: "success",
-      message: "Verification email sent successfully!",
+      message: "Verification email sent successfully!"
    };
 }
 
@@ -310,7 +314,7 @@ function handleForgotPassword(req) {
    );
    return {
       status: "success",
-      message: "Message sent to your email, kindly check.",
+      message: "Message sent to your email, kindly check."
    };
 }
 
@@ -356,7 +360,7 @@ function resetPassword(req) {
    logger.inform(`Password changed for user "${record.data.username}".`);
    return {
       status: "success",
-      message: "Password was reset successfully.",
+      message: "Password was reset successfully."
    };
 }
 
@@ -418,7 +422,7 @@ function updateStats(req) {
    logger.inform(`Metrics for user "${user.username}" updated.`);
    return {
       status: "success",
-      message: "Stats updated successfully.",
+      message: "Stats updated successfully."
    };
 }
 
@@ -428,7 +432,7 @@ function updateStats(req) {
  */
 function generateUserToken(id) {
    return jwt.sign({ id }, JWT_SECRET, {
-      expiresIn: "20d",
+      expiresIn: "20d"
    });
 }
 
@@ -442,5 +446,5 @@ module.exports = {
    resendVerificationEmail,
    resetPassword,
    updateStats,
-   verifyEmail,
+   verifyEmail
 };
