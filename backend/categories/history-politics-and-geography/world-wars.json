@@ -93,7 +93,8 @@
          "level": 0
       }
    ],
-   "level1": [ {
+   "level1": [
+      {
          "prompt": "Which war was fought between 1914 and 1918?",
          "options": [
             "World War II",
@@ -106,7 +107,12 @@
       },
       {
          "prompt": "Which war was fought between 1939 and 1945?",
-         "options": ["Korean War", "World War I", "World War II", "Vietnam War"],
+         "options": [
+            "Korean War",
+            "World War I",
+            "World War II",
+            "Vietnam War"
+         ],
          "correctAnswer": 2,
          "level": 0
       },
@@ -118,13 +124,23 @@
       },
       {
          "prompt": "Which war was fought between 1950 and 1953?",
-         "options": ["World War I", "World War II", " Korean War", "Vietnam War"],
+         "options": [
+            "World War I",
+            "World War II",
+            " Korean War",
+            "Vietnam War"
+         ],
          "correctAnswer": 2,
          "level": 0
       },
-       {
+      {
          "prompt": "Who was the Prime Minister of the United Kingdom during World War II?",
-         "options": ["Winston Churchill", "Franklin D. Roosevelt", "Joseph Stalin", "Adolf Hitler"],
+         "options": [
+            "Winston Churchill",
+            "Franklin D. Roosevelt",
+            "Joseph Stalin",
+            "Adolf Hitler"
+         ],
          "correctAnswer": 0,
          "level": 0
       },
@@ -135,8 +151,13 @@
          "level": 0
       },
       {
-         "prompt": "Which war is known as the "Great War"?",
-         "options": ["World War I", "World War II", "Korean War", "Vietnam War"],
+         "prompt": "Which war is known as the \"Great War\"?",
+         "options": [
+            "World War I",
+            "World War II",
+            "Korean War",
+            "Vietnam War"
+         ],
          "correctAnswer": 0,
          "level": 0
       },
@@ -146,7 +167,7 @@
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "Which country was the first to use poison gas as a weapon during World War I?",
          "options": ["France", "Germany", "United States", "Netherlands"],
          "correctAnswer": 1,
@@ -157,16 +178,16 @@
          "options": ["France", "Nigeria", "United States", "Germany"],
          "correctAnswer": 3,
          "level": 0
-      },
+      }
    ],
    "level2": [
       {
-         "prompt": "During World War II, which country was known for its "Blitzkrieg" military strategy?",
+         "prompt": "During World War II, which country was known for its \"Blitzkrieg\" military strategy?",
          "options": ["Germany", "Nigeria", "United States", "Japan"],
          "correctAnswer": 0,
          "level": 0
       },
-       {
+      {
          "prompt": "What was the main cause of World War I?",
          "options": ["Imperialism", "Nationalism", "Communism", "Fascism"],
          "correctAnswer": 1,
@@ -178,9 +199,14 @@
          "correctAnswer": 1,
          "level": 0
       },
-       {
+      {
          "prompt": "What was the name of the German air force during World War II?",
-         "options": ["Royal Air Force (RAF)", "Luftwaffe", "Red Army", "Wehrmacht"],
+         "options": [
+            "Royal Air Force (RAF)",
+            "Luftwaffe",
+            "Red Army",
+            "Wehrmacht"
+         ],
          "correctAnswer": 1,
          "level": 0
       },
@@ -189,7 +215,7 @@
          "options": ["France", "Poland", " Norway", "Switzerland"],
          "correctAnswer": 3,
          "level": 0
-      },
+      }
    ],
    "level3": [],
    "level4": []
