@@ -21,7 +21,7 @@ const _resendEmailRequest = async (
  */
 
 export const useResendEmailMutation = () => {
-   const { ...returns } = useMutation(_resendEmailRequest, {
+   const resendEmailMutation = useMutation(_resendEmailRequest, {
       onSuccess: (data) => {
          toast.success(data.message);
       },
@@ -29,9 +29,8 @@ export const useResendEmailMutation = () => {
          toast.error(error.response?.data?.message);
       }
    });
-   return {
-      ...returns
-   };
+
+   return resendEmailMutation;
 };
 
 /**
@@ -54,7 +53,7 @@ const _verifyEmailRequest = async (
  */
 
 export const useVerifyEmailMutation = () => {
-   const { ...returns } = useMutation(_verifyEmailRequest, {
+   const verifyEmailMutation = useMutation(_verifyEmailRequest, {
       onSuccess: (data) => {
          toast.success(data.message);
          setTimeout(() => {
@@ -65,7 +64,6 @@ export const useVerifyEmailMutation = () => {
          toast.error(error.response?.data?.message);
       }
    });
-   return {
-      ...returns
-   };
+
+   return verifyEmailMutation;
 };
