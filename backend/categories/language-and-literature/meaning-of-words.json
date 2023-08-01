@@ -1,7 +1,19 @@
 {
    "title": "Meaning of Words",
    "category": "Language and Literature",
-   "level0": [],
+   "level0": [ {
+         "prompt": "The word POIGNANT means?",
+         "options": ["evoking a keen sense of sadness", "a feeling of depression", "a joyful expression", "a moody feeling"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "EXEMPTION is used to denote?",
+         "options": ["an act of disqualification", "immunity from a task", "vulnerability to an event", "accountability to a task"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+   ],
    "level1": [],
    "level2": [],
    "level3": [],
