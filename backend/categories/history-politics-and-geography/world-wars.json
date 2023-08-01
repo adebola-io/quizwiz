@@ -216,6 +216,36 @@
          "correctAnswer": 3,
          "level": 0
       }
+       {
+         "prompt": "The League of Nations was established in what year?",
+         "options": ["1919", "1921", "1920", "1935"],
+         "correctAnswer": 2,
+         "level": 0
+      }
+       {
+         "prompt": "Which one of the following countries was not a member of the Triple Alliance?",
+         "options": ["German", "China", "Austria", "Italy"],
+         "correctAnswer": 1,
+         "level": 0
+      }
+      {
+         "prompt": "Who proposed the constitution of the League of Nations?",
+         "options": ["Woodrow Wilson", "Adolf Hitler", "Mansa Musa", "George Bush"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+       {
+         "prompt": "Which leader was responsible for the decision to drop atomic bombs on Japan during World War II?",
+         "options": ["Winston Churchill", "Adolf Hitler", "Joseph Stalin", "Harry Truman"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "Which country was not part of the Axis Powers in World War II?",
+         "options": ["Germany", "Italy", "Japan", "Soviet Union"],
+         "correctAnswer": 3,
+         "level": 0
+      }
    ],
    "level3": [],
    "level4": []
