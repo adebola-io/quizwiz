@@ -5,6 +5,7 @@ import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
 import { FormObject, LoginParams, RequestError } from "@/types";
 import { AxiosError } from "axios";
+import { Link } from "react-router-dom";
 
 interface LoginErrorObject {
    usernameOrEmail?: string;
@@ -100,9 +101,9 @@ export function LoginForm() {
                Log In
             </Button>
          </div>
-         <div className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
+         <Link to = "/auth/forgot-password"className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
             Forgot Password?
-         </div>
+         </Link>
       </form>
    );
 }
