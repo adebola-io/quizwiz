@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 
 /**
- * communicate with resend email service.
+ * communicates with resend email service.
  * @route "/user/verify_email"
  * @param payload
  */
@@ -34,7 +34,7 @@ export const useResendEmailMutation = () => {
 };
 
 /**
- * communicate with verify email service.
+ * communicates with verify email service.
  * @route "/user/verify_email"
  * @param token
  * @returns {ApiResponse}
@@ -66,4 +66,75 @@ export const useVerifyEmailMutation = () => {
    });
 
    return verifyEmailMutation;
+};
+
+/**
+ * communicates with forgot password service.
+ * @route "/user/forgot_password"
+ * @param payload
+ */
+
+const _forgotPasswordRequest = async (
+   payload: Pick<UserCreationParams, "email">
+): Promise<ApiResponse<null>> => {
+   const { data } = await axios.post("/user/forgot_password", payload);
+   return data;
+};
+/**
+ * mutation wrapper hook for request
+ * @returns
+ */
+
+export const useForgotPasswordMutation = () => {
+   const forgotPasswordlMutation = useMutation(_forgotPasswordRequest, {
+      onSuccess: (data) => {
+         toast.success(data.message);
+      },
+      onError: (error: RequestError) => {
+         toast.error(error.response?.data?.message);
+      }
+   });
+
+   return forgotPasswordlMutation;
+};
+
+/**
+ * communicates with forgot password service.
+ * @route "/user/forgot_password"
+ * @param payload
+ */
+
+const _resetPasswordRequest = async (
+   token: string,
+   payload?: Pick<UserCreationParams, "password" | "confirmPassword">
+): Promise<ApiResponse<null>> => {
+   const { data } = await axios.post(`/user/reset_password/${token}`, payload);
+   return data;
+};
+/**
+ * mutation wrapper hook for request
+ * @returns
+ */
+
+export const useResetPasswordMutation = () => {
+   const resetPasswordMutation = useMutation({
+      mutationFn: ({
+         token,
+         payload
+      }: {
+         token: string;
+         payload?: Pick<UserCreationParams, "password" | "confirmPassword">;
+      }) => _resetPasswordRequest(token, payload),
+      onSuccess: (data) => {
+         toast.success(data.message);
+         setTimeout(() => {
+            window.location.pathname = "/auth/login";
+         }, 2000);
+      },
+      onError: (error: RequestError) => {
+         toast.error(error.response?.data?.message);
+      }
+   });
+
+   return resetPasswordMutation;
 };

@@ -49,6 +49,12 @@
    background-image: url(../assets/signin-background.png);
 }
 
+.backgrounds_password {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/password-background.png);
+}
+
 .page_with_header {
    position: relative;
    padding-top: var(--header-height);

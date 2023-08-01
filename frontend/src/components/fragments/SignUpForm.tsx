@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
 import { FormObject, RequestError } from "@/types";
+import { showPasswordBriefly } from "@/utils/form";
 
 interface SignUpErrorObject {
    username?: string;
@@ -149,11 +150,4 @@ export function SignUpForm() {
          </div>
       </form>
    );
-}
-
-function showPasswordBriefly(password: HTMLInputElement) {
-   password.type = "text";
-   setTimeout(() => {
-      password.type = "password";
-   }, 3000);
 }
