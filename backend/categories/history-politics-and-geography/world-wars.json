@@ -247,6 +247,43 @@
          "level": 0
       }
    ],
-   "level3": [],
+   "level3": [ 
+      {
+         "prompt": "What was the meaning of the Japanese term \"kamikaze\"?",
+         "options": ["Divine wave", "Holy wind", "Divine wind", "Holy war"],
+         "correctAnswer": 2,
+         "level": 0
+      }
+       {
+         "prompt": "The title	of	Hitler's book Mein Kampf in English means what?",
+         "options": ["Well-Being", "My Country", "My Struggle", "Master Race"],
+         "correctAnswer": 2,
+         "level": 0
+      }
+       {
+         "prompt": "Which of the following features did Nazi society stress to its citizens?",
+         "options": ["Nationalism", "Isolationism", "Individual rights", "A classless society"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+      {
+         "prompt": "What was the name given by Hitler to his supposed \"master race\"?",
+         "options": ["Uebermenschen", "Aryans", "Untermenschen", "Einsatzgruppen"],
+         "correctAnswer": 1,
+         "level": 0
+      }
+       {
+         "prompt": "Who was known as the \"Spartan General\" in World War 2?",
+         "options": ["Eisenhower", "Bradley", "Patton", "Montgomery"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "What is the Allies codename for the invasion of Nazi-occupied France",
+         "options": ["Operation Overlord", "Operation Torch", "Operation of Barbarossa", "Operation Cobra"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+   ],
    "level4": []
 }
