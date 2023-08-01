@@ -2,7 +2,7 @@ import shape from "../../assets/shape.svg";
 
 export function LandingPageDiagrams() {
    return (
-      <section className="relative flex items-center justify-center overflow-hidden h-full w-[50%] bg-green-feldgrau border-r-[5px] border-solid border-green-charcoal shadow-inner-shadow">
+      <section className="relative hidden items-center justify-center overflow-hidden  min-h-screen w-[50%] bg-green-feldgrau border-r-[5px] border-solid border-green-charcoal shadow-inner-shadow lg:flex">
          <QuestionBackground />
          <Eclipse top="-23.5rem" right="-22.5625rem" />
          <Eclipse bottom="-22.4375rem" left="-23.75rem" />

@@ -14,7 +14,7 @@ type HeaderProps =
  */
 export function Header(props: HeaderProps) {
    return (
-      <header className="fixed top-0 z-10 flex items-center justify-between h-[--header-height] w-full border-green-charcoal px-[--global-padding-left] bg-white border-b-4 border-solid">
+      <header className="fixed top-0 z-10 flex items-center justify-between h-[--header-height] w-full border-green-charcoal px-8 sm:px-[--global-padding-left] bg-white border-b-4 border-solid">
          <Logo />
          <div className="border-l-4 h-full border-green-charcoal flex items-center justify-items-end pl-14">
             {props.loggedIn ? (
@@ -37,7 +37,7 @@ export function Header(props: HeaderProps) {
 function Logo() {
    return (
       <span className="logo_text text-green-dark-slate-gray font-bold font-eras-bold text-[2.081713rem] text-center [font-style:normal] [line-height:normal]">
-         QuizApp
+         QuizWiz
       </span>
    );
 }

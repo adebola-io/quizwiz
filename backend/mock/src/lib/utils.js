@@ -69,10 +69,10 @@ function isValidEmail(emailAddress) {
  * @returns {T[]}
  */
 function selectRandom(array, number) {
+   if (array.length === 0) return [];
    /**@type {number[]} */
    const indexes = [];
    const selected = [];
-
    while (selected.length < number) {
       const select = parseFloat((Math.random() * 100).toFixed()) % array.length;
       if (indexes.includes(select)) {
@@ -80,6 +80,7 @@ function selectRandom(array, number) {
       }
       indexes.push(select);
       selected.push(array[select]);
+      if (selected.length === array.length) break;
    }
    return selected;
 }
@@ -94,6 +95,60 @@ function shuffle(array) {
    return selectRandom(array, array.length);
 }
 
+/**
+ * Converts a string with spaces, commas and capital letters into hyphenated text.
+ * @param {string} input
+ */
+function hyphenate(input) {
+   return input
+      .replace(/\.|,/g, "")
+      .replace(/\s+[A-Za-z0-9]/g, (match) => {
+         return "-" + match.trim();
+      })
+      .toLowerCase();
+}
+
+const dates = {
+   /**
+    * Compares two days and returns true if a is later than b.
+    * @param {Date} a
+    * @param {Date} b
+    */
+   isLater(a, b) {
+      const yearA = a.getFullYear();
+      const yearB = b.getFullYear();
+      if (yearA < yearB) {
+         return false;
+      }
+      if (yearA > yearB) {
+         return true;
+      }
+      const isSameYear = yearA === yearB;
+      const monthA = a.getMonth();
+      const monthB = b.getMonth();
+      if (isSameYear && monthA < monthB) {
+         return false;
+      }
+      if (isSameYear && monthA > monthB) {
+         return true;
+      }
+      const isSameMonth = monthA && monthB;
+      const dateA = a.getDate();
+      const dateB = b.getDate();
+      if (isSameYear && isSameMonth && dateA < dateB) {
+         return false;
+      }
+      if (isSameYear && isSameMonth && dateA > dateB) {
+         return true;
+      }
+      const isSameDay = dateA === dateB;
+      if (isSameYear && isSameMonth && isSameDay) {
+         return false;
+      }
+      return true;
+   },
+};
+
 module.exports = {
    isAlphabetic,
    isNumeric,
@@ -102,4 +157,6 @@ module.exports = {
    isValidUsername,
    selectRandom,
    shuffle,
+   dates,
+   hyphenate,
 };

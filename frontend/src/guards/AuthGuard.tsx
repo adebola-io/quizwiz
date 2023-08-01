@@ -3,13 +3,14 @@ import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks";
 import { Loader } from "@/components/ui";
 import LoginOrSignUpPage from "@/pages/LoginOrSignUpPage";
+import VerifyEmailPage from "@/pages/VerifyEmailPage";
 
 interface AuthGuardProps {
    children: ReactNode;
 }
 
 export function AuthGuard({ children }: AuthGuardProps) {
-   const { isAuthenticated, isInitialized } = useAuth();
+   const { isAuthenticated, isVerified, isInitialized } = useAuth();
    const { pathname } = useLocation();
    const [requestedLocation, setRequestedLocation] = useState<string | null>(
       null
@@ -28,6 +29,13 @@ export function AuthGuard({ children }: AuthGuardProps) {
          setRequestedLocation(pathname);
       }
       return <LoginOrSignUpPage />;
+   }
+
+   if (isAuthenticated && !isVerified) {
+      if (pathname !== requestedLocation) {
+         setRequestedLocation(pathname);
+      }
+      return <VerifyEmailPage />;
    }
 
    if (requestedLocation && pathname !== requestedLocation) {

@@ -6,17 +6,17 @@
    flex-shrink: 0;
    align-self: stretch;
    text-align: right;
-   font-size: 7.625rem;
+   /* font-size: 7.625rem; */
    font-style: normal;
    font-weight: 700;
-   line-height: 8.3125rem;
+   /* line-height: 8.3125rem; */
    @apply font-avenir-next-lt-pro-bold text-green-charcoal;
 }
-@media (aspect-ratio > 1) {
+/* @media (aspect-ratio > 1) {
    .landing_page_headline_text {
       line-height: 9.4rem;
    }
-}
+} */
 .landing_page_headline_text .second {
    background: linear-gradient(100deg, #6b917e 0%, #446461 100%);
    background-clip: text;
@@ -26,7 +26,7 @@
 }
 .landing_page_paragraph {
    display: flex;
-   width: 35.0625rem;
+   max-width: 35.0625rem;
    height: 6rem;
    flex-direction: column;
    justify-content: center;
@@ -34,8 +34,8 @@
    color: var(--green-charcoal, #2f3e46);
    text-align: right;
    font-family: Poppins;
-   font-size: 0.97438rem;
+   /* font-size: 0.97438rem; */
    font-style: normal;
    font-weight: 400;
-   line-height: 1.5rem; /* 153.945% */
+   /* line-height: 1.5rem; 153.945% */
 }

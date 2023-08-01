@@ -5,6 +5,7 @@ import { User, LoginParams, UserCreationParams, ApiResponse } from "@/types";
 
 interface AuthState {
    isAuthenticated: boolean;
+   isVerified: boolean;
    isInitialized: boolean;
    user: User | null;
 }
@@ -12,14 +13,28 @@ interface AuthState {
 type AuthAction =
    | {
         type: "INITIALIZE";
-        payload: { isAuthenticated: boolean; user: User | null };
+        payload: {
+           isAuthenticated: boolean;
+           isVerified: boolean;
+           user: User | null;
+        };
      }
-   | { type: "LOGIN"; payload: { isAuthenticated: true; user: User } }
-   | { type: "LOGOUT"; payload: { isAuthenticated: false; user: null } }
-   | { type: "REGISTER"; payload: { isAuthenticated: true; user: User } };
+   | {
+        type: "LOGIN";
+        payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
+     }
+   | {
+        type: "LOGOUT";
+        payload: { isAuthenticated: boolean; isVerified: boolean; user: null };
+     }
+   | {
+        type: "REGISTER";
+        payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
+     };
 
 const initialState: AuthState = {
    isAuthenticated: false,
+   isVerified: false,
    isInitialized: false,
    user: null
 };
@@ -29,34 +44,37 @@ const handlers: Record<
    (state: AuthState, action: AuthAction) => AuthState
 > = {
    INITIALIZE: (state, action) => {
-      const { isAuthenticated, user } = action.payload;
+      const { isAuthenticated, isVerified, user } = action.payload;
       return {
          ...state,
          isAuthenticated,
+         isVerified,
          isInitialized: true,
          user
       };
    },
    LOGIN: (state, action) => {
-      const { isAuthenticated, user } = action.payload;
+      const { isAuthenticated, isVerified, user } = action.payload;
 
       return {
          ...state,
          isAuthenticated,
+         isVerified,
          user
       };
    },
    LOGOUT: (state, action) => {
-      const { isAuthenticated, user } = action.payload;
+      const { isAuthenticated, isVerified, user } = action.payload;
 
-      return { ...state, isAuthenticated, user: user };
+      return { ...state, isAuthenticated, isVerified, user: user };
    },
    REGISTER: (state, action) => {
-      const { isAuthenticated, user } = action.payload;
+      const { isAuthenticated, isVerified, user } = action.payload;
 
       return {
          ...state,
          isAuthenticated,
+         isVerified,
          user
       };
    }
@@ -102,6 +120,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                   type: "INITIALIZE",
                   payload: {
                      isAuthenticated: true,
+                     isVerified: user.emailConfirmationStatus,
                      user
                   }
                });
@@ -110,6 +129,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                   type: "INITIALIZE",
                   payload: {
                      isAuthenticated: false,
+                     isVerified: false,
                      user: null
                   }
                });
@@ -120,6 +140,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                type: "INITIALIZE",
                payload: {
                   isAuthenticated: false,
+                  isVerified: false,
                   user: null
                }
             });
@@ -140,7 +161,8 @@ function AuthProvider({ children }: AuthProviderProps) {
          type: "LOGIN",
          payload: {
             user,
-            isAuthenticated: true
+            isAuthenticated: true,
+            isVerified: user?.emailConfirmationStatus
          }
       });
    };
@@ -156,8 +178,9 @@ function AuthProvider({ children }: AuthProviderProps) {
       dispatch({
          type: "REGISTER",
          payload: {
+            user,
             isAuthenticated: true,
-            user
+            isVerified: user?.emailConfirmationStatus
          }
       });
    };
@@ -166,7 +189,11 @@ function AuthProvider({ children }: AuthProviderProps) {
       setSession(null);
       dispatch({
          type: "LOGOUT",
-         payload: { user: null, isAuthenticated: false }
+         payload: {
+            user: null,
+            isAuthenticated: false,
+            isVerified: false
+         }
       });
    };
 

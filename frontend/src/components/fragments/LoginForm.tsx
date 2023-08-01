@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
-import { FormObject, LoginParams } from "@/types";
+import { FormObject, LoginParams, RequestError } from "@/types";
+import { Link } from "react-router-dom";
 
 interface LoginErrorObject {
    usernameOrEmail?: string;
@@ -41,22 +42,19 @@ export function LoginForm() {
 
       login(payload)
          .then(() => navigate("/dashboard/home"))
-         .catch((err) => {
-            toast.error(
-               err.response
-                  ? err.response.data.message
-                  : "Something went wrong. Please try again."
-            );
-         })
+         .catch(
+            (err: RequestError) =>
+               err.response && toast.error(err?.response?.data.message)
+         )
          .finally(() => setIsLoading(false));
    };
 
    return (
       <form
          onSubmit={validator.submitter}
-         className="w-full pr-[--global-padding-left]"
+         className="w-full lg:pr-[--global-padding-left]"
       >
-         <h1 className="animate-fade-in-from-right effect-item-0 text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-[4.6875rem]">
+         <h1 className="animate-fade-in-from-right effect-item-0 text-green-feldgrau uppercase font-bold font-avenir-next-lt-pro-bold text-xl 2xl:text-[4.6875rem] mb-5">
             Sign In to Use App.
          </h1>
          <div className="flex flex-col w-full">
@@ -93,9 +91,9 @@ export function LoginForm() {
                Log In
             </Button>
          </div>
-         <div className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
+         <Link to = "/auth/forgot-password"className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
             Forgot Password?
-         </div>
+         </Link>
       </form>
    );
 }

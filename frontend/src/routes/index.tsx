@@ -32,6 +32,12 @@ const LandingPage = Loadable(lazy(() => import("../pages/LandingPage")));
 const LoginOrSignUpPage = Loadable(
    lazy(() => import("../pages/LoginOrSignUpPage"))
 );
+const VerifyEmailPage = Loadable(
+   lazy(() => import("../pages/VerifyEmailPage"))
+);
+const ForgotPassword = Loadable(
+   lazy(() => import("../pages/ForgotPassword"))
+)
 
 // Protected
 const Home = Loadable(lazy(() => import("../pages/Home")));
@@ -56,6 +62,14 @@ export default function Router() {
                      <LoginOrSignUpPage />
                   </GuestGuard>
                )
+            }, 
+            {
+               path: "forgot-password",
+               element: (
+                  <GuestGuard>
+                     <ForgotPassword />
+                  </GuestGuard>
+               )
             }
          ]
       },
@@ -73,7 +87,15 @@ export default function Router() {
                element: <Navigate to="/dashboard/home" replace />,
                index: true
             },
-            { path: "home", element: <Home /> }
+            { path: "home", element: <Home /> },
+            {
+               path: "verify-email/:token",
+               element: (
+                  <GuestGuard>
+                     <VerifyEmailPage />
+                  </GuestGuard>
+               )
+            }
          ]
       },
 

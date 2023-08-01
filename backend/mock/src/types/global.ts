@@ -18,19 +18,18 @@ declare global {
       /** The nested paths. */
       children?: { [keyof: string]: RoutePath };
     }
-    type RoutePathLeaf = {
-      protected?: boolean;
-      handler: RequestHandler;
-    } | RequestHandler;
+    type RoutePathLeaf =
+      | {
+          protected?: boolean;
+          handler: RequestHandler;
+        }
+      | RequestHandler;
 
     type RoutesConfig = {
       [keyof: string]: RoutePathLeaf;
     };
 
-    type RequestHandler = (
-      req: Request,
-      res: Response,
-    ) => unknown;
+    type RequestHandler = (req: Request, res: Response) => unknown;
 
     type ContentType = "text/html" | "application/json";
 
@@ -44,9 +43,7 @@ declare global {
     }
 
     interface ErrorHandler {
-      (
-        options: ErrorHandlerOptions,
-      ): { fatal: boolean; message?: string };
+      (options: ErrorHandlerOptions): { fatal: boolean; message?: string };
     }
 
     interface ErrorHandlerOptions {
@@ -78,7 +75,7 @@ declare global {
   interface User {
     username: string;
     password: string;
-    emailAddress: string;
+    email: string;
     emailConfirmationStatus: boolean;
     rapidFireCheckpoint: string | null;
     quizzesPlayed: number;
@@ -88,7 +85,7 @@ declare global {
 
   interface CreateUserResponse {
     status: "success";
-    message: "registration successful, kindly check your email for next step";
+    message: string;
     data: {
       token: string;
       user: Exclude<User, "password"> & {
@@ -157,16 +154,20 @@ declare global {
 
   type Level = 0 | 1 | 2 | 3 | 4;
 
-  type Topic =
-    & { title: string }
-    & {
-      [key in LevelProperty]: Question[];
-    };
+  type Topic = { title: string } & {
+    [key in LevelProperty]: Question[];
+  };
 
   interface RandomQuestionParams {
     number: number;
     level: Level;
     categoryName?: Categories;
+  }
+
+  interface Quiz {
+    name: string;
+    level: Level;
+    questions: Question[];
   }
 
   type ErrorType = number;

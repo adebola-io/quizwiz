@@ -6,7 +6,6 @@ const isValidToken = (accessToken: string) => {
       return false;
    }
    const decoded: { exp: number } = jwtDecode(accessToken);
-   console.log(decoded);
    const currentTime = Date.now() / 1000;
 
    return decoded.exp > currentTime;

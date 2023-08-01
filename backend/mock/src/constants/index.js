@@ -1,6 +1,7 @@
 // const ERROR_TYPES = require("../../../json/error-codes.json");
 const JWT_SECRET = process.env.JWT_SECRET || "SOME_STRING";
 const PORT = process.env.PORT || 4174;
+const QUESTIONS_PER_QUIZ = 20;
 
 // Duplicated as type because JSDoc doesn't preserve literal types.
 /**
@@ -17,9 +18,23 @@ const TOKENS = {
    PASSWORD_RESET: 1,
 };
 
+/**
+ * @type {{[keyof: number]: string}}
+ */
+const CATEGORIES = {
+   1: "History, Politics and Geography",
+   2: "Language and Literature",
+   3: "Mathematics",
+   4: "Pop Culture",
+   5: "Sports",
+   6: "Technology",
+};
+
 module.exports = {
    // ERROR_TYPES,
    JWT_SECRET,
    PORT,
    TOKENS,
+   CATEGORIES,
+   QUESTIONS_PER_QUIZ,
 };

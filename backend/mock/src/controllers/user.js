@@ -43,10 +43,10 @@ function addNewUser(req) {
    const users = db.getUsers();
    for (const { data: previousUser } of users) {
       if (previousUser.username == username) {
-         throw new ServerError(`${username} already exists.`, 401);
+         throw new ServerError(`${username} already exists.`, 400);
       }
-      if (previousUser.emailAddress == email) {
-         throw new ServerError(`${email} already exists.`, 401);
+      if (previousUser.email == email) {
+         throw new ServerError(`${email} already exists.`, 400);
       }
    }
    const hashedPassword = bcrypt.hashSync(password, 10);
@@ -55,12 +55,12 @@ function addNewUser(req) {
    const userData = {
       username,
       password: hashedPassword,
-      emailAddress: email,
+      email: email,
       emailConfirmationStatus: false,
       quizzesPlayed: 0,
       rapidFireCheckpoint: null,
       stars: 0,
-      successRate: 0,
+      successRate: 0
    };
 
    const metadata = users.add(userData);
@@ -74,9 +74,9 @@ function addNewUser(req) {
          user: {
             ...userData,
             password: undefined,
-            ...metadata,
-         },
-      },
+            ...metadata
+         }
+      }
    };
    const tokenProvider = db.getTokenProvider();
    const emailService = db.getEmailService();
@@ -85,9 +85,10 @@ function addNewUser(req) {
       userData
    );
    emailService.sendEmail(
-      userData.emailAddress,
+      userData.email,
       `Welcome to QuizApp. To verify your email, use the token ${value}.`
    );
+   logger.inform(`Visit http://localhost:5173/dashboard/verify-email/${value}`);
 
    return response;
 }
@@ -117,9 +118,9 @@ function getUserProfile(req) {
             ...record.data,
             role: "user",
             password: undefined,
-            ...record.metadata,
-         },
-      },
+            ...record.metadata
+         }
+      }
    };
 }
 
@@ -161,30 +162,30 @@ function loginUser(req) {
          401
       );
    }
-   const { username, email, password } = req.body;
-   if (typeof username !== "string" && typeof email !== "string") {
+   const { username, password } = req.body;
+   let email = utils.isValidEmail(username) ? username : undefined;
+   if (typeof username !== "string") {
       throw new ServerError("Email/Username and Password must be provided.");
    }
    const users = db.getUsers();
    const record = users.find(
-      (user) =>
-         user.data.username === username || user.data.emailAddress === email
+      (user) => user.data.username === username || user.data.email === email
    );
    if (!record) {
-      throw new ServerError("Invalid email, username or password.", 404);
+      throw new ServerError("Invalid email, username or password.", 400);
    }
    if (!bcrypt.compareSync(password, record.data.password)) {
-      throw new ServerError("Invalid email, username or password.", 401);
+      throw new ServerError("Invalid email, username or password.", 400);
    }
    /**@type {CreateUserResponse} */
    let response = {
       status: "success",
-      message: "registration successful, kindly check your email for next step",
+      message: "Login Successful",
       data: {
          token: generateUserToken(record.metadata._id),
          //@ts-ignore
-         user: { ...record.data, password: undefined, ...record.metadata },
-      },
+         user: { ...record.data, password: undefined, ...record.metadata }
+      }
    };
    logger.inform(`User "${username}" logged in.`);
    return response;
@@ -233,7 +234,7 @@ function verifyEmail(req) {
 
    return {
       status: "success",
-      message: "Email successfully activated.",
+      message: "Email successfully activated."
    };
 }
 
@@ -269,12 +270,15 @@ function resendVerificationEmail(req) {
    const emailService = db.getEmailService();
    const { value } = tokenProvider.generate(TOKENS.EMAIL_VERIFICATION, user);
    emailService.sendEmail(
-      user.emailAddress,
+      user.email,
       `To verify your email, use the token ${value}.`
    );
+
+   logger.inform(`Visit http://localhost:5173/dashboard/verify-email/${value}`);
+
    return {
       status: "success",
-      message: "Verification email sent successfully!",
+      message: "Verification email sent successfully!"
    };
 }
 
@@ -297,9 +301,7 @@ function handleForgotPassword(req) {
       throw new ServerError("Invalid email.");
    }
    const users = db.getUsers();
-   const user = users.find(
-      (record) => record.data.emailAddress === email
-   )?.data;
+   const user = users.find((record) => record.data.email === email)?.data;
    if (!user) {
       throw new ServerError("User not found.", 401);
    }
@@ -307,12 +309,15 @@ function handleForgotPassword(req) {
    const tokenProvider = db.getTokenProvider();
    const { value } = tokenProvider.generate(TOKENS.PASSWORD_RESET, email);
    emailService.sendEmail(
-      user.emailAddress,
+      user.email,
       `To change your password, use the token "${value}".`
+   );
+   logger.inform(
+      `Visit http://localhost:5173/auth/reset-password/${value}`
    );
    return {
       status: "success",
-      message: "Message sent to your email, kindly check.",
+      message: "Message sent to your email, kindly check."
    };
 }
 
@@ -350,9 +355,7 @@ function resetPassword(req) {
       );
    }
    const users = db.getUsers();
-   const record = users.find(
-      (record) => record.data.emailAddress === token.reference
-   );
+   const record = users.find((record) => record.data.email === token.reference);
    record.data.password = bcrypt.hashSync(password, 10);
    record.metadata.updatedAt = new Date().toISOString();
    tokenProvider.deleteToken(token);
@@ -360,37 +363,37 @@ function resetPassword(req) {
    logger.inform(`Password changed for user "${record.data.username}".`);
    return {
       status: "success",
-      message: "Password was reset successfully.",
+      message: "Password was reset successfully."
    };
 }
 
-/**
- * Returns the metrics of a user so far.
- * @protected
- * @route "/user/stats"
- * @param {apigen.Request} req
- * @throws {apigen.ServerError}
- * @return {UserStatsResponse}
- */
-function getUserStats(req) {
-   if (req.method !== "GET") {
-      throw new ServerError(
-         `${req.method} /user/stats is not a valid route.`,
-         401
-      );
-   }
-   /**@type {User} */
-   const user = req["user"];
-   let quizzesPlayed = user.quizzesPlayed;
-   let stars = user.stars;
-   let successRate = user.successRate;
-   logger.inform(`GET /user/stats for "${user.username}"`);
-   return {
-      quizzesPlayed,
-      stars,
-      successRate,
-   };
-}
+// /**
+//  * Returns the metrics of a user so far.
+//  * @protected
+//  * @route "/user/stats"
+//  * @param {apigen.Request} req
+//  * @throws {apigen.ServerError}
+//  * @return {UserStatsResponse}
+//  */
+// function getUserStats(req) {
+//    if (req.method !== "GET") {
+//       throw new ServerError(
+//          `${req.method} /user/stats is not a valid route.`,
+//          401
+//       );
+//    }
+//    /**@type {User} */
+//    const user = req["user"];
+//    let quizzesPlayed = user.quizzesPlayed;
+//    let stars = user.stars;
+//    let successRate = user.successRate;
+//    logger.inform(`GET /user/stats for "${user.username}"`);
+//    return {
+//       quizzesPlayed,
+//       stars,
+//       successRate,
+//    };
+// }
 
 /**
  * Updates the metrics of a user.
@@ -422,7 +425,7 @@ function updateStats(req) {
    logger.inform(`Metrics for user "${user.username}" updated.`);
    return {
       status: "success",
-      message: "Stats updated successfully.",
+      message: "Stats updated successfully."
    };
 }
 
@@ -432,19 +435,19 @@ function updateStats(req) {
  */
 function generateUserToken(id) {
    return jwt.sign({ id }, JWT_SECRET, {
-      expiresIn: "20d",
+      expiresIn: "20d"
    });
 }
 
 module.exports = {
    addNewUser,
    deleteUser,
-   getUserStats,
+   // getUserStats,
    getUserProfile,
    handleForgotPassword,
    loginUser,
    resendVerificationEmail,
    resetPassword,
    updateStats,
-   verifyEmail,
+   verifyEmail
 };

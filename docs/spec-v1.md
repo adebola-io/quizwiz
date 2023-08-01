@@ -158,7 +158,8 @@ To return a list of random [questions](#question), given a `number`, a specified
 1. Let `questions` be a new list or array.
 2. Let `categoryList` be an array of [categories](#category).
 3. If `category` is defined, add `category` to `categoryList`. Else, add all 6 categories to `categoryList`.
-4. While the length of `questions` is less than `number`:
+4. Implementations can determine a MAX_ITERATION_COUNT, to prevent forever loops on insufficient topics and levels.
+5. While the length of `questions` is less than `number` and MAX_ITERATION_COUNT has not been surpassed:
 
    -  For each topic in each category in `categoryList`:
 
@@ -171,7 +172,7 @@ To return a list of random [questions](#question), given a `number`, a specified
             -  Replace question with another random question.
          -  Add question to `questions`.
 
-5. Return a shuffled version of `questions`.
+6. Return a shuffled version of `questions`.
 
 ---
 
