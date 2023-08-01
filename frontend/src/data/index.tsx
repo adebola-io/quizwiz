@@ -747,26 +747,33 @@ export const categories: CategoryStore = {
 interface LevelObject {
    name: string;
    theme: string;
+   /** How long a question lasts in this level. */
+   timerValue: number;
 }
 export const levels: LevelObject[] = [
    {
       name: "Beginner",
-      theme: "#B9C0F9"
-   },
-   {
-      name: "Standard",
-      theme: "#FFC7E8"
+      theme: "#B9C0F9",
+      timerValue: 15
    },
    {
       name: "Simple",
-      theme: "#B5FFB4"
+      theme: "#FFC7E8",
+      timerValue: 13
+   },
+   {
+      name: "Standard",
+      theme: "#B5FFB4",
+      timerValue: 10
    },
    {
       name: "Complex",
-      theme: "#FFE2AB"
+      theme: "#FFE2AB",
+      timerValue: 10
    },
    {
       name: "Expert",
-      theme: "#00625C"
+      theme: "#00625C",
+      timerValue: 8
    }
 ];

@@ -4,3 +4,6 @@ export * from "./SignUpForm";
 export * from "./CategoryList";
 export * from "./Category";
 export * from "./QuizStart";
+export * from "./QuizBox";
+export * from "./Eclipses";
+export * from "./QuizEnd";

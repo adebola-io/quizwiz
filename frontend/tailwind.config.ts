@@ -11,6 +11,7 @@ const config: Config = {
             "fine-purple": "#c20275",
             "royal-red": "#c00073",
             "error-red": "#930202",
+            "indigo-dye": "#284B63",
             purple: {
                "raisin-black": "#1a1423",
                "english-violet": "#3d314a",

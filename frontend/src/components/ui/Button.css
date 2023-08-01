@@ -12,8 +12,7 @@
    transition-duration: 300ms;
 }
 
-.app_button.filled:hover,
-.app_button.outlined:hover {
+.app_button:not(:disabled):hover {
    transform: scale(0.95) translateX(-3%);
    box-shadow: 0 0 0 0;
 }
@@ -48,7 +47,7 @@
    background: transparent;
    color: var(--green-charcoal, #2f3e46);
 }
-.app_button.outlined:hover {
+.app_button.outlined:not(:disabled):hover {
    background-color: var(--green-charcoal, #2f3e46);
    color: var(--green-ash-gray, #cad2c5);
 }

@@ -88,8 +88,11 @@ class ModalStore extends EventTarget {
          },
          open(options) {
             outerThis.isOpen = true;
-            outerThis.closeOnClickOutside =
-               options?.closeOnClickOutside || true;
+            if (options?.closeOnClickOutside === undefined) {
+               outerThis.closeOnClickOutside = true;
+            } else {
+               outerThis.closeOnClickOutside = options.closeOnClickOutside;
+            }
             outerThis.update();
          },
          morph(props) {

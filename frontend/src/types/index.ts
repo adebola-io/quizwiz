@@ -101,8 +101,23 @@ export interface ModalProps {
    closeOnClickOutside?: boolean;
 }
 
-export interface Quiz {}
+export interface Quiz {
+   name: string;
+   level: Level;
+   questions: Question[];
+}
+export interface Question {
+   id: string;
+   prompt: string;
+   options: [string, string, string, string];
+   level: Level;
+   correctAnswer: 0 | 1 | 2 | 3 | 4;
+}
 
 export type CategoryResponse = ApiResponse<{
    quiz: Quiz;
+}>;
+
+export type RandomQuizResponse = ApiResponse<{
+   questions: Question[];
 }>;

@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { ForwardedRef, MouseEvent, forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Property } from "csstype";
 import { Loader } from "@/components/ui";
@@ -38,55 +38,60 @@ type ButtonProps = {
 /**
  * Generic button component.
  */
-export function Button(props: ButtonProps) {
-   const disabled = props.isLoading || props.disabled;
+export const Button = forwardRef(
+   (props: ButtonProps, ref: ForwardedRef<HTMLElement>) => {
+      const disabled = props.isLoading || props.disabled;
 
-   const className = clsxm(
-      "app_button",
-      props.size ?? "normal",
-      props.variant ?? "filled",
-      props.className
-   );
+      const className = clsxm(
+         "app_button",
+         props.size ?? "normal",
+         props.variant ?? "filled",
+         props.disabled ? "opacity-[0.5]" : "",
+         props.className
+      );
 
-   return props.as === "link" ? (
-      <Link
-         onClick={props.onClick}
-         style={{
-            height: props.height,
-            width: props.width,
-            ...(props.style ?? {})
-         }}
-         className={className}
-         to={props.to}
-      >
-         {props.children}
-      </Link>
-   ) : (
-      <button
-         onClick={props.onClick}
-         type={props.type ?? "button"}
-         disabled={disabled}
-         style={{
-            height: props.height,
-            width: props.width,
-            ...(props.style ?? {})
-         }}
-         className={className}
-      >
-         {props.isLoading ? (
-            <Loader
-               className="animate-pop"
-               style={{
-                  animationDuration: "300ms"
-               }}
-               size={40}
-               variant="outlined"
-               color={props.loaderColor ?? "white"}
-               shadow={false}
-            />
-         ) : (
-            props.children
-         )}
-      </button>
-   );
-}
+      return props.as === "link" ? (
+         <Link
+            ref={ref as ForwardedRef<HTMLAnchorElement>}
+            onClick={props.onClick}
+            style={{
+               height: props.height,
+               width: props.width,
+               ...(props.style ?? {})
+            }}
+            className={className}
+            to={props.to}
+         >
+            {props.children}
+         </Link>
+      ) : (
+         <button
+            ref={ref as ForwardedRef<HTMLButtonElement>}
+            onClick={props.onClick}
+            type={props.type ?? "button"}
+            disabled={disabled}
+            style={{
+               height: props.height,
+               width: props.width,
+               ...(props.style ?? {})
+            }}
+            className={className}
+         >
+            {props.isLoading ? (
+               <Loader
+                  className="animate-pop"
+                  style={{
+                     animationDuration: "300ms"
+                  }}
+                  size={40}
+                  variant="outlined"
+                  color={props.loaderColor ?? "white"}
+                  shadow={false}
+               />
+            ) : (
+               props.children
+            )}
+         </button>
+      );
+   }
+);

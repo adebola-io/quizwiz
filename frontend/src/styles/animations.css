@@ -56,11 +56,11 @@
 
 @keyframes pop {
    0% {
-      transform: scale(0.9);
+      scale: 0.9;
       opacity: 0;
    }
    70% {
-      transform: scale(1.05);
+      scale: 1.05;
    }
 }
 
