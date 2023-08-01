@@ -1,9 +1,883 @@
 {
-   "title": "Stats and History",
-   "category": "Sports",
-   "level0": [],
-   "level1": [],
-   "level2": [],
-   "level3": [],
-   "level4": []
+  "title": "Stats and History",
+  "category": "Sports",
+  "level0": [
+    {
+      "prompt": "Which country hosted the 2008 Summer Olympics?",
+      "options": ["United States", "China", "Japan", "Australia"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Who holds the record for the most career goals in FIFA World Cup history?",
+      "options": ["Pele", "Diego Maradona", "Ronaldo", "Marta"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which athlete has won the most Olympic gold medals in history?",
+      "options": [
+        "Usain Bolt",
+        "Michael Phelps",
+        "Serena Williams",
+        "Simone Biles"
+      ],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which team won the first-ever FIFA Women's World Cup in 1991?",
+      "options": ["United States", "Germany", "Norway", "Brazil"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport did Michael Jordan become a legendary figure?",
+      "options": ["Basketball", "Golf", "Tennis", "Football"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the NBA?",
+      "options": [
+        "Kareem Abdul-Jabbar",
+        "LeBron James",
+        "Michael Jordan",
+        "Kobe Bryant"
+      ],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Winter Olympics?",
+      "options": ["Norway", "United States", "Germany", "Canada"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Who holds the record for the most Grand Slam tennis titles (singles) in history?",
+      "options": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Serena Williams",
+        "Novak Djokovic"
+      ],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which team won the first-ever Super Bowl in 1967?",
+      "options": [
+        "Green Bay Packers",
+        "Kansas City Chiefs",
+        "Pittsburgh Steelers",
+        "Dallas Cowboys"
+      ],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Who was the first athlete to complete a sub-four-minute mile?",
+      "options": ["Roger Bannister", "Usain Bolt", "Carl Lewis", "Jesse Owens"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which boxer is known for his famous 'Rumble in the Jungle' match?",
+      "options": [
+        "Mike Tyson",
+        "Muhammad Ali",
+        "Floyd Mayweather Jr.",
+        "Manny Pacquiao"
+      ],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which country has won the most FIFA World Cup titles in men's Football?",
+      "options": ["Brazil", "Germany", "Italy", "Argentina"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Who is the first gymnast in history to be awarded a perfect score of 10 in the Olympics?",
+      "options": [
+        "Nadia Comăneci",
+        "Simone Biles",
+        "Mary Lou Retton",
+        "Olga Korbut"
+      ],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which country hosted the 2010 FIFA World Cup?",
+      "options": ["Brazil", "South Africa", "France", "Spain"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Who is the first Formula 1 driver to win seven World Drivers' Championships?",
+      "options": [
+        "Lewis Hamilton",
+        "Ayrton Senna",
+        "Michael Schumacher",
+        "Sebastian Vettel"
+      ],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which team won the first-ever Rugby World Cup in 1987?",
+      "options": ["New Zealand", "South Africa", "Australia", "England"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Who was the first female athlete to appear on the front of a Wheaties cereal box?",
+      "options": [
+        "Serena Williams",
+        "Mia Hamm",
+        "Lindsey Vonn",
+        "Mary Lou Retton"
+      ],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "Which country has the most Olympic gold medals in men's ice hockey?",
+      "options": ["Canada", "Soviet Union", "Sweden", "United States"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Who holds the record for the most home runs in a single MLB season?",
+      "options": ["Babe Ruth", "Barry Bonds", "Mark McGwire", "Hank Aaron"],
+      "correctAnswer": 1,
+      "level": 0
+    }
+  ],
+  "level1": [
+    {
+      "prompt": "Who won the FIFA Women's World Cup in 2019?",
+      "options": ["United States", "France", "Germany", "Netherlands"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Summer Olympics?",
+      "options": ["United States", "China", "Russia", "Great Britain"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Who holds the record for the most career home runs in MLB?",
+      "options": ["Barry Bonds", "Hank Aaron", "Babe Ruth", "Alex Rodriguez"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first FIFA World Cup in 1930?",
+      "options": ["Brazil", "Uruguay", "Argentina", "Italy"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in NBA history?",
+      "options": [
+        "Michael Jordan",
+        "LeBron James",
+        "Kareem Abdul-Jabbar",
+        "Kobe Bryant"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "Which athlete won the most gold medals in a single Olympic Games?",
+      "options": ["Michael Phelps", "Usain Bolt", "Carl Lewis", "Simone Biles"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first Cricket World Cup in 1975?",
+      "options": ["England", "Australia", "India", "West Indies"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "Which NFL team has the most Super Bowl wins?",
+      "options": [
+        "Pittsburgh Steelers",
+        "New England Patriots",
+        "Dallas Cowboys",
+        "San Francisco 49ers"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Who won the Formula 1 World Drivers' Championship in 2020?",
+      "options": [
+        "Lewis Hamilton",
+        "Sebastian Vettel",
+        "Max Verstappen",
+        "Valtteri Bottas"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country hosted the 2016 Summer Olympics?",
+      "options": ["China", "Brazil", "Russia", "United Kingdom"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Who won the men's singles title at the French Open in 2021?",
+      "options": [
+        "Novak Djokovic",
+        "Rafael Nadal",
+        "Roger Federer",
+        "Dominic Thiem"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which team won the first NBA Championship in 1947?",
+      "options": [
+        "Chicago Stags",
+        "Philadelphia Warriors",
+        "Boston Celtics",
+        "Minneapolis Lakers"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first Rugby World Cup in 1987?",
+      "options": ["New Zealand", "Australia", "England", "South Africa"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Who is the all-time leading goal scorer in international men's Football?",
+      "options": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Pelé",
+        "Miroslav Klose"
+      ],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first ICC T20 Cricket World Cup in 2007?",
+      "options": ["India", "Pakistan", "Australia", "England"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which MLB team has the most World Series titles?",
+      "options": [
+        "New York Yankees",
+        "Los Angeles Dodgers",
+        "St. Louis Cardinals",
+        "Boston Red Sox"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Who won the women's singles title at Wimbledon in 2021?",
+      "options": [
+        "Ashleigh Barty",
+        "Serena Williams",
+        "Simona Halep",
+        "Naomi Osaka"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first Men's Hockey World Cup in 1971?",
+      "options": ["India", "Pakistan", "Netherlands", "Australia"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in NHL history?",
+      "options": [
+        "Wayne Gretzky",
+        "Mario Lemieux",
+        "Jaromir Jagr",
+        "Gordie Howe"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which country won the first African Cup of Nations in football in 1957?",
+      "options": ["Egypt", "Ghana", "Nigeria", "South Africa"],
+      "correctAnswer": 1,
+      "level": 1
+    }
+  ],
+  "level2": [
+    {
+      "prompt": "Who holds the record for the most career Grand Slam singles titles in tennis?",
+      "options": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Novak Djokovic",
+        "Pete Sampras"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Winter Olympics?",
+      "options": ["Norway", "United States", "Germany", "Russia"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the English Premier League?",
+      "options": [
+        "Alan Shearer",
+        "Wayne Rooney",
+        "Thierry Henry",
+        "Sergio Agüero"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which athlete won the most gold medals in the history of the Olympic Games?",
+      "options": [
+        "Michael Phelps",
+        "Larisa Latynina",
+        "Usain Bolt",
+        "Paavo Nurmi"
+      ],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "Which MLB team has the longest championship drought as of 2023?",
+      "options": [
+        "Chicago Cubs",
+        "Cleveland Indians",
+        "San Diego Padres",
+        "Seattle Mariners"
+      ],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the Ballon d'Or award for the best men's football player in 2021?",
+      "options": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Robert Lewandowski",
+        "Neymar Jr."
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country won the first Rugby World Cup Sevens tournament in 1993?",
+      "options": ["New Zealand", "England", "Fiji", "Australia"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the NBA?",
+      "options": [
+        "Kareem Abdul-Jabbar",
+        "Karl Malone",
+        "LeBron James",
+        "Kobe Bryant"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which team won the UEFA Champions League in 2020-2021 season?",
+      "options": ["Chelsea", "Manchester City", "Real Madrid", "Bayern Munich"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who was the first woman to score a perfect 10 in Olympic gymnastics?",
+      "options": [
+        "Nadia Comăneci",
+        "Simone Biles",
+        "Olga Korbut",
+        "Mary Lou Retton"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country hosted the first-ever FIFA World Cup in 1930?",
+      "options": ["Brazil", "Uruguay", "Argentina", "Italy"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the men's singles title at the US Open in 2021?",
+      "options": [
+        "Novak Djokovic",
+        "Rafael Nadal",
+        "Dominic Thiem",
+        "Daniil Medvedev"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which NFL team has the most Super Bowl appearances?",
+      "options": [
+        "Pittsburgh Steelers",
+        "New England Patriots",
+        "Dallas Cowboys",
+        "San Francisco 49ers"
+      ],
+      "correctAnswer": 3,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the Formula 1 World Drivers' Championship in 2019?",
+      "options": [
+        "Lewis Hamilton",
+        "Sebastian Vettel",
+        "Max Verstappen",
+        "Valtteri Bottas"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country won the first Women's Hockey World Cup in 1974?",
+      "options": ["Netherlands", "Germany", "Australia", "United States"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who holds the record for the most career points in NHL history?",
+      "options": [
+        "Wayne Gretzky",
+        "Mark Messier",
+        "Gordie Howe",
+        "Jaromir Jagr"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country won the first ICC Women's T20 Cricket World Cup in 2009?",
+      "options": ["England", "Australia", "New Zealand", "India"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the men's singles title at the Australian Open in 2021?",
+      "options": [
+        "Novak Djokovic",
+        "Rafael Nadal",
+        "Dominic Thiem",
+        "Daniil Medvedev"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Which country won the first-ever ICC Cricket World Cup in 1975?",
+      "options": ["West Indies", "Australia", "England", "India"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "Who won the women's singles title at the French Open in 2021?",
+      "options": [
+        "Ashleigh Barty",
+        "Serena Williams",
+        "Simona Halep",
+        "Naomi Osaka"
+      ],
+      "correctAnswer": 0,
+      "level": 2
+    }
+  ],
+  "level3": [
+    {
+      "prompt": "Which athlete has the most Olympic gold medals of all time?",
+      "options": [
+        "Michael Phelps",
+        "Usain Bolt",
+        "Larisa Latynina",
+        "Carl Lewis"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the youngest player to score a goal in the history of the FIFA World Cup?",
+      "options": ["Pele", "Kylian Mbappe", "Diego Maradona", "Lionel Messi"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Summer Olympics?",
+      "options": ["United States", "Russia", "Germany", "China"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who holds the record for the most triple-doubles in NBA history?",
+      "options": [
+        "Magic Johnson",
+        "LeBron James",
+        "Russell Westbrook",
+        "Oscar Robertson"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which team has won the most Super Bowl titles in NFL history?",
+      "options": [
+        "Pittsburgh Steelers",
+        "New England Patriots",
+        "Dallas Cowboys",
+        "Green Bay Packers"
+      ],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the all-time leading goal scorer in the history of the UEFA Champions League?",
+      "options": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Raul",
+        "Robert Lewandowski"
+      ],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Which country won the first-ever ICC Women's Cricket World Cup in 1973?",
+      "options": ["England", "Australia", "India", "New Zealand"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who holds the record for the most home runs in a single MLB season?",
+      "options": ["Barry Bonds", "Mark McGwire", "Babe Ruth", "Sammy Sosa"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Which athlete has won the most World Championships medals in track and field?",
+      "options": [
+        "Usain Bolt",
+        "Allyson Felix",
+        "Carl Lewis",
+        "Michael Johnson"
+      ],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of Test cricket?",
+      "options": [
+        "Sachin Tendulkar",
+        "Ricky Ponting",
+        "Jacques Kallis",
+        "Rahul Dravid"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Which country has won the most FIFA World Cup titles in men's football?",
+      "options": ["Brazil", "Germany", "Italy", "Argentina"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who was the first woman to complete a solo flight across the Atlantic Ocean?",
+      "options": [
+        "Amelia Earhart",
+        "Bessie Coleman",
+        "Harriet Quimby",
+        "Jacqueline Cochran"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Which boxer has the highest knockout percentage in heavyweight boxing history?",
+      "options": [
+        "Mike Tyson",
+        "George Foreman",
+        "Rocky Marciano",
+        "Deontay Wilder"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Who won the men's singles title at Wimbledon in 2021?",
+      "options": [
+        "Roger Federer",
+        "Rafael Nadal",
+        "Novak Djokovic",
+        "Daniil Medvedev"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which country has won the most Rugby World Cup titles?",
+      "options": ["New Zealand", "Australia", "South Africa", "England"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the oldest player to win a PGA Tour event?",
+      "options": ["Phil Mickelson", "Tiger Woods", "Vijay Singh", "Tom Watson"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Which athlete has the most career Olympic medals (including non-gold medals)?",
+      "options": [
+        "Larisa Latynina",
+        "Michael Phelps",
+        "Usain Bolt",
+        "Paavo Nurmi"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "Who holds the record for the most assists in a single NBA game?",
+      "options": [
+        "John Stockton",
+        "Magic Johnson",
+        "Scott Skiles",
+        "Chris Paul"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which country won the first ICC Men's T20 Cricket World Cup in 2007?",
+      "options": ["India", "Pakistan", "Australia", "Sri Lanka"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the NHL?",
+      "options": [
+        "Wayne Gretzky",
+        "Gordie Howe",
+        "Mario Lemieux",
+        "Jaromir Jagr"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    }
+  ],
+  "level4": [
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the UEFA Champions League?",
+      "options": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Raul",
+        "Robert Lewandowski"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only athlete to win the FIFA World Cup, UEFA Champions League, and Ballon d'Or in the same year?",
+      "options": ["Pele", "Diego Maradona", "Zinedine Zidane", "Lionel Messi"],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "Which country has won the most gold medals in the history of the Summer Olympics?",
+      "options": ["United States", "China", "Soviet Union", "Germany"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who holds the record for the most consecutive wins in professional boxing without a loss?",
+      "options": [
+        "Floyd Mayweather Jr.",
+        "Rocky Marciano",
+        "Muhammad Ali",
+        "Joe Louis"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which team has won the most NBA championships in league history?",
+      "options": [
+        "Los Angeles Lakers",
+        "Boston Celtics",
+        "Chicago Bulls",
+        "Golden State Warriors"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Who holds the record for the fastest century in Test cricket by balls faced?",
+      "options": [
+        "Vivian Richards",
+        "Brendon McCullum",
+        "Adam Gilchrist",
+        "David Warner"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the first-ever Rugby World Cup in 1987?",
+      "options": ["New Zealand", "Australia", "South Africa", "England"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the oldest player to win a Grand Slam singles title in tennis?",
+      "options": [
+        "Serena Williams",
+        "Roger Federer",
+        "Rafael Nadal",
+        "Martina Navratilova"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which athlete won the most medals in the history of the Winter Olympics?",
+      "options": [
+        "Marit Bjorgen",
+        "Ole Einar Bjorndalen",
+        "Apolo Anton Ohno",
+        "Raisa Smetanina"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the all-time leading scorer in the history of the UEFA European Championship (Euro)?",
+      "options": [
+        "Cristiano Ronaldo",
+        "Michel Platini",
+        "Thierry Henry",
+        "Wayne Rooney"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country has won the most Cricket World Cup titles?",
+      "options": ["Australia", "India", "West Indies", "England"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who holds the record for the most points scored in a single NBA game?",
+      "options": [
+        "Wilt Chamberlain",
+        "Kobe Bryant",
+        "Michael Jordan",
+        "Elgin Baylor"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which golfer has the most major championships wins in men's golf?",
+      "options": [
+        "Jack Nicklaus",
+        "Tiger Woods",
+        "Walter Hagen",
+        "Gary Player"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only athlete to win the FIFA World Cup three times as a player?",
+      "options": [
+        "Pele",
+        "Diego Maradona",
+        "Franz Beckenbauer",
+        "Zinedine Zidane"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Paralympic Games?",
+      "options": ["China", "United States", "Great Britain", "Germany"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who holds the record for the most assists in a single NHL season?",
+      "options": [
+        "Wayne Gretzky",
+        "Bobby Orr",
+        "Mario Lemieux",
+        "Jaromir Jagr"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country has won the most Davis Cup titles in men's tennis?",
+      "options": ["United States", "Australia", "France", "Spain"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only athlete to win the Laureus World Sports Awards Sportsman of the Year five times?",
+      "options": [
+        "Usain Bolt",
+        "Roger Federer",
+        "Michael Phelps",
+        "Lionel Messi"
+      ],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Which country won the first ICC Men's Cricket World Cup in 1975?",
+      "options": ["West Indies", "Australia", "England", "India"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "Who is the only athlete to win the FIFA World Cup Golden Boot three times?",
+      "options": [
+        "Just Fontaine",
+        "Miroslav Klose",
+        "Gary Lineker",
+        "Thomas Müller"
+      ],
+      "correctAnswer": 1,
+      "level": 4
+    }
+  ]
 }

@@ -1,7 +1,98 @@
 {
    "title": "Meaning of Words",
    "category": "Language and Literature",
-   "level0": [],
+   "level0": [ {
+         "prompt": "The word POIGNANT means?",
+         "options": ["evoking a keen sense of sadness", "a feeling of depression", "a joyful expression", "a moody feeling"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "EXEMPTION is used to denote?",
+         "options": ["an act of disqualification", "immunity from a task", "vulnerability to an event", "accountability to a task"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+       {
+         "prompt": "We use INTEND when we want to express?",
+         "options": ["a plan", "an idea", "a vision", "a process"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+       {
+         "prompt": "The word COMMIT means?",
+         "options": ["take responsibility for a task", "help somebody accomplish a task", "put a task in someone's care", "put somebody under a watch"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+       {
+         "prompt": "To OBTAIN is?",
+         "options": ["forcefully take what is yours", "get an item", "give an item", "drop an item"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+       {
+         "prompt": "SCARCE is used to denote?",
+         "options": ["unavailable", "not sufficient", "cannot be obtained", "costly"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+       {
+         "prompt": "What is the meaning of OPAQUE?",
+         "options": ["transparent", "invisible", "not easily seen", "clear"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "The word CONSTANT means?",
+         "options": ["unstable", "fixed", "changing", "variable"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "We use AFFECT when we want to express?",
+         "options": ["the cause of an action", "an influence on something", "the result of an action", "none of the above"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "To GRANT means?",
+         "options": ["to allow", "to free", "to gain", "to refuse "],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "WANDER is used to denote?",
+         "options": ["moving about", "moving freely", "moving quickly", "moving round"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+       {
+         "prompt": "To be PESSIMISTIC is to be?",
+         "options": ["hopeful", "negative", "doubtful", "scared"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+       {
+         "prompt": "To be UNAWARE means",
+         "options": ["not available", "not informed", "not prepared", "none of the above"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "The word COMPEL denotes?",
+         "options": ["to plead with somebody to do a task", "to force somebody to do a task", "to assist somebody to do a task", "to convince somebody to do a task"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "What is the meaning of the word CONTEND?",
+         "options": ["to draw", "to envy", "to compete", "to argue"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+   
+   ],
    "level1": [],
    "level2": [],
    "level3": [],

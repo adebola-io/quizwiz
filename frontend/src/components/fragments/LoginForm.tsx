@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
 import { FormObject, LoginParams, RequestError } from "@/types";
-import { AxiosError } from "axios";
+import { Link } from "react-router-dom";
 
 interface LoginErrorObject {
    usernameOrEmail?: string;
@@ -43,17 +43,8 @@ export function LoginForm() {
       login(payload)
          .then(() => navigate("/dashboard/home"))
          .catch(
-            (
-               err: AxiosError<RequestError["response"]["data"]> | RequestError
-            ) => {
-               if (err.response === undefined && err instanceof AxiosError) {
-                  toast.error(err?.message);
-               } else {
-                  toast.error(
-                     err?.response?.data.message ?? "Something went wrong"
-                  );
-               }
-            }
+            (err: RequestError) =>
+               err.response && toast.error(err?.response?.data.message)
          )
          .finally(() => setIsLoading(false));
    };
@@ -100,9 +91,9 @@ export function LoginForm() {
                Log In
             </Button>
          </div>
-         <div className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
+         <Link to = "/auth/forgot-password"className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
             Forgot Password?
-         </div>
+         </Link>
       </form>
    );
 }

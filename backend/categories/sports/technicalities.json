@@ -1,9 +1,610 @@
 {
-   "title": "Technicalities",
-   "category": "Sports",
-   "level0": [],
-   "level1": [],
-   "level2": [],
-   "level3": [],
-   "level4": []
+  "title": "Technicalities",
+  "category": "Sports",
+  "level0": [
+    {
+      "prompt": "In basketball, how many players from each team are allowed on the court during gameplay?",
+      "options": ["4 players", "5 players", "6 players", "7 players"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In soccer, what is the maximum number of substitutions allowed per team in a standard match?",
+      "options": [
+        "2 substitutions",
+        "3 substitutions",
+        "4 substitutions",
+        "5 substitutions"
+      ],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "How many innings are there in a regulation baseball game?",
+      "options": ["4 innings", "6 innings", "8 innings", "9 innings"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "In volleyball, how many hits are allowed per side before the ball must go over the net?",
+      "options": ["1 hit", "2 hits", "3 hits", "4 hits"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "What is the maximum weight of a golf ball according to the rules?",
+      "options": ["1 ounce", "1.5 ounces", "1.62 ounces", "2 ounces"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In soccer, what is the duration of a standard match, including stoppage time?",
+      "options": ["60 minutes", "75 minutes", "90 minutes", "120 minutes"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "How many players are there on a standard volleyball team?",
+      "options": ["4", "6", "8", "10"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In basketball, how high is the regulation hoop from the floor?",
+      "options": ["9 feet", "10 feet", "11 feet", "12 feet"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "What is the diameter of a standard discus used in track and field?",
+      "options": ["16 cm", "18 cm", "20 cm", "22 cm"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In which sport would you perform an ollie?",
+      "options": ["Skateboarding", "Surfing", "Snowboarding", "Bungee Jumping"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "How many players are there on a standard field hockey team?",
+      "options": ["8", "9", "10", "11"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "What is the regulation size of a standard soccer ball?",
+      "options": ["Size 3", "Size 4", "Size 5", "Size 6"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In baseball, what is the distance between each base (in feet)?",
+      "options": ["60 feet", "70 feet", "80 feet", "90 feet"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "In which event would an athlete use a javelin?",
+      "options": ["Shot put", "Hammer throw", "Discus throw", "Javelin throw"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "How many dribbles are allowed per team in a single possession in basketball?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the circumference of a standard basketball in inches?",
+      "options": ["28.5 inches", "29.5 inches", "30.5 inches", "31.5 inches"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In archery, what is the name of the center part of the target?",
+      "options": ["Bullseye", "Bulls-Eye", "Bull's Eye", "Bull Eye"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In tennis, what is the term for a score of 40-40?",
+      "options": ["Deuce", "Advantage", "Love", "All"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What is the total number of hurdles in a standard 100-meter hurdles race in athletics?",
+      "options": ["8", "9", "10", "11"],
+      "correctAnswer": 1,
+      "level": 0
+    }
+  ],
+  "level1": [
+    {
+      "prompt": "How many seconds are allowed for a serve in professional tennis?",
+      "options": ["15 seconds", "20 seconds", "25 seconds", "30 seconds"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "What is the maximum number of players allowed on the field for a soccer team?",
+      "options": ["9", "10", "11", "12"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In American football, what is the distance between the goalposts (inside to inside)?",
+      "options": ["15 feet", "18 feet", "21 feet", "24 feet"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In basketball, how many personal fouls does a player need to commit before fouling out of the game?",
+      "options": ["3", "4", "5", "6"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "How many rounds are there in a professional boxing championship fight?",
+      "options": ["10 rounds", "12 rounds", "15 rounds", "20 rounds"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In rugby union, how many points is a try worth?",
+      "options": ["3 points", "5 points", "7 points", "10 points"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "What is the maximum weight for a shuttlecock used in badminton?",
+      "options": ["4 grams", "4.5 grams", "5 grams", "5.5 grams"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In track and field, how many attempts do athletes usually get in field events like shot put and discus throw?",
+      "options": ["3 attempts", "4 attempts", "5 attempts", "6 attempts"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "How many players are there on a standard ice hockey team?",
+      "options": ["4", "5", "6", "7"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "What is the maximum weight of a golf ball according to the rules?",
+      "options": ["1.60 ounces", "1.62 ounces", "1.64 ounces", "1.66 ounces"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In swimming, what is the standard distance of an Olympic-sized pool?",
+      "options": ["25 meters", "30 meters", "50 meters", "100 meters"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "How many players are there on a standard field lacrosse team?",
+      "options": ["8", "10", "12", "14"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In which event do athletes compete for the decathlon in track and field?",
+      "options": ["Sprints", "Jumps", "Throws", "Combined Events"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "What is the height of the basketball hoop in women's basketball?",
+      "options": ["9 feet", "9.5 feet", "10 feet", "10.5 feet"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In Formula 1 racing, what do the letters 'DRS' stand for?",
+      "options": [
+        "Drag Reduction System",
+        "Downforce Recovery System",
+        "Dynamic Race Strategy",
+        "Driver Revolving Seat"
+      ],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "In table tennis, what is the maximum number of points needed to win a set?",
+      "options": ["8 points", "10 points", "11 points", "12 points"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "What is the regulation size of a standard volleyball?",
+      "options": [
+        "8 inches in diameter",
+        "9 inches in diameter",
+        "10 inches in diameter",
+        "11 inches in diameter"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In baseball, what is the term for a pitch that is outside the strike zone and does not get swung at?",
+      "options": ["Strike", "Ball", "Foul", "Out"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "How many players are there on a standard netball team?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": 2,
+      "level": 1
+    }
+  ],
+  "level2": [
+    {
+      "prompt": "In soccer, how long is a standard half-time break?",
+      "options": ["10 minutes", "15 minutes", "20 minutes", "25 minutes"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "How many players are there on a standard ice hockey team?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "In baseball, how many balls result in a walk?",
+      "options": ["2", "3", "4", "5"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum number of players allowed on the field for a team in rugby union?",
+      "options": ["11", "13", "15", "17"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "How long is an official timeout in NBA basketball?",
+      "options": ["30 seconds", "60 seconds", "90 seconds", "120 seconds"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In American football, how many yards is each team penalized for an offside infraction?",
+      "options": ["5 yards", "10 yards", "15 yards", "20 yards"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the diameter of a standard basketball hoop in inches?",
+      "options": ["16 inches", "17 inches", "18 inches", "19 inches"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In tennis, what is it called when a player wins a point after deuce is called?",
+      "options": ["Match point", "Game point", "Break point", "Advantage"],
+      "correctAnswer": 3,
+      "level": 2
+    },
+    {
+      "prompt": "How many players are on the field for a team in ultimate frisbee?",
+      "options": ["5", "6", "7", "8"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In badminton, how many points are played in a standard game?",
+      "options": ["15 points", "21 points", "25 points", "30 points"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum weight of a table tennis ball in grams?",
+      "options": ["1.9 grams", "2.0 grams", "2.1 grams", "2.2 grams"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In field hockey, what is the name of the small ball used?",
+      "options": ["Puck", "Shuttlecock", "Ball", "Dimple Ball"],
+      "correctAnswer": 3,
+      "level": 2
+    },
+    {
+      "prompt": "How many strikes result in a strikeout in baseball?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In rugby league, how many tackles does a team get before they must turnover the ball to the opposing team?",
+      "options": ["4", "5", "6", "7"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum number of clubs a golfer can have in their bag during a round of golf?",
+      "options": ["12", "14", "16", "18"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "In table tennis, how many points does a player need to win a standard game?",
+      "options": ["9 points", "11 points", "15 points", "21 points"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "How many rounds are there in a professional boxing championship bout?",
+      "options": ["8", "10", "12", "15"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In soccer, how long is the halftime break during a FIFA World Cup match?",
+      "options": ["10 minutes", "15 minutes", "20 minutes", "25 minutes"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum weight of a standard shot put used in track and field?",
+      "options": ["4 kg", "6 kg", "8 kg", "10 kg"],
+      "correctAnswer": 2,
+      "level": 2
+    }
+  ],
+  "level3": [
+    {
+      "prompt": "In Formula 1 racing, what does the 'ERS' stand for?",
+      "options": [
+        "Energy Recovery System",
+        "Engine Revving System",
+        "Enhanced Race Strategy",
+        "Emission Reduction System"
+      ],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "How many points is a drop goal worth in rugby union?",
+      "options": ["2 points", "3 points", "4 points", "5 points"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In professional golf, what is the maximum number of clubs that a player can carry in their bag during a round?",
+      "options": ["12", "14", "16", "18"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "Which country hosted the first-ever FIFA World Cup in 1930?",
+      "options": ["Brazil", "Argentina", "Uruguay", "France"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the distance between the pitcher's mound and home plate in Major League Baseball?",
+      "options": ["50 feet", "55 feet", "60 feet", "65 feet"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In professional tennis, what is the highest number of sets required to win a men's singles match at Grand Slam tournaments?",
+      "options": ["2 sets", "3 sets", "4 sets", "5 sets"],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "What is the regulation weight of a standard snooker ball?",
+      "options": ["140 grams", "150 grams", "160 grams", "170 grams"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In athletics, how many meters are added to the track for each lane in races that start from staggered positions?",
+      "options": ["5 meters", "7.5 meters", "10 meters", "12.5 meters"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "Which city has hosted the most Olympic Games as of 2021?",
+      "options": ["London", "Paris", "Tokyo", "Los Angeles"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In beach volleyball, how many players are there on each side of the net during a standard game?",
+      "options": ["2", "3", "4", "5"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "What is the diameter of the center circle in professional basketball?",
+      "options": ["12 feet", "15 feet", "18 feet", "21 feet"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In rugby league, how many points is a field goal worth?",
+      "options": ["1 point", "2 points", "3 points", "4 points"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "What is the length of a standard Olympic swimming pool in meters?",
+      "options": ["40 meters", "50 meters", "60 meters", "70 meters"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In Olympic weightlifting, how many attempts does an athlete get to perform the clean and jerk lift?",
+      "options": ["1 attempt", "2 attempts", "3 attempts", "4 attempts"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the official diameter of a standard ice hockey puck?",
+      "options": ["2.75 inches", "3 inches", "3.5 inches", "4 inches"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In professional tennis, how many Grand Slam singles titles has Serena Williams won as of 2021?",
+      "options": ["20", "22", "24", "26"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the maximum weight of a regulation beach volleyball?",
+      "options": ["260 grams", "270 grams", "280 grams", "290 grams"],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "In archery, what is the highest score achievable with a single arrow?",
+      "options": ["8 points", "9 points", "10 points", "12 points"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "How many players are there on each side in a regulation water polo team during a match?",
+      "options": ["6", "7", "8", "9"],
+      "correctAnswer": 1,
+      "level": 3
+    }
+  ],
+  "level4": [
+    {
+      "prompt": "In curling, what is the target area called that players aim to hit with the stones?",
+      "options": ["Button", "Bullseye", "House", "Center"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In darts, what is the highest possible score with three darts in a standard game?",
+      "options": ["120", "150", "180", "200"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In which sport can you perform a 'cork 720' trick?",
+      "options": ["Snowboarding", "Skateboarding", "BMX", "Freestyle Skiing"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the total number of pockets on a standard pool table?",
+      "options": ["4", "6", "8", "10"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Which country is considered the birthplace of modern orienteering?",
+      "options": ["Norway", "Sweden", "Finland", "Switzerland"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the maximum weight of a standard shot put used in track and field?",
+      "options": ["4 kg", "5 kg", "6 kg", "7 kg"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In table tennis, what is the diameter of the ball used in official competitions?",
+      "options": ["36 mm", "38 mm", "40 mm", "42 mm"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "How many players are there on a standard water polo team?",
+      "options": ["6", "7", "8", "9"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Which country is hosting the 2022 FIFA World Cup?",
+      "options": ["Qatar", "Russia", "United States", "Germany"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In archery, what is the name of the innermost ring on the target?",
+      "options": ["Bullseye", "Kill Zone", "Gold", "Sweet Spot"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "How many players are there on a standard lacrosse field for one team?",
+      "options": ["8", "10", "12", "14"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the length of a standard cricket pitch?",
+      "options": ["18 yards", "20 yards", "22 yards", "24 yards"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In speed skating, what is the name of the turn where skaters change from one lane to the other?",
+      "options": ["Swerve", "Exchange Zone", "Crossover", "Transition"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "Which country has won the most medals in the history of the Winter Olympics?",
+      "options": ["Norway", "United States", "Germany", "Canada"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of an Olympic men's boxing glove?",
+      "options": ["8 ounces", "10 ounces", "12 ounces", "14 ounces"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "In rugby sevens, how long does each half typically last?",
+      "options": ["5 minutes", "7 minutes", "10 minutes", "12 minutes"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the maximum weight of a regulation bowling ball?",
+      "options": ["12 pounds", "14 pounds", "16 pounds", "18 pounds"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In biathlon, what is the name of the rifle-carrying strap that goes across the chest?",
+      "options": ["Chest Holster", "Rifle Sling", "Gun Strap", "Cross Harness"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "Which country is credited with inventing the sport of volleyball?",
+      "options": ["United States", "Brazil", "Russia", "Germany"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the diameter of the bullseye on a standard dartboard?",
+      "options": ["1 inch", "1.5 inches", "2 inches", "2.5 inches"],
+      "correctAnswer": 2,
+      "level": 4
+    }
+  ]
 }

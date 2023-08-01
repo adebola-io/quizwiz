@@ -167,13 +167,13 @@
          "prompt": "Where is the document temporarily stored during working on a document on a PC?",
          "options": ["ROM", "CPU", "RAM", "Flash Memory"],
          "correctAnswer": 2,
-         "level": 0
+         "level": 1
       },
       {
          "prompt": "Where is the decoded instruction stored?",
          "options": ["Registers", "MDR", "PC", "IR"],
          "correctAnswer": 3,
-         "level": 0
+         "level": 1
       },
       {
          "prompt": "What does MMID stand for?",
@@ -184,7 +184,7 @@
             "Memory Information Memory Data"
          ],
          "correctAnswer": 1,
-         "level": 0
+         "level": 1
       }
    ],
    "level2": [],

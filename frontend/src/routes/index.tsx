@@ -35,6 +35,9 @@ const LoginOrSignUpPage = Loadable(
 const VerifyEmailPage = Loadable(
    lazy(() => import("../pages/VerifyEmailPage"))
 );
+const ForgotPassword = Loadable(
+   lazy(() => import("../pages/ForgotPassword"))
+)
 
 // Protected
 const Home = Loadable(lazy(() => import("../pages/Home")));
@@ -57,6 +60,14 @@ export default function Router() {
                element: (
                   <GuestGuard>
                      <LoginOrSignUpPage />
+                  </GuestGuard>
+               )
+            }, 
+            {
+               path: "forgot-password",
+               element: (
+                  <GuestGuard>
+                     <ForgotPassword />
                   </GuestGuard>
                )
             }

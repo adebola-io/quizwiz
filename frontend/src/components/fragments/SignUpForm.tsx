@@ -82,7 +82,10 @@ export function SignUpForm() {
             );
             navigate("/dashboard/home");
          })
-         .catch((err: RequestError) => toast.error(err.response.data.message))
+         .catch(
+            (err: RequestError) =>
+               err.response && toast.error(err?.response?.data.message)
+         )
          .finally(() => setIsLoading(false));
    };
 

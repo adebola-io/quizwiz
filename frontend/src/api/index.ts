@@ -23,11 +23,15 @@ axiosInstance.interceptors.response.use(
       return response;
    },
    function (error) {
-      if (error.response.status === 401) {
+      console.log({ error });
+      if (error.code === "ERR_NETWORK") {
+         toast.error(error.message);
+      } else if (error.response.status === 401) {
          toast.error(error.response.data.message);
          localStorage.removeItem("accessToken");
+      } else {
+         return Promise.reject(error);
       }
-      return Promise.reject(error);
    }
 );
 
