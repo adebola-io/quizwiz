@@ -58,7 +58,7 @@
          "level": 0
       },
       {
-         "prompt": "Can you accurately describe the flag of Japan?",
+         "prompt": "Can you describe the flag of Japan?",
          "options": [
             "A white flag with a red circle at the center.",
             "A green flag with a white crescent moon and star at the center.",
@@ -69,13 +69,13 @@
          "level": 0
       },
       {
-         "prompt": "Which Asian country was divided into two states after the Korean War in the 1950s?",
+         "prompt": "Which Asian country was divided into two states after the Korean War?",
          "options": ["Korea", "Vietnam", "China", "Japan"],
          "correctAnswer": 0,
          "level": 0
       },
       {
-         "prompt": "What is the capital city of South Korea?",
+         "prompt": "What is the capital of South Korea?",
          "options": ["Beijing", "Tokyo", "Seoul", "Bangkok"],
          "correctAnswer": 2,
          "level": 0
@@ -93,7 +93,7 @@
          "level": 0
       },
       {
-         "prompt": "Which of these languages is the most widely spoken in Asia?",
+         "prompt": "Which language is the most widely spoken in Asia?",
          "options": ["Hindi", "English", "Mandarin Chinese", "Arabic"],
          "correctAnswer": 2,
          "level": 0
@@ -105,7 +105,7 @@
          "level": 0
       },
       {
-         "prompt": "Which of these countries was formerly known as Siam?",
+         "prompt": "Which country was formerly known as Siam?",
          "options": ["Vietnam", "Cambodia", "Thailand", "Laos"],
          "correctAnswer": 2,
          "level": 0
@@ -129,7 +129,7 @@
          "level": 0
       },
       {
-         "prompt": "Which Asian country is the only one to have a Hindu majority?",
+         "prompt": "Which country is the only one to have a Hindu majority?",
          "options": ["Nepal", "India", "Bhutan", "Indonesia"],
          "correctAnswer": 3,
          "level": 0
@@ -137,7 +137,7 @@
    ],
    "level1": [
       {
-         "prompt": "Which country is known as the 'Land of the Rising Sun'?",
+         "prompt": "Which country is the 'Land of the Rising Sun'?",
          "options": ["China", "Japan", "India", "South Korea"],
          "correctAnswer": 1,
          "level": 1
@@ -166,7 +166,7 @@
          "level": 1
       },
       {
-         "prompt": "What is the term for the traditional Japanese art of folding paper into various shapes?",
+         "prompt": "What is the Japanese art of folding paper into various shapes called?",
          "options": ["Origami", "Ikebana", "Kabuki", "Haiku"],
          "correctAnswer": 0,
          "level": 1
@@ -178,19 +178,19 @@
          "level": 1
       },
       {
-         "prompt": "Which Asian country is the only one to have a land border with Africa?",
+         "prompt": "Which Asian country has a land border with Africa?",
          "options": ["Yemen", "Oman", "Egypt", "Turkey"],
          "correctAnswer": 2,
          "level": 1
       },
       {
-         "prompt": "Which  ancient civilizations developed a system of writing called cuneiform in Mesopotamia?",
+         "prompt": "Which ancient civilization developed a system of writing called cuneiform?",
          "options": ["Sumerian", "Babylonian", "Akkadian", "Assyrian"],
          "correctAnswer": 0,
          "level": 1
       },
       {
-         "prompt": "Which religion originated in ancient India and believes in the cycle of birth and rebirth?",
+         "prompt": "Which religion from ancient India believes in the cycle of birth and rebirth?",
          "options": ["Buddhism", "Christianity", "Islam", "Hinduism"],
          "correctAnswer": 3,
          "level": 1
