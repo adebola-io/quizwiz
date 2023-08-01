@@ -255,7 +255,7 @@
          "level": 0
       }
        {
-         "prompt": "The title	of	Hitler's book Mein Kampf in English means what?",
+         "prompt": "The title of Hitler's book Mein Kampf,in English means what?",
          "options": ["Well-Being", "My Country", "My Struggle", "Master Race"],
          "correctAnswer": 2,
          "level": 0
@@ -284,6 +284,50 @@
          "correctAnswer": 0,
          "level": 0
       }
+        {
+         "prompt": "What region of France was chosen for the D-Day invasion?",
+         "options": ["Calais", "Normandy", "Belgium", "Caucasus"],
+         "correctAnswer": 1,
+         "level": 0
+      }
+       {
+         "prompt": "Who is credited with planning the attack on the US naval base at Pearl Harbor?",
+         "options": ["Hideki Tojo", "Emperor Hirohito", "Isoroku Yamamoto", "Ichiro Suzuki"],
+         "correctAnswer": 2,
+         "level": 0
+      }
+      {
+         "prompt": "Which technology gave the British an advantage in the Battle of Britain?",
+         "options": ["Radar", "Enigma code", "British Morale", "More aircraft"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+       {
+         "prompt": "Who was the leader of Japan's dictatorial government during the 1930s and 1940s?",
+         "options": ["Adolf Hitler", "Francisco Franco", "Benito Sussolini", "Hideki Tojo"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+ 
    ],
-   "level4": []
+   "level4": [
+       {
+         "prompt": "The Munich Conference addressed the German threat to which nation?",
+         "options": ["Poland", "Hungary", "Austria", "Czechoslovakia"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+ {
+         "prompt": "In what country was the Fascist party and government formed?",
+         "options": ["Italy", "Japan", "Spain", "Germany"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+        {
+         "prompt": "Which of the following was a false promise from Hitler not to take any more land in Europe?",
+         "options": ["The Munich Pact", "The Atlantic Charter", "The Lend-Lease Act", "Versailles Treaty"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+   ]
 }
