@@ -329,5 +329,47 @@
          "correctAnswer": 0,
          "level": 0
       }
+      {
+         "prompt": "Hitler's main method for providing living space for the German people was to do what?",
+         "options": ["Dictatorship", "Attack Jews", "Form a secret police", "Conquer other countries"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "II Duce was the title of which WWII totalitarian leader?",
+         "options": ["Joseph Stalin", "Adolf Hitler", "James Brown", "Benito Mussolini"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+      {
+         "prompt": "Which country invaded Rhineland, triggering World War II?",
+         "options": ["Italy", "Japan", "Germany", "Soviet Union"],
+         "correctAnswer": 2,
+         "level": 0
+      }
+       {
+         "prompt": "Which country invaded China in 1938 as part of territorial expansion?",
+         "options": ["Italy", "India", "Germany", "Japan"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "What technological development used by the Japanese enabled the attack on Pearl Harbor?",
+         "options": ["Submarines", "Bombers", "Radar", "Aircraft carrriers"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "What methods were used by the German Schutzstaffel (SS) on \"undesirables\" in Nazi Germany?",
+         "options": ["Death camps", "Concentration camps", "Deportation", "All of the above"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+       {
+         "prompt": "Who created the theories that led to the creation of the atomic bomb??",
+         "options": ["Albert Einstein", "Enrico Fermi", "Robert Oppenheimer", "Warner Braun"],
+         "correctAnswer": 0,
+         "level": 0
+      }
    ]
 }
