@@ -11,9 +11,9 @@ import { Button, Loader } from "@/components/ui";
 export default function VerifyEmailPage() {
    const { pathname } = useLocation();
    const token = pathname.split("/")[3];
-   const { user, logout } = useAuth();
+   const { user } = useAuth();
    const [count, { startCountdown, resetCountdown }] = useCountdown({
-      countStart: 30,
+      countStart: 5,
       intervalMs: 1000
    });
    const { mutate: resend, isLoading, isSuccess } = useResendEmailMutation();
@@ -21,10 +21,6 @@ export default function VerifyEmailPage() {
 
    function handleResendEmail() {
       resend({ email: user?.email as string });
-   }
-
-   function handleGoHome() {
-      logout();
    }
 
    useEffect(() => {
@@ -38,14 +34,15 @@ export default function VerifyEmailPage() {
       } else {
          verify(token);
       }
-   }, [token, isSuccess, resetCountdown, startCountdown, verify]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [token, isSuccess]);
 
    return (
       <div className="flex w-screen items-center justify-center lines h-screen px-[--global-padding-left]">
          {!token ? (
-            <div className="flex flex-col justify-center items-center w-full h-full max-w-3xl gap-8">
+            <div className="flex flex-col justify-center items-center w-full h-full max-w-3xl gap-6">
                <p className="w-full text-[2.8rem] font-avenir-next-lt-pro-bold text-green-feldgrau [line-height:3rem] text-center">
-                  A verification link has been sent to your email.
+                  A verification link has been sent to your email.{" "}
                </p>
                <Button
                   size="normal"
@@ -58,7 +55,6 @@ export default function VerifyEmailPage() {
                >
                   Resend Email {count > 0 ? `(${count}s)` : null}
                </Button>
-               <Button onClick={handleGoHome} size="okay">Go Home</Button>
             </div>
          ) : (
             <div className="flex flex-col items-center gap-4">
