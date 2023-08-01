@@ -19,7 +19,7 @@ The design for this project is hosted on Figma [here](https://www.figma.com/file
 
 ### Front-end 
 
-The front-end is (to be) written using React and Tailwind. Node and NPM/Yarn must be installed to preview it. To run the frontend locally, cd into the `frontend/` folder and run
+The front-end is written using React, Typescript and Tailwind. Node and NPM/Yarn must be installed to preview it. To run the frontend locally, cd into the `frontend/` folder and run
 
 ```shell
 npm install
