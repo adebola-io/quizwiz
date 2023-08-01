@@ -312,6 +312,9 @@ function handleForgotPassword(req) {
       user.email,
       `To change your password, use the token "${value}".`
    );
+   logger.inform(
+      `Visit http://localhost:5173/dashboard/reset-password/${value}`
+   );
    return {
       status: "success",
       message: "Message sent to your email, kindly check."
