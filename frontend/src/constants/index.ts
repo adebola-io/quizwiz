@@ -2,9 +2,9 @@
 
 // export const ENDPOINT_ROOT = "http://localhost:3010/api/v1";
 
-export const ENDPOINT_ROOT = "https://quiz-app-server-pvx6.onrender.com/api/v1";
+// export const ENDPOINT_ROOT = "https://quiz-app-server-pvx6.onrender.com/api/v1";
 
-// export const ENDPOINT_ROOT: string = import.meta.env.VITE_SERVER_ENDPOINT;
+export const ENDPOINT_ROOT: string = import.meta.env.VITE_SERVER_ENDPOINT;
 
 // export const ENDPOINTS = {
 //    USER_CREATE: `${ENDPOINT_ROOT}/user/create`,
