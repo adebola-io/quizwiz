@@ -44,17 +44,8 @@ export function LoginForm() {
       login(payload)
          .then(() => navigate("/dashboard/home"))
          .catch(
-            (
-               err: AxiosError<RequestError["response"]["data"]> | RequestError
-            ) => {
-               if (err.response === undefined && err instanceof AxiosError) {
-                  toast.error(err?.message);
-               } else {
-                  toast.error(
-                     err?.response?.data.message ?? "Something went wrong"
-                  );
-               }
-            }
+            (err: RequestError) =>
+               err.response && toast.error(err?.response?.data.message)
          )
          .finally(() => setIsLoading(false));
    };
