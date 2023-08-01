@@ -91,7 +91,10 @@ export function LoginForm() {
                Log In
             </Button>
          </div>
-         <Link to = "/auth/forgot-password"className="text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem] [line-height:4.375rem]">
+         <Link
+            to="/auth/forgot-password"
+            className="flex justify-end text-green-charcoal animate-fade-in-from-left effect-item-2 font-bold w-full text-right underline text-[1rem]"
+         >
             Forgot Password?
          </Link>
       </form>
