@@ -1,9 +1,649 @@
 {
-   "title": "Rules and Equipment",
-   "category": "Sports",
-   "level0": [],
-   "level1": [],
-   "level2": [],
-   "level3": [],
-   "level4": []
+  "title": "Rules and Equipment",
+  "category": "Sports",
+  "level0": [
+    {
+      "prompt": "In soccer, what is the equipment used by goalkeepers to protect their hands?",
+      "options": [
+        "Shin guards",
+        "Goalkeeper gloves",
+        "Chest protector",
+        "Mouthguard"
+      ],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a shuttlecock?",
+      "options": ["Badminton", "Tennis", "Table Tennis", "Volleyball"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In basketball, what is the equipment used to score points?",
+      "options": ["Bat", "Ball", "Paddle", "Hoop"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "What type of shoes are commonly worn by athletes in track and field events?",
+      "options": ["Cleats", "Skates", "Spikes", "Boots"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport is associated with a bow and arrow?",
+      "options": ["Archery", "Fencing", "Lacrosse", "Shot Put"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In swimming, what is the equipment used to keep afloat and aid buoyancy?",
+      "options": ["Swim cap", "Goggles", "Kickboard", "Nose clip"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "What protective equipment is commonly worn by a batter in baseball?",
+      "options": ["Helmet", "Shin guards", "Chest protector", "Elbow pads"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a racquet to hit a ball back and forth?",
+      "options": ["Golf", "Table Tennis", "Volleyball", "Tennis"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "In American football, what is the equipment used by players to protect their head?",
+      "options": ["Mouthguard", "Shoulder pads", "Helmet", "Gloves"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a round, dimpled ball and clubs to play?",
+      "options": ["Baseball", "Hockey", "Cricket", "Golf"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "What protective gear is commonly worn by a goalkeeper in ice hockey?",
+      "options": ["Helmet", "Shin guards", "Gloves", "Pads"],
+      "correctAnswer": 2,
+      "level": 0
+    },
+    {
+      "prompt": "In volleyball, what is the equipment used to set the ball?",
+      "options": ["Bat", "Ball", "Goggles", "Setter's hands"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a long, narrow board and waves to ride?",
+      "options": ["Snowboarding", "Surfing", "Skateboarding", "Skiing"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In rugby, what is the equipment used to pass the ball?",
+      "options": ["Gloves", "Ball", "Cleats", "Paddle"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a small, hard ball and players throw it to their teammates?",
+      "options": ["Frisbee", "Basketball", "Tennis", "Soccer"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "In table tennis, what is the equipment used to hit the ball?",
+      "options": ["Bat", "Ball", "Goggles", "Gloves"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What protective headgear is commonly worn by boxers?",
+      "options": ["Helmet", "Gloves", "Mouthguard", "Headgear"],
+      "correctAnswer": 3,
+      "level": 0
+    },
+    {
+      "prompt": "Which sport uses a small, hard ball and a bat to hit it?",
+      "options": ["Golf", "Baseball", "Cricket", "Tennis"],
+      "correctAnswer": 1,
+      "level": 0
+    },
+    {
+      "prompt": "In bowling, what is the equipment used to knock down the pins?",
+      "options": ["Ball", "Paddle", "Racket", "Shuttlecock"],
+      "correctAnswer": 0,
+      "level": 0
+    },
+    {
+      "prompt": "What equipment is used by a goalkeeper in handball?",
+      "options": ["Paddle", "Ball", "Gloves", "Helmet"],
+      "correctAnswer": 2,
+      "level": 0
+    }
+  ],
+  "level1": [
+    {
+      "prompt": "In soccer, what is the equipment used by players to protect their shins?",
+      "options": [
+        "Goalkeeper gloves",
+        "Shin guards",
+        "Chest protector",
+        "Mouthguard"
+      ],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a cork-tipped dart and a dartboard?",
+      "options": ["Table Tennis", "Frisbee", "Darts", "Volleyball"],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "In baseball, what is the equipment used by catchers to protect their face?",
+      "options": [
+        "Shin guards",
+        "Chest protector",
+        "Catcher's mask",
+        "Elbow pads"
+      ],
+      "correctAnswer": 2,
+      "level": 1
+    },
+    {
+      "prompt": "What type of shoes are commonly worn by basketball players?",
+      "options": ["Cleats", "Sneakers", "Spikes", "Boots"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport is associated with a shuttlecock and a net?",
+      "options": ["Badminton", "Tennis", "Squash", "Golf"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "In swimming, what is the equipment used to cover the nose?",
+      "options": ["Swim cap", "Goggles", "Kickboard", "Nose clip"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "What protective equipment is commonly worn by a batter in cricket?",
+      "options": ["Helmet", "Shin guards", "Chest protector", "Elbow pads"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a racquet to hit a ball over a net?",
+      "options": ["Golf", "Table Tennis", "Volleyball", "Tennis"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "In American football, what is the equipment used by players to protect their shoulders?",
+      "options": ["Mouthguard", "Shoulder pads", "Helmet", "Gloves"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a hard ball and a bat to hit it?",
+      "options": ["Golf", "Baseball", "Lacrosse", "Tennis"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "What protective gear is commonly worn by ice hockey players?",
+      "options": ["Helmet", "Shin guards", "Gloves", "Pads"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "In volleyball, what is the equipment used to serve the ball?",
+      "options": ["Bat", "Ball", "Goggles", "Serving tray"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a long, narrow board and snow to ride?",
+      "options": ["Snowboarding", "Surfing", "Skateboarding", "Skiing"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "In rugby, what is the equipment used to protect the head?",
+      "options": ["Gloves", "Ball", "Cleats", "Helmet"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a small, flat disc thrown to teammates?",
+      "options": ["Frisbee", "Basketball", "Tennis", "Soccer"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "In table tennis, what is the equipment used to hit the ball?",
+      "options": ["Bat", "Ball", "Goggles", "Gloves"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "What protective headgear is commonly worn by boxers?",
+      "options": ["Helmet", "Gloves", "Mouthguard", "Headgear"],
+      "correctAnswer": 3,
+      "level": 1
+    },
+    {
+      "prompt": "Which sport uses a small, hard ball and a bat to hit it?",
+      "options": ["Golf", "Baseball", "Cricket", "Tennis"],
+      "correctAnswer": 1,
+      "level": 1
+    },
+    {
+      "prompt": "In bowling, what is the equipment used to knock down the pins?",
+      "options": ["Ball", "Paddle", "Racket", "Shuttlecock"],
+      "correctAnswer": 0,
+      "level": 1
+    },
+    {
+      "prompt": "What equipment is used by a goalkeeper in soccer?",
+      "options": ["Paddle", "Ball", "Gloves", "Helmet"],
+      "correctAnswer": 2,
+      "level": 1
+    }
+  ],
+  "level2": [
+    {
+      "prompt": "In basketball, how high is the regulation hoop from the floor in feet?",
+      "options": ["8 feet", "9 feet", "10 feet", "11 feet"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "What is the standard weight of a table tennis ball in grams?",
+      "options": ["2.4 grams", "2.6 grams", "2.8 grams", "3.0 grams"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In golf, what is the maximum number of clubs a player is allowed to have in their bag?",
+      "options": ["12 clubs", "14 clubs", "16 clubs", "18 clubs"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the standard weight of a shot put used in men's competition?",
+      "options": ["4 kilograms", "5 kilograms", "6 kilograms", "7 kilograms"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In ice hockey, what is the object that players strike to score a goal?",
+      "options": ["Puck", "Ball", "Shuttlecock", "Disk"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the diameter of a standard basketball hoop in inches?",
+      "options": ["16 inches", "17 inches", "18 inches", "19 inches"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In tennis, what is the term for a score of 40-40?",
+      "options": ["Deuce", "Advantage", "Love", "All"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum number of players allowed on the field for a team in rugby union?",
+      "options": ["11 players", "13 players", "15 players", "17 players"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In volleyball, how many hits are allowed per side before the ball must be sent over the net?",
+      "options": ["1 hit", "2 hits", "3 hits", "4 hits"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "How long is an official timeout in NBA basketball?",
+      "options": ["30 seconds", "60 seconds", "90 seconds", "120 seconds"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "In American football, how many yards is each team penalized for an offside infraction?",
+      "options": ["5 yards", "10 yards", "15 yards", "20 yards"],
+      "correctAnswer": 0,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum weight of a standard frisbee used in ultimate frisbee?",
+      "options": ["150 grams", "160 grams", "170 grams", "180 grams"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In badminton, what is the maximum length of a racquet?",
+      "options": ["25 inches", "26 inches", "27 inches", "28 inches"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "How many players are on the field for a team in field hockey?",
+      "options": ["10 players", "11 players", "12 players", "13 players"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the regulation weight of a boxing glove used in heavyweight bouts?",
+      "options": ["8 ounces", "10 ounces", "12 ounces", "14 ounces"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In swimming, what is the standard length of an Olympic-sized pool in meters?",
+      "options": ["25 meters", "30 meters", "50 meters", "100 meters"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "How many players are there on a standard soccer team?",
+      "options": ["9 players", "10 players", "11 players", "12 players"],
+      "correctAnswer": 2,
+      "level": 2
+    },
+    {
+      "prompt": "In rugby league, how many tackles does a team get before they must turnover the ball to the opposing team?",
+      "options": ["4 tackles", "5 tackles", "6 tackles", "7 tackles"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "What is the maximum number of clubs a golfer can have in their bag during a round of golf?",
+      "options": ["12 clubs", "14 clubs", "16 clubs", "18 clubs"],
+      "correctAnswer": 1,
+      "level": 2
+    },
+    {
+      "prompt": "In table tennis, how many points does a player need to win a standard game?",
+      "options": ["9 points", "11 points", "15 points", "21 points"],
+      "correctAnswer": 1,
+      "level": 2
+    }
+  ],
+  "level3": [
+    {
+      "prompt": "What is the diameter of the center bullseye on a standard dartboard?",
+      "options": ["1 inch", "2 inches", "3 inches", "4 inches"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In curling, what is the name of the object that players slide down the ice?",
+      "options": ["Stone", "Puck", "Disc", "Rock"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "How many players are there on a standard water polo team?",
+      "options": ["6 players", "7 players", "8 players", "9 players"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In target archery, what is the outermost ring of the target called?",
+      "options": ["Bullseye", "Gold", "Red", "Outer"],
+      "correctAnswer": 3,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a cricket ball in grams?",
+      "options": ["120 grams", "140 grams", "160 grams", "180 grams"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In billiards, how many points is the black ball worth?",
+      "options": ["5 points", "7 points", "10 points", "12 points"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a bowling ball in pounds?",
+      "options": ["10 pounds", "12 pounds", "14 pounds", "16 pounds"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In snooker, how many points is the black ball worth?",
+      "options": ["5 points", "7 points", "10 points", "12 points"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a shot put used in women's competition?",
+      "options": ["3 kilograms", "4 kilograms", "5 kilograms", "6 kilograms"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In badminton, what is the maximum length of a shuttlecock?",
+      "options": [
+        "60 millimeters",
+        "62 millimeters",
+        "64 millimeters",
+        "66 millimeters"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a baseball in ounces?",
+      "options": ["4 ounces", "5 ounces", "6 ounces", "7 ounces"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In archery, what is the name for a bow with curved limbs that curve away from the archer when unstrung?",
+      "options": ["Recurve bow", "Longbow", "Compound bow", "Crossbow"],
+      "correctAnswer": 0,
+      "level": 3
+    },
+    {
+      "prompt": "What is the regulation size of a standard soccer ball?",
+      "options": ["Size 4", "Size 5", "Size 6", "Size 7"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In table tennis, what is the maximum thickness of the rubber on a racket?",
+      "options": [
+        "1.2 millimeters",
+        "1.5 millimeters",
+        "1.8 millimeters",
+        "2.0 millimeters"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a standard discus used in track and field?",
+      "options": [
+        "1 kilogram",
+        "1.5 kilograms",
+        "2 kilograms",
+        "2.5 kilograms"
+      ],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "In bowling, what is the term for three consecutive strikes?",
+      "options": ["Trio", "Triple", "Turkey", "Triad"],
+      "correctAnswer": 2,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard weight of a golf ball in ounces?",
+      "options": ["1.55 ounces", "1.62 ounces", "1.68 ounces", "1.75 ounces"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In darts, what is the name for three consecutive bullseyes?",
+      "options": [
+        "Triple Bull",
+        "Bullseye Hat-Trick",
+        "Bullseye Trio",
+        "Bullseye Triad"
+      ],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "What is the standard length of a cricket pitch in meters?",
+      "options": ["18 meters", "20 meters", "22 meters", "24 meters"],
+      "correctAnswer": 1,
+      "level": 3
+    },
+    {
+      "prompt": "In Olympic weightlifting, what is the term for the lift where the barbell is brought from the ground to the shoulders in one motion?",
+      "options": ["Snatch", "Clean and Jerk", "Clean and Press", "Power Clean"],
+      "correctAnswer": 0,
+      "level": 3
+    }
+  ],
+  "level4": [
+    {
+      "prompt": "In which sport is a 'bonspiel' a term used for a tournament?",
+      "options": ["Curling", "Bandy", "Kabaddi", "Bossaball"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard length of a cricket bat in centimeters?",
+      "options": ["86 cm", "92 cm", "98 cm", "104 cm"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In underwater hockey, how many players are there on each team?",
+      "options": ["4", "6", "8", "10"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the name of the small rubber puck used in table hockey games?",
+      "options": ["Puck", "Flingo", "Dasher", "Quaich"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "In roller derby, how many players are typically allowed on the track from each team during gameplay?",
+      "options": ["2", "3", "4", "5"],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "What is the maximum weight of a professional boomerang used in competitions?",
+      "options": ["50 grams", "75 grams", "100 grams", "125 grams"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In artistic gymnastics, what is the maximum diameter of the women's balance beam?",
+      "options": ["10 cm", "15 cm", "20 cm", "25 cm"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the official ball size used in 9-ball pool tournaments?",
+      "options": ["1.875 inches", "2 inches", "2.125 inches", "2.25 inches"],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "In competitive trampolining, what is the name for the skill of bouncing on the back or seat and landing on the feet?",
+      "options": ["Rudy-out", "Humble-bounce", "Squirrel jump", "Pike jump"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the maximum weight of a professional frisbee used in Ultimate Frisbee competitions?",
+      "options": ["120 grams", "140 grams", "160 grams", "180 grams"],
+      "correctAnswer": 3,
+      "level": 4
+    },
+    {
+      "prompt": "In artistic swimming, how many swimmers usually form a duet team?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of a professional bocce ball?",
+      "options": ["600 grams", "700 grams", "800 grams", "900 grams"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "In Kabaddi, how many 'raiders' can be on the court at once during a raid?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of a curling stone used in men's competition?",
+      "options": ["17 kg", "19 kg", "21 kg", "23 kg"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In darts, what is the highest possible score with three darts in a standard game?",
+      "options": ["180", "240", "300", "360"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of a professional shot put used in women's competition?",
+      "options": ["3 kg", "4 kg", "5 kg", "6 kg"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In korfball, how many players are there on each team?",
+      "options": ["6", "7", "8", "9"],
+      "correctAnswer": 1,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of a professional hammer used in men's competition?",
+      "options": ["6 kg", "7.26 kg", "8 kg", "9.08 kg"],
+      "correctAnswer": 2,
+      "level": 4
+    },
+    {
+      "prompt": "In netball, what is the maximum height a player can jump when shooting for a goal?",
+      "options": ["3 feet", "8 feet", "10 feet", "12 feet"],
+      "correctAnswer": 0,
+      "level": 4
+    },
+    {
+      "prompt": "What is the standard weight of a standard bowling ball used in ten-pin bowling?",
+      "options": ["6 pounds", "10 pounds", "14 pounds", "18 pounds"],
+      "correctAnswer": 2,
+      "level": 4
+    }
+  ]
 }
