@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import { useAuth, useFormValidator } from "@/hooks";
 import { Button, Input } from "@/components/ui";
 import { FormObject, LoginParams, RequestError } from "@/types";
-import { AxiosError } from "axios";
 import { Link } from "react-router-dom";
 
 interface LoginErrorObject {
