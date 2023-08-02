@@ -1,4 +1,9 @@
-import { ApiResponse, RequestError, UserCreationParams } from "@/types";
+import {
+   ApiResponse,
+   RequestError,
+   StatsUpdateParams,
+   UserCreationParams
+} from "@/types";
 import axios from ".";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
@@ -137,4 +142,24 @@ export const useResetPasswordMutation = () => {
    });
 
    return resetPasswordMutation;
+};
+
+/**
+ * communicates with the stats update service.
+ * @route "/user/stats/update"
+ * @param payload
+ */
+const _updateUserStats = async (
+   payload: StatsUpdateParams
+): Promise<ApiResponse<null>> => {
+   const { data } = await axios.put("/user/stats/update", payload);
+   return data;
+};
+
+/**
+ * mutation wrapper hook for request
+ */
+export const useUpdateUserStats = () => {
+   const updateStatsMutation = useMutation(_updateUserStats, {});
+   return updateStatsMutation;
 };

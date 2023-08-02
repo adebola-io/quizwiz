@@ -12,6 +12,7 @@ interface QuizEndProps {
 }
 
 export function QuizEnd(props: QuizEndProps) {
+   // Update user stats here.
    const { score, correctAnswers } = props;
    const category = categories[props.name];
 
@@ -28,11 +29,7 @@ export function QuizEnd(props: QuizEndProps) {
       container.ontransitionend = () => {
          modal.setContent(<QuizStart name={props.name} />);
          modal.morph({
-            className: "aspect-auto min-h-[max-content]",
-            onClose() {
-               console.log(score);
-               modal.close();
-            }
+            className: "aspect-auto min-h-[max-content]"
          });
       };
    }

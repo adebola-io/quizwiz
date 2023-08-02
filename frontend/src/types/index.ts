@@ -40,6 +40,11 @@ export type LoginParams = {
    password: string;
 };
 
+export interface StatsUpdateParams {
+   quizResult: number;
+   starsEarned: number;
+}
+
 export interface UserSession {
    username: string;
    token: string;
