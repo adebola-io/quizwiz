@@ -127,7 +127,7 @@
          "options": [
             "World War I",
             "World War II",
-            " Korean War",
+            "Korean War",
             "Vietnam War"
          ],
          "correctAnswer": 2,
@@ -420,14 +420,14 @@
          "level": 0
       },
       {
-         "prompt": "Who created the theories that led to the creation of the atomic bomb??",
+         "prompt": "Who created the theories that led to the creation of the atomic bomb?",
          "options": [
             "Albert Einstein",
             "Enrico Fermi",
             "Robert Oppenheimer",
             "Warner Braun"
          ],
-         "correctAnswer": 0,
+         "correctAnswer": 2,
          "level": 0
       }
    ]

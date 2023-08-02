@@ -15,7 +15,7 @@ const QUESTIONS_PER_QUIZ = 20;
  */
 const TOKENS = {
    EMAIL_VERIFICATION: 0,
-   PASSWORD_RESET: 1,
+   PASSWORD_RESET: 1
 };
 
 /**
@@ -24,10 +24,10 @@ const TOKENS = {
 const CATEGORIES = {
    1: "History, Politics and Geography",
    2: "Language and Literature",
-   3: "Mathematics",
-   4: "Pop Culture",
-   5: "Sports",
-   6: "Technology",
+   3: "Sports",
+   4: "Mathematics",
+   5: "Pop Culture",
+   6: "Technology"
 };
 
 module.exports = {
@@ -36,5 +36,5 @@ module.exports = {
    PORT,
    TOKENS,
    CATEGORIES,
-   QUESTIONS_PER_QUIZ,
+   QUESTIONS_PER_QUIZ
 };
