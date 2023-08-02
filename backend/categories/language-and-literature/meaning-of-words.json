@@ -2,14 +2,13 @@
    "title": "Meaning of Words",
    "category": "Language and Literature",
    "level0": [
-      
       {
          "prompt": "We use INTEND when we want to express?",
          "options": ["a plan", "a task", "a vision", "a process"],
          "correctAnswer": 0,
          "level": 0
       },
-   
+
       {
          "prompt": "To OBTAIN is?",
          "options": [
@@ -23,12 +22,7 @@
       },
       {
          "prompt": "The word FORMAL means?",
-         "options": [
-            "official",
-            "joyful",
-            "friendly",
-            "playful"
-         ],
+         "options": ["official", "joyful", "friendly", "playful"],
          "correctAnswer": 0,
          "level": 0
       },
@@ -45,12 +39,7 @@
       },
       {
          "prompt": "To BELIEVE means?",
-         "options": [
-            "to join",
-            "to trust",
-            "to imagine",
-            "all of the above"
-         ],
+         "options": ["to join", "to trust", "to imagine", "all of the above"],
          "correctAnswer": 0,
          "level": 0
       },
@@ -65,14 +54,14 @@
          "correctAnswer": 1,
          "level": 0
       },
-     
+
       {
          "prompt": "The word CONSTANT means?",
          "options": ["unstable", "fixed", "changing", "variable"],
          "correctAnswer": 1,
          "level": 0
       },
-     
+
       {
          "prompt": "To GRANT means?",
          "options": ["to allow", "to free", "to gain", "to refuse "],
@@ -90,9 +79,9 @@
          "correctAnswer": 0,
          "level": 0
       },
-      
+
       {
-         "prompt": "To be UNAWARE means",
+         "prompt": "To be UNAWARE means?",
          "options": [
             "not available",
             "not informed",
@@ -101,12 +90,10 @@
          ],
          "correctAnswer": 1,
          "level": 0
-      },
-    
-      
+      }
    ],
    "level1": [
-         {
+      {
          "prompt": "The word COMMIT means?",
          "options": [
             "take responsibility for a task",
@@ -122,14 +109,14 @@
          "options": ["to draw", "to envy", "to compete", "to argue"],
          "correctAnswer": 2,
          "level": 1
-      }
+      },
       {
          "prompt": "To be PESSIMISTIC is to be?",
          "options": ["hopeful", "negative", "doubtful", "scared"],
          "correctAnswer": 0,
          "level": 1
       },
-       {
+      {
          "prompt": "We use AFFECT when we want to express?",
          "options": [
             "the cause of an action",
@@ -140,7 +127,7 @@
          "correctAnswer": 1,
          "level": 1
       },
-        {
+      {
          "prompt": "The word COMPEL denotes?",
          "options": [
             "to plead with somebody to do a task",
@@ -151,14 +138,15 @@
          "correctAnswer": 1,
          "level": 1
       },
-       {
+      {
          "prompt": "What is the meaning of OPAQUE?",
          "options": ["transparent", "invisible", "not easily seen", "clear"],
          "correctAnswer": 2,
          "level": 1
-      },
+      }
    ],
-   "level2": [ {
+   "level2": [
+      {
          "prompt": "EXEMPTION is used to denote?",
          "options": [
             "an act of disqualification",
@@ -169,7 +157,7 @@
          "correctAnswer": 1,
          "level": 2
       },
-   {
+      {
          "prompt": "The word POIGNANT means?",
          "options": [
             "evoking a keen sense of sadness",
@@ -179,7 +167,8 @@
          ],
          "correctAnswer": 0,
          "level": 2
-      },],
+      }
+   ],
    "level3": [],
    "level4": []
 }
