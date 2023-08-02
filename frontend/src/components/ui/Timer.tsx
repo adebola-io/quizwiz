@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { clsxm } from "@/utils/clsxm";
+import { useEffect } from "react";
 import { useCountdown } from "usehooks-ts";
 
 interface TimerProps {
@@ -6,6 +7,7 @@ interface TimerProps {
    duration: number;
    /** Function that should run once the time runs out. */
    onElaspse?: () => void;
+   className?: string;
 }
 
 /**
@@ -13,11 +15,19 @@ interface TimerProps {
  */
 export function Timer(props: TimerProps) {
    const { onElaspse } = props;
+
+   const className = clsxm(
+      "w-full flex items-center justify-center",
+      "border-green-charcoal border-4 shadow-components/shadow rounded-[--default-border-radius]",
+      "text-[4.34938rem] font-poppins font-bold text-green-charcoal",
+      "animate-pop effect-item-1",
+      props.className
+   );
+
    const [countdown, { startCountdown }] = useCountdown({
       countStart: props.duration,
       intervalMs: 1000
    });
-   const [elapsed, setElapsed] = useState(false);
 
    const { minutes, seconds } = {
       minutes: Math.floor(countdown / 60),
@@ -28,13 +38,13 @@ export function Timer(props: TimerProps) {
    }, [startCountdown]);
 
    useEffect(() => {
-      if (minutes === 0 && seconds === 0 && !elapsed) {
+      if (minutes === 0 && seconds === 0) {
          onElaspse?.();
-         return () => setElapsed(true);
       }
-   }, [minutes, seconds, elapsed, onElaspse]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [minutes, seconds]);
    return (
-      <div className="border-green-charcoal w-full animate-pop effect-item-1 flex items-center justify-center border-4 shadow-components/shadow rounded-[--default-border-radius] text-[4.34938rem] font-poppins font-bold text-green-charcoal">
+      <div className={className}>
          {minutes < 10 ? `0${minutes}` : minutes}:
          {seconds < 10 ? `0${seconds}` : seconds}
       </div>

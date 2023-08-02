@@ -2,7 +2,6 @@ import { categories } from "@/data";
 import { useModal } from "@/hooks";
 import { clsxm } from "@/utils/clsxm";
 import { QuizStart } from ".";
-import { Eclipses } from "./Eclipses";
 
 interface CategoryProps {
    name: keyof typeof categories;
@@ -18,12 +17,7 @@ export function Category(props: CategoryProps) {
    const modal = useModal();
 
    function openQuiz() {
-      modal.setContent(
-         <>
-            <Eclipses name={props.name} />
-            <QuizStart name={props.name} />
-         </>
-      );
+      modal.setContent(<QuizStart name={props.name} />);
       modal.morph({
          className: "aspect-auto min-h-[max-content]"
       });

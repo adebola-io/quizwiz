@@ -9,3 +9,4 @@ export * from "./QuizStart";
 export * from "./QuizBox";
 export * from "./Eclipses";
 export * from "./QuizEnd";
+export * from "./QuestionBox";

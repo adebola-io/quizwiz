@@ -1,18 +1,9 @@
-import { CategoryName, Question, Quiz } from "@/types";
-import {
-   FormEvent,
-   FormEventHandler,
-   ForwardedRef,
-   ReactNode,
-   forwardRef,
-   useRef,
-   useState
-} from "react";
-import { Button, Timer } from "../ui";
-import { clsxm } from "@/utils/clsxm";
+import { CategoryName, Quiz } from "@/types";
+import { FormEvent, ReactNode, useEffect, useRef, useState } from "react";
+import { Timer } from "../ui";
 import { levels } from "@/data";
 import { useModal } from "@/hooks";
-import { Eclipses, QuizEnd } from ".";
+import { Eclipses, QuestionBox, QuizEnd } from ".";
 
 /**
  * A complete quiz flow.
@@ -23,11 +14,38 @@ export function QuizBox(props: Quiz) {
    const modal = useModal();
    const [openQuestion, setOpenQuestion] = useState(0);
    const [questionIsFinished, setQuestionIsFinished] = useState(false);
-   const [score, setScore] = useState(0);
-   const [correctAnswers, setCorrectAnswers] = useState(0);
+   const [quizEnded, setQuizEnded] = useState(false);
+
+   const [metrics, setMetrics] = useState({
+      score: 0,
+      correctAnswers: 0,
+      missed: 0
+   });
+
    /** Reference to the next button in a question. */
    const nextButtonRef = useRef<HTMLButtonElement>(null);
    const quizBoxRef = useRef<HTMLDivElement>(null);
+
+   // Effect to end quiz.
+   useEffect(() => {
+      if (quizEnded) {
+         if (!quizBoxRef.current) {
+            return;
+         }
+         const div = quizBoxRef.current;
+         div.style.opacity = "0";
+         div.ontransitionend = () => {
+            div.style.width = "var(--quiz-start-width)";
+            div.style.height = "var(--quiz-start-height)";
+            div.ontransitionend = () => {
+               modal.setContent(
+                  <QuizEnd name={props.name as CategoryName} {...metrics} />
+               );
+            };
+         };
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [quizEnded]);
 
    const currentQuestion = questions[openQuestion];
 
@@ -37,16 +55,17 @@ export function QuizBox(props: Quiz) {
     */
    function handleQuestionAnswering(event: FormEvent) {
       event.preventDefault();
-      const target = event.target as unknown as {
+      const { questionOption: nodeList } = event.target as unknown as {
          questionOption: RadioNodeList;
       };
 
-      const correctAnswer = currentQuestion.correctAnswer;
-      const nodeList = target.questionOption;
+      const { correctAnswer } = currentQuestion;
       const correctAnswerContainer = nodeList.item(correctAnswer)
          ?.parentElement as HTMLElement;
 
       let selectedAnswerContainer: HTMLLabelElement | undefined = undefined;
+      let failed = false;
+
       for (const node of nodeList) {
          const _node = node as HTMLInputElement;
          // Skip unselected answers.
@@ -59,10 +78,14 @@ export function QuizBox(props: Quiz) {
 
          // Answer is correct.
          if (selectedOption === correctAnswer) {
-            setScore(score + 1);
-            setCorrectAnswers(correctAnswers + 1);
+            setMetrics({
+               score: metrics.score + 1,
+               correctAnswers: metrics.correctAnswers + 1,
+               missed: 0
+            });
          } else {
             // Answer is wrong.
+            failed = true;
             selectedAnswerContainer.style.setProperty(
                "--outline-color",
                "var(--error-red-secondary)"
@@ -74,6 +97,7 @@ export function QuizBox(props: Quiz) {
 
       // No answer was selected. Mark all other options as wrong.
       if (selectedAnswerContainer === undefined) {
+         failed = true;
          for (const node of nodeList) {
             const _node = node as HTMLInputElement;
             if (parseInt(_node.value.slice(7)) === correctAnswer) continue;
@@ -88,11 +112,22 @@ export function QuizBox(props: Quiz) {
       }
 
       correctAnswerContainer.classList.add("correct-option");
+
+      if (failed) {
+         if (metrics.missed + 1 === 3) {
+            setMetrics((m) => ({ ...m, score: m.score - 1, missed: 0 }));
+         } else
+            setMetrics((m) => ({
+               ...m,
+               missed: m.missed + 1
+            }));
+      }
+
       /// Open next question, or end quiz.
       correctAnswerContainer.ontransitionend = () => {
          setTimeout(() => {
             if (openQuestion === 5) {
-               endQuiz();
+               setQuizEnded(true);
             } else {
                // Open next question.
                setOpenQuestion(openQuestion + 1);
@@ -114,156 +149,42 @@ export function QuizBox(props: Quiz) {
       next.click();
    }
 
-   /**
-    * End quiz flow.
-    */
-   function endQuiz() {
-      if (!quizBoxRef.current) {
-         return;
-      }
-      const div = quizBoxRef.current;
-      div.style.opacity = "0";
-      div.ontransitionend = () => {
-         div.style.width = "var(--quiz-start-width)";
-         div.style.height = "var(--quiz-start-height)";
-         div.ontransitionend = () => {
-            modal.setContent(
-               <>
-                  <Eclipses name={props.name as CategoryName} />
-                  <QuizEnd
-                     correctAnswers={correctAnswers + 1}
-                     name={props.name as CategoryName}
-                     score={score + 1}
-                  />
-               </>
-            );
-         };
-      };
-   }
-
    return (
-      <div
-         ref={quizBoxRef}
-         className="w-[--quiz-width] duration-500 h-[--quiz-height] relative flex items-center gap-[3rem]"
-      >
-         <QuestionBox
-            ref={nextButtonRef}
-            key={openQuestion}
-            number={openQuestion + 1}
-            {...currentQuestion}
-            finished={questionIsFinished}
-            handler={handleQuestionAnswering}
-         />
-         <div className="flex flex-col w-[40%] h-[80%] items-center justify-between">
-            <Timer
-               key={openQuestion}
-               duration={levels[level].timerValue}
-               onElaspse={forceFormSubmit}
-            />
-            <ScoreCount>
-               <span>{score}</span>
-            </ScoreCount>
-         </div>
-      </div>
-   );
-}
-
-interface QuestionBoxProps extends Question {
-   number: number;
-   /** Function that should run once a question is answered, or the timer elapses. */
-   handler?: FormEventHandler;
-   /** Whether or not the question can still be answered. */
-   finished?: boolean;
-}
-
-const options = "ABCD" as const;
-
-/**
- * A question.
- */
-const QuestionBox = forwardRef(
-   (props: QuestionBoxProps, ref: ForwardedRef<HTMLButtonElement>) => {
-      const optionState = useState(-1);
-
-      return (
-         <form
-            onSubmit={props.handler}
-            className="flex w-[60%] h-full flex-col justify-center items-end gap-[0.58094rem]"
+      <>
+         <Eclipses name={props.name as CategoryName} />
+         <div
+            ref={quizBoxRef}
+            className="w-[--quiz-width] duration-500 h-[--quiz-height] relative flex items-center gap-[3rem]"
          >
-            <h3 className="animate-pull-from-bottom effect-item-2 [animation-duration:400ms] w-full text-[2.51019rem] font-avenir-next-lt-pro-bold text-green-charcoal">
-               {`${props.number}. ${props.prompt}`}
-            </h3>
-            {props.options.map((value, index) => (
-               <Option
-                  handler={optionState}
-                  key={index}
-                  index={index}
-                  letter={options[index]}
-                  value={value}
+            <QuestionBox
+               ref={nextButtonRef}
+               key={openQuestion}
+               number={openQuestion + 1}
+               {...currentQuestion}
+               finished={questionIsFinished}
+               handler={handleQuestionAnswering}
+            />
+            <div className="flex flex-col w-[40%] h-[80%] items-center justify-between">
+               <Timer
+                  key={openQuestion}
+                  duration={levels[level].timerValue}
+                  onElaspse={forceFormSubmit}
                />
-            ))}
-            <Button
-               ref={ref}
-               type="submit"
-               disabled={optionState[0] === -1 || props.finished}
-               variant="outlined"
-               className="w-fit"
-            >
-               Next
-            </Button>
-         </form>
-      );
-   }
-);
-
-interface OptionProps {
-   index: number;
-   letter: string;
-   value: string;
-   handler: [number, React.Dispatch<React.SetStateAction<number>>];
-}
-
-/**
- * An option in a question.
- */
-function Option(props: OptionProps) {
-   const inputRef = useRef<HTMLInputElement>(null);
-   const containerClassnames = clsxm(
-      "before:block before:[content:''] before:absolute before:w-full before:h-full before:[border-color:var(--outline-color)] before:border-[3.718px] before:rounded-[0.40663rem] before:duration-[--transition-speed] before:translate-x-[--bg-offset-x] before:translate-y-[--bg-offset-y]",
-      "[--bg-offset-x:-1%] [--bg-offset-y:10%] [--transition-speed:400ms] [--outline-color:var(--green-charcoal)]",
-      "relative w-full mb-2",
-      "animate-fade-in-from-left duration-[--transition-speed] hover:[--bg-offset-x:-0.3%] hover:[--bg-offset-y:3%] hover:scale-[0.96] hover:translate-x-[-3%]",
-      `effect-item-${props.index}`,
-      props.handler[0] === props.index &&
-         "[--outline-color:var(--green-feldgrau)] font-bold text-green-viridian"
-   );
-   const labelClassNames = clsxm(
-      "border-green-charcoal bg-white duration-300 relative block font-poppins w-full text-[1.21994rem] rounded-[0.40663rem] border-[3.718px] p-[0.58094rem_0.58094rem_0.58094rem_1.33613rem] cursor-pointer",
-      props.handler[0] === props.index &&
-         "text-white bg-[--outline-color] border-[4.5px]"
-   );
-
-   function handleClick() {
-      props.handler[1](props.index);
-      if (inputRef.current) {
-         inputRef.current.checked = true;
-      }
-   }
-
-   return (
-      <div className={containerClassnames}>
-         <label onClick={handleClick} className={labelClassNames}>
-            <b className="text-[1.58835rem]">{props.letter}. </b>
-            {props.value}
-         </label>
-         <input
-            ref={inputRef}
-            hidden
-            type="radio"
-            name="questionOption"
-            value={`option-${props.index}`}
-         />
-      </div>
+               <ScoreCount>
+                  <span
+                     style={{
+                        color:
+                           metrics.score < 0
+                              ? "var(--error-red)"
+                              : "var(--green-feldgrau)"
+                     }}
+                  >
+                     {metrics.score}
+                  </span>
+               </ScoreCount>
+            </div>
+         </div>
+      </>
    );
 }
 

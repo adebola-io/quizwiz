@@ -78,14 +78,11 @@ export function QuizStart(props: QuizStartProps) {
                toast("Coming soon...");
             } else
                modal.setContent(
-                  <>
-                     <Eclipses name={props.name} />
-                     <QuizBox
-                        name={props.name}
-                        questions={questions}
-                        level={selectedLevel}
-                     />
-                  </>
+                  <QuizBox
+                     name={props.name}
+                     questions={questions}
+                     level={selectedLevel}
+                  />
                );
          })
          .catch((err: AxiosError) =>
@@ -98,6 +95,7 @@ export function QuizStart(props: QuizStartProps) {
 
    return (
       <>
+         <Eclipses name={props.name} />
          <div
             ref={containerRef}
             className="relative w-[--quiz-start-width] min-h-[--quiz-start-height] duration-500 flex items-center justify-center flex-col"
