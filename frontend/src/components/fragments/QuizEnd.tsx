@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { CategoryName } from "@/types";
 import { Button } from "../ui";
 import { categories } from "@/data";
-import { useModal } from "@/hooks";
+import { useAuth, useModal } from "@/hooks";
 import { Eclipses, QuizStart } from ".";
 
 interface QuizEndProps {
@@ -12,10 +12,9 @@ interface QuizEndProps {
 }
 
 export function QuizEnd(props: QuizEndProps) {
-   // Update user stats here.
+   const { updateStats } = useAuth();
    const { score, correctAnswers } = props;
    const category = categories[props.name];
-
    const percent = (correctAnswers / 20) * 100;
 
    const modal = useModal();
@@ -33,6 +32,11 @@ export function QuizEnd(props: QuizEndProps) {
          });
       };
    }
+
+   useEffect(() => {
+      updateStats({ quizResult: percent, starsEarned: score });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [score, correctAnswers, percent]);
 
    return (
       <>

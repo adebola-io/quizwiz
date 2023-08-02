@@ -109,7 +109,7 @@ function runServer(delay) {
             protected: true,
             handler(req, res) {
                const data = updateStats(req);
-               res.statusCode = 204;
+               res.statusCode = 200;
                return data;
             },
          },

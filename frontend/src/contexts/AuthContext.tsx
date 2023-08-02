@@ -1,7 +1,13 @@
 import { ReactNode, createContext, useEffect, useReducer } from "react";
-import axios from "@/api";
+import axios, { globalConfig } from "@/api";
 import { isValidToken, setSession } from "@/utils/jwt";
-import { User, LoginParams, UserCreationParams, ApiResponse } from "@/types";
+import {
+   User,
+   LoginParams,
+   UserCreationParams,
+   ApiResponse,
+   StatsUpdateParams
+} from "@/types";
 
 interface AuthState {
    isAuthenticated: boolean;
@@ -29,6 +35,10 @@ type AuthAction =
      }
    | {
         type: "REGISTER";
+        payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
+     }
+   | {
+        type: "UPDATE_STATS";
         payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
      };
 
@@ -66,9 +76,19 @@ const handlers: Record<
    LOGOUT: (state, action) => {
       const { isAuthenticated, isVerified, user } = action.payload;
 
-      return { ...state, isAuthenticated, isVerified, user: user };
+      return { ...state, isAuthenticated, isVerified, user };
    },
    REGISTER: (state, action) => {
+      const { isAuthenticated, isVerified, user } = action.payload;
+
+      return {
+         ...state,
+         isAuthenticated,
+         isVerified,
+         user
+      };
+   },
+   UPDATE_STATS: (state, action) => {
       const { isAuthenticated, isVerified, user } = action.payload;
 
       return {
@@ -87,13 +107,15 @@ interface AuthContextValue extends AuthState {
    login: (payload: LoginParams) => Promise<void>;
    logout: () => Promise<void>;
    signup: (payload: UserCreationParams) => Promise<void>;
+   updateStats: (payload: StatsUpdateParams) => void;
 }
 
 const AuthContext = createContext<AuthContextValue>({
    ...initialState,
    login: () => Promise.resolve(),
    logout: () => Promise.resolve(),
-   signup: () => Promise.resolve()
+   signup: () => Promise.resolve(),
+   updateStats: () => Promise.resolve()
 });
 
 interface AuthProviderProps {
@@ -185,6 +207,25 @@ function AuthProvider({ children }: AuthProviderProps) {
       });
    };
 
+   const updateStats = async (payload: StatsUpdateParams) => {
+      const { data } = await axios.put<ApiResponse<{ user: User }>>(
+         "/user/stats/update",
+         payload,
+         globalConfig
+      );
+
+      const { user } = data.data;
+
+      dispatch({
+         type: "UPDATE_STATS",
+         payload: {
+            user,
+            isAuthenticated: true,
+            isVerified: true
+         }
+      });
+   };
+
    const logout = async () => {
       setSession(null);
       dispatch({
@@ -203,7 +244,8 @@ function AuthProvider({ children }: AuthProviderProps) {
             ...state,
             login,
             logout,
-            signup
+            signup,
+            updateStats
          }}
       >
          {children}

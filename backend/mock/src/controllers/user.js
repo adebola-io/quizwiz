@@ -312,9 +312,7 @@ function handleForgotPassword(req) {
       user.email,
       `To change your password, use the token "${value}".`
    );
-   logger.inform(
-      `Visit http://localhost:5173/auth/reset-password/${value}`
-   );
+   logger.inform(`Visit http://localhost:5173/auth/reset-password/${value}`);
    return {
       status: "success",
       message: "Message sent to your email, kindly check."
@@ -425,7 +423,8 @@ function updateStats(req) {
    logger.inform(`Metrics for user "${user.username}" updated.`);
    return {
       status: "success",
-      message: "Stats updated successfully."
+      message: "Stats updated successfully.",
+      data: { user }
    };
 }
 

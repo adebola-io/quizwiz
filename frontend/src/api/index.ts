@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { ENDPOINT_ROOT } from "@/constants";
 
 const axiosInstance: AxiosInstance = axios.create({
@@ -18,19 +18,44 @@ axiosInstance.interceptors.request.use((config) => {
    return config;
 });
 
+interface RetryConfig extends AxiosRequestConfig {
+   retry: number;
+   retryDelay: number;
+}
+
+export const globalConfig: RetryConfig = {
+   retry: 5,
+   retryDelay: 1000
+};
+
 axiosInstance.interceptors.response.use(
    async (response) => {
       return response;
    },
    function (error) {
-      console.log({ error });
+      const { config } = error;
+
       if (error.code === "ERR_NETWORK") {
          toast.error(error.message);
       } else if (error.response.status === 401) {
          toast.error(error.response.data.message);
          localStorage.removeItem("accessToken");
-      } else {
+      } else if (!config || !config.retry) {
          return Promise.reject(error);
+      } else {
+         config.retry -= 1;
+         const delayRetryRequest = new Promise<void>((resolve) => {
+            setTimeout(() => {
+               if (config.retry === 0) {
+                  toast.error(
+                     error.response.data.message ??
+                        "Failed to log request due to an error on our end"
+                  );
+               }
+               resolve();
+            }, config.retryDelay || 1000);
+         });
+         return delayRetryRequest.then(() => axiosInstance(config));
       }
    }
 );
