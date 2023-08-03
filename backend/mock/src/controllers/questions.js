@@ -49,9 +49,9 @@ function getCategoryQuestions(req) {
          //@ts-ignore
          categoryName: utils.hyphenate(categoryName),
          level: levelAsNumber,
-         number: QUESTIONS_PER_QUIZ,
+         number: QUESTIONS_PER_QUIZ
       }),
-      level: levelAsNumber,
+      level: levelAsNumber
    };
 
    logger.inform(`Retrieved questions for ${categoryName}`);
@@ -63,8 +63,8 @@ function getCategoryQuestions(req) {
       status: "success",
       message: "Quiz fetched successfully",
       data: {
-         quiz: quizObject,
-      },
+         quiz: quizObject
+      }
    };
 }
 
@@ -101,7 +101,7 @@ function getRandomQuestions(req) {
    const questionData = db.getQuestions();
    let questions = questionData.random({
       number: QUESTIONS_PER_QUIZ,
-      level: levelAsNumber,
+      level: levelAsNumber
    });
 
    logger.inform(`Retrieved questions for random quiz, level ${levelAsNumber}`);
@@ -113,8 +113,8 @@ function getRandomQuestions(req) {
       status: "success",
       message: "Questions fetched successfully",
       data: {
-         questions,
-      },
+         questions
+      }
    };
 }
 
@@ -140,7 +140,7 @@ function getRapidFireQuestions(req) {
    /**@type {Question[]} */
    let questions = [];
    let shouldRetrieve =
-      user.rapidFireCheckpoint !== null ||
+      user.rapidFireCheckpoint === null ||
       utils.dates.isLater(new Date(), new Date(user.rapidFireCheckpoint));
 
    if (shouldRetrieve) {
@@ -163,8 +163,8 @@ function getRapidFireQuestions(req) {
       status: "success",
       message: "Questions fetched successfully",
       data: {
-         questions,
-      },
+         questions
+      }
    };
 }
 
@@ -205,6 +205,7 @@ function completeRapidFire(req) {
    return {
       status: "success",
       message: "Rapid fire completed successfully",
+      data: { user }
    };
 }
 
@@ -212,5 +213,5 @@ module.exports = {
    getCategoryQuestions,
    getRandomQuestions,
    getRapidFireQuestions,
-   completeRapidFire,
+   completeRapidFire
 };

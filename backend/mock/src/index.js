@@ -14,7 +14,7 @@ const {
    getCategoryQuestions,
    getRandomQuestions,
    getRapidFireQuestions,
-   completeRapidFire,
+   completeRapidFire
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -32,7 +32,7 @@ function runServer(delay) {
    api.delay = delay;
    api.useMiddleware({
       errorHandler,
-      protect,
+      protect
    })
       // UI.
       .endpoints({
@@ -41,7 +41,7 @@ function runServer(delay) {
             const html = readFileSync("src/html/index.html").toString();
             logger.inform("Home visited.");
             return html;
-         },
+         }
       })
       // User routes
       .endpoints({
@@ -61,7 +61,7 @@ function runServer(delay) {
                const data = getUserProfile(req);
                res.statusCode = 200;
                return data;
-            },
+            }
          },
          "/user/verify_email/:oneTimeToken": {
             protected: true,
@@ -69,7 +69,7 @@ function runServer(delay) {
                const data = verifyEmail(req);
                res.statusCode = 200;
                return data;
-            },
+            }
          },
          "/user/resend_email": {
             protected: true,
@@ -77,7 +77,7 @@ function runServer(delay) {
                const data = resendVerificationEmail(req);
                res.statusCode = 200;
                return data;
-            },
+            }
          },
          "/user/forgot_password"(req, res) {
             const data = handleForgotPassword(req);
@@ -95,7 +95,7 @@ function runServer(delay) {
                const data = deleteUser(req);
                res.statusCode = 204;
                return data;
-            },
+            }
          },
          // "/user/stats": {
          //    protected: true,
@@ -111,8 +111,8 @@ function runServer(delay) {
                const data = updateStats(req);
                res.statusCode = 200;
                return data;
-            },
-         },
+            }
+         }
       })
       // Others
       .endpoints({
@@ -132,16 +132,16 @@ function runServer(delay) {
                const data = getRapidFireQuestions(req);
                res.statusCode = 200;
                return data;
-            },
+            }
          },
          "/question/rpdfire/completed": {
             protected: true,
             handler(req, res) {
                const data = completeRapidFire(req);
-               res.statusCode = 204;
+               res.statusCode = 200;
                return data;
-            },
-         },
+            }
+         }
       });
 
    api.listen(PORT);
