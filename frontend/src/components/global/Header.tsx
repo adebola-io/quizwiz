@@ -1,3 +1,4 @@
+import { clsxm } from "@/utils/clsxm";
 import { Button } from "../ui";
 
 type HeaderProps =
@@ -13,12 +14,18 @@ type HeaderProps =
  * App navigation bar.
  */
 export function Header(props: HeaderProps) {
+   const headerClassnames = clsxm(
+      "fixed top-0 z-10 flex items-center justify-between h-[--header-height] w-full border-green-charcoal px-8 bg-white border-b-4 border-solid",
+      props.loggedIn
+         ? "pl-[1.625rem] pr-[--global-padding-left]"
+         : "px-[--global-padding-left]"
+   );
    return (
-      <header className="fixed top-0 z-10 flex items-center justify-between h-[--header-height] w-full border-green-charcoal px-8 sm:px-[--global-padding-left] bg-white border-b-4 border-solid">
+      <header className={headerClassnames}>
          <Logo />
          <div className="border-l-4 h-full border-green-charcoal flex items-center justify-items-end pl-14">
             {props.loggedIn ? (
-               <div className="flex items-center justify-center [box-shadow:-2px_2px_0px_0px_rgba(53,79,82,0.78)] text-white font-avenir-next-lt-pro-bold text-[1.63519rem] border-4 border-green-charcoal border-solid rounded-[50%] h-[3.625rem] aspect-square bg-green-dark-slate-gray">
+               <div className="flex items-center justify-center text-white font-avenir-next-lt-pro-bold text-[1.33519rem] border-4 border-green-charcoal border-solid rounded-[50%] h-[2.925rem] aspect-square bg-green-feldgrau">
                   {props.username[0].toUpperCase()}
                </div>
             ) : (
