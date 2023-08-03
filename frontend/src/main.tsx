@@ -9,13 +9,13 @@ import "./styles/index.css";
 const client = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-   <AuthProvider>
-      <QueryClientProvider client={client}>
+   <QueryClientProvider client={client}>
+      <AuthProvider>
          <BrowserRouter>
             <ModalProvider>
                <App />
             </ModalProvider>
          </BrowserRouter>
-      </QueryClientProvider>
-   </AuthProvider>
+      </AuthProvider>
+   </QueryClientProvider>
 );
