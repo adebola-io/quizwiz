@@ -194,7 +194,8 @@ function completeRapidFire(req) {
    /**@type {User} */
    const user = req["user"];
    user.quizzesPlayed += 1;
-   user.successRate = (quizResult + user.successRate) / user.quizzesPlayed;
+   user.successRate =
+      (quizResult + user.successRate) / (user.successRate === 0 ? 1 : 2);
    user.stars += starsEarned;
    logger.inform(
       `Rapid fire played. Metrics for user "${user.username}" updated.`
@@ -205,7 +206,7 @@ function completeRapidFire(req) {
    return {
       status: "success",
       message: "Rapid fire completed successfully",
-      data: { user }
+      data: { user: { ...user, password: undefined } }
    };
 }
 

@@ -4,40 +4,40 @@
 
 ## Table of Contents
 
--  [Table of Contents](#table-of-contents)
--  [Definition of Terms](#definition-of-terms)
-   -  [Prompt](#prompt)
-   -  [Question](#question)
-   -  [Quiz](#quiz)
-   -  [Category](#category)
-   -  [Level](#level)
-   -  [User](#user)
--  [Algorithms](#algorithms)
-   -  [Validating Usernames](#validating-usernames)
-   -  [Validating Emails](#validating-emails)
-   -  [Validating Passwords](#validating-passwords)
-   -  [Email Links](#email-links)
-      -  [Verify email link](#verify-email-link)
-      -  [reset password email link](#reset-password-email-link)
-   -  [Success Rate](#success-rate)
-   -  [Quiz Result](#quiz-result)
-   -  [Collecting Random Questions](#collecting-random-questions)
--  [Server API](#server-api)
-   -  [Success Response](#success-response)
-   -  [Server Errors](#server-errors)
-   -  [API Endpoints](#api-endpoints)
-      -  [- `BaseUrl`](#--baseurl)
-      -  [- POST `/api/v1/user/create`](#--post-apiv1usercreate)
-      -  [- POST `/api/v1/user/login`](#--post-apiv1userlogin)
-      -  [- PATCH `/api/v1/user/verify_email/:oneTimeToken`](#--patch-apiv1userverify_emailonetimetoken)
-      -  [- POST `/api/v1/user/resend_email`](#--post-apiv1userresend_email)
-      -  [- POST `/api/v1/user/forgot_password`](#--post-apiv1userforgot_password)
-      -  [- POST `/api/v1/user/reset_password/:oneTimeToken`](#--post-apiv1userreset_passwordonetimetoken)
-      -  [- PUT `/user/stats/update`](#--put-userstatsupdate)
-      -  [- GET `/category/get/:id/:level`](#--get-categorygetidlevel)
-      -  [- GET `/question/random/:level`](#--get-questionrandomlevel)
-      -  [- GET `/question/rpdfire`](#--get-questionrpdfire)
-      -  [- POST `question/rpdfire/completed`](#--post-questionrpdfirecompleted)
+- [Table of Contents](#table-of-contents)
+- [Definition of Terms](#definition-of-terms)
+  - [Prompt](#prompt)
+  - [Question](#question)
+  - [Quiz](#quiz)
+  - [Category](#category)
+  - [Level](#level)
+  - [User](#user)
+- [Algorithms](#algorithms)
+  - [Validating Usernames](#validating-usernames)
+  - [Validating Emails](#validating-emails)
+  - [Validating Passwords](#validating-passwords)
+  - [Email Links](#email-links)
+    - [Verify email link](#verify-email-link)
+    - [reset password email link](#reset-password-email-link)
+  - [Success Rate](#success-rate)
+  - [Quiz Result](#quiz-result)
+  - [Collecting Random Questions](#collecting-random-questions)
+- [Server API](#server-api)
+  - [Success Response](#success-response)
+  - [Server Errors](#server-errors)
+  - [API Endpoints](#api-endpoints)
+    - [- `BaseUrl`](#--baseurl)
+    - [- POST `/api/v1/user/create`](#--post-apiv1usercreate)
+    - [- POST `/api/v1/user/login`](#--post-apiv1userlogin)
+    - [- PATCH `/api/v1/user/verify_email/:oneTimeToken`](#--patch-apiv1userverify_emailonetimetoken)
+    - [- POST `/api/v1/user/resend_email`](#--post-apiv1userresend_email)
+    - [- POST `/api/v1/user/forgot_password`](#--post-apiv1userforgot_password)
+    - [- POST `/api/v1/user/reset_password/:oneTimeToken`](#--post-apiv1userreset_passwordonetimetoken)
+    - [- PUT `/user/stats/update`](#--put-userstatsupdate)
+    - [- GET `/category/get/:id/:level`](#--get-categorygetidlevel)
+    - [- GET `/question/random/:level`](#--get-questionrandomlevel)
+    - [- GET `/question/rpdfire`](#--get-questionrpdfire)
+    - [- POST `question/rpdfire/completed`](#--post-questionrpdfirecompleted)
 
 ## Definition of Terms
 
@@ -411,7 +411,9 @@ This route is protected. Only users should be able to access it.
 3. if `quizResult` is not an integer or a stringified integer, "quizResult" must be a number
 4. if `starsEarned` is not an integer or a stringified integer, "starsEarned" must be a number.
 5. Increase the user's `quizzesPlayed` value by 1.
-6. Recalculate the user's success rate by adding `quizResult` to the former `successRate` multiplied by former `quizzesPlayed`, and dividing the sum by new `quizzesPlayed`.
+6. Recalculate the user's success rate by adding `quizResult` to the former `successRate` multiplied by former `quizzesPlayed`, and dividing the sum by:
+   1. 1 if the initial success rate is 0.
+   2. else, 2.
 7. Increase the user's stars by `starsEarned`.
 8. Return a response with the shape:
 

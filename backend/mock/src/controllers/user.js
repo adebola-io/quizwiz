@@ -418,13 +418,14 @@ function updateStats(req) {
    /**@type {User} */
    const user = req["user"];
    user.quizzesPlayed += 1;
-   user.successRate = (quizResult + user.successRate) / user.quizzesPlayed;
+   user.successRate =
+      (quizResult + user.successRate) / (user.successRate === 0 ? 1 : 2);
    user.stars += starsEarned;
    logger.inform(`Metrics for user "${user.username}" updated.`);
    return {
       status: "success",
       message: "Stats updated successfully.",
-      data: { user }
+      data: { user: { ...user, password: undefined } }
    };
 }
 
