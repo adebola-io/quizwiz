@@ -1,7 +1,12 @@
 import { Banner, Button, Metric } from "@/components/ui";
 import { useAuth, useModal } from "@/hooks";
 import RpdFireBanner from "@/assets/RapidFireBanner.png";
-import { CategoryList, RapidFireStart } from "@/components/fragments";
+import {
+   CategoryList,
+   QuizStart,
+   RapidFireStart
+} from "@/components/fragments";
+import Dice from "@/assets/icons/Dice.png";
 import "./Home.css";
 
 /**
@@ -28,9 +33,17 @@ export default function Home() {
       modal.open({ closeOnClickOutside: false });
    }
 
+   function openRandomQuiz() {
+      modal.setContent(<QuizStart name="Random Quiz" />);
+      modal.morph({
+         className: "aspect-auto min-h-[max-content]"
+      });
+      modal.open({ closeOnClickOutside: false });
+   }
+
    return (
       <>
-         <main className="page_with_header lines min-h-screen pl-[--sidebar-width]">
+         <main className="page_with_header relative lines min-h-screen pl-[--sidebar-width]">
             <div className="p-[3.125rem_var(--global-padding-left)_0rem_2.5rem]">
                <div className="flex mb-[2.04rem] w-full max-w-[1920px] gap-11">
                   <Metric
@@ -73,6 +86,16 @@ export default function Home() {
                   </Button>
                </Banner>
                <CategoryList />
+            </div>
+            <div
+               style={{
+                  boxShadow:
+                     "-5.799999713897705px 5.799999713897705px 0px 0px rgba(53, 79, 82, 0.78)"
+               }}
+               onClick={openRandomQuiz}
+               className="fixed right-0 bottom-[7vh] cursor-pointer duration-300 opacity-30 hover:opacity-100 hover:scale-95 h-[7.0625rem] aspect-square flex items-center justify-center bg-green-viridian mr-[--global-padding-left] rounded-[50%] border-[5.8px] border-green-charcoal"
+            >
+               <img className="w-[50%]" src={Dice} alt="dice" />
             </div>
          </main>
       </>

@@ -71,6 +71,7 @@ export type ImageImport = string;
 
 interface CategoryData {
    id: number;
+   info: string;
    MainIcon: ImageImport;
    BoxIcon: React.FC;
    gradient: string;

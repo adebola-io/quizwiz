@@ -17,6 +17,8 @@ export function QuizEnd(props: QuizEndProps) {
    const category = categories[props.name];
    const percent = (correctAnswers / 20) * 100;
 
+   console.log(correctAnswers, percent);
+
    const modal = useModal();
    const containerRef = useRef<HTMLDivElement>(null);
 
@@ -72,7 +74,11 @@ export function QuizEnd(props: QuizEndProps) {
                   ? "This quiz has ended with no benefit or loss. Play again to gain some stars!"
                   : score > 0
                   ? `${
-                       percent > 60 ? "Great job!" : ""
+                       percent === 100
+                          ? "A perfect score!"
+                          : percent > 60
+                          ? "Great job!"
+                          : ""
                     } You answered ${correctAnswers}/20 questions correctly, and gained ${score} star${
                        score > 1 ? "s" : ""
                     }.`

@@ -160,11 +160,15 @@ export function QuizStart(props: QuizStartProps) {
                style={{ opacity: isLoading ? "0" : "1" }}
                className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem]"
             >
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. sunt in culpa qui
-               officia deserunt mollit anim id est laborum.
+               <span className="block">{category.info}</span>
+               <span className="block">
+                  You have {levels[selectedLevel].timerValue} seconds for each
+                  question, and 20 questions in total.
+               </span>
+               <span className="block font-bold">
+                  Failing 3 questions in a row will result in a penalty.
+               </span>
+               <span className="block">Are you ready?</span>
             </p>
             <Button
                className="mb-[3rem]"

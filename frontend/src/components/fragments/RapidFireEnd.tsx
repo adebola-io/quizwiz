@@ -2,6 +2,7 @@ import { useAuth, useModal } from "@/hooks";
 import { Eclipses } from ".";
 import { Button } from "../ui";
 import { useEffect } from "react";
+import { User } from "@/types";
 
 interface RapidFireEndProps {
    score: number;
@@ -9,11 +10,14 @@ interface RapidFireEndProps {
 }
 
 export function RapidFireEnd(props: RapidFireEndProps) {
-   const { updateRapidFire } = useAuth();
+   const { updateRapidFire, user } = useAuth();
    const modal = useModal();
 
    const { score, questionsAnswered } = props;
-   const percent = (score / questionsAnswered) * 100;
+   const percent =
+      questionsAnswered === 0
+         ? (user as User).successRate
+         : (score / questionsAnswered) * 100;
 
    useEffect(() => {
       updateRapidFire({ quizResult: percent, starsEarned: score });

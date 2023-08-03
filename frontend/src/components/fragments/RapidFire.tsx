@@ -3,6 +3,7 @@ import { Timer } from "../ui";
 import { QuestionBox, RapidFireEnd } from ".";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { useModal } from "@/hooks";
+import { toast } from "react-hot-toast";
 
 interface RapidFireProps {
    questions: Question[];
@@ -15,9 +16,12 @@ export function RapidFire(props: RapidFireProps) {
    const [index, setIndex] = useState(0);
    const [score, setScore] = useState(0);
    const [questionsAnswered, setQuestionsAnswered] = useState(0);
+   const [streak, setStreak] = useState(0);
+   const [timerValueChanged, setTimerValueChanged] = useState(0);
    const [quizEnded, setQuizEnded] = useState(false);
    const containerRef = useRef<HTMLDivElement>(null);
 
+   // Effect to run once rapid fire ends.
    useEffect(() => {
       if (quizEnded && containerRef.current) {
          const div = containerRef.current;
@@ -53,11 +57,19 @@ export function RapidFire(props: RapidFireProps) {
 
       if (correctDiv === selectedDiv) {
          setScore(score + 1);
+         setStreak(streak + 1);
       } else {
          selectedDiv.classList.add("wrong-option");
+         setStreak(0);
       }
 
       setQuestionsAnswered(questionsAnswered + 1);
+
+      if (streak === 10) {
+         setTimerValueChanged(timerValueChanged + 1);
+         toast.success("Ten seconds added! 🤩");
+         setStreak(0);
+      }
 
       correctDiv.classList.add("correct-option");
       correctDiv.ontransitionend = () => {
@@ -77,8 +89,9 @@ export function RapidFire(props: RapidFireProps) {
          className="background_rapidfire flex flex-col justify-center items-center h-[--rapid-fire-height] w-[--rapid-fire-width] duration-[600ms] p-[--modal-padding]"
       >
          <Timer
+            hijacker={[timerValueChanged, (countdown) => countdown + 10]}
             className="w-[60%] border-[8px] shadow-none font-poppins text-[4.11394rem] font-normal mb-[2rem] px-[--modal-padding] bg-[#FFD3EE] text-black"
-            duration={3 * 60}
+            duration={4 * 60}
             onElaspse={() => setQuizEnded(true)}
          />
          <QuestionBox

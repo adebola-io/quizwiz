@@ -1,6 +1,7 @@
 import { clsxm } from "@/utils/clsxm";
-import { useEffect } from "react";
-import { useCountdown } from "usehooks-ts";
+import { useEffect, useState } from "react";
+
+type HijackerCallback = (currentTimerValue: number) => number;
 
 interface TimerProps {
    /** How long the timer should count, in seconds. */
@@ -8,13 +9,16 @@ interface TimerProps {
    /** Function that should run once the time runs out. */
    onElaspse?: () => void;
    className?: string;
+   /** Function to edit and change the timer value when a key changes. */
+   hijacker?: [React.Key, HijackerCallback];
 }
 
 /**
  * A generic timer component
  */
 export function Timer(props: TimerProps) {
-   const { onElaspse } = props;
+   const { onElaspse, hijacker } = props;
+   const [hijackerKey, hijackerCallback] = hijacker ?? [];
 
    const className = clsxm(
       "w-full flex items-center justify-center",
@@ -24,18 +28,24 @@ export function Timer(props: TimerProps) {
       props.className
    );
 
-   const [countdown, { startCountdown }] = useCountdown({
-      countStart: props.duration,
-      intervalMs: 1000
-   });
+   const [countdown, setCountdown] = useState(props.duration);
 
    const { minutes, seconds } = {
       minutes: Math.floor(countdown / 60),
       seconds: countdown % 60
    };
+
    useEffect(() => {
-      startCountdown();
-   }, [startCountdown]);
+      const interval = setInterval(() => {
+         setCountdown((c) => c - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+   }, []);
+
+   useEffect(() => {
+      setCountdown(hijackerCallback?.(countdown) ?? countdown);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [hijackerKey]);
 
    useEffect(() => {
       if (minutes === 0 && seconds === 0) {

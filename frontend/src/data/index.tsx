@@ -11,6 +11,7 @@ export const categories: CategoryStore = {
    "Random Quiz": {
       // Not a real id.
       id: 0,
+      info: "Answer general questions from every category. 🎲",
       MainIcon: RandomIcon,
       BoxIcon() {
          return (
@@ -114,6 +115,7 @@ export const categories: CategoryStore = {
    },
    "History, Politics & Geography": {
       id: 1,
+      info: "What do you know about the past? 🕰️",
       MainIcon: History,
       BoxIcon() {
          return (
@@ -219,6 +221,7 @@ export const categories: CategoryStore = {
    },
    "Language & Literature": {
       id: 2,
+      info: "Test your knowledge on spoken and written word. 💬📝",
       MainIcon: Language,
       BoxIcon() {
          return (
@@ -324,6 +327,7 @@ export const categories: CategoryStore = {
    },
    Sports: {
       id: 3,
+      info: "Score a goal, hit a six, or ace a serve. 🏈⚽",
       MainIcon: Sports,
       BoxIcon() {
          return (
@@ -429,6 +433,7 @@ export const categories: CategoryStore = {
    },
    Mathematics: {
       id: 4,
+      info: "Don't count on luck! ➗🧮",
       MainIcon: Maths,
       BoxIcon() {
          return (
@@ -534,6 +539,7 @@ export const categories: CategoryStore = {
    },
    "Pop Culture": {
       id: 4,
+      info: "Let's know if you're in the know. 😎",
       MainIcon: PopCulture,
       BoxIcon() {
          return (
@@ -639,6 +645,7 @@ export const categories: CategoryStore = {
    },
    Technology: {
       id: 6,
+      info: "Assess your acumen on gadgets and gizmos. 🖥️",
       MainIcon: Technology,
       BoxIcon() {
          return (
