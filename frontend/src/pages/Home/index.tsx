@@ -1,7 +1,7 @@
 import { Banner, Button, Metric } from "@/components/ui";
-import { useAuth } from "@/hooks";
+import { useAuth, useModal } from "@/hooks";
 import RpdFireBanner from "@/assets/RapidFireBanner.png";
-import { CategoryList } from "@/components/fragments";
+import { CategoryList, RapidFireStart } from "@/components/fragments";
 import "./Home.css";
 
 /**
@@ -10,9 +10,23 @@ import "./Home.css";
  */
 export default function Home() {
    const { user } = useAuth();
-   if (!user) {
-      return <></>;
+   const modal = useModal();
+
+   if (!user) return <></>;
+
+   function openRapidFireStart() {
+      modal.setContent(<RapidFireStart />);
+      modal.morph({
+         style: {
+            padding: 0,
+            maxHeight: "fit-content",
+            minHeight: "0px",
+            aspectRatio: "auto"
+         }
+      });
+      modal.open({ closeOnClickOutside: false });
    }
+
    return (
       <>
          <main className="page_with_header lines min-h-screen pl-[--sidebar-width]">
@@ -46,6 +60,7 @@ export default function Home() {
                      Earn more Stars in a Rapid Fire Quiz.
                   </h1>
                   <Button
+                     onClick={openRapidFireStart}
                      className="w-fit"
                      style={{
                         backgroundColor: "#ffc150",

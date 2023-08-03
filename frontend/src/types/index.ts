@@ -126,3 +126,7 @@ export type CategoryResponse = ApiResponse<{
 export type RandomQuizResponse = ApiResponse<{
    questions: Question[];
 }>;
+
+export type RapidFireResponse = ApiResponse<{
+   questions: Question[];
+}>;

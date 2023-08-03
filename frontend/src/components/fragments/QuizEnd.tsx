@@ -39,7 +39,7 @@ export function QuizEnd(props: QuizEndProps) {
          <Eclipses name={props.name} />
          <div
             ref={containerRef}
-            className="w-[--quiz-start-width] h-[--quiz-start-height] duration-500 flex flex-col items-center gap-[1.875rem] justify-center"
+            className="w-[--quiz-start-width] h-[--quiz-start-height] duration-[--modal-morph-duration] flex flex-col items-center gap-[1.875rem] justify-center"
          >
             <h4 className="text-green-feldgrau text-center text-[3.03688rem] font-avenir-next-lt-pro-bold">
                Quiz Ended.

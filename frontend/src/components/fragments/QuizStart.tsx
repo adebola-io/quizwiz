@@ -98,7 +98,7 @@ export function QuizStart(props: QuizStartProps) {
          <Eclipses name={props.name} />
          <div
             ref={containerRef}
-            className="relative w-[--quiz-start-width] min-h-[--quiz-start-height] duration-500 flex items-center justify-center flex-col"
+            className="relative w-[--quiz-start-width] min-h-[--quiz-start-height] duration-[--modal-morph-duration] flex items-center justify-center flex-col"
          >
             {isLoading ? (
                <div className="absolute w-full h-full flex items-center justify-center">

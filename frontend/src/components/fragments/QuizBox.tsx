@@ -12,19 +12,20 @@ export function QuizBox(props: Quiz) {
    const { questions, level } = props;
 
    const modal = useModal();
-   const [openQuestion, setOpenQuestion] = useState(0);
+   /** Reference to the next button in a question. */
+   const nextButtonRef = useRef<HTMLButtonElement>(null);
+   /** Reference to component container. */
+   const quizBoxRef = useRef<HTMLDivElement>(null);
+   const [index, setIndex] = useState(0);
    const [questionIsFinished, setQuestionIsFinished] = useState(false);
    const [quizEnded, setQuizEnded] = useState(false);
-
    const [metrics, setMetrics] = useState({
       score: 0,
       correctAnswers: 0,
       missed: 0
    });
 
-   /** Reference to the next button in a question. */
-   const nextButtonRef = useRef<HTMLButtonElement>(null);
-   const quizBoxRef = useRef<HTMLDivElement>(null);
+   const currentQuestion = questions[index];
 
    // Effect to end quiz.
    useEffect(() => {
@@ -47,71 +48,49 @@ export function QuizBox(props: Quiz) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [quizEnded]);
 
-   const currentQuestion = questions[openQuestion];
-
    /**
     * User has answered a question and pressed 'Next', or the time has elapsed.
-    * @param event form event.
+    * @param e form event.
     */
-   function handleQuestionAnswering(event: FormEvent) {
-      event.preventDefault();
-      const { questionOption: nodeList } = event.target as unknown as {
+   const responseHandler = (e: FormEvent) => {
+      e.preventDefault();
+      setQuestionIsFinished(true);
+
+      const { questionOption: list } = e.target as unknown as {
          questionOption: RadioNodeList;
       };
 
       const { correctAnswer } = currentQuestion;
-      const correctAnswerContainer = nodeList.item(correctAnswer)
-         ?.parentElement as HTMLElement;
+      const correctDiv = list.item(correctAnswer)?.parentElement as HTMLElement;
 
-      let selectedAnswerContainer: HTMLLabelElement | undefined = undefined;
+      const selectedAnswer = list.value ? parseInt(list.value.slice(7)) : -1;
+      let selectedDiv = list.item(selectedAnswer)?.parentElement ?? null;
+
       let failed = false;
 
-      for (const node of nodeList) {
-         const _node = node as HTMLInputElement;
-         // Skip unselected answers.
-         if (!_node.checked) continue;
-
-         setQuestionIsFinished(true);
-         const selectedOption = parseInt(_node.value.slice(7));
-
-         selectedAnswerContainer = node.parentElement as HTMLLabelElement;
-
+      if (selectedAnswer === correctAnswer) {
          // Answer is correct.
-         if (selectedOption === correctAnswer) {
-            setMetrics({
-               score: metrics.score + 1,
-               correctAnswers: metrics.correctAnswers + 1,
-               missed: 0
-            });
-         } else {
-            // Answer is wrong.
-            failed = true;
-            selectedAnswerContainer.style.setProperty(
-               "--outline-color",
-               "var(--error-red-secondary)"
-            );
-            selectedAnswerContainer.classList.add("wrong-option");
-         }
-         break;
-      }
-
-      // No answer was selected. Mark all other options as wrong.
-      if (selectedAnswerContainer === undefined) {
+         setMetrics({
+            score: metrics.score + 1,
+            correctAnswers: metrics.correctAnswers + 1,
+            missed: 0
+         });
+      } else if (selectedDiv) {
+         // Answer is wrong.
          failed = true;
-         for (const node of nodeList) {
-            const _node = node as HTMLInputElement;
-            if (parseInt(_node.value.slice(7)) === correctAnswer) continue;
+         selectedDiv.style.setProperty("--outline", "var(--error-red-2)");
+         selectedDiv.classList.add("wrong-option");
+      } else {
+         // No answer was selected. Mark all other options as wrong.
+         failed = true;
+         for (const node of list as unknown as NodeListOf<HTMLInputElement>) {
+            if (parseInt(node.value.slice(7)) === correctAnswer) continue;
 
-            selectedAnswerContainer = node.parentElement as HTMLLabelElement;
-            selectedAnswerContainer.style.setProperty(
-               "--outline-color",
-               "var(--error-red-secondary)"
-            );
-            selectedAnswerContainer.classList.add("wrong-option");
+            selectedDiv = node.parentElement as HTMLElement;
+            selectedDiv.style.setProperty("--outline", "var(--error-red-2)");
+            selectedDiv.classList.add("wrong-option");
          }
       }
-
-      correctAnswerContainer.classList.add("correct-option");
 
       if (failed) {
          if (metrics.missed + 1 === 3) {
@@ -123,50 +102,51 @@ export function QuizBox(props: Quiz) {
             }));
       }
 
+      correctDiv.classList.add("correct-option");
       /// Open next question, or end quiz.
-      correctAnswerContainer.ontransitionend = () => {
+      correctDiv.ontransitionend = () => {
          setTimeout(() => {
-            if (openQuestion === 5) {
+            if (index === 5) {
                setQuizEnded(true);
             } else {
                // Open next question.
-               setOpenQuestion(openQuestion + 1);
+               setIndex(index + 1);
                setQuestionIsFinished(false);
             }
          }, 450);
       };
-   }
+   };
 
    /**
     * Time has elapsed.
     */
-   function forceFormSubmit() {
+   const forceFormSubmit = () => {
       const next = nextButtonRef.current;
       if (!next) {
          return;
       }
       next.disabled = false;
       next.click();
-   }
+   };
 
    return (
       <>
          <Eclipses name={props.name as CategoryName} />
          <div
             ref={quizBoxRef}
-            className="w-[--quiz-width] duration-500 h-[--quiz-height] relative flex items-center gap-[3rem]"
+            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center gap-[3rem]"
          >
             <QuestionBox
                ref={nextButtonRef}
-               key={openQuestion}
-               number={openQuestion + 1}
+               key={index}
+               number={index + 1}
                {...currentQuestion}
                finished={questionIsFinished}
-               handler={handleQuestionAnswering}
+               handler={responseHandler}
             />
             <div className="flex flex-col w-[40%] h-[80%] items-center justify-between">
                <Timer
-                  key={openQuestion}
+                  key={index}
                   duration={levels[level].timerValue}
                   onElaspse={forceFormSubmit}
                />
