@@ -104,7 +104,7 @@ export function QuizBox(props: Quiz) {
       /// Open next question, or end quiz.
       correctDiv.ontransitionend = () => {
          setTimeout(() => {
-            if (index === 5) setQuizEnded(true);
+            if (index === 19) setQuizEnded(true);
             else {
                // Open next question.
                setIndex(index + 1);
