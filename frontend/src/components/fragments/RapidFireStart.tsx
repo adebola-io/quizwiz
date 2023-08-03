@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import axios from "@/api";
 import { Question, RapidFireResponse } from "@/types";
 import { RapidFire } from ".";
+import { toast } from "react-hot-toast";
 
 export function RapidFireStart() {
    const modal = useModal();
@@ -17,7 +18,12 @@ export function RapidFireStart() {
       axios
          .get<RapidFireResponse>("/question/rpdfire")
          .then(({ data }) => {
-            startRapidFire(data.data.questions);
+            const { questions } = data.data;
+            if (questions.length === 0) {
+               toast(
+                  "You have played Rapid fire today. Check back again tomorrow! 💫"
+               );
+            } else startRapidFire(questions);
          })
          .catch(() => {})
          .finally(() => setIsLoading(false));

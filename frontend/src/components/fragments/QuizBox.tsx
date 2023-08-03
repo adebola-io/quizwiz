@@ -78,7 +78,6 @@ export function QuizBox(props: Quiz) {
       } else if (selectedDiv) {
          // Answer is wrong.
          failed = true;
-         selectedDiv.style.setProperty("--outline", "var(--error-red-2)");
          selectedDiv.classList.add("wrong-option");
       } else {
          // No answer was selected. Mark all other options as wrong.
@@ -87,7 +86,6 @@ export function QuizBox(props: Quiz) {
             if (parseInt(node.value.slice(7)) === correctAnswer) continue;
 
             selectedDiv = node.parentElement as HTMLElement;
-            selectedDiv.style.setProperty("--outline", "var(--error-red-2)");
             selectedDiv.classList.add("wrong-option");
          }
       }
@@ -106,9 +104,8 @@ export function QuizBox(props: Quiz) {
       /// Open next question, or end quiz.
       correctDiv.ontransitionend = () => {
          setTimeout(() => {
-            if (index === 5) {
-               setQuizEnded(true);
-            } else {
+            if (index === 5) setQuizEnded(true);
+            else {
                // Open next question.
                setIndex(index + 1);
                setQuestionIsFinished(false);

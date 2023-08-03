@@ -19,6 +19,10 @@
 .correct-option label {
    background-color: var(--green-cambridge-blue);
 }
+
+.wrong-option {
+   --outline: var(--error-red-2);
+}
 .wrong-option:after {
    height: 40%;
    transform: translate(-97%, -180%);

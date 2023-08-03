@@ -12,3 +12,4 @@ export * from "./QuizEnd";
 export * from "./QuestionBox";
 export * from "./RapidFireStart";
 export * from "./RapidFire";
+export * from "./RapidFireEnd";

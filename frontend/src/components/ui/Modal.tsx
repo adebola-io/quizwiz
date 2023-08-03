@@ -25,7 +25,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
       "before:block before:[content:''] before:duration-[500ms] before:[backdrop-filter:blur(10px)] before:absolute before:w-full before:h-full"
    );
    const dialogClassName = clsxm(
-      "hover:scale-[0.99]",
+      // "hover:scale-[0.99]",
       "animate-pop [animation-duration:500ms] duration-300 shadow-components/shadow",
       "relative bg-[#00000047] overflow-hidden min-h-[25vh] aspect-[1.5] p-[--modal-padding] bg-white",
       "border-green-charcoal border-[6.778px] rounded-[1.1015rem]",

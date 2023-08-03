@@ -1,8 +1,22 @@
 import { categories } from "@/data";
+import { CategoryName } from "@/types";
 import { clsxm } from "@/utils/clsxm";
 
-export function Eclipses(props: { name: keyof typeof categories }) {
-   const category = categories[props.name];
+interface CategoryEclipseProps {
+   name: CategoryName;
+}
+
+interface RapidFireEclipseProps {
+   rapidFire: true;
+}
+
+export function Eclipses(props: CategoryEclipseProps | RapidFireEclipseProps) {
+   const category = isCategory(props)
+      ? categories[props.name]
+      : {
+           gradient:
+              "var(--gradients-rapid-fire-three, linear-gradient(90deg, #CE0000 0%, #FFA500 100%))"
+        };
 
    const outerClassNames =
       "animate-spin-custom [animation-duration:2500ms] flex items-center z-[0] opacity-[0.5] justify-center w-[19.5rem] aspect-square rounded-[50%] absolute";
@@ -46,3 +60,9 @@ export function Eclipses(props: { name: keyof typeof categories }) {
       </>
    );
 }
+
+const isCategory = (
+   props: CategoryEclipseProps | RapidFireEclipseProps
+): props is CategoryEclipseProps => {
+   return (props as CategoryEclipseProps).name !== undefined;
+};

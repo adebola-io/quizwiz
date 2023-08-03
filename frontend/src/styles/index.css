@@ -18,6 +18,7 @@
    --heat-wave: #ff7a00;
    --fine-purple: #c20275;
    --indigo-dye: #284b63;
+   --purple-eggplant: #684756;
 
    --global-padding-left: 3.75rem;
    --modal-padding: 3.75rem;
@@ -33,7 +34,7 @@
 
    --rapid-fire-start-height: 59vh;
    --rapid-fire-start-width: 60vw;
-   --rapid-fire-height: 65vh;
+   --rapid-fire-height: 75vh;
    --rapid-fire-width: 70vw;
 }
 /* For squished screens. */
@@ -63,6 +64,12 @@
    background-size: cover;
    background-position: center;
    background-image: url(../assets/password-background.png);
+}
+
+.background_rapidfire {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/rapidfire-background.png);
 }
 
 .page_with_header {

@@ -13,6 +13,7 @@ export default function Home() {
    const modal = useModal();
 
    if (!user) return <></>;
+   const { quizzesPlayed, stars, successRate } = user;
 
    function openRapidFireStart() {
       modal.setContent(<RapidFireStart />);
@@ -34,20 +35,20 @@ export default function Home() {
                <div className="flex mb-[2.04rem] w-full max-w-[1920px] gap-11">
                   <Metric
                      className="animate-drop-from-top effect-item-0"
-                     name="quizzes played"
-                     value={user.quizzesPlayed}
+                     name={`quiz${quizzesPlayed !== 1 ? "zes" : ""} played`}
+                     value={quizzesPlayed}
                      icon={<QuestionIcon />}
                   />
                   <Metric
                      className="animate-drop-from-top effect-item-2"
-                     name="stars"
-                     value={user.stars}
+                     name={`star${stars !== 1 ? "s" : ""}`}
+                     value={stars}
                      icon={<StarsIcon />}
                   />
                   <Metric
                      name="success rate"
                      className="animate-drop-from-top effect-item-4"
-                     value={user.successRate.toFixed(1)}
+                     value={successRate.toFixed(1)}
                      percent
                      icon={<CheckMark />}
                   />

@@ -40,6 +40,10 @@ type AuthAction =
    | {
         type: "UPDATE_STATS";
         payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
+     }
+   | {
+        type: "UPDATE_RAPID_FIRE";
+        payload: { isAuthenticated: boolean; isVerified: boolean; user: User };
      };
 
 const initialState: AuthState = {
@@ -97,6 +101,16 @@ const handlers: Record<
          isVerified,
          user
       };
+   },
+   UPDATE_RAPID_FIRE: (state, action) => {
+      const { isAuthenticated, isVerified, user } = action.payload;
+
+      return {
+         ...state,
+         isAuthenticated,
+         isVerified,
+         user
+      };
    }
 };
 
@@ -108,6 +122,7 @@ interface AuthContextValue extends AuthState {
    logout: () => Promise<void>;
    signup: (payload: UserCreationParams) => Promise<void>;
    updateStats: (payload: StatsUpdateParams) => void;
+   updateRapidFire: (payload: StatsUpdateParams) => void;
 }
 
 const AuthContext = createContext<AuthContextValue>({
@@ -115,7 +130,8 @@ const AuthContext = createContext<AuthContextValue>({
    login: () => Promise.resolve(),
    logout: () => Promise.resolve(),
    signup: () => Promise.resolve(),
-   updateStats: () => Promise.resolve()
+   updateStats: () => Promise.resolve(),
+   updateRapidFire: () => Promise.resolve()
 });
 
 interface AuthProviderProps {
@@ -226,6 +242,25 @@ function AuthProvider({ children }: AuthProviderProps) {
       });
    };
 
+   const updateRapidFire = async (payload: StatsUpdateParams) => {
+      const { data } = await axios.post<ApiResponse<{ user: User }>>(
+         "/question/rpdfire/completed",
+         payload,
+         globalConfig
+      );
+      console.log(data.data);
+      const { user } = data.data;
+      console.log(user);
+      dispatch({
+         type: "UPDATE_RAPID_FIRE",
+         payload: {
+            user,
+            isAuthenticated: true,
+            isVerified: true
+         }
+      });
+   };
+
    const logout = async () => {
       setSession(null);
       dispatch({
@@ -245,7 +280,8 @@ function AuthProvider({ children }: AuthProviderProps) {
             login,
             logout,
             signup,
-            updateStats
+            updateStats,
+            updateRapidFire
          }}
       >
          {children}
