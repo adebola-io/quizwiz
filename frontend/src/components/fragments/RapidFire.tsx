@@ -19,6 +19,7 @@ export function RapidFire(props: RapidFireProps) {
    const [streak, setStreak] = useState(0);
    const [timerValueChanged, setTimerValueChanged] = useState(0);
    const [quizEnded, setQuizEnded] = useState(false);
+   const [streakIsPossible, setStreakIsPossible] = useState(false);
    const containerRef = useRef<HTMLDivElement>(null);
 
    // Effect to run once rapid fire ends.
@@ -42,6 +43,17 @@ export function RapidFire(props: RapidFireProps) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [quizEnded]);
 
+   // Effect to constrain a streak to 20 seconds.
+   useEffect(() => {
+      if (streakIsPossible) {
+         const timeout = setTimeout(() => {
+            setStreakIsPossible(false);
+            setStreak(0);
+         }, 25000);
+         return () => clearTimeout(timeout);
+      }
+   }, [streakIsPossible]);
+
    const currentQuestion = questions[index];
 
    const responseHandler = (e: FormEvent) => {
@@ -57,18 +69,20 @@ export function RapidFire(props: RapidFireProps) {
 
       if (correctDiv === selectedDiv) {
          setScore(score + 1);
+         if (!streakIsPossible) setStreakIsPossible(true);
          setStreak(streak + 1);
       } else {
          selectedDiv.classList.add("wrong-option");
+         setStreakIsPossible(false);
          setStreak(0);
       }
 
       setQuestionsAnswered(questionsAnswered + 1);
 
-      if (streak === 10) {
+      if (streak === 9 && streakIsPossible) {
          setTimerValueChanged(timerValueChanged + 1);
-         toast.success("Ten seconds added! 🤩");
-         setStreak(0);
+         toast.success("You're fast! Ten seconds added! 🤩");
+         setStreakIsPossible(false);
       }
 
       correctDiv.classList.add("correct-option");
@@ -91,7 +105,7 @@ export function RapidFire(props: RapidFireProps) {
          <Timer
             hijacker={[timerValueChanged, (countdown) => countdown + 10]}
             className="w-[60%] border-[8px] shadow-none font-poppins text-[4.11394rem] font-normal mb-[2rem] px-[--modal-padding] bg-[#FFD3EE] text-black"
-            duration={4 * 60}
+            duration={4 * 60 - 10}
             onElaspse={() => setQuizEnded(true)}
          />
          <QuestionBox

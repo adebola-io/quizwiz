@@ -46,7 +46,8 @@ export const QuestionBox = forwardRef(
             className={formClassNames}
          >
             <h3 className="animate-pull-from-bottom effect-item-2 [animation-duration:400ms] w-full text-[2rem] font-avenir-next-lt-pro-bold text-green-charcoal">
-               {`${props.number}. ${props.prompt}`}
+               {props.number}.{" "}
+               <span dangerouslySetInnerHTML={{ __html: props.prompt }}></span>
             </h3>
             {props.options.map((value, index) => (
                <Option
@@ -113,6 +114,7 @@ function Option(props: OptionProps) {
          <input
             ref={inputRef}
             hidden
+            className="pr-[5%]"
             type="radio"
             name="questionOption"
             value={`option-${props.index}`}

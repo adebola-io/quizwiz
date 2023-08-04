@@ -538,7 +538,7 @@ export const categories: CategoryStore = {
          "var(--gradients-math, linear-gradient(317deg, #CC2BC6 0%, #E9A219 100%))"
    },
    "Pop Culture": {
-      id: 4,
+      id: 5,
       info: "Let's know if you're in the know. 😎",
       MainIcon: PopCulture,
       BoxIcon() {
