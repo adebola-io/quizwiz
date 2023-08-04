@@ -183,7 +183,7 @@ To return a list of random [questions](#question), given a `number`, a specified
 
    -  For each topic in each category in `categoryList`:
 
-      -  Select 3 random questions from the specified level.
+      -  Select 2 random questions from the specified level.
 
       -  For each of these random questions:
 

@@ -176,7 +176,7 @@ class QuestionData {
       while (questions.length < number && MAX_ITERATION_COUNT--) {
          for (const category of categoryList) {
             for (const topic of category.topics) {
-               const randomQuestions = selectRandom(topic[`level${level}`], 3);
+               const randomQuestions = selectRandom(topic[`level${level}`], 2);
                for (let randomQuestion of randomQuestions) {
                   if (questions.length === number) return shuffle(questions);
                   while (
