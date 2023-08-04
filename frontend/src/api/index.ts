@@ -9,11 +9,8 @@ const axiosInstance: AxiosInstance = axios.create({
 axiosInstance.interceptors.request.use((config) => {
    const token = localStorage.getItem("accessToken");
    if (token) {
-      (config as unknown as { headers: { [keyof: string]: string } }).headers =
-         {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json"
-         };
+      config.headers["Authorization"] = `Bearer ${token}`;
+      config.headers["Content-Type"] = "application/json";
    }
    return config;
 });
