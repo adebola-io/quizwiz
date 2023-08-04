@@ -168,7 +168,39 @@
          "correctAnswer": 0,
          "level": 2
       }
+      {
+         "prompt": "CLICHE denotes?",
+         "options": [
+            "norms",
+            "regular",
+            "overused",
+            "ordinary"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      }
    ],
-   "level3": [],
+   "level3": [{
+         "prompt": "The word PIQUED is used to express?",
+         "options": [
+            "increase in interest",
+            "increase in love",
+            "increase in quality",
+            "increase in anger"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+   {
+         "prompt": "To WALLOW is to?",
+         "options": [
+            "remain offended",
+            "remain unhappy",
+            "stay indifferent",
+            "all of the above"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      }],
    "level4": []
 }
