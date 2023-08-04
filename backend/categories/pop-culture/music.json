@@ -132,7 +132,7 @@
       {
          "prompt": "Which artist is featured on the Wizkid song <i>Come Closer</i>?",
          "options": ["Popcaan", "Drake", "Rihanna", "Runtown"],
-         "correctAnswer": 0,
+         "correctAnswer": 1,
          "level": 0
       },
       {

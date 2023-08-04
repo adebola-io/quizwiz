@@ -1,7 +1,88 @@
 {
    "title": "Movies and TV",
    "category": "Pop Culture",
-   "level0": [],
+   "level0": [
+      {
+         "prompt": "Who directed the movie “Schindler’s List”?",
+         "options": [
+            "Steven Spielberg",
+            "Martin Scorsese",
+            "Quentin Tarantino",
+            "James Cameron"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "In which country is “Gone with the Wind” set?",
+         "options": ["England", "France", "USA", "Canada"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "In which series of films can you see a character named Frodo Baggins?",
+         "options": [
+            "The Hunger Games",
+            "The Lord of the Rings",
+            "Star Wars",
+            "Harry Potter"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which colour are the Na’vi in Avatar?",
+         "options": ["Blue", "Green", "Red", "Yellow"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which actor plays James Bond in Skyfall and Casino Royale?",
+         "options": [
+            "Daniel Craig",
+            "Sean Connery",
+            "Pierce Brosnan",
+            "Roger Moore"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What is the name of the Princess in “The Little Mermaid”?",
+         "options": ["Ariel", "Belle", "Jasmine", "Cinderella"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Who directed the movie <i>Pulp Fiction</i>?",
+         "options": [
+            "Quentin Tarantino",
+            "Steven Spielberg",
+            "Martin Scorsese",
+            "James Cameron"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which Marvel character has wrist-mounted web-shooters?",
+         "options": ["Spider-Man", "Iron Man", "Black Widow", "Hawkeye"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What type of creature is Shrek?",
+         "options": ["Ogre", "Troll", "Goblin", "Orc"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What is the name of the school in Harry Potter?",
+         "options": ["Hogwarts", "Narnia", "Middle-Earth", "Oz"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+   ],
    "level1": [],
    "level2": [],
    "level3": [],
