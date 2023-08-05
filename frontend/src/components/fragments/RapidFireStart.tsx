@@ -49,10 +49,10 @@ export function RapidFireStart() {
          ref={containerRef}
          className="relative w-[--rapid-fire-start-width] overflow-hidden pl-[--modal-padding] h-[--rapid-fire-start-height] duration-[--modal-morph-duration] gap-[0.625rem] flex flex-col justify-center"
       >
-         <h1 className="relative z-10 text-fine-purple font-avenir-next-lt-pro-bold text-[3.91188rem]">
+         <h1 className="relative z-10 text-fine-purple font-avenir-next-lt-pro-bold text-[3.91188rem] max-[1024px]:text-[3rem] max-[600px]:text-[2.2rem]">
             Rapid Fire.
          </h1>
-         <p className="relative z-10 text-[1.03688rem] font-poppins text-black w-[45%]">
+         <p className="relative z-10 text-[1.03688rem] max-[768px]:text-[0.8rem] max-[600px]:text-[0.6rem] font-poppins text-black w-[45%] ">
             Answer as many questions as you can, as fast as possible. Receive
             extra time with every streak, and incur no penalties for wrong
             answers.
@@ -76,8 +76,8 @@ export function RapidFireStart() {
 }
 
 function RapidFireBanner() {
-   const emptyArray1 = Array(7).fill(null);
-   const emptyArray2 = Array(9).fill(null);
+   const emptyArray1 = Array(13).fill(null);
+   const emptyArray2 = Array(13).fill(null);
    return (
       <div className="absolute right-0 bottom-0 flex items-center justify-center w-[50%] h-full">
          {/* Overlay */}
@@ -105,7 +105,7 @@ function RapidFireBanner() {
                background:
                   "var(--gradients-rapid-fire-four, linear-gradient(220deg, #FFF500 0%, #FF7A00 100%))"
             }}
-            className="relative flex h-[35%] hover:rotate-[-12deg] hover:shadow duration-500 border-purple-raisin-black border-[5px] shadow-screens/shadow aspect-square rounded-[50%] items-center justify-center"
+            className="relative flex h-[35%] max-[1024px]:h-[45%] hover:rotate-[-12deg] hover:shadow duration-500 border-purple-raisin-black border-[5px] shadow-screens/shadow aspect-square rounded-[50%] items-center justify-center"
          >
             <img className="h-[60%]" src={MainBolt} alt="*" />
          </div>

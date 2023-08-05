@@ -3,10 +3,10 @@ import { Category } from ".";
 export function CategoryList() {
    return (
       <div>
-         <h2 className="font-avenir-next-lt-pro-bold text-[1.4965rem] mb-3 text-green-charcoal">
+         <h2 className="font-avenir-next-lt-pro-bold text-[1.4965rem] max-[720px]:text-[2rem] mb-3 text-green-charcoal">
             Categories
          </h2>
-         <div className="flex items-center justify-between">
+         <div className="flex items-center max-[912px]:flex-wrap justify-between max-[912px]:justify-center max-[768px]:justify-between">
             <Category
                name="Random Quiz"
                className="animate-pull-from-bottom effect-item-0"

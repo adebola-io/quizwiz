@@ -8,7 +8,7 @@ export default function LoginOrSignUpPage() {
    const { pathname } = useLocation();
    const isSignUp = pathname.includes("/sign-up");
    return (
-      <div className="flex w-screen items-center justify-between lines min-h-screen px-8 md:px-[--global-padding-left] lg:px-12 xl:px-[--global-padding-left]">
+      <div className="flex w-screen items-center justify-between min-h-screen px-8 md:px-[--global-padding-left] lg:px-12 xl:px-[--global-padding-left]">
          {/* Text */}
          <div className="flex flex-col justify-center items-center w-full lg:w-[50%] py-10 lg:py-0 h-full">
             {!isSignUp ? <LoginForm /> : <SignUpForm />}

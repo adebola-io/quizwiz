@@ -23,7 +23,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
       const [tooltipWidth, setTooltipWidth] = useState(0);
 
       const contentClassName = clsxm(
-         "absolute flex animate-fade-in effect-item-0 top-3 left-1/2 transform -translate-x-1/2  bg-white text-black shadow-[-4px_4px_0_0_rgba(53,79,82,0.78)] rounded-md border-[3px] border-green-charcoal py-2.5 pr-2.5 pl-3.5 w-[214px] hover:shadow-[-0_0_0_0] transition duration-500 hover:scale-95 cursor-pointer text-[1.036875rem]",
+         "absolute flex animate-fade-in effect-item-0 left-1/2 transform -translate-x-1/2  bg-white text-black shadow-[-4px_4px_0_0_rgba(53,79,82,0.78)] rounded-md border-[3px] border-green-charcoal py-2.5 pr-2.5 pl-3.5 w-[214px] hover:shadow-[-0_0_0_0] transition duration-500 hover:scale-95 cursor-pointer text-[1.036875rem]",
          props.openToLeft
             ? "tooltip-left left-auto right-full -translate-x-8"
             : "tooltip-right left-full translate-x-8",

@@ -2,7 +2,7 @@ import shape from "../../assets/shape.svg";
 
 export function LandingPageDiagrams() {
    return (
-      <section className="relative hidden items-center justify-center overflow-hidden  min-h-screen w-[50%] bg-green-feldgrau border-r-[5px] border-solid border-green-charcoal shadow-inner-shadow lg:flex">
+      <section className="landing_page_diagrams relative flex items-center justify-center overflow-hidden h-full w-[50%] bg-green-feldgrau border-r-[5px] border-solid border-green-charcoal shadow-inner-shadow">
          <QuestionBackground />
          <Eclipse top="-23.5rem" right="-22.5625rem" />
          <Eclipse bottom="-22.4375rem" left="-23.75rem" />
@@ -28,13 +28,13 @@ function Eclipse(
          style={{
             ...props
          }}
-         className={`absolute z-2 w-[43.75rem] aspect-square bg-green-viridian border-[5px] border-solid border-green-charcoal shadow-image-depth rounded-[50%]`}
+         className={`eclipse absolute z-2 w-[43.75rem] aspect-square bg-green-viridian border-[5px] border-solid border-green-charcoal shadow-image-depth rounded-[50%]`}
       ></div>
    );
 }
 
 function QuestionBackground() {
-   const a = Array(8).fill(null);
+   const a = Array(15).fill(null);
    const b = Array(30).fill(null);
    return (
       <div className="absolute rotate-3 z-0 w-full h-full overflow-hidden">

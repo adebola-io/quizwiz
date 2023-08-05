@@ -27,12 +27,12 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
    const dialogClassName = clsxm(
       // "hover:scale-[0.99]",
       "animate-pop [animation-duration:500ms] duration-300 shadow-components/shadow",
-      "relative bg-[#00000047] overflow-hidden min-h-[25vh] aspect-[1.5] p-[--modal-padding] bg-white",
+      "relative bg-[#00000047] overflow-hidden min-h-[25vh] max-[912px]:min-h-fit aspect-[1.5] p-[--modal-padding] bg-white",
       "border-green-charcoal border-[6.778px] rounded-[1.1015rem]",
       className
    );
    const closeButtonClassnames = clsxm(
-      "absolute text-green-charcoal duration-300 bg-white aspect-square w-[45px] flex items-center justify-center rounded-[50%] border-green-charcoal border-[3px] top-0 right-0 mr-5 mt-3",
+      "absolute z-[99] text-green-charcoal duration-300 bg-white aspect-square w-[45px] max-[475px]:w-[30px] flex items-center justify-center rounded-[50%] border-green-charcoal border-[3px] top-0 right-0 mr-5 mt-3",
       "hover:scale-[0.9] hover:bg-green-charcoal hover:text-white"
    );
 

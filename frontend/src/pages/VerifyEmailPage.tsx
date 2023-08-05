@@ -38,7 +38,7 @@ export default function VerifyEmailPage() {
    }, [token, isSuccess]);
 
    return (
-      <div className="flex w-screen items-center justify-center lines h-screen px-[--global-padding-left]">
+      <div className="flex w-screen items-center justify-center h-screen px-[--global-padding-left]">
          {!token ? (
             <div className="flex flex-col justify-center items-center w-full h-full max-w-3xl gap-6">
                <p className="w-full text-[2.8rem] font-avenir-next-lt-pro-bold text-green-feldgrau [line-height:3rem] text-center">

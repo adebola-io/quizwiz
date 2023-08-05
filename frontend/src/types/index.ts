@@ -73,7 +73,7 @@ interface CategoryData {
    id: number;
    info: string;
    MainIcon: ImageImport;
-   BoxIcon: React.FC;
+   BoxIcon: ImageImport;
    gradient: string;
 }
 

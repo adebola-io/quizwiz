@@ -51,3 +51,43 @@
    background-color: var(--green-charcoal, #2f3e46);
    color: var(--green-ash-gray, #cad2c5);
 }
+
+@media (min-width: 2560px) {
+   .app_button.normal {
+      height: 7rem;
+      padding: 1.5rem 4rem;
+      font-size: 1.9rem;
+   }
+}
+
+@media (max-width: 1024px) {
+   .app_button.normal {
+      height: 3.4rem;
+      padding: 0.3rem 1.8rem;
+      font-size: 1rem;
+   }
+   .app_button.okay {
+      height: 2.4rem;
+      padding: 0.3rem 1.3rem;
+      font-size: 0.8rem;
+   }
+}
+
+@media (max-width: 912px) {
+   .app_button.normal {
+      font-size: 1.4rem;
+   }
+}
+@media (max-width: 768px) {
+   .app_button.okay {
+      height: 2.4rem;
+      padding: 0.3rem 1.3rem;
+      font-size: 0.8rem;
+   }
+}
+
+@media (max-width: 414px) {
+   .app_button.normal {
+      font-size: 1rem;
+   }
+}

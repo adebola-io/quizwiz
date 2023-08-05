@@ -13,6 +13,7 @@
    --green-viridian: #6b917e;
    --green-ash-gray: #cad2c5;
    --green-cambridge-blue: #84a98c;
+   --green-dark-slate-gray: #354f52;
    --error-red: #930202;
    --error-red-2: #e95454;
    --heat-wave: #ff7a00;
@@ -21,11 +22,13 @@
    --purple-eggplant: #684756;
 
    --global-padding-left: 3.75rem;
-   --modal-padding: 3.75rem;
+   --modal-padding: 3rem;
    --default-border-radius: 0.8125rem;
+   --home-card-left-padding: 1.8rem;
 
-   --header-height: 6.75rem;
+   --header-height: 5rem;
    --sidebar-width: 7.4375rem;
+   --logo-text-size: 1.881713rem;
    --modal-morph-duration: 500ms;
    --quiz-start-width: 40vw;
    --quiz-start-height: 59vh;
@@ -37,19 +40,11 @@
    --rapid-fire-height: 75vh;
    --rapid-fire-width: 70vw;
 }
-/* For squished screens. */
-@media (aspect-ratio > 1) {
-   :root {
-      --header-height: 4.5rem;
-      --global-padding-left: 6rem;
-   }
-   .logo_text {
-      font-size: 1.7rem;
-   }
-}
 
 .lines {
-   background-size: cover;
+   background-size: 100vw;
+   background-attachment: fixed;
+   background-repeat: repeat-y;
    background-position: center;
    background-image: url(../assets/lines-background.png);
 }
@@ -75,4 +70,70 @@
 .page_with_header {
    position: relative;
    padding-top: var(--header-height);
+}
+
+/* ------ */
+/* Media Queries */
+@media (prefers-reduced-motion) {
+   * {
+      animation-duration: 0ms !important;
+      transition-duration: 0ms !important;
+   }
+}
+
+@media (min-width: 2560px) {
+   :root {
+      --header-height: 8vh;
+   }
+}
+
+@media (max-width: 1024px) {
+   :root {
+      --global-padding-left: 2.4rem;
+      --header-height: 4.7rem;
+      --logo-text-size: 1.581713rem;
+      --home-card-left-padding: 1rem;
+      --sidebar-width: 6.4375rem;
+      --rapid-fire-start-width: 70vw;
+   }
+}
+
+@media (max-width: 912px) {
+   :root {
+      --header-height: 7rem;
+      --rapid-fire-start-width: 84vw;
+      --rapid-fire-start-height: 35vh;
+   }
+}
+@media (max-width: 768px) {
+   :root {
+      --header-height: 6rem;
+   }
+}
+@media (max-width: 540px) {
+   :root {
+      --header-height: 3.7rem;
+      --logo-text-size: 1.2rem;
+   }
+}
+@media (max-width: 414px) {
+   :root {
+      --header-height: 7vh;
+      --global-padding-left: 4vw;
+      --logo-text-size: 1.4rem;
+   }
+   .app_header {
+      justify-content: center;
+      text-align: center;
+      border-bottom-width: 2px;
+   }
+   .header_box {
+      display: none;
+   }
+}
+
+@media (max-width: 390px) {
+   :root {
+      --header-height: 8vh;
+   }
 }
