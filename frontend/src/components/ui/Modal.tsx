@@ -28,7 +28,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
       // "hover:scale-[0.99]",
       "animate-pop [animation-duration:500ms] duration-300 shadow-components/shadow",
       "relative bg-[#00000047] overflow-hidden min-h-[25vh] max-[912px]:min-h-fit aspect-[1.5] p-[--modal-padding] bg-white",
-      "border-green-charcoal border-[6.778px] rounded-[1.1015rem]",
+      "border-green-charcoal border-[6.778px] max-[540px]:border-[4.5px] rounded-[1.1015rem]",
       className
    );
    const closeButtonClassnames = clsxm(

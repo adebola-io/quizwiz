@@ -42,7 +42,7 @@ export default function Home() {
    function openRandomQuiz() {
       modal.setContent(<QuizStart name="Random Quiz" />);
       modal.morph({
-         className: "aspect-auto min-h-[max-content]"
+         className: "aspect-auto min-h-[max-content] max-[1024px]:p-0"
       });
       modal.open({ closeOnClickOutside: false });
    }
@@ -94,7 +94,7 @@ export default function Home() {
                   className="mb-[2.04rem] animate-fade-in-from-left effect-item-2"
                   rightCornerImage={RpdFireBanner}
                >
-                  <h1 className="max-[768px]:w-[75%] text-[3vw] min-[2160px]:text-[4rem] max-[768px]:text-[2.76rem] max-[540px]:text-[2rem] max-[390px]:text-[1.6rem] max-[768px]:text-center mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal max-[768px]:font-bold">
+                  <h1 className="max-[768px]:w-[75%] text-[3vw] min-[2160px]:text-[4rem] max-[1280px]:text-[1.5rem] max-[768px]:text-[2.76rem] max-[540px]:text-[2rem] max-[390px]:text-[1.6rem] max-[290px]:text-[1rem] max-[768px]:text-center mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal max-[768px]:font-bold">
                      Earn more Stars in a Rapid Fire Quiz.
                   </h1>
                   <Button

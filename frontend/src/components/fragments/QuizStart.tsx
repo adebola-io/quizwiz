@@ -28,17 +28,17 @@ export function QuizStart(props: QuizStartProps) {
    const [selectedLevel, setSelectedLevel] = useState<Level>(0);
 
    const imageClassName = clsxm(
-      "z-0 duration-300 w-[11.625rem]",
+      "z-0 duration-300 h-full",
       imageIsReady ? "opacity-1 translate-y-0" : "opacity-0 translate-y-[10%]"
    );
    const levelRowClassnames =
-      "duration-300 flex relative rounded-[0.35481rem] my-[0.63rem] text-center font-poppins text-[0.625rem] [font-weight:600] border-[3.406px] border-green-charcoal [box-shadow:-2.2706422805786133px_2.2706422805786133px_0px_0px_rgba(70,57,86,0.78)]";
+      "duration-300 flex relative rounded-[0.35481rem] my-[0.63rem] max-[1024px]:my-[0.5rem] max-[475px]:scale-[0.8] text-center font-poppins text-[0.625rem] [font-weight:600] border-[3.406px] border-green-charcoal [box-shadow:-2.2706422805786133px_2.2706422805786133px_0px_0px_rgba(70,57,86,0.78)]";
    const levelClassnames =
       "duration-300 w-[70px] py-[0.625rem] flex items-center justify-center relative border-green-charcoal border-r-[2px] cursor-pointer";
    const levelSelectorClassnames =
       "w-[70px] h-full absolute duration-[400ms] ease-in-out";
    const headingClassnames =
-      "duration-300 z-0 w-[27rem] [line-height:1.3] font-avenir-next-lt-pro-bold [-webkit-text-fill-color:transparent] bg-clip-text [-webkit-background-clip:text] text-[3.03688rem] text-center";
+      "duration-300 z-0 w-[27rem] max-[475px]:w-[80%] [line-height:1.3] font-avenir-next-lt-pro-bold [-webkit-text-fill-color:transparent] bg-clip-text [-webkit-background-clip:text] text-[3.03688rem] max-[1024px]:text-[2rem] text-center";
 
    function handleClick() {
       setIsLoading(true);
@@ -109,7 +109,7 @@ export function QuizStart(props: QuizStartProps) {
             )}
             <div
                style={{ opacity: isLoading ? "0" : "1" }}
-               className="h-[11.625rem] mt-[3rem] duration-300"
+               className="h-[11.625rem] max-[1024px]:h-[7rem] mt-[3rem] duration-300"
             >
                <img
                   onLoad={() => setImageIsReady(true)}
@@ -158,7 +158,7 @@ export function QuizStart(props: QuizStartProps) {
             </div>
             <p
                style={{ opacity: isLoading ? "0" : "1" }}
-               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem]"
+               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem] max-[1024px]:text-[13pt] max-[475px]:text-[0.6rem] max-[1024px]:w-[80%]"
             >
                <span className="block">{category.info}</span>
                <span className="block">

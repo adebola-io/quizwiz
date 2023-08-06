@@ -27,7 +27,7 @@ export function RapidFireEnd(props: RapidFireEndProps) {
    return (
       <>
          <Eclipses rapidFire />
-         <div className="flex flex-col items-center justify-center gap-[1.5rem] w-[--quiz-start-width] h-[--quiz-start-height] ">
+         <div className="flex flex-col items-center justify-center gap-[1.5rem] max-[1366px]:gap-[1rem] max-[1024px]:gap-[0.5rem] max-[912px]:gap-[1.5rem] max-[540px]:gap-[1rem] w-[--quiz-start-width] h-[--quiz-start-height] ">
             <h3
                style={{
                   background:
@@ -38,12 +38,12 @@ export function RapidFireEnd(props: RapidFireEndProps) {
                   WebkitTextStrokeColor: "var(--fine-purple)",
                   WebkitTextStrokeWidth: "5.73px"
                }}
-               className="text-[12.92006rem] font-avenir-next-lt-pro-bold text-center leading-[14rem] animate-pop"
+               className="text-[12.92006rem] max-[1024px]:text-[10rem] max-[540px]:text-[8.5rem] font-avenir-next-lt-pro-bold text-center leading-[14rem] max-[1366px]:leading-[11rem] max-[1024px]:leading-none animate-pop"
             >
                {score > 0 ? "+" : ""}
                {score}
             </h3>
-            <p className="text-[1.22438rem] w-[70%] font-poppins text-black text-center">
+            <p className="text-[1.22438rem] max-[1024px]:text-[1rem] max-[540px]:text-[0.8rem] w-[70%] max-[1024px]:w-[80%] font-poppins text-black text-center">
                {`${
                   score > 0 ? "Excellent! " : ""
                }You have gained ${score} star${

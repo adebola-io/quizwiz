@@ -10,6 +10,9 @@ interface RapidFireEclipseProps {
    rapidFire: true;
 }
 
+/**
+ * Spinning circles for each category or rapid fire.
+ */
 export function Eclipses(props: CategoryEclipseProps | RapidFireEclipseProps) {
    const category = isCategory(props)
       ? categories[props.name]
@@ -18,8 +21,12 @@ export function Eclipses(props: CategoryEclipseProps | RapidFireEclipseProps) {
               "var(--gradients-rapid-fire-three, linear-gradient(90deg, #CE0000 0%, #FFA500 100%))"
         };
 
-   const outerClassNames =
-      "animate-spin-custom [animation-duration:2500ms] flex items-center z-[0] opacity-[0.5] justify-center w-[19.5rem] aspect-square rounded-[50%] absolute";
+   const outerClassNames = clsxm(
+      "animate-spin-custom [animation-duration:2500ms] flex items-center z-[0] opacity-[0.5] justify-center w-[19.5rem] aspect-square rounded-[50%] absolute",
+      isCategory(props)
+         ? "max-[540px]:opacity-[0.2]"
+         : "max-[540px]:opacity-[0.1]"
+   );
    const middleClassNames =
       "flex items-center justify-center bg-white w-[94%] aspect-square rounded-[50%]";
    const innerClassNames = "w-[80%] h-[80%] rounded-[50%]";

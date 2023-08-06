@@ -65,6 +65,7 @@
    background-size: cover;
    background-position: center;
    background-image: url(../assets/rapidfire-background.png);
+   background-color: rgb(254, 246, 249);
 }
 
 .page_with_header {
@@ -87,6 +88,13 @@
    }
 }
 
+@media (max-width: 1366px) {
+   :root {
+      --rapid-fire-height: 90vh;
+      --quiz-start-width: 55vw;
+   }
+}
+
 @media (max-width: 1024px) {
    :root {
       --global-padding-left: 2.4rem;
@@ -95,6 +103,10 @@
       --home-card-left-padding: 1rem;
       --sidebar-width: 6.4375rem;
       --rapid-fire-start-width: 70vw;
+      --quiz-start-width: 50vw;
+      --quiz-start-height: 70vh;
+      --quiz-height: 95vh;
+      --quiz-width: 90vw;
    }
 }
 
@@ -103,17 +115,29 @@
       --header-height: 7rem;
       --rapid-fire-start-width: 84vw;
       --rapid-fire-start-height: 35vh;
+      --rapid-fire-height: 55vh;
+      --rapid-fire-width: 90vw;
+      --quiz-start-height: 47vh;
+      --quiz-start-width: 80vw;
    }
 }
 @media (max-width: 768px) {
    :root {
       --header-height: 6rem;
+      --rapid-fire-height: 64vh;
    }
 }
 @media (max-width: 540px) {
    :root {
       --header-height: 3.7rem;
       --logo-text-size: 1.2rem;
+      --modal-padding: 1.7rem;
+      --rapid-fire-height: 70vh;
+   }
+}
+@media (max-width: 475px) {
+   :root {
+      --rapid-fire-height: 60vh;
    }
 }
 @media (max-width: 414px) {
@@ -132,8 +156,11 @@
    }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 393px) {
    :root {
       --header-height: 8vh;
+      --rapid-fire-start-height: 50vh;
+      --rapid-fire-height: 76vh;
+      --quiz-start-width: 90vw;
    }
 }

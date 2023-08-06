@@ -127,7 +127,7 @@
          "level": 0
       },
       {
-         "prompt": "Which ancient civilization is known for its military discipline and Spartan warriors?",
+         "prompt": "Which ancient civilization is known for its military discipline and warriors?",
          "options": ["Romans", "Persians", "Spartans", "Greeks"],
          "correctAnswer": 2,
          "level": 0

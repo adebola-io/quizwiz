@@ -20,6 +20,7 @@ interface QuestionBoxProps extends Question {
    /** Whether or not the question should be centered, */
    center?: boolean;
    theme?: Property.Color;
+   className?: string;
 }
 
 const options = "ABCD" as const;
@@ -31,7 +32,8 @@ export const QuestionBox = forwardRef(
    (props: QuestionBoxProps, ref: ForwardedRef<HTMLButtonElement>) => {
       const formClassNames = clsxm(
          "flex w-[60%] h-full flex-col justify-center items-end gap-[0.58094rem]",
-         props.center ? "text-center items-center w-[70%]" : ""
+         props.center ? "text-center items-center w-[70%]" : "",
+         props.className
       );
 
       const optionState = useState(-1);
@@ -45,7 +47,7 @@ export const QuestionBox = forwardRef(
             onSubmit={props.handler}
             className={formClassNames}
          >
-            <h3 className="animate-pull-from-bottom effect-item-2 [animation-duration:400ms] w-full text-[2rem] font-avenir-next-lt-pro-bold text-green-charcoal">
+            <h3 className="animate-pull-from-bottom effect-item-2 [animation-duration:400ms] w-full text-[2rem] min-[2156px]:text-[3.2rem] max-[1024px]:text-[1.6rem] max-[540px]:text-[1rem] font-avenir-next-lt-pro-bold text-green-charcoal">
                {props.number}.{" "}
                <span dangerouslySetInnerHTML={{ __html: props.prompt }}></span>
             </h3>
@@ -93,7 +95,7 @@ function Option(props: OptionProps) {
       props.handler[0] === props.index && "font-bold text-green-viridian"
    );
    const labelClassNames = clsxm(
-      "border-green-charcoal bg-white duration-300 relative block font-poppins w-full text-[1.21994rem] rounded-[0.40663rem] border-[3.718px] p-[0.58094rem_0.58094rem_0.58094rem_1.33613rem] cursor-pointer",
+      "border-green-charcoal bg-white duration-300 relative block font-poppins w-full min-[2160px]:text-[2.2rem] text-[1.21994rem] max-[1366px]:text-[1.2rem] max-[600px]:text-[0.8rem] rounded-[0.40663rem] border-[3.718px] p-[0.58094rem_0.58094rem_0.58094rem_1.33613rem] cursor-pointer",
       props.handler[0] === props.index &&
          "text-white bg-[--outline] border-[4.5px]"
    );
@@ -108,7 +110,9 @@ function Option(props: OptionProps) {
    return (
       <div className={containerClassnames}>
          <label onClick={handleClick} className={labelClassNames}>
-            <b className="text-[1.58835rem]">{props.letter}. </b>
+            <b className="text-[1.58835rem] min-[2160px]:text-[2.7rem] max-[1366px]:text-[1.3rem] max-[600px]:text-[0.8rem]">
+               {props.letter}.{" "}
+            </b>
             {props.value}
          </label>
          <input

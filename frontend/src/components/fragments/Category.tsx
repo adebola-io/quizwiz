@@ -19,7 +19,7 @@ export function Category(props: CategoryProps) {
    function openQuiz() {
       modal.setContent(<QuizStart name={props.name} />);
       modal.morph({
-         className: "aspect-auto min-h-[max-content]"
+         className: "aspect-auto min-h-[max-content] max-[1024px]:p-0"
       });
       modal.open({ closeOnClickOutside: false });
    }

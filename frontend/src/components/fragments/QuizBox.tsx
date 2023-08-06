@@ -131,7 +131,7 @@ export function QuizBox(props: Quiz) {
          <Eclipses name={props.name as CategoryName} />
          <div
             ref={quizBoxRef}
-            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center gap-[3rem]"
+            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center gap-[3rem] max-[1024px]:px-6"
          >
             <QuestionBox
                ref={nextButtonRef}
@@ -146,6 +146,7 @@ export function QuizBox(props: Quiz) {
                   key={index}
                   duration={levels[level].timerValue}
                   onElaspse={forceFormSubmit}
+                  className="max-[1024px]:text-[3rem] max-[1024px]:w-[80%]"
                />
                <ScoreCount>
                   <span
@@ -171,7 +172,7 @@ interface ScoreCountProps {
 
 function ScoreCount({ children }: ScoreCountProps) {
    return (
-      <div className="border-green-charcoal animate-pop effect-item-3 flex items-center justify-center border-[5px] rounded-[--default-border-radius] text-green-charcoal font-poppins font-bold text-[6.47438rem] w-[17.0625rem] h-[11rem] bg-white shadow-components/smaller-shadow">
+      <div className="border-green-charcoal animate-pop effect-item-3 flex items-center justify-center border-[5px] rounded-[--default-border-radius] text-green-charcoal font-poppins font-bold text-[6.47438rem] max-[1024px]:text-[4rem] w-[17.0625rem] h-[11rem] bg-white shadow-components/smaller-shadow">
          {children}
       </div>
    );

@@ -49,7 +49,7 @@ export function RapidFire(props: RapidFireProps) {
          const timeout = setTimeout(() => {
             setStreakIsPossible(false);
             setStreak(0);
-         }, 25000);
+         }, 28000);
          return () => clearTimeout(timeout);
       }
    }, [streakIsPossible]);
@@ -100,11 +100,11 @@ export function RapidFire(props: RapidFireProps) {
    return (
       <div
          ref={containerRef}
-         className="background_rapidfire flex flex-col justify-center items-center h-[--rapid-fire-height] w-[--rapid-fire-width] duration-[600ms] p-[--modal-padding]"
+         className="background_rapidfire flex flex-col justify-center items-center h-[--rapid-fire-height] w-[--rapid-fire-width] duration-[600ms] p-[--modal-padding] max-[475px]:px-[1rem]"
       >
          <Timer
             hijacker={[timerValueChanged, (countdown) => countdown + 10]}
-            className="w-[60%] border-[8px] shadow-none font-poppins text-[4.11394rem] font-normal mb-[2rem] px-[--modal-padding] bg-[#FFD3EE] text-black"
+            className="w-[60%] border-[8px] max-[600px]:border-[5px] shadow-none font-poppins text-[4.11394rem] max-[1024px]:text-[3rem] max-[600px]:text-[2rem] font-normal mb-[2rem] max-[1366px]:mb-[0.4rem] max-[475px]:mb-[0.8rem] px-[--modal-padding] bg-[#FFD3EE] text-black"
             duration={4 * 60 - 10}
             onElaspse={() => setQuizEnded(true)}
          />
@@ -115,6 +115,7 @@ export function RapidFire(props: RapidFireProps) {
             number={index + 1}
             {...currentQuestion}
             handler={responseHandler}
+            className="max-[720px]:w-[90%] max-[475px]:w-[95%] max-[475px]:h-fit"
          />
       </div>
    );
