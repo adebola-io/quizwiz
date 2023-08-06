@@ -158,7 +158,7 @@ export function QuizStart(props: QuizStartProps) {
             </div>
             <p
                style={{ opacity: isLoading ? "0" : "1" }}
-               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem] max-[1024px]:text-[13pt] max-[475px]:text-[0.6rem] max-[1024px]:w-[80%]"
+               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem] max-[1024px]:text-[11pt] max-[475px]:text-[0.6rem] max-[1024px]:w-[80%]"
             >
                <span className="block">{category.info}</span>
                <span className="block">

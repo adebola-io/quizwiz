@@ -131,7 +131,7 @@ export function QuizBox(props: Quiz) {
          <Eclipses name={props.name as CategoryName} />
          <div
             ref={quizBoxRef}
-            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center gap-[3rem] max-[1024px]:px-6"
+            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center max-[785px]:justify-center max-[785px]:flex-col-reverse max-[785px]:gap-[3rem] max-[475px]:gap-[2rem] max-[1024px]:px-6"
          >
             <QuestionBox
                ref={nextButtonRef}
@@ -140,13 +140,14 @@ export function QuizBox(props: Quiz) {
                {...currentQuestion}
                finished={questionIsFinished}
                handler={responseHandler}
+               className="max-[785px]:h-fit max-[785px]:w-[75%] max-[475px]:w-full"
             />
-            <div className="flex flex-col w-[40%] h-[80%] items-center justify-between">
+            <div className="flex flex-col w-[40%] h-[80%] max-[785px]:h-fit max-[785px]:gap-[3rem] items-center justify-between">
                <Timer
                   key={index}
                   duration={levels[level].timerValue}
                   onElaspse={forceFormSubmit}
-                  className="max-[1024px]:text-[3rem] max-[1024px]:w-[80%]"
+                  className="max-[1024px]:text-[3rem] max-[580px]:text-[2rem] max-[475px]:text-[1.6rem] max-[475px]:py-[2rem] max-[475px]:px-[4rem] max-[475px]:bg-white max-[1024px]:w-[80%]"
                />
                <ScoreCount>
                   <span
@@ -172,7 +173,7 @@ interface ScoreCountProps {
 
 function ScoreCount({ children }: ScoreCountProps) {
    return (
-      <div className="border-green-charcoal animate-pop effect-item-3 flex items-center justify-center border-[5px] rounded-[--default-border-radius] text-green-charcoal font-poppins font-bold text-[6.47438rem] max-[1024px]:text-[4rem] w-[17.0625rem] h-[11rem] bg-white shadow-components/smaller-shadow">
+      <div className="border-green-charcoal animate-pop effect-item-3 flex items-center justify-center border-[5px] rounded-[--default-border-radius] text-green-charcoal font-poppins font-bold text-[6.47438rem] max-[1024px]:text-[4rem] max-[475px]:text-[3rem] w-[17.0625rem] h-[11rem] max-[580px]:h-[8rem] max-[485px]:h-fit bg-white shadow-components/smaller-shadow">
          {children}
       </div>
    );
