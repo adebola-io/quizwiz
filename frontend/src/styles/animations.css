@@ -1,0 +1,205 @@
+/* Keyframes */
+@keyframes fade-in {
+   0% {
+      transform: translateX(var(--start));
+      opacity: 0;
+   }
+}
+
+@keyframes drop-from-top {
+   0% {
+      transform: translateY(var(--start));
+   }
+}
+
+@keyframes pull-from-bottom {
+   0% {
+      transform: translateY(var(--start));
+   }
+}
+
+@keyframes drop-from-top-bounce {
+   0% {
+      transform: translateY(-30%);
+      opacity: 0;
+   }
+   80% {
+      transform: translateY(10%);
+   }
+}
+
+@keyframes spin-custom {
+   100% {
+      rotate: 360deg;
+   }
+}
+
+@keyframes squeeze {
+   0% {
+      transform: scale(1.05);
+      opacity: 0;
+   }
+}
+
+@keyframes condense {
+   0% {
+      transform: scale(1.05);
+      opacity: 0;
+   }
+}
+
+@keyframes expand {
+   0% {
+      transform: scale(0.9);
+   }
+}
+
+@keyframes pop {
+   0% {
+      scale: 0.9;
+      opacity: 0;
+   }
+   70% {
+      scale: 1.05;
+   }
+}
+
+@keyframes infinite-scroll {
+   100% {
+      transform: translateX(var(--end));
+   }
+}
+
+/* Classnames */
+.animate-fade-in,
+.animate-fade-in-from-left,
+.animate-fade-in-from-right {
+   animation-name: fade-in;
+}
+.animate-drop-from-top {
+   animation-name: drop-from-top;
+}
+.animate-pull-from-bottom {
+   animation-name: pull-from-bottom;
+}
+.animate-spin-custom {
+   animation-name: spin-custom;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+.effect-item-0 {
+   animation-duration: 500ms;
+}
+.effect-item-1 {
+   animation-duration: 700ms;
+}
+.effect-item-2 {
+   animation-duration: 900ms;
+}
+.effect-item-3 {
+   animation-duration: 1100ms;
+}
+.effect-item-4 {
+   animation-duration: 1300ms;
+}
+.effect-item-5 {
+   animation-duration: 1500ms;
+}
+.effect-item-6 {
+   animation-duration: 1700ms;
+}
+
+.animate-fade-in {
+   --start: 0;
+}
+.animate-fade-in-from-right.effect-item-0 {
+   --start: 7vw;
+}
+.animate-fade-in-from-right.effect-item-1 {
+   --start: 8vw;
+}
+.animate-fade-in-from-right.effect-item-2 {
+   --start: 9vw;
+}
+.animate-fade-in-from-right.effect-item-3 {
+   --start: 10vw;
+}
+.animate-fade-in-from-right.effect-item-4 {
+   --start: 11vw;
+}
+
+.animate-fade-in-from-left.effect-item-0 {
+   --start: -7vw;
+}
+.animate-fade-in-from-left.effect-item-1 {
+   --start: -8vw;
+}
+.animate-fade-in-from-left.effect-item-2 {
+   --start: -9vw;
+}
+.animate-fade-in-from-left.effect-item-3 {
+   --start: -10vw;
+}
+.animate-fade-in-from-left.effect-item-4 {
+   --start: -11vw;
+}
+
+.animate-drop-from-top.effect-item-0 {
+   --start: -30%;
+}
+.animate-drop-from-top.effect-item-1 {
+   --start: -33%;
+}
+.animate-drop-from-top.effect-item-2 {
+   --start: -40%;
+}
+.animate-drop-from-top.effect-item-3 {
+   --start: -45%;
+}
+.animate-drop-from-top.effect-item-4 {
+   --start: -50%;
+}
+
+.animate-pull-from-bottom.effect-item-0 {
+   --start: 30%;
+}
+.animate-pull-from-bottom.effect-item-1 {
+   --start: 33%;
+}
+.animate-pull-from-bottom.effect-item-2 {
+   --start: 40%;
+}
+.animate-pull-from-bottom.effect-item-3 {
+   --start: 45%;
+}
+.animate-pull-from-bottom.effect-item-4 {
+   --start: 50%;
+}
+.animate-pull-from-bottom.effect-item-5 {
+   --start: 45%;
+}
+.animate-pull-from-bottom.effect-item-6 {
+   --start: 50%;
+}
+
+.animate-squeeze {
+   animation: squeeze 700ms;
+}
+.animate-pop {
+   animation: pop 750ms;
+}
+.animate-expand {
+   animation: expand 400ms;
+}
+.animate-condense {
+   animation: condense 500ms;
+}
+
+.animate-infinite-scroll {
+   --end: -48%;
+   animation: infinite-scroll 8000ms infinite linear;
+}
+.animate-drop-from-top-bounce {
+   animation: drop-from-top-bounce 400ms;
+}

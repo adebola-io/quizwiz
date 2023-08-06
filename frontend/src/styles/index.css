@@ -1,0 +1,166 @@
+@import "./fonts.css";
+@import "./animations.css";
+@import "./quizbox.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+   --white: #ffffff;
+   --green-charcoal: #2f3e46;
+   --green-feldgrau: #446461;
+   --green-viridian: #6b917e;
+   --green-ash-gray: #cad2c5;
+   --green-cambridge-blue: #84a98c;
+   --green-dark-slate-gray: #354f52;
+   --error-red: #930202;
+   --error-red-2: #e95454;
+   --heat-wave: #ff7a00;
+   --fine-purple: #c20275;
+   --indigo-dye: #284b63;
+   --purple-eggplant: #684756;
+
+   --global-padding-left: 3.75rem;
+   --modal-padding: 3rem;
+   --default-border-radius: 0.8125rem;
+   --home-card-left-padding: 1.8rem;
+
+   --header-height: 5rem;
+   --sidebar-width: 7.4375rem;
+   --logo-text-size: 1.881713rem;
+   --modal-morph-duration: 500ms;
+   --quiz-start-width: 40vw;
+   --quiz-start-height: 59vh;
+   --quiz-width: 70vw;
+   --quiz-height: 62vh;
+
+   --rapid-fire-start-height: 59vh;
+   --rapid-fire-start-width: 60vw;
+   --rapid-fire-height: 75vh;
+   --rapid-fire-width: 70vw;
+}
+
+.lines {
+   background-size: 100vw;
+   background-attachment: fixed;
+   background-repeat: repeat-y;
+   background-position: center;
+   background-image: url(../assets/lines-background.png);
+}
+
+.backgrounds_sign_in {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/signin-background.png);
+}
+
+.backgrounds_password {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/password-background.png);
+}
+
+.background_rapidfire {
+   background-size: cover;
+   background-position: center;
+   background-image: url(../assets/rapidfire-background.png);
+   background-color: rgb(254, 246, 249);
+}
+
+.page_with_header {
+   position: relative;
+   padding-top: var(--header-height);
+}
+
+/* ------ */
+/* Media Queries */
+@media (prefers-reduced-motion) {
+   * {
+      animation-duration: 0ms !important;
+      transition-duration: 0ms !important;
+   }
+}
+
+@media (min-width: 2560px) {
+   :root {
+      --header-height: 8vh;
+   }
+}
+
+@media (max-width: 1366px) {
+   :root {
+      --rapid-fire-height: 90vh;
+      --quiz-start-width: 55vw;
+   }
+}
+
+@media (max-width: 1024px) {
+   :root {
+      --global-padding-left: 2.4rem;
+      --header-height: 4.7rem;
+      --logo-text-size: 1.581713rem;
+      --home-card-left-padding: 1rem;
+      --sidebar-width: 6.4375rem;
+      --rapid-fire-start-width: 70vw;
+      --quiz-start-width: 50vw;
+      --quiz-start-height: 70vh;
+      --quiz-height: 95vh;
+      --quiz-width: 90vw;
+   }
+}
+
+@media (max-width: 912px) {
+   :root {
+      --header-height: 7rem;
+      --rapid-fire-start-width: 84vw;
+      --rapid-fire-start-height: 35vh;
+      --rapid-fire-height: 55vh;
+      --rapid-fire-width: 90vw;
+      --quiz-start-height: 47vh;
+      --quiz-start-width: 80vw;
+   }
+}
+@media (max-width: 768px) {
+   :root {
+      --header-height: 6rem;
+      --rapid-fire-height: 64vh;
+   }
+}
+@media (max-width: 540px) {
+   :root {
+      --header-height: 3.7rem;
+      --logo-text-size: 1.2rem;
+      --modal-padding: 1.7rem;
+      --rapid-fire-height: 70vh;
+   }
+}
+@media (max-width: 475px) {
+   :root {
+      --rapid-fire-height: 60vh;
+   }
+}
+@media (max-width: 414px) {
+   :root {
+      --header-height: 7vh;
+      --global-padding-left: 4vw;
+      --logo-text-size: 1.4rem;
+   }
+   .app_header {
+      justify-content: center;
+      text-align: center;
+      border-bottom-width: 2px;
+   }
+   .header_box {
+      display: none;
+   }
+}
+
+@media (max-width: 393px) {
+   :root {
+      --header-height: 8vh;
+      --rapid-fire-start-height: 50vh;
+      --rapid-fire-height: 76vh;
+      --quiz-start-width: 90vw;
+   }
+}

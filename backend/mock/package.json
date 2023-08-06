@@ -1,0 +1,19 @@
+{
+   "name": "mock-backend",
+   "version": "1.0.0",
+   "description": "A simple node.js backend for local development",
+   "main": "src/index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "nodemon src/index.js",
+      "start": "node src/index.js"
+   },
+   "keywords": [],
+   "license": "MIT",
+   "dependencies": {
+      "bcrypt": "^5.1.0",
+      "colors": "^1.4.0",
+      "jsonwebtoken": "^8.5.1",
+      "nodemon": "^3.0.1"
+   }
+}

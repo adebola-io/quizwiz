@@ -1,0 +1,377 @@
+{
+   "title": "Nigerian History",
+   "category": "History and Politics",
+   "level0": [
+      {
+         "prompt": "How many ethnic groups are there in Nigeria?",
+         "options": ["100", "150", "200", "250"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which ethnic group is considered the major ethnic group in Nigeria?",
+         "options": ["Hausa-Fulani", "Yoruba", "Igbo", "All of the above"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "The most widely spoken language in Nigeria is?",
+         "options": ["English", "Yoruba", "Hausa", "Igbo"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Who gave Nigeria independence?",
+         "options": [
+            "British Rule",
+            "United States",
+            "Egypt",
+            "Belgium and France"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "How many colors are in the Nigerian national flag?",
+         "options": ["2", "3", "4", "5"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these is true?",
+         "options": [
+            "Africa is the second-largest continent by area",
+            "Africa is the second-largest continent by population",
+            "Nigeria is Africa's largest country by area",
+            "Both (A) and (B)"
+         ],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "How many members are in the African Union?",
+         "options": ["45", "50", "55", "60"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which is the capital of Nigeria?",
+         "options": ["Kano", "Lagos", "Abuja", "Ibadan"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "The largest city in Africa is?",
+         "options": ["Lagos", "Cairo", "Johannesburg", "Addis Ababa"],
+         "correctAnswer": 0,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "How many years did Nigeria remain under military rule?",
+         "options": ["13", "23", "33", "43"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "What years did the Nigerian civil war last??",
+         "options": [
+            "1965 - 1968",
+            "1967 - 1970",
+            "1969 - 1972",
+            "1971 - 1974"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "After regaining democracy in 1999, who became president of Nigeria?",
+         "options": [
+            "Muhammadu Buhari",
+            "Olusegun Obasanjo",
+            "Umaru Musa Yar'Adua",
+            "Abdulsalami Abubakar"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Goodluck Jonathan remained president of Nigeria from _____ to _____.?",
+         "options": ["2010, 2015", "2010, 2017", "2012, 2017", "2012, 2018"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+
+      {
+         "prompt": "Militant organization Boko Haram was founded in?",
+         "options": ["1996", "1998", "2000", "2002"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Bakassi Peninsula was transferred from Nigeria to Cameroon on 14 August?",
+         "options": ["1990", "1996", "2000", "2008"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Which gulf is present in the South of Nigeria?",
+         "options": [
+            "Persian Gulf",
+            "Gulf of Guinea",
+            "Gulf of Oman",
+            "Persian Gulf"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which West African state is located in the West of Nigeria?",
+         "options": ["Congo", "Somalia", "Sudan", "Benin"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Nigeria shares its Eastern Border with which country?",
+         "options": ["Cameroon", "Niger", "Mali", "Libya"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "How many states are in Nigeria?",
+         "options": ["26", "36", "46", "56"],
+         "correctAnswer": 1,
+         "level": 1
+      }
+   ],
+   "level2": [
+      {
+         "prompt": "Which was the first West African country to overcome the Ebola epidemic?",
+         "options": ["Chad", "Cameroon", "Libya", "Nigeria"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "The motto of Nigeria is?",
+         "options": [
+            "Unity, Faith, Discipline",
+            "Unity and Faith, Peace and Progress",
+            "Unity, Discipline, Development",
+            "Development and Prosperity"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which of the following statement(s) is/are true about Nigeria?",
+         "options": [
+            "Nigeria is the most populous country in Africa",
+            "Nigeria is Africa's biggest oil exporter",
+            "Nigeria has the largest natural gas reserves",
+            "All statements are true"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Where do Christians and Muslims mostly live in Nigeria, respectively?",
+         "options": [
+            "south, north",
+            "north, south",
+            "east, west",
+            "west, east"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What kind of state is Nigeria, officially?",
+         "options": ["Islamic", "Christian", "Jewish", "Secular"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "When was Muhammadu Buhari sworn in for his second term?",
+         "options": ["13 May", "29 June", "13 June", "29 May"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "The national elections in 2019 were the _____ consecutive elections since 1999?",
+         "options": ["third", "Fourth", "Fifth", "Sixth"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "What name is Nigeria popularly known as?",
+         "options": [
+            "The Energy of Africa",
+            "The Minion of Africa",
+            "The Dwarf of Africa",
+            "The Giant of Africa"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      }
+   ],
+   "level3": [
+      {
+         "prompt": "What kind of state is Nigeria?",
+         "options": [
+            "Multilingual State",
+            "Multicultural State",
+            "Both A & B",
+            "None of These"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What is the Nigeria's total area in square kilometer?",
+         "options": ["723,768", "823,768", "929,768", "1,029,768"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Where does Nigeria rank in terms of nominal GDP?",
+         "options": ["19th", "23rd", "27th", "31st"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "When did Muhammadu Buhari assume office as a president?",
+         "options": ["2014", "2015", "2016", "2017"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which of these is not an organization including Nigeria?",
+         "options": ["BRICS", "OPEC", "United Nations", "Commonwealth"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "Where in Africa is Nigeria located?",
+         "options": [
+            "West Africa",
+            "East Africa",
+            "South Africa",
+            "North Africa"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What was the 2020 total population estimate of Nigeria?",
+         "options": [
+            "191 million",
+            "201 million",
+            "211 million",
+            "221 million"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "The first Coronavirus case in Nigeria was from which country?",
+         "options": ["French", "Italian", "Indian", "Chinese"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+
+      {
+         "prompt": "Who coined the name Nigeria?",
+         "options": [
+            "Mary Slessor",
+            "Lady Flora Lugard",
+            "Queen Elizabeth",
+            "Michelle Obama"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      }
+   ],
+   "level4": [
+      {
+         "prompt": "What was the GDP of Nigeria in 2020?",
+         "options": [
+            "$424.57 billion",
+            "$464.57 billion",
+            "$504.57 billion",
+            "$544.57 billion"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Where was the first Nigerian storey building?",
+         "options": ["Epe", "Lekki", "Lokoja", "Badagry"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "When did Nigeria become a Republic?",
+         "options": [
+            "October 1st 1964",
+            "October 1st 1963",
+            "October 1st 1962",
+            "October 1st 1960"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "What year did NEPA become PHCN?",
+         "options": ["2002", "2005", "2008", "2010"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "What is former President Obasanjo's middle name?",
+         "options": ["Iyabo", "Aremu", "Olusegun", "Bankole"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Which is the official language of Nigeria's closest western neighour?",
+         "options": ["English", "French", "Hausa", "Swahili"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "What is the length of the Nigerian coastline in kilometer on the Gulf of Guinea?",
+         "options": ["953", "753", "853", "1053"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Which water body is closest to Nigeria?",
+         "options": [
+            "Gulf of Guinea",
+            "Walvis Bay",
+            "Gulf of Aqaba",
+            "Suez Canal"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Which region declared its independence from Nigeria in 1967 and was unsuccessful?",
+         "options": ["Calabar", "Biafra", "Sapele", "Warri"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Who won the presidential election in 1993 and was imprisoned?",
+         "options": [
+            "Mashood Abiola",
+            "Abdulsalam Abubakar",
+            "Olusegun Obasanjo",
+            "Muhammadu Buhari"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      }
+   ]
+}

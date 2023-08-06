@@ -1,0 +1,77 @@
+.app_input_and_error_container {
+   margin-bottom: 1.86rem;
+   width: 100%;
+   transition-duration: 400ms;
+}
+.app_input_container {
+   --background-offset: 5.5px;
+   position: relative;
+   transition-duration: 400ms;
+}
+.app_input_container:hover {
+   --background-offset: 3px;
+   transform: scale(0.99) translateX(-1.4%);
+}
+
+.app_input_container::before {
+   content: "";
+   display: block;
+   position: absolute;
+   z-index: -1;
+   height: 100%;
+   width: 100%;
+   transform: translate(
+      calc(var(--background-offset) * -1),
+      var(--background-offset)
+   );
+   transition-duration: 400ms;
+}
+
+.app_input {
+   display: flex;
+   align-items: center;
+   font-weight: bold;
+   font-size: 1.0625rem;
+   height: 4.125rem;
+   font-family: Poppins;
+   padding: 0.625rem 0.625rem 0.625rem 1.4375rem;
+   gap: 0.625rem;
+   transition-duration: 400ms;
+   @apply text-green-charcoal;
+}
+
+.app_input::placeholder {
+   color: #000;
+   font-size: 1.0625rem;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 5.4375rem; /* 511.765% */
+
+   opacity: 0.5;
+}
+
+.app_input_container::before,
+.app_input {
+   border-radius: 0.4375rem;
+   border: 4px solid var(--green-charcoal, #2f3e46);
+   background: var(--white, #fff);
+}
+.app_input_container.error::before,
+.app_input_container.error .app_input {
+   border-color: rgb(142, 1, 1);
+}
+.app_input_container.error .app_input::placeholder {
+   color: rgb(142, 1, 1);
+}
+.app_input_error_message {
+   height: 0px;
+   display: block;
+   margin-top: 10px;
+   font-family: Poppins;
+   font-size: 0.9rem;
+   color: rgb(142, 1, 1);
+   font-weight: bold;
+   transition-duration: 400ms;
+   animation: drop-from-top 400ms;
+   animation-fill-mode: both;
+}

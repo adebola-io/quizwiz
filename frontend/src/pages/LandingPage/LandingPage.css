@@ -1,0 +1,193 @@
+.landing_page_text {
+   position: relative;
+   gap: 1.5rem;
+}
+.landing_page_headline_text {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-end;
+   flex-shrink: 0;
+   width: 90%;
+   text-align: right;
+   font-size: 6.825rem;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 7.3125rem;
+   @apply font-avenir-next-lt-pro-bold text-green-charcoal;
+}
+.landing_page_headline_text .second {
+   background: linear-gradient(100deg, #6b917e 0%, #446461 100%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-decoration-line: underline;
+}
+.landing_page_paragraph {
+   display: flex;
+   max-width: 84%;
+   height: 6rem;
+   flex-direction: column;
+   justify-content: center;
+   flex-shrink: 0;
+   color: var(--green-charcoal, #2f3e46);
+   text-align: right;
+   font-family: Poppins;
+   font-size: 0.97438rem;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+/* Media Queries */
+@media (min-width: 2560px) {
+   .landing_page_headline_text {
+      font-size: 10rem;
+      line-height: 120%;
+   }
+   .landing_page_paragraph {
+      height: fit-content;
+      font-size: 2rem;
+      max-width: 90%;
+   }
+   .landing_page_diagrams .eclipse {
+      width: 50rem;
+   }
+   .landing_page_diagrams img {
+      width: 70rem;
+   }
+}
+/* LAPTOPS/DESKTOPS */
+@media (max-width: 1368px) {
+   .landing_page_text {
+      gap: 0.7rem;
+   }
+   .landing_page_headline_text {
+      font-size: 4.5rem;
+      line-height: 5.25rem;
+   }
+   .landing_page_paragraph {
+      font-size: 0.8rem;
+      max-width: 80%;
+   }
+   .landing_page_diagrams .eclipse {
+      width: 39.75rem;
+   }
+   .landing_page_diagrams img {
+      width: 30rem;
+   }
+}
+@media (max-width: 1024px) {
+   .landing_page_headline_text {
+      font-size: 5rem;
+   }
+   .landing_page_paragraph {
+      font-size: 0.8rem;
+      max-width: 86%;
+   }
+   .landing_page_diagrams img {
+      width: 25rem;
+   }
+}
+@media (max-height: 600px) {
+   .landing_page_headline_text {
+      font-size: 4rem;
+      line-height: 100%;
+   }
+   .landing_page_paragraph {
+      font-size: 0.75rem;
+   }
+}
+@media (max-width: 912px) {
+   .landing_page_text {
+      width: 100%;
+      align-items: center;
+      padding-left: var(--global-padding-left);
+      overflow: hidden;
+   }
+   .landing_page_text * {
+      position: relative;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+   }
+   .landing_page_text:before,
+   .landing_page_text:after {
+      position: absolute;
+      z-index: -1;
+      display: block;
+      content: "jdsdk";
+      width: 100vw;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(
+         45deg,
+         var(--green-cambridge-blue),
+         var(--green-feldgrau)
+      );
+      outline: 20px solid var(--green-charcoal);
+      border: 20px solid var(--green-viridian);
+      opacity: 0.4;
+   }
+   .landing_page_text:before {
+      bottom: 0;
+      transform: translate(-50%, 50%);
+   }
+   .landing_page_text:after {
+      top: 0;
+      transform: translate(50%, -50%);
+   }
+   .landing_page_headline_text {
+      font-size: 8rem;
+      line-height: 120%;
+      mix-blend-mode: color-burn;
+   }
+   .landing_page_paragraph {
+      height: fit-content;
+      font-size: 1.3rem;
+      font-weight: 600;
+      max-width: 90%;
+   }
+   .landing_page_text .button_row {
+      flex-direction: column;
+      justify-content: center;
+   }
+   .landing_page_text .button_row > .app_button {
+      width: 70%;
+      height: 5rem;
+   }
+   .landing_page_diagrams {
+      display: none;
+   }
+}
+@media (max-width: 900px) {
+   .landing_page_headline_text {
+      font-size: 5rem;
+      width: 90%;
+   }
+   .landing_page_paragraph {
+      font-size: 1.1rem;
+   }
+   .landing_page_text .button_row .app_button {
+      height: 4rem;
+      width: 60%;
+      font-size: 1.2rem;
+   }
+}
+@media (max-width: 540px) {
+   .landing_page_headline_text {
+      font-size: 3rem;
+   }
+   .landing_page_paragraph {
+      font-size: 0.8rem;
+   }
+}
+@media (max-width: 414px) {
+   .landing_page_paragraph {
+      width: 90%;
+   }
+   .landing_page_text .button_row .app_button {
+      width: 90%;
+      height: 3.5rem;
+   }
+}

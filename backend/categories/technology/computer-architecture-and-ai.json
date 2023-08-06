@@ -1,0 +1,193 @@
+{
+   "title": "Computer Architecture and AI",
+   "category": "Technology",
+   "level0": [
+      {
+         "prompt": "Who developed the basic architecture of computers?",
+         "options": [
+            "Blaise Pascal",
+            "Charles Babbage",
+            "John Von Neuman",
+            "None of the above"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following allows simultaneous write and read operations?",
+         "options": ["ROM", "EPROM", "RAM", "VROM"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following is not considered as a peripheral device?",
+         "options": ["CPU", "Keyboard", "Monitor", "All of the above"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following computer memory is the fastest?",
+         "options": ["Register", "Harddisk", "RAM", "None of the above"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following operations is/are performed by the ALU?",
+         "options": [
+            "Data Manipulation",
+            "Exponential",
+            "Squareroot",
+            "All of the above"
+         ],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following formats is used to store data?",
+         "options": ["Decimal", "Octal", "BCD", "Hexadecimal"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following memory of the computer is used to speed up the computer processing?",
+         "options": ["Cache memory", "RAM", "ROM", "None of the above"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Computer address bus is - ?",
+         "options": [
+            "Multidirectional",
+            "Bidirectional",
+            "Unidirectional",
+            "None of the above"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following circuits is used to store one bit of data?",
+         "options": ["Flip Flop", "Decoder", "Encoder", "Register"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following is a way in which the components of a computer are connected to each other?",
+         "options": [
+            "Computer parts",
+            "Computer architecture",
+            "Computer Hardware",
+            "None of the above"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following circuits converts the binary data into a decimal?",
+         "options": ["Decoder", "Encoder", "Code converter", "Multiplexer"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "The address in the main memory is known as...",
+         "options": [
+            "Logical address",
+            "Physical address",
+            "Memory address",
+            "None of the above"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Subtraction in computers is carried out by...",
+         "options": [
+            "1's complement",
+            "2's Complement",
+            "3's Complement",
+            "9's complement"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following memory units communicates directly with the CPU?",
+         "options": [
+            "Auxiliary Memory",
+            "Main Memory",
+            "Secondary Memory",
+            "None of the above"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "The collection of 8-bits is called as-",
+         "options": ["Byte", "Nibble", "Word", "Record"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following registers can interact with the secondary storage",
+         "options": ["PC", "MAR", "MDR", "IR"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "In which of the following ways does the computer store its data in memory",
+         "options": [
+            "Hexadecimal Form",
+            "Octal Form",
+            "Binary Form",
+            "Decimal Form"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following is a combinational logic circuit which sends data from a single source to two or more separate destinations?",
+         "options": ["Multiplexer", "Demultiplexer", "Encoder", "Decoder"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of the following is a group of bits that tells the computer to perform a particular operation?",
+         "options": [
+            "Accumulator",
+            "Register",
+            "Intruction Code",
+            "None of the above"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "Where is the document temporarily stored during working on a document on a PC?",
+         "options": ["ROM", "CPU", "RAM", "Flash Memory"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Where is the decoded instruction stored?",
+         "options": ["Registers", "MDR", "PC", "IR"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "What does MMID stand for?",
+         "options": [
+            "Multiple Instruction Memory Data",
+            " Multiple Instruction Multiple Data",
+            "Memory Instruction Multiple Data",
+            "Memory Information Memory Data"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      }
+   ],
+   "level2": [],
+   "level3": [],
+   "level4": []
+}

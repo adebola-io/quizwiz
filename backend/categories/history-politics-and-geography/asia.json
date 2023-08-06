@@ -1,0 +1,761 @@
+{
+   "title": "Asian History",
+   "category": "History and Politics",
+   "level0": [
+      {
+         "prompt": "What is the capital of China?",
+         "options": ["Beijing", "Shanghai", "Hong Kong", "Taipei"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What is the world's 5th largest country by population?",
+         "options": ["India", "Taiwan", "Pakistan", "Nigeria"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "What is the largest and most populous continent in the world?",
+         "options": ["Asia", "Africa", "Europe", "North America"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which term is often used to refer to the Indian film industry?",
+         "options": ["Tollywood", "Kollywood", "Bollywood", "Lollywood"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "What is the currency of China?",
+         "options": ["Renminbi", "Yuan", "Yen", "Won"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+
+      {
+         "prompt": "What is the longest river in Asia?",
+         "options": [
+            "The Yangtze River",
+            "The Yellow River",
+            "The Mekong River",
+            "The Indus River"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+
+      {
+         "prompt": "What is the sacred text of Islam?",
+         "options": ["Quran", "Bible", "Vedas", "Tripitaka"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What is the traditional martial art of Japan?",
+         "options": ["Kung Fu", "Tai Chi", "Taekwondo", "Karate"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Can you describe the flag of Japan?",
+         "options": [
+            "A white flag with a red circle at the center.",
+            "A green flag with a white crescent moon and star at the center.",
+            "A red flag with a yellow star at the upper left corner.",
+            "A blue flag with a yellow sunburst at the center."
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which Asian country was divided into two states after the Korean War?",
+         "options": ["Korea", "Vietnam", "China", "Japan"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What is the capital of South Korea?",
+         "options": ["Beijing", "Tokyo", "Seoul", "Bangkok"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which mountain is the highest in Asia and the world?",
+         "options": ["K2", "Mount Everest", "Kangchenjunga", "Lhotse"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "What is the largest desert in Asia?",
+         "options": ["Gobi", "Sahara", "Thar", "Arabian"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which language is the most widely spoken in Asia?",
+         "options": ["Hindi", "English", "Mandarin Chinese", "Arabic"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "What is the largest lake in Asia?",
+         "options": ["Lake Baikal", "Lake Victoria", "Caspian Sea", "Aral Sea"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which country was formerly known as Siam?",
+         "options": ["Vietnam", "Cambodia", "Thailand", "Laos"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which empire was based in modern-day Iran?",
+         "options": ["Ottoman", "Mongol", "Persian", "Mughal"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which country is the largest by area in Asia?",
+         "options": ["China", "India", "Russia", "Indonesia"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which Asian country is the smallest by area?",
+         "options": ["Maldives", "Singapore", "Bahrain", "Lebanon"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which country is the only one to have a Hindu majority?",
+         "options": ["Nepal", "India", "Bhutan", "Indonesia"],
+         "correctAnswer": 3,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "Which country is the 'Land of the Rising Sun'?",
+         "options": ["China", "Japan", "India", "South Korea"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the ancient Indian prince who became the Buddha?",
+         "options": ["Siddhartha Gautama", "Confucius", "Laozi", "Buddha"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the first emperor of China?",
+         "options": ["Qin Shi Huang", "Confucius", "Sun Tzu", "Kublai Khan"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which Chinese dynasty built the Great Wall of China?",
+         "options": [
+            "Ming Dynasty",
+            "Qin Dynasty",
+            "Han Dynasty",
+            "Tang Dynasty"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "What is the Japanese art of folding paper into various shapes called?",
+         "options": ["Origami", "Ikebana", "Kabuki", "Haiku"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the first Emperor of the Mongol Empire?",
+         "options": ["Kublai Khan", "Attila the Hun", "Timur", "Genghis Khan"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Which Asian country has a land border with Africa?",
+         "options": ["Yemen", "Oman", "Egypt", "Turkey"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which ancient civilization developed a system of writing called cuneiform?",
+         "options": ["Sumerian", "Babylonian", "Akkadian", "Assyrian"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which religion from ancient India believes in the cycle of birth and rebirth?",
+         "options": ["Buddhism", "Christianity", "Islam", "Hinduism"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "What is the mountain range that separates Asia and Europe?",
+         "options": ["Alps", "Himalayas", "Ural", "Andes"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which of these countries is the only one in Asia that has a predominantly Jewish population?",
+         "options": ["Iran", "Tajikistan", "Israel", "Cyprus"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which Asian country is the only one to have a monarchy that is officially called a caliphate?",
+         "options": ["Brunei", "Malaysia", "Saudi Arabia", "Jordan"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "What is the sacred river in Hinduism that flows through India and Bangladesh?",
+         "options": ["Indus", "Brahmaputra", "Narmada", "Ganges"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Which Asian country was the first to gain independence from colonial rule?",
+         "options": ["India", "Philippines", "Thailand", "Indonesia"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which Asian country is the only one to have a communist government that is also a monarchy?",
+         "options": ["China", "North Korea", "Laos", "Vietnam"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "What was the ancient trade route that connected China with the Mediterranean?",
+         "options": [
+            "The Spice Route",
+            "The Silk Road",
+            "The Amber Road",
+            "The Grand Trunk Road"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "What was the last imperial dynasty of China that ruled from 1644 to 1912?",
+         "options": ["Ming", "Qing", "Yuan", "Han"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "What is the name of the Indian leader who led the nonviolent resistance movement against British colonial rule?",
+         "options": [
+            "Jawaharlal Nehru",
+            "Rabindranath Tagore",
+            "Subhas Chandra Bose",
+            "Mahatma Gandhi"
+         ],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "What was the first Japanese city to be attacked by an atomic bomb in 1945?",
+         "options": ["Tokyo", "Hiroshima", "Nagasaki", "Osaka"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "What is the name of the Korean peninsula's first unified kingdom that existed from the 7th to the 10th century?",
+         "options": ["Goguryeo", "Silla", "Baekje", "Goryeo"],
+         "correctAnswer": 1,
+         "level": 1
+      }
+   ],
+   "level2": [
+      {
+         "prompt": "What is the oldest civilization in Asia?",
+         "options": ["China", "India", "Mesopotamia", "Egypt"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "In which country did the Silk Road originate?",
+         "options": ["India", "China", "Persia", "Japan"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which  region is an autonomous territory within China with a distinct culture and identity?",
+         "options": ["Tibet", "Hong Kong", "Macao", "Taiwan"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Bharat is an alternative name for which Asian country?",
+         "options": ["India", "Sri Lanka", "Singapore", "Pakistan"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Sentosa is an island resort in which country?",
+         "options": ["Singapore", "Malaysia", "Sri Lanka", "Russia"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "The motto of which country is 'Truth Alone Triumphs'?",
+         "options": ["China", "United States", "India", "Australia"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Amman is which country's capital city?",
+         "options": ["Saudi Arabia", "Jordan", "Lebanon", "Syria"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "The Ottoman Empire was centered in which modern-day country?",
+         "options": ["Greece", "Egypt", "Turkey", "Syria"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which European power colonized Indonesia for over 300 years before its independence?",
+         "options": ["Spain", "Portugal", "France", "The Netherlands"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Who led the Chinese Communist Party to victory in the Chinese Civil War and became the leader of the People's Republic of China?",
+         "options": [
+            "Deng Xiaoping",
+            "Sun Yat-sen",
+            "Chiang Kai-shek",
+            "Mao Zedong"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Which imperial dynasty ruled Japan from 1603 to 1868, known for its policy of isolationism?",
+         "options": [
+            "The Kamakura Shogunate",
+            "The Heian Dynasty",
+            "The Tokugawa Shogunate",
+            "The Meiji Restoration"
+         ],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which Chinese dynasty is often considered the golden age of Chinese civilization?",
+         "options": [
+            "The Han Dynasty",
+            "The Tang Dynasty",
+            "The Ming Dynasty",
+            "The Qing Dynasty"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which dynasty ruled over Korea from 1392 to 1910?",
+         "options": [
+            "The Goryeo Dynasty",
+            "The Baekje Dynasty",
+            "The Silla Dynasty",
+            "The Joseon Dynasty"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Which Asian country was the site of the 'Tiananmen Square protests' in 1989?",
+         "options": ["China", "Japan", "South Korea", "India"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Which ancient civilization developed the concept of zero and the decimal system?",
+         "options": [
+            "The Ancient Egyptians",
+            "The Ancient Greeks",
+            "The Ancient Indians",
+            "The Ancient Chinese"
+         ],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which nation is known as the 'Abode of Peace'?",
+         "options": ["Bhutan", "Brunei", "Oman", "Qatar"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Since 1981, Mumbai is the official name for which Indian city?",
+         "options": ["Kolkata", "Delhi", "Chennai", "Bombay"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Of these Asian 'seas', which one is actually a real sea, and not a landlocked lake?",
+         "options": ["Aral Sea", "Caspian Sea", "Flores Sea", "Dead Sea"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "The sources of the Indus and Mekong rivers can be found in which country?",
+         "options": ["India", "Nepal", "China", "Thailand"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Orchard Road, that had a $40 million revamp in 2009, is the retail and entertainment center of which city?",
+         "options": ["Bangkok", "Kuala Lumpur", "Jakarta", "Singapore"],
+         "correctAnswer": 3,
+         "level": 2
+      }
+   ],
+   "level3": [
+      {
+         "prompt": "Where is Asia's longest and highest ropeway constructed?",
+         "options": [
+            "Auli, Garhwal, Himalayas",
+            "Mount Kinabalu, Malaysia",
+            "Mount Fuji, Japan",
+            "Annapurna, Nepal"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What is called the boundary line between Afghanistan and Pakistan?",
+         "options": [
+            "Radcliffe Line",
+            "MacMahon Line",
+            "Durand Line",
+            "Curzon Line"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What name is given to Kathmandu Airport of Nepal?",
+         "options": [
+            "Gautam Buddha International Airport",
+            "Tribhuvan International Airport",
+            "Mount Everest Airport",
+            "Annapurna Regional Airport"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Name the South Indian city which is air-linked with Maldives?",
+         "options": ["Chennai", "Bengaluru", "Thiruvananthapuram", "Hyderabad"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What is Pidurutalagala's special feature?",
+         "options": [
+            "It is the highest peak in Sri Lanka.",
+            "It is an ancient temple complex.",
+            "It is a famous wildlife sanctuary.",
+            "It is a UNESCO World Heritage Site."
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "Which major archaeological site associated with early civilization is near Larkana?",
+         "options": ["Harappa", "Mohenjo-daro", "Taxila", "Sanchi"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "The largest republic of Russia entirely in Asia?",
+         "options": [
+            "Kazakh Republic",
+            "Republic of Sakha (Yakutia)",
+            "Tatarstan",
+            "Chechnya"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which Mediterranean island is considered an independent Asian country?",
+         "options": ["Crete", "Sardinia", "Cyprus", "Malta"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What is Saigon now known as?",
+         "options": ["Hanoi", "Da Nang", "Nha Trang", "Ho Chi Minh City"],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "Iraq has a common border on its South with two countries. Which are they?",
+         "options": [
+            "Iran and Turkey",
+            "Saudi Arabia and Jordan",
+            "Kuwait and Syria",
+            "Saudi Arabia and Kuwait"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "Which type of aircraft was used to bomb Hiroshima, Japan, in World War II?",
+         "options": [
+            "B-17 Flying Fortress",
+            "B-25 Mitchell",
+            "B-24 Liberator",
+            "B-29 Superfortress"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "The Abbasid Caliphate was one of the great dynasties of the Muslim Empire. For approximately how long did it reign?",
+         "options": ["2,000 years", "1,000 years", "500 years", "1,500 years"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which Asian country hosted the 2020 Summer Olympic Games?",
+         "options": ["China", "South Korea", "Japan", "India"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "In what colorful area of Moscow is Saint Basil's Cathedral?",
+         "options": [
+            "The Blue Square",
+            "The Green Square",
+            "The Red Square",
+            "The Yellow Square"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which ancient empire was responsible for constructing the famous Angkor Wat temple complex?",
+         "options": [
+            "The Aztec Empire",
+            "The Roman Empire",
+            "The Inca Empire",
+            "The Khmer Empire"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "Which US territory was so infested with brown tree snakes that toxic mice were parachuted in to poison them in 2013?",
+         "options": [
+            "Puerto Rico",
+            "Guam",
+            "American Samoa",
+            "U.S. Virgin Islands"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which of the following countries is not located in Asia?",
+         "options": ["Maldives", "Sri Lanka", "Madagascar", "Oman"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which structure in China constituted one of the largest building-construction projects ever undertaken?",
+         "options": [
+            "The Forbidden City",
+            "The Great Wall",
+            "The Terracotta Army",
+            "The Three Gorges Dam"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "In which country can you go diving and snorkeling on the famous island of El Nido?",
+         "options": ["Thailand", "Indonesia", "The Philippines", "Malaysia"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What was the main religion practiced during the Gupta Empire in ancient India?",
+         "options": ["Buddhism", "Hinduism", "Zoroastrianism", "Jainism"],
+         "correctAnswer": 1,
+         "level": 3
+      }
+   ],
+   "level4": [
+      {
+         "prompt": "What religion that originated in India was divided into the 'White-Robed' and the 'Sky-Clad' sects in a 5th-century schism?",
+         "options": ["Jainism", "Buddhism", "Hinduism", "Sikhism"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Of the three kingdoms that constituted ancient Korea until 668, which was the largest?",
+         "options": ["Baekje", "Goguryeo", "Silla", "Koguryŏ"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Which ancient ruler’s reign, from 336 to 323 BCE, marked a decisive moment in the history of Europe and Asia?",
+         "options": [
+            "Julius Caesar",
+            "Cyrus the Great",
+            "Genghis Khan",
+            "Alexander the Great"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "What South Asian country emerged in 1971 as the result of civil war and foreign invasion?",
+         "options": ["Sri Lanka", "Pakistan", "Nepal", "Bangladesh"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "Who was the world’s first woman prime minister?",
+         "options": [
+            "Margaret Thatcher",
+            "Golda Meir",
+            "Indira Gandhi",
+            "Sirimavo Bandaranaike"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "The first major conflict of the Cold War, lasting from 1950 to 1953 in Eastern Asia was?",
+         "options": [
+            "Vietnam War",
+            "Korean War",
+            "Suez Crisis",
+            "Cuban Missile Crisis"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "What are the countries that comprise Indochina, which were formerly associated with France?",
+         "options": [
+            "Vietnam, Thailand & Myanmar",
+            "Vietnam, Laos & Cambodia",
+            "Vietnam, Indonesia & Malaysia",
+            "Vietnam, Philippines & Singapore"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Which of these Chinese dynasties is remembered for porcelain, printing, gunpowder, compass, and advancements in art and poetry?",
+         "options": [
+            "Han and Qin",
+            "Ming and Qing",
+            "Tang and Song",
+            "Yuan and Jin"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What name was given to the surprise attack launched by the North Vietnamese army against U.S. and South Vietnamese forces during the Lunar New Year festival of 1968?",
+         "options": [
+            "Battle of Dien Bien Phu",
+            "Operation Rolling Thunder",
+            "Tet Offensive",
+            "Battle of Hamburger Hill"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What was Japan’s first treaty with a western Nation, that led to the opening of Japan to the outside world?",
+         "options": [
+            "Treaty of Versailles",
+            "Treaty of Tordesillas",
+            "Treaty of Kanagawa",
+            "Treaty of Nanking"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What was one of the previous names of Johor Bahru?",
+         "options": ["Tanjung Puteri", "Malacca City", "Kuala Lumpur", "Ipoh"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "In which country is the Galata Bridge which connects Europe to Asia?",
+         "options": ["Greece", "Russia", "Turkey", "Egypt"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "The Khyber Pass links which two countries?",
+         "options": [
+            "Afghanistan/India",
+            "Afghanistan/Pakistan",
+            "Afghanistan/Iran",
+            "Afghanistan/China"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Dushanbe is the capital of which of the following countries?",
+         "options": ["Uzbekistan", "Kyrgyzstan", "Tajikistan", "Turkmenistan"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "The national flag of Japan, known as the \"Nisshōki,\" features a red circle in the center. What is this circle called?",
+         "options": ["Tenshin", "Hinomaru", "Kyokujitsu", "Shinchō"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Which ancient Indian epic, attributed to the sage Vyasa, narrates the great Kurukshetra War?",
+         "options": ["Mahabharata", "Ramayana", "Rigveda", "Upanishads"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Which Asian country underwent a period of rapid industrialization and modernization under the Meiji Restoration during the late 19th century?",
+         "options": ["India", "Vietnam", "Thailand", "Japan"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "Who was the first female ruler of the Delhi Sultanate in India?",
+         "options": ["Razia Sultana", "Nur Jahan", "Chand Bibi", "Begum Samru"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "What was the name of the Japanese military government that ruled from 1192 to 1868?",
+         "options": ["Shogunate", "Daimyo", "Samurai", "Emperor"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "What was the name of the Chinese philosophy that advocated strict obedience to authority and harsh punishments for moral transgressions?",
+         "options": ["Confucianism", "Taoism", "Legalism", "Buddhism"],
+         "correctAnswer": 2,
+         "level": 4
+      }
+   ]
+}

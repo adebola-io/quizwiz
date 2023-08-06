@@ -1,0 +1,869 @@
+{
+   "title": "Music",
+   "category": "Pop Culture",
+   "level0": [
+      {
+         "prompt": "The singer Beyonce is married to which rapper?",
+         "options": ["Big Sean", "JAY Z", "Kanye West", "Lil Wayne"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these is not a Nigerian artist?",
+         "options": ["Burna Boy", "Rema", "Swae Lee", "Flavour"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these is not a popular Drake song?",
+         "options": ["One Dance", "Hotline Bling", "God's Plan", "Best Part"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "Frank Ocean's first studio album was called?",
+         "options": [
+            "Channel Orange",
+            "Blonde",
+            "Flower Boy",
+            "Nostalgia, Ultra"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which artist has a hit song called <i>Johnny</i>?",
+         "options": ["Tiwa Savage", "Yemi Alade", "Seyi Shay", "Simi"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these is not a Rihanna song?",
+         "options": ["Diamonds", "Umbrella", "Judas", "Work"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which Nigerian artist group sang <i>Dorobucci</i>?",
+         "options": ["YBNL", "DMW", "Mavins", "P-Square"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these is not a Davido album?",
+         "options": [
+            "Timeless",
+            "Made In Lagos",
+            "A Better Time",
+            "Son of Mercy"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which artist was featured on the <i>Despacito</i> remix?",
+         "options": ["Beyonce", "Justin Bieber", "Anne Marie", "Niall Horan"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Who sang <i>Bohemian Rhapsody</i>?",
+         "options": ["Prince", "Michael Jackson", "The Beatles", "Queen"],
+         "correctAnswer": 3,
+         "level": 0
+      },
+      {
+         "prompt": "What is the name of Eminem's alter ego?",
+         "options": [
+            "Marshall Mathers",
+            "Slim Shady",
+            "Kung Fu Kenny",
+            "Roman Zolanski"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Who sang the 2015 hit song <i>Hello</i>?",
+         "options": ["Sam Smith", "Adele", "Celine Dion", "Taylor Swift"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": " Who sang the 2013 hit <i>Wrecking Ball</i>?",
+         "options": [
+            "Selena Gomez",
+            "Miley Cyrus",
+            "Demi Lovato",
+            "Bea Miller"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these songs is from the musical <i>Hamilton</i>?",
+         "options": ["Popular", "Satisfied", "Hello", "Let It Go"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these songs is sang by Maroon 5?",
+         "options": [
+            "Thunder",
+            "Adventure of a Lifetime",
+            "Girls Like You",
+            "Bad Liar"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Who sang <i>Orente</i>?",
+         "options": ["Asake", "Adekunle Gold", "Olamide", "Reminisce"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which of these artists sang Bad Romance?",
+         "options": ["Madonna", "Lady Gaga", "Beyonce", "Jennifer Lopez"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which artist is featured on the Wizkid song <i>Come Closer</i>?",
+         "options": ["Popcaan", "Drake", "Rihanna", "Runtown"],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which artist sang Stay With Me?",
+         "options": [
+            "Troye Sivan",
+            "Sam Smith",
+            "Lewis Capaldi",
+            "Jon Bellion"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": " Which of Nigerian songs was released in the 2010s?",
+         "options": [
+            "Holla at Your Boy by Wizkid",
+            "Unavailable by Davido",
+            "Koroba by Tiwa Savage",
+            "Abule by Patoranking"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "Which artist shines on the soundtrack for Euphoria's first season?",
+         "options": ["Labrinth", "Beyonce", "James TW", "SZA"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Who sang the 2008 hit <i>A Milli</i>?",
+         "options": ["Kanye West", "Rick Ross", "Lil Wayne", "50 Cent"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "What was Adekunle Gold's first studio album?",
+         "options": [
+            "About 30",
+            "GOLD",
+            "Afro Pop, Vol. 1",
+            "Catch Me If You Can"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which of these songs was released by Whitney Houston?",
+         "options": [
+            "All I Want For Christmas",
+            "I Wanna Dance With Somebody",
+            "Happy Birthday",
+            "Come and Get Your Love"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who sang the 2011 hit song <i>Call Me Maybe</i>?",
+         "options": [
+            "Carly Rae Jepsen",
+            "Ariana Grande",
+            "Britney Spears",
+            "Olivia Rodrigo"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "What is the last track of Labrinth's <i>Imagination and the Misfit Kid</i>?",
+         "options": ["Forever", "Juju Woman", "Mount Everest", "Oblivion"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "What is Kendrick Lamar's second album called?",
+         "options": [
+            "To Pimp A Butterfly",
+            "DAMN.",
+            "Good Kid, M.A.A.D City",
+            "Section.80"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which of these songs was released in 2018?",
+         "options": [
+            "Science Student by Olamide",
+            "Soft Work by Falz",
+            "Aye by Davido",
+            "Bounce by Rema"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which artist heads Mavins Records?",
+         "options": ["DBanj", "Don Jazzy", "Olamide", "Wande Coal"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who sang the 1984 song Purple Rain?",
+         "options": ["Fall Out Boy", "U2", "Prince", "Stevie Wonder"],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which artist was featured on the Davido song <i>Holy Ground</i>?",
+         "options": ["Mayorkun", "Nicki Minaj", "Drake", "Reekado Banks"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which artistes were featured on DJ Khaled's <i>Wild Thoughts</i>?",
+         "options": [
+            "Chris Brown and Tinashe",
+            "Rihanna and Chris Brown",
+            "Rihanna and Bryson Tiller",
+            "Bryson Tiller and Tinashe"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which of these songs is by Jon Bellion?",
+         "options": ["All Time Low", "Let You Down", "Everything", "All I Am"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which animated film is the song <i>We Don't Talk About Bruno</i> from?",
+         "options": ["Moana", "Encanto", "Coco", "Tangled"],
+         "correctAnswer": 3,
+         "level": 1
+      },
+      {
+         "prompt": "Which of these song-artist matches is correct?",
+         "options": [
+            "Deja Vu by Rihanna",
+            "Sandcastles by Taylor Swift",
+            "traitor by Olivia Rodrigo",
+            "Jesus Walks by JAY Z"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which Nigerian artist sang <i>What If I Say</i>?",
+         "options": ["Mr Eazi", "Ruger", "Fireboy DML", "Rema"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the youngest member of the Beatles?",
+         "options": [
+            "John Lennon",
+            "Paul McCartney",
+            "George Harrison",
+            "Ringo Starr"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Who famously wore a dress made of meat to the MTV Awards?",
+         "options": ["Lady Gaga", "Britney Spears", "Ciara", "Madonna"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Eminem's 8 Mile is named after a road in which city?",
+         "options": ["Detroit", "Chicago", "New York", "Los Angeles"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Before Miley Cyrus recorded <i>Wrecking Ball</i>, it was offered to which singer?",
+         "options": ["Beyoncé", "Rihanna", "Katy Perry", "Lady Gaga"],
+         "correctAnswer": 0,
+         "level": 1
+      }
+   ],
+   "level2": [
+      {
+         "prompt": "Which of these Taylor Swift songs has the least streams?",
+         "options": [
+            "Blank Space",
+            "Love Story",
+            "Shake It Off",
+            "I Don't Wanna Live Forever"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "What day was Beyoncé's self titled album released?",
+         "options": [
+            "July 29th, 2022",
+            "December 13, 2013",
+            "February 1998",
+            "November 24, 2019"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which of these music videos once held the title for Most viewed in 24 hours?",
+         "options": [
+            "BTS - Butter",
+            "Taylor Swift - ME!",
+            "Ariana Grande - thank u, next",
+            "Blackpink - Kill This Love"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "The 2009 hit <i>Single Ladies</i> was released in what album?",
+         "options": [
+            "Dangerously in Love",
+            "B'Day",
+            "I Am... Sasha Fierce",
+            "4"
+         ],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Who was Marvin Gaye's duet partner?",
+         "options": ["Tammi Terrell", "Diana Ross", "Mary Wells", "Kim Weston"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What is the first track of the Drake's <i>Nothing was the Same</i>?",
+         "options": [
+            "Started from the Bottom",
+            "Tuscan Leather",
+            "Hold On, We're Going Home",
+            "The Language"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Who performed at the 2013 Super Bowl?",
+         "options": ["Beyoncé", "Bruno Mars", "Madonna", "Katy Perry"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "In what album was the Nicki Minaj song Anaconda released?",
+         "options": [
+            "Pink Friday",
+            "Queen",
+            "The Pinkprint",
+            "Pink Friday: Roman Reloaded"
+         ],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which of these songs is by Bruno Mars?",
+         "options": [
+            "24K Magic",
+            "Blinding Lights",
+            "Watermelon Sugar",
+            "Can't Feel My Face"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What is the joint album by Falz and Simi called?",
+         "options": ["Chemistry", "Foreign", "Soldier", "Jamb Question"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "The fourth studio album by Adele is titled what?",
+         "options": ["19", "21", "25", "30"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Which artist is featured on the remix of Sia's Cheap Thrills?",
+         "options": ["Sean Paul", "Nicky Jam", "Drake", "Rihanna"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "How many songs are in the Michael Jackson album, Thriller?",
+         "options": ["7", "8", "9", "10"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Who was the first woman ever inducted into the Rock and Roll Hall of Fame?",
+         "options": [
+            "Aretha Franklin",
+            "Janis Joplin",
+            "Tina Turner",
+            "Madonna"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Which member of *NSYNC was a replacement for another who quit before they got big?",
+         "options": [
+            "Justin Timberlake",
+            "Lance Bass",
+            "JC Chasez",
+            "Joey Fatone"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "What was Elvis Presley's first No. 1 hit in the United States?",
+         "options": [
+            "Hound Dog",
+            "Jailhouse Rock",
+            "Heartbreak Hotel",
+            "Don't Be Cruel"
+         ],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which of these tracks was on the Burna Boy album Twice as Tall?",
+         "options": ["On the Low", "Wonderful", "Ye", "Gbona"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Who was the first woman to have four country albums reach No. 1 on the Billboard 200?",
+         "options": [
+            "Carrie Underwood",
+            "Shania Twain",
+            "Dolly Parton",
+            "Reba McEntire"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Which astronomer is name-dropped in \"Bohemian Rhapsody\"?",
+         "options": ["Galileo", "Copernicus", "Newton", "Hawking"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What was the first YouTube music video to cross 1 billion views?",
+         "options": [
+            "Psy - Gangnam Style",
+            "Justin Bieber - Baby",
+            "Luis Fonsi - Despacito",
+            "Ed Sheeran - Shape of You"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      }
+   ],
+   "level3": [
+      {
+         "prompt": "The 2010 Kanye West song <i>Monster</i> features Nicki Minaj, Jay Z and who?",
+         "options": ["Rick Ross", "Drake", "Lil Wayne", "Kendrick Lamar"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What was the last album by boy band One Direction?",
+         "options": [
+            "Four",
+            "Midnight Memories",
+            "Made in the A.M.",
+            "Take Me Home"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What is the first line of Adele's <i>Rolling in the Deep</i>?",
+         "options": [
+            "We could have had it all",
+            "There's a fire starting in my heart",
+            "You had my heart inside of your hand",
+            "Don't underestimate the things that I will do"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "The prequel to the Eminem song <i>97 Bonnie and Clyde</i>, released on his next album, was titled?",
+         "options": ["Kim", "Stan", "Hailie's Song", "The Way I Am"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "The electronic 2019 album LSD is a collaboration of which artistes?",
+         "options": [
+            "Lauv, Skrillex and Dua Lipa",
+            "Lil Nas X, Steve Aoki and Drake",
+            "Lizzo, Sam Smith and David Guetta",
+            "Labrinth, Sia and Diplo"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "As a child, what singer held the longest note ever on Star Search?",
+         "options": [
+            "Usher",
+            "Justin Timberlake",
+            "Britney Spears",
+            "Christina Aguilera"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What was the first rap single to hit the Billboard Top 40?",
+         "options": [
+            "(You Gotta) Fight for Your Right (To Party!) by Beastie Boys",
+            "Rapper's Delight by Sugarhill Gang",
+            "(Rap) Superstar by Cypress Hill",
+            "(I Can't Live Without My) Radio by LL Cool J"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which track is not from the Oxlade EP <i>Eclipse</i>?",
+         "options": ["More", "Ojuju", "Pay Me", "DKT"],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "Which of these artistes has an album called <i>Icarus Falls</i>?",
+         "options": ["Zayn", "Harry Styles", "Liam Payne", "Niall Horan"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What is the final track of <i>My Beautiful Dark Twisted Fantasy</i>?",
+         "options": [
+            "See Me Now",
+            "Lost In the World",
+            "Who Will Survive In America?",
+            "Blame Game"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which Tems song is sampled in Future's WAIT FOR U?",
+         "options": ["Damages", "Higher", "Try Me", "The Key"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which of these tracks does not appear on Charlie Puth's Nine Track Mind?",
+         "options": [
+            "One Call Away",
+            "Attention",
+            "Marvin Gaye",
+            "We Don't Talk Anymore"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Who, to date, has won the most Grammys of all time?",
+         "options": ["Beyoncé", "Quincy Jones", "Georg Solti", "Alison Krauss"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "What is the fourth track of Imagine Dragons' Evolve?",
+         "options": [
+            "Walking the Wire",
+            "Thunder",
+            "Believer",
+            "Whatever It Takes"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "Which artist sang Glimpse of Us?",
+         "options": ["Joji", "Post Malone", "The Weeknd", "Ed Sheeran"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What artist was featured on Swae Lee's Black Beatles?",
+         "options": ["Drake", "Gucci Mane", "Lil Wayne", "Future"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which of these songs has never been on the Billboard Hot 100?",
+         "options": [
+            "Bohemian Rhapsody by Queen",
+            "Stairway to Heaven by Led Zeppelin",
+            "Hey Jude by The Beatles",
+            "I Will Always Love You by Whitney Houston"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Which of these is not an album by Big Sean?",
+         "options": [
+            "Finally Famous",
+            "Hall of Fame",
+            "Dark Sky Paradise",
+            "The Blueprint"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "Taylor Swift named her debut country single after which singer?",
+         "options": [
+            "Garth Brooks",
+            "Tim McGraw",
+            "Shania Twain",
+            "Dolly Parton"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Who produced Michael Jackson's Bad?",
+         "options": ["Rick Rubin", "Quincy Jones", "Dr. Dre", "Phil Spector"],
+         "correctAnswer": 1,
+         "level": 3
+      }
+   ],
+   "level4": [
+      {
+         "prompt": "What is the first line of Olivia Rodrigo's <i>traitor</i>?",
+         "options": [
+            "Brown guilty eyes and little white lies",
+            "You talked to her when we were together",
+            "I played dumb but I always knew",
+            "You didn't cheat, but you're still a traitor"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Which of these tracks was released under Asa's <i>Bed of Stone</i>?",
+         "options": ["Jailer", "Eyo", "Fire on the Mountain", "Be My Man"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Which of these is not an album by Ladipoe?",
+         "options": [
+            "Talk About Poe",
+            "Providence EP",
+            "The Revival",
+            "The Never Say Never Guy"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "On August 14, 2019, what was the top song on the Billboard Hot 100?",
+         "options": [
+            "Old Town Road by Lil Nas X feat. Billy Ray Cyrus",
+            "Bad Guy by Billie Eilish",
+            "Senorita by Shawn Mendes & Camila Cabello",
+            "Truth Hurts by Lizzo"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "How many times does the key change towards the end of Beyonce's Love On Top?",
+         "options": ["Two", "Three", "Four", "Five"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What year was <i>Nobody</i> by Joeboy, DJ Neptune and Mr Eazi released?",
+         "options": ["2018", "2019", "2020", "2021"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What is the first line of the Kendrick Lamar album <i>Mr Morale and the Big Steppers</i>?",
+         "options": [
+            "I've been goin' through somethin'",
+            "Lord God, I come to you a sinner.",
+            "I hope you find some peace of mind in this lifetime.",
+            "Is it wickedness? Is it weakness?"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "What is the track after <i>Drive Slow</i> in Kanye West's <i>Late Registration</i>?",
+         "options": ["My Way Home", "Crack Music", "Roses", "Bring Me Down"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "What song is sampled in the intro to Sza's <i>SOS</i>?",
+         "options": [
+            "Navajo by Masego",
+            "Listen by Beyoncé",
+            "Until I Found the Lord by The Gabriel Hardeman Delegation",
+            "All of the above"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "Which two songs are singles from Post Malone's <i>Stoney</i>?",
+         "options": [
+            "White Iverson and Too Young",
+            "Go Flex and Deja Vu",
+            "Congratulations and I Fall Apart",
+            "None of the above"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Which Marvel movie's soundtrack won two Grammys?",
+         "options": [
+            "Black Panther",
+            "Guardians of the Galaxy",
+            "Spider-Man: Into the Spider-Verse",
+            "Avengers: Endgame"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "What do Drake, Taylor Swift and The Beatles have in common?",
+         "options": [
+            "They all have diamond-certified albums",
+            "They all won the Grammy for Album of the Year",
+            "They all replaced themselves at No. 1 on the Hot 100",
+            "They all collaborated with Kanye West"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Who was Elton John's longtime lyricist?",
+         "options": [
+            "Bernie Taupin",
+            "Tim Rice",
+            "Gary Osborne",
+            "Leon Russell"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Which member of The Runaways competed on Jeopardy!?",
+         "options": ["Joan Jett", "Lita Ford", "Cherie Currie", "Jackie Fox"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "What singer has had a Billboard No. 1 hit in each of the last four decades?",
+         "options": ["Madonna", "Mariah Carey", "Cher", "Usher"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "What was Paula Abdul's first Top 40 hit?",
+         "options": [
+            "Straight Up",
+            "Forever Your Girl",
+            "Cold Hearted",
+            "Opposites Attract"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "What country is Rihanna from?",
+         "options": ["Jamaica", "Barbados", "Trinidad and Tobago", "Bahamas"],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Michael Jackson had his first solo No. 1 hit with which 1972 song?",
+         "options": [
+            "Rockin' Robin",
+            "Ben",
+            "Got to Be There",
+            "I Want You Back"
+         ],
+         "correctAnswer": 1,
+         "level": 4
+      },
+      {
+         "prompt": "Ozzy Osbourne was in what heavy metal band?",
+         "options": [
+            "Black Sabbath",
+            "Iron Maiden",
+            "Judas Priest",
+            "Metallica"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "\"Businessmen, they drink my wine\" is a lyric from which Jimi Hendrix song?",
+         "options": [
+            "Purple Haze",
+            "Hey Joe",
+            "All Along the Watchtower",
+            "Voodoo Child"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      }
+   ]
+}

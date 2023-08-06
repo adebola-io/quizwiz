@@ -1,0 +1,434 @@
+{
+   "title": "World Wars",
+   "category": "History and Politics",
+   "level0": [
+      {
+         "prompt": "Which event triggered the start of World War I?",
+         "options": [
+            "Assassination of Archduke Franz Ferdinand",
+            "Invasion of Poland",
+            "Bombing of Pearl Harbor",
+            "Signing of the Treaty of Versailles"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "In which year did World War I end?",
+         "options": ["1914", "1917", "1918", "1919"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which country was the first to use chemical weapons during World War I?",
+         "options": ["Germany", "France", "United States", "Russia"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Which battle is considered one of the bloodiest of World War I?",
+         "options": [
+            "Battle of the Somme",
+            "Battle of Stalingrad",
+            "Battle of Dunkirk",
+            "Battle of Midway"
+         ],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "Who was the leader of Nazi Germany during World War II?",
+         "options": [
+            "Winston Churchill",
+            "Joseph Stalin",
+            "Adolf Hitler",
+            "Benito Mussolini"
+         ],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "Which country remained neutral during most of World War II?",
+         "options": ["United States", "France", "Switzerland", "Italy"],
+         "correctAnswer": 2,
+         "level": 0
+      },
+      {
+         "prompt": "What was the main cause of World War II??",
+         "options": [
+            "Economic recession",
+            "Imperialism",
+            "Russian Revolution",
+            "Treaty of Tordesillas"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which city was the first target of an atomic bomb during World War II?",
+         "options": ["Hiroshima", "Berlin", "Nagasaki", "Tokyo"],
+         "correctAnswer": 0,
+         "level": 0
+      },
+      {
+         "prompt": "What event triggered the United States' entry into World War II?",
+         "options": [
+            "Bombing of London",
+            "Attack on Pearl Harbor",
+            "Invasion of Poland",
+            "Sinking of the Lusitania"
+         ],
+         "correctAnswer": 1,
+         "level": 0
+      },
+      {
+         "prompt": "Which two countries were the primary Axis Powers during World War II?",
+         "options": [
+            "Germany and Italy",
+            "Germany and France",
+            "Italy and Japan",
+            "Germany and Japan"
+         ],
+         "correctAnswer": 3,
+         "level": 0
+      }
+   ],
+   "level1": [
+      {
+         "prompt": "Which war was fought between 1914 and 1918?",
+         "options": [
+            "World War II",
+            "World War I",
+            "Korean War",
+            "Vietnam War"
+         ],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which war was fought between 1939 and 1945?",
+         "options": [
+            "Korean War",
+            "World War I",
+            "World War II",
+            "Vietnam War"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Which country did the United States drop atomic bombs on during World War II?",
+         "options": ["Japan", "Germany", "Italy", "Russia"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which war was fought between 1950 and 1953?",
+         "options": [
+            "World War I",
+            "World War II",
+            "Korean War",
+            "Vietnam War"
+         ],
+         "correctAnswer": 2,
+         "level": 1
+      },
+      {
+         "prompt": "Who was the Prime Minister of the United Kingdom during World War II?",
+         "options": [
+            "Winston Churchill",
+            "Franklin D. Roosevelt",
+            "Joseph Stalin",
+            "Adolf Hitler"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which country was the main aggressor in World War II?",
+         "options": ["United States", "Germany", "France", "Russia"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which war is known as the \"Great War\"?",
+         "options": [
+            "World War I",
+            "World War II",
+            "Korean War",
+            "Vietnam War"
+         ],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which country did Germany invade, leading to the start of World War II?",
+         "options": ["Poland", "France", "Belgium", "Netherlands"],
+         "correctAnswer": 0,
+         "level": 1
+      },
+      {
+         "prompt": "Which country was the first to use poison gas as a weapon during World War I?",
+         "options": ["France", "Germany", "United States", "Netherlands"],
+         "correctAnswer": 1,
+         "level": 1
+      },
+      {
+         "prompt": "Which country was responsible for the Holocaust during World War II?",
+         "options": ["France", "Nigeria", "United States", "Germany"],
+         "correctAnswer": 3,
+         "level": 1
+      }
+   ],
+   "level2": [
+      {
+         "prompt": "During World War II, which country was known for its \"Blitzkrieg\" military strategy?",
+         "options": ["Germany", "Nigeria", "United States", "Japan"],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "What was the main cause of World War I?",
+         "options": ["Imperialism", "Nationalism", "Communism", "Fascism"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which country was the first to use tanks during World War I?",
+         "options": ["Germany", "United Kingdom", "United States", "France"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "What was the name of the German air force during World War II?",
+         "options": [
+            "Royal Air Force (RAF)",
+            "Luftwaffe",
+            "Red Army",
+            "Wehrmacht"
+         ],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Which country was not occupied by Germany during World War II?",
+         "options": ["France", "Poland", " Norway", "Switzerland"],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "The League of Nations was established in what year?",
+         "options": ["1919", "1921", "1920", "1935"],
+         "correctAnswer": 2,
+         "level": 2
+      },
+      {
+         "prompt": "Which one of the following countries was not a member of the Triple Alliance?",
+         "options": ["German", "China", "Austria", "Italy"],
+         "correctAnswer": 1,
+         "level": 2
+      },
+      {
+         "prompt": "Who proposed the constitution of the League of Nations?",
+         "options": [
+            "Woodrow Wilson",
+            "Adolf Hitler",
+            "Mansa Musa",
+            "George Bush"
+         ],
+         "correctAnswer": 0,
+         "level": 2
+      },
+      {
+         "prompt": "Which leader was responsible for the decision to drop atomic bombs on Japan during World War II?",
+         "options": [
+            "Winston Churchill",
+            "Adolf Hitler",
+            "Joseph Stalin",
+            "Harry Truman"
+         ],
+         "correctAnswer": 3,
+         "level": 2
+      },
+      {
+         "prompt": "Which country was not part of the Axis Powers in World War II?",
+         "options": ["Germany", "Italy", "Japan", "Soviet Union"],
+         "correctAnswer": 3,
+         "level": 2
+      }
+   ],
+   "level3": [
+      {
+         "prompt": "What was the meaning of the Japanese term \"kamikaze\"?",
+         "options": ["Divine wave", "Holy wind", "Divine wind", "Holy war"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "The title of Hitler's book Mein Kampf,in English means what?",
+         "options": ["Well-Being", "My Country", "My Struggle", "Master Race"],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which of the following features did Nazi society stress to its citizens?",
+         "options": [
+            "Nationalism",
+            "Isolationism",
+            "Individual rights",
+            "A classless society"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What was the name given by Hitler to his supposed \"master race\"?",
+         "options": [
+            "Uebermenschen",
+            "Aryans",
+            "Untermenschen",
+            "Einsatzgruppen"
+         ],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Who was known as the \"Spartan General\" in World War 2?",
+         "options": ["Eisenhower", "Bradley", "Patton", "Montgomery"],
+         "correctAnswer": 3,
+         "level": 3
+      },
+      {
+         "prompt": "What is the Allies codename for the invasion of Nazi-occupied France?",
+         "options": [
+            "Operation Overlord",
+            "Operation Torch",
+            "Operation of Barbarossa",
+            "Operation Cobra"
+         ],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "What region of France was chosen for the D-Day invasion?",
+         "options": ["Calais", "Normandy", "Belgium", "Caucasus"],
+         "correctAnswer": 1,
+         "level": 3
+      },
+      {
+         "prompt": "Who is credited with planning the attack on the US naval base at Pearl Harbor?",
+         "options": [
+            "Hideki Tojo",
+            "Emperor Hirohito",
+            "Isoroku Yamamoto",
+            "Ichiro Suzuki"
+         ],
+         "correctAnswer": 2,
+         "level": 3
+      },
+      {
+         "prompt": "Which technology gave the British an advantage in the Battle of Britain?",
+         "options": ["Radar", "Enigma code", "British Morale", "More aircraft"],
+         "correctAnswer": 0,
+         "level": 3
+      },
+      {
+         "prompt": "Who was the leader of Japan's dictatorial government during the 1930s and 1940s?",
+         "options": [
+            "Adolf Hitler",
+            "Francisco Franco",
+            "Benito Sussolini",
+            "Hideki Tojo"
+         ],
+         "correctAnswer": 3,
+         "level": 3
+      }
+   ],
+   "level4": [
+      {
+         "prompt": "The Munich Conference addressed the German threat to which nation?",
+         "options": ["Poland", "Hungary", "Austria", "Czechoslovakia"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "In what country was the Fascist party and government formed?",
+         "options": ["Italy", "Japan", "Spain", "Germany"],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Which of the following was a false promise from Hitler not to take any more land in Europe?",
+         "options": [
+            "The Munich Pact",
+            "The Atlantic Charter",
+            "The Lend-Lease Act",
+            "Versailles Treaty"
+         ],
+         "correctAnswer": 0,
+         "level": 4
+      },
+      {
+         "prompt": "Hitler's main method for providing living space for the German people was to do what?",
+         "options": [
+            "Dictatorship",
+            "Attack Jews",
+            "Form a secret police",
+            "Conquer other countries"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "II Duce was the title of which WWII totalitarian leader?",
+         "options": [
+            "Joseph Stalin",
+            "Adolf Hitler",
+            "James Brown",
+            "Benito Mussolini"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "Which country invaded Rhineland, triggering World War II?",
+         "options": ["Italy", "Japan", "Germany", "Soviet Union"],
+         "correctAnswer": 2,
+         "level": 4
+      },
+      {
+         "prompt": "Which country invaded China in 1938 as part of territorial expansion?",
+         "options": ["Italy", "India", "Germany", "Japan"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "What technological development used by the Japanese enabled the attack on Pearl Harbor?",
+         "options": ["Submarines", "Bombers", "Radar", "Aircraft carrriers"],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "What methods were used by the German Schutzstaffel (SS) on \"undesirables\" in Nazi Germany?",
+         "options": [
+            "Death camps",
+            "Concentration camps",
+            "Deportation",
+            "All of the above"
+         ],
+         "correctAnswer": 3,
+         "level": 4
+      },
+      {
+         "prompt": "Who created the theories that led to the creation of the atomic bomb?",
+         "options": [
+            "Albert Einstein",
+            "Enrico Fermi",
+            "Robert Oppenheimer",
+            "Warner Braun"
+         ],
+         "correctAnswer": 2,
+         "level": 4
+      }
+   ]
+}
