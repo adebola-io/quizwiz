@@ -131,7 +131,7 @@ export function QuizBox(props: Quiz) {
          <Eclipses name={props.name as CategoryName} />
          <div
             ref={quizBoxRef}
-            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center max-[785px]:justify-center max-[785px]:flex-col-reverse max-[785px]:gap-[3rem] max-[475px]:gap-[2rem] max-[1024px]:px-6"
+            className="w-[--quiz-width] duration-[--modal-morph-duration] h-[--quiz-height] relative flex items-center max-[785px]:justify-center max-[785px]:flex-col-reverse gap-[3rem] max-[475px]:gap-[2rem] max-[1024px]:px-6"
          >
             <QuestionBox
                ref={nextButtonRef}

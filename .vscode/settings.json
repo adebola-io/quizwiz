@@ -4,5 +4,6 @@
          "fileMatch": ["/backend/categories/**/*.json"],
          "url": "./backend/json/topic-schema.json"
       }
-   ]
+   ],
+   "githubPullRequests.ignoredPullRequestBranches": ["main"]
 }
