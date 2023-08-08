@@ -60,7 +60,7 @@
       opacity: 0;
    }
    70% {
-      scale: 1.05;
+      scale: var(--jump-scale);
    }
 }
 
@@ -187,6 +187,7 @@
    animation: squeeze 700ms;
 }
 .animate-pop {
+   --jump-scale: 1.05;
    animation: pop 750ms;
 }
 .animate-expand {

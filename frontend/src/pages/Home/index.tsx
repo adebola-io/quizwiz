@@ -117,7 +117,7 @@ export default function Home() {
                      "-5.799999713897705px 5.799999713897705px 0px 0px rgba(53, 79, 82, 0.78)"
                }}
                onClick={openRandomQuiz}
-               className="fixed right-0 bottom-[7vh] cursor-pointer duration-300 opacity-30 hover:opacity-100 hover:scale-95 h-[7.0625rem] max-[768px]:h-[150px] aspect-square flex items-center justify-center bg-green-viridian mr-[--global-padding-left] rounded-[50%] border-[5.8px] border-green-charcoal"
+               className="fixed right-0 bottom-[7vh] cursor-pointer duration-300 opacity-30 hover:opacity-100 hover:scale-95 h-[7.0625rem] max-[768px]:h-[150px] max-[475px]:h-[100px] aspect-square flex items-center justify-center bg-green-viridian mr-[--global-padding-left] rounded-[50%] border-[5.8px] border-green-charcoal"
             >
                <img className="w-[50%]" src={Dice} alt="dice" />
             </div>

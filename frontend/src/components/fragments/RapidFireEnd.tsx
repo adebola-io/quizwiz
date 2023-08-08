@@ -3,6 +3,7 @@ import { Eclipses } from ".";
 import { Button } from "../ui";
 import { useEffect } from "react";
 import { User } from "@/types";
+import { queryClient } from "@/api";
 
 interface RapidFireEndProps {
    score: number;
@@ -21,6 +22,7 @@ export function RapidFireEnd(props: RapidFireEndProps) {
 
    useEffect(() => {
       updateRapidFire({ quizResult: percent, starsEarned: score });
+      queryClient.invalidateQueries({ queryKey: ["ranked"] });
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [score, percent]);
 

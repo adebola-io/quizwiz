@@ -166,7 +166,7 @@ export function QuizStart(props: QuizStartProps) {
                   question, and 20 questions in total.
                </span>
                <span className="block font-bold">
-                  Failing 3 questions in a row will result in a penalty.
+                  Failing 2 questions in a row will result in a penalty.
                </span>
                <span className="block">Are you ready?</span>
             </p>

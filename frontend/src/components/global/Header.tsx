@@ -3,6 +3,7 @@ import { clsxm } from "@/utils/clsxm";
 import { Button } from "../ui";
 import { SidebarToggle, Icon } from ".";
 import { useModal } from "@/hooks";
+import { Link } from "react-router-dom";
 import { Logout } from "../fragments/Logout";
 
 type HeaderProps =
@@ -54,11 +55,16 @@ export function Header(props: HeaderProps) {
                   }}
                   className="min-[913px]:hidden flex flex-col duration-500 items-center justify-between pt-[7vh] pb-[12vh] text-white text-[3.75rem] max-[768px]:text-[3rem] max-[540px]:text-[2rem] fixed left-0 top-0 mt-[--header-height] w-full h-screen bg-green-charcoal"
                >
-                  {/* Hmm... 
-                   <div className="flex flex-col text-center">
-                     <Link to="dashboard/scoreboard">Scoreboard</Link>
-                     <Link to="dashboard/marketplace">Marketplace</Link>
-                  </div> */}
+                  <div className="flex flex-col text-center">
+                     <Link to="/dashboard/home">
+                        <div onClick={() => expanded[1](false)}>Home</div>
+                     </Link>
+                     <Link to="/dashboard/leaderboard">
+                        <div onClick={() => expanded[1](false)}>
+                           Leaderboard
+                        </div>
+                     </Link>
+                  </div>
                   <div>
                      <span onClick={() => setShowSettings(!showSettings)}>
                         Settings

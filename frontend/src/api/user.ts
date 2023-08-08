@@ -1,6 +1,11 @@
-import { ApiResponse, RequestError, UserCreationParams } from "@/types";
+import {
+   ApiResponse,
+   RankedUsersResponse,
+   RequestError,
+   UserCreationParams
+} from "@/types";
 import axios from ".";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 
 /**
@@ -137,4 +142,19 @@ export const useResetPasswordMutation = () => {
    });
 
    return resetPasswordMutation;
+};
+
+/**
+ * query hook for getting ranked users.
+ */
+export const useGetRankedUsersQuery = () => {
+   const getRankedUsersQuery = useQuery({
+      queryKey: ["ranked"],
+      retry: false,
+      queryFn: async (): Promise<RankedUsersResponse> => {
+         const { data } = await axios.get("/users/ranked");
+         return data;
+      }
+   });
+   return getRankedUsersQuery;
 };
