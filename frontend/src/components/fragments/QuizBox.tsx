@@ -91,13 +91,12 @@ export function QuizBox(props: Quiz) {
       }
 
       if (failed) {
-         if (metrics.missed + 1 === 3) {
-            setMetrics((m) => ({ ...m, score: m.score - 1, missed: 0 }));
-         } else
-            setMetrics((m) => ({
-               ...m,
-               missed: m.missed + 1
-            }));
+         // User has failed 2. Start deducting.
+         setMetrics((m) => ({
+            ...m,
+            missed: m.missed + 1,
+            score: metrics.missed + 1 >= 2 ? m.score - 1 : m.score
+         }));
       }
 
       correctDiv.classList.add("correct-option");
