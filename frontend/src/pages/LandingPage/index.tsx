@@ -13,7 +13,7 @@ export default function LandingPage() {
                   <span className="second">KNOW?</span>
                </span>
             </div>
-            <p className="landing_page_paragraph animate-fade-in-from-left effect-item-1">
+            <p className="landing_page_paragraph font-bold animate-fade-in-from-left effect-item-1">
                Challenge your inner genius with captivating quizzes spanning an
                impressive spectrum of topics. From history's enigmatic mysteries
                to the marvels of science, from the captivating world of

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { clsxm } from "@/utils/clsxm";
 import { Button } from "../ui";
-import { SidebarToggle } from ".";
-// import { Link } from "react-router-dom";
+import { SidebarToggle, Icon } from ".";
 import { useModal } from "@/hooks";
 import { Logout } from "../fragments/Logout";
 
@@ -31,7 +30,7 @@ export function Header(props: HeaderProps) {
    }
 
    const headerClassnames = clsxm(
-      "fixed top-0 z-10 flex items-center justify-between h-[--header-height] w-full border-green-charcoal px-8 bg-white border-b-4 border-solid",
+      "fixed top-0 z-10 flex items-center min-[768px]:[box-shadow:0_0_8px_0_var(--green-charcoal)] justify-between h-[--header-height] w-full border-green-charcoal px-8 bg-white border-b-4 border-solid",
       "animate-drop-from-top effect-item-0",
       props.loggedIn
          ? "pl-[1.625rem] pr-[--global-padding-left]"
@@ -73,7 +72,7 @@ export function Header(props: HeaderProps) {
                </aside>
             </>
          )}
-         <Logo />
+         <Icon className="h-[120%]" />
          <div className="header_box border-l-4 h-full border-green-charcoal flex items-center justify-items-end pl-14">
             {props.loggedIn ? (
                <div className="flex items-center justify-center text-white font-avenir-next-lt-pro-bold text-[80%] border-4 border-green-charcoal border-solid rounded-[50%] h-[2.925rem] max-[540px]:h-[2rem] aspect-square bg-green-feldgrau">
@@ -89,13 +88,13 @@ export function Header(props: HeaderProps) {
    );
 }
 
-/**
- * App Logo
- */
-function Logo() {
-   return (
-      <span className="text-green-dark-slate-gray font-bold font-sans [font-size:--logo-text-size] text-center">
-         QuizWiz
-      </span>
-   );
-}
+// /**
+//  * App Logo
+//  */
+// function Logo() {
+//    return (
+//       <span className=>
+//          QuizWiz
+//       </span>
+//    );
+// }
