@@ -173,8 +173,8 @@ class QuestionData {
       }
       let MAX_ITERATION_COUNT = 3000;
       while (questions.length < number && MAX_ITERATION_COUNT--) {
-         for (const category of categoryList) {
-            for (const topic of category.topics) {
+         for (const category of shuffle(categoryList)) {
+            for (const topic of shuffle(category.topics)) {
                const randomQuestions = selectRandom(topic[`level${level}`], 2);
                for (let randomQuestion of randomQuestions) {
                   if (questions.length === number) return shuffle(questions);
@@ -406,7 +406,7 @@ module.exports = {
 
       logger.inform(
          `Mock User Database is ready. ${users.length} user${
-            !users.length || users.length > 2 ? "s are" : " is"
+            !users.length || users.length > 1 ? "s are" : " is"
          } available.`
       );
 

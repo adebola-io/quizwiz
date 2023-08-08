@@ -182,11 +182,10 @@ The success rate of a [user](#user) is defined as the average of all their [quiz
 
 The rank score of a user is defined as the sum of:
 
--  the number of quizzes played times the quiz weight (0.25)
--  the number of stars times the stars weight (0.45)
--  the success rate of the user times the success rate weight (0.3)
+-  the number of quizzes played times the quiz weight (0.3)
+-  the number of stars times the stars weight (0.6)
 
-$Rank = (Quizzes * 0.25) + (Stars * 0.45) + (SuccessRate * 0.3)$
+$Rank = (Quizzes _ 0.4) + (Stars _ 0.6)
 
 ### Quiz Result
 
@@ -204,7 +203,7 @@ To return a list of random [questions](#question), given a `number`, a specified
 4. Implementations can determine a MAX_ITERATION_COUNT, to prevent forever loops on insufficient topics and levels.
 5. While the length of `questions` is less than `number` and MAX_ITERATION_COUNT has not been surpassed:
 
-   -  For each topic in each category in `categoryList`:
+   -  For each topic in each shuffled version of category in shuffled version of `categoryList`:
 
       -  Select 2 random questions from the specified level.
 
@@ -496,9 +495,9 @@ This route is protected. Only users should be able to access it.
 1. If the request method is not GET, return error response with message being "{route} is not a valid route".
 2. Let `questions` be an empty array.
 3. If the `rapidFireCheckpoint` of the user is _not_ set to the current day,
-   -  Let `rfQuestionsL0` be an array of 15 [random questions](#collecting-random-questions) that have the level 0.
-   -  Let `rfQuestionsL1` be an array of 30 [random questions](#collecting-random-questions) that have the level 1.
-   -  Let `rfQuestionsL2` be an array of 45 [random questions](#collecting-random-questions) that have the level 2.
+   -  Let `rfQuestionsL0` be an array of 10 [random questions](#collecting-random-questions) that have the level 0.
+   -  Let `rfQuestionsL1` be an array of 20 [random questions](#collecting-random-questions) that have the level 1.
+   -  Let `rfQuestionsL2` be an array of 40 [random questions](#collecting-random-questions) that have the level 2.
    -  Let `rfQuestionsL3` be an array of 60 [random questions](#collecting-random-questions) that have the level 3.
    -  Let `rfQuestionsL4` be an array of 75 [random questions](#collecting-random-questions) that have the level 4.
    -  Concatenate and flatten all the above arrays into `questions`.

@@ -1,5 +1,6 @@
 const db = require("../db");
 const { ServerError } = require("../lib");
+const logger = require("../lib/logger");
 
 /**
  * Returns 45 users with the best rank scores.
@@ -27,7 +28,7 @@ function rankUsers(req) {
          successRate: record.data.successRate
       }))
       .slice(0, 45);
-
+   logger.inform(`Retreived ranking of ${publicUsers.length} users.`);
    return {
       status: "success",
       message: "Ranked users retrieved successfully",
@@ -42,11 +43,7 @@ function rankUsers(req) {
  * @param {UserRecord} user
  */
 function calculateRankScore(user) {
-   return (
-      user.data.quizzesPlayed * 0.2 +
-      user.data.stars * 0.5 +
-      user.data.successRate * 0.3
-   );
+   return user.data.quizzesPlayed * 0.4 + user.data.stars * 0.6;
 }
 
 module.exports = {
