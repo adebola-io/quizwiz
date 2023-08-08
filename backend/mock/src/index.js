@@ -14,7 +14,8 @@ const {
    getCategoryQuestions,
    getRandomQuestions,
    getRapidFireQuestions,
-   completeRapidFire
+   completeRapidFire,
+   rankUsers
 } = require("./controllers");
 const db = require("./db");
 const { APIGenerator } = require("./lib");
@@ -138,6 +139,17 @@ function runServer(delay) {
             protected: true,
             handler(req, res) {
                const data = completeRapidFire(req);
+               res.statusCode = 200;
+               return data;
+            }
+         }
+      })
+      // Ranked
+      .endpoints({
+         "/users/ranked": {
+            protected: true,
+            handler(req, res) {
+               const data = rankUsers(req);
                res.statusCode = 200;
                return data;
             }

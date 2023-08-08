@@ -23,7 +23,6 @@ class UserList {
    /**
     * The items in memory.
     * @type {UserRecord[]}
-    * @private
     */
    items = [];
    /**

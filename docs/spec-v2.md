@@ -12,6 +12,7 @@
   - [Category](#category)
   - [Level](#level)
   - [User](#user)
+  - [Public User](#public-user)
 - [Algorithms](#algorithms)
   - [Validating Usernames](#validating-usernames)
   - [Validating Emails](#validating-emails)
@@ -20,6 +21,7 @@
     - [Verify email link](#verify-email-link)
     - [reset password email link](#reset-password-email-link)
   - [Success Rate](#success-rate)
+  - [Rank Score](#rank-score)
   - [Quiz Result](#quiz-result)
   - [Collecting Random Questions](#collecting-random-questions)
 - [Server API](#server-api)
@@ -38,6 +40,7 @@
     - [- GET `/question/random/:level`](#--get-questionrandomlevel)
     - [- GET `/question/rpdfire`](#--get-questionrpdfire)
     - [- POST `question/rpdfire/completed`](#--post-questionrpdfirecompleted)
+    - [- GET `users/ranked`](#--get-usersranked)
 
 ## Definition of Terms
 
@@ -122,6 +125,16 @@ A user is an entity that uses the app. Each user should have the following field
 -  A `stars` integer value, initially set to 0.
 -  A `rapidFireCheckpoint`, initially set to null.
 
+### Public User
+
+The public interface for a [user](#user) is an object containing only the:
+
+-  username
+-  `quizzesPlayed`
+-  `successRate`, and
+-  `stars`
+   of a user.
+
 ---
 
 ## Algorithms
@@ -155,15 +168,25 @@ To validate a given password:
 
 #### Verify email link
 
-<https://csc420quiz.vercel.app/verify_email/${oneTimeToken}>
+<https://quizwiz-game.vercel.app/verify_email/${oneTimeToken}>
 
 #### reset password email link
 
-<https://csc420quiz.vercel.app/reset_password/${oneTimeToken}>
+<https://quizwiz-game.vercel.app/reset_password/${oneTimeToken}>
 
 ### Success Rate
 
 The success rate of a [user](#user) is defined as the average of all their [quiz results](#quiz-result).
+
+### Rank Score
+
+The rank score of a user is defined as the sum of:
+
+-  the number of quizzes played times the quiz weight (0.25)
+-  the number of stars times the stars weight (0.45)
+-  the success rate of the user times the success rate weight (0.3)
+
+$Rank = (Quizzes * 0.25) + (Stars * 0.45) + (SuccessRate * 0.3)$
 
 ### Quiz Result
 
@@ -506,6 +529,24 @@ This route is protected. Only users should be able to access it.
    "message": "Rapid fire completed successfully",
    "data": {
       "user": "user"
+   }
+}
+```
+
+#### - GET `users/ranked`
+
+This route is protected. Only users should be able to access it.
+
+1. If the request method is not `GET`, return error response with message being "{route} is not a valid route.
+2. Let users be a list containing the [public data](#public-user) of at most 45 users with the highest [rank scores](#rank-score).
+3. Return a response with the shape:
+
+```json
+{
+   "status": "success",
+   "message": "Ranked users retrieved successfully",
+   "data": {
+      "users": "users"
    }
 }
 ```
