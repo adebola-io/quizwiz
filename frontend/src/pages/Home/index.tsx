@@ -24,7 +24,7 @@ export default function Home() {
    const { quizzesPlayed, stars, successRate } = user;
 
    const metricImageClassNames =
-      "w-[25%] max-[720px]:h-[130%] max-[720px]:w-auto max-[720px]:absolute max-[720px]:right-0 max-[720px]:translate-x-[30%] max-[720px]:rotate-[-13deg] max-[720px]:opacity-[0.6]";
+      "w-[25%] min-[1900px]:h-[60%] min-[1900px]:w-auto max-[720px]:h-[130%] max-[720px]:w-auto max-[720px]:absolute max-[720px]:right-0 max-[720px]:translate-x-[30%] max-[720px]:rotate-[-13deg] max-[720px]:opacity-[0.6]";
 
    function openRapidFireStart() {
       modal.setContent(<RapidFireStart />);
@@ -94,7 +94,7 @@ export default function Home() {
                   className="mb-[2.04rem] animate-fade-in-from-left effect-item-2"
                   rightCornerImage={RpdFireBanner}
                >
-                  <h1 className="max-[768px]:w-[75%] text-[3vw] min-[2160px]:text-[4rem] max-[1280px]:text-[1.5rem] max-[768px]:text-[2.76rem] max-[540px]:text-[2rem] max-[390px]:text-[1.6rem] max-[290px]:text-[1rem] max-[768px]:text-center mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal max-[768px]:font-bold">
+                  <h1 className="max-[768px]:w-[75%] min-[1900px]:w-[60%] text-[50px] min-[2160px]:text-[4rem] max-[1280px]:text-[1.5rem] max-[768px]:text-[2.76rem] max-[540px]:text-[2rem] max-[390px]:text-[1.6rem] max-[290px]:text-[1rem] max-[768px]:text-center mb-[0.62rem] font-avenir-next-lt-pro-bold text-green-charcoal max-[768px]:font-bold">
                      Earn more Stars in a Rapid Fire Quiz.
                   </h1>
                   <Button
@@ -117,7 +117,7 @@ export default function Home() {
                      "-5.799999713897705px 5.799999713897705px 0px 0px rgba(53, 79, 82, 0.78)"
                }}
                onClick={openRandomQuiz}
-               className="fixed right-0 bottom-[7vh] cursor-pointer duration-300 opacity-30 hover:opacity-100 hover:scale-95 h-[7.0625rem] max-[768px]:h-[150px] aspect-square flex items-center justify-center bg-green-viridian mr-[--global-padding-left] rounded-[50%] border-[5.8px] border-green-charcoal"
+               className="fixed right-0 bottom-[7vh] cursor-pointer duration-300 opacity-30 hover:opacity-100 hover:scale-95 h-[7.0625rem] max-[768px]:h-[150px] max-[475px]:h-[100px] aspect-square flex items-center justify-center bg-green-viridian mr-[--global-padding-left] rounded-[50%] border-[5.8px] border-green-charcoal"
             >
                <img className="w-[50%]" src={Dice} alt="dice" />
             </div>

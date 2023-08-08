@@ -1,4 +1,5 @@
 module.exports = {
    ...require("./user"),
-   ...require("./questions"),
+   ...require("./users"),
+   ...require("./questions")
 };

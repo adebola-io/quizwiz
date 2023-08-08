@@ -15,6 +15,7 @@ export function SidebarToggle(props: {
 
    return (
       <div
+         title="Expand Sidebar"
          className={className}
          style={{
             rotate: expanded ? "180deg" : "0deg"

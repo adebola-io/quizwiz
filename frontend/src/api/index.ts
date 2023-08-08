@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { ENDPOINT_ROOT } from "@/constants";
+import { QueryClient } from "@tanstack/react-query";
 
 const axiosInstance: AxiosInstance = axios.create({
    baseURL: ENDPOINT_ROOT
@@ -57,4 +58,5 @@ axiosInstance.interceptors.response.use(
    }
 );
 
+export const queryClient = new QueryClient();
 export default axiosInstance;

@@ -131,3 +131,12 @@ export type RandomQuizResponse = ApiResponse<{
 export type RapidFireResponse = ApiResponse<{
    questions: Question[];
 }>;
+
+export type PublicUser = Pick<
+   User,
+   "username" | "stars" | "quizzesPlayed" | "successRate"
+>;
+
+export type RankedUsersResponse = ApiResponse<{
+   users: PublicUser[];
+}>;

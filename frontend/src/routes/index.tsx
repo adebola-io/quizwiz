@@ -40,6 +40,7 @@ const ResetPassword = Loadable(lazy(() => import("../pages/ResetPassword")));
 
 // Protected
 const Home = Loadable(lazy(() => import("../pages/Home")));
+const Leaderboard = Loadable(lazy(() => import("../pages/Leaderboard")));
 
 export default function Router() {
    return useRoutes([
@@ -95,6 +96,7 @@ export default function Router() {
                index: true
             },
             { path: "home", element: <Home /> },
+            { path: "leaderboard", element: <Leaderboard /> },
             {
                path: "verify-email/:token",
                element: (

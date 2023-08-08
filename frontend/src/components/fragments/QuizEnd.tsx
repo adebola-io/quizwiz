@@ -4,6 +4,7 @@ import { Button } from "../ui";
 import { categories } from "@/data";
 import { useAuth, useModal } from "@/hooks";
 import { Eclipses, QuizStart } from ".";
+import { queryClient } from "@/api";
 
 interface QuizEndProps {
    name: CategoryName;
@@ -16,8 +17,6 @@ export function QuizEnd(props: QuizEndProps) {
    const { score, correctAnswers } = props;
    const category = categories[props.name];
    const percent = (correctAnswers / 20) * 100;
-
-   console.log(correctAnswers, percent);
 
    const modal = useModal();
    const containerRef = useRef<HTMLDivElement>(null);
@@ -37,6 +36,7 @@ export function QuizEnd(props: QuizEndProps) {
 
    useEffect(() => {
       updateStats({ quizResult: percent, starsEarned: score });
+      queryClient.invalidateQueries({ queryKey: ["ranked"] });
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [score, correctAnswers, percent]);
 
