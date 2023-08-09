@@ -96,6 +96,14 @@
 @media (min-width: 2560px) {
    :root {
       --header-height: 8vh;
+      --rapid-fire-height: 95vh;
+   }
+}
+
+@media (min-width: 1400px) {
+   :root {
+      --header-height: 8vh;
+      --rapid-fire-height: 95vh;
    }
 }
 
