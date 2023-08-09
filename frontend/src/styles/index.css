@@ -96,6 +96,7 @@
 @media (min-width: 2560px) {
    :root {
       --header-height: 8vh;
+      --rapid-fire-height: 90vh;
    }
 }
 
