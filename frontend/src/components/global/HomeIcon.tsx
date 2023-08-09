@@ -2,22 +2,24 @@ import { useNavigate } from "react-router-dom";
 import { SidebarIconProps } from ".";
 
 export function HomeIcon(props: SidebarIconProps) {
-   const [page, setPage] = props.handler;
+   const [page, setPage] = props.handlers.page;
+   const setSidebarExpanded = props.handlers.expanded[1];
    const navigate = useNavigate();
 
    function handleClick() {
       setPage("home");
+      setSidebarExpanded(false);
       navigate("/dashboard/home");
    }
 
    return (
       <div
          title="Home"
-         className="cursor-pointer scale-75"
+         className="flex cursor-pointer relative w-full pl-[calc(var(--sidebar-width)/3.5)] [--line-height:0] [--line-width:0] hover:[--line-width:100%] hover:[--line-height:2px] "
          onClick={handleClick}
       >
          <svg
-            className="duration-300"
+            className="duration-300 scale-75"
             width="47"
             height="42"
             viewBox="0 0 47 42"
@@ -35,6 +37,10 @@ export function HomeIcon(props: SidebarIconProps) {
                fill="white"
             />
          </svg>
+         <span className="absolute left-[var(--sidebar-width)] w-full h-full flex flex-col justify-center font-poppins text-[14pt] text-white">
+            Home
+            <div className="h-[2px] bg-white w-[--line-width] duration-300"></div>
+         </span>
       </div>
    );
 }

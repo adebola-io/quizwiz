@@ -49,7 +49,7 @@ export function RapidFireStart() {
          ref={containerRef}
          className="relative w-[--rapid-fire-start-width] overflow-hidden pl-[--modal-padding] max-[475px]:pr-[--modal-padding] h-[--rapid-fire-start-height] duration-[--modal-morph-duration] gap-[0.625rem] flex flex-col justify-center max-[475px]:items-center"
       >
-         <h1 className="relative z-10 text-fine-purple font-avenir-next-lt-pro-bold text-[3.91188rem] max-[1024px]:text-[3rem] max-[600px]:text-[2.2rem] max-[475px]:text-center">
+         <h1 className="relative z-10 text-fine-purple font-avenir-next-lt-pro-bold text-[3.91188rem] min-[2160px]:text-[70pt] max-[1024px]:text-[3rem] max-[600px]:text-[2.2rem] max-[475px]:text-center">
             Rapid Fire.
          </h1>
          <p className="relative z-10 text-[1.03688rem] max-[768px]:text-[0.8rem] max-[720px]:text-[1rem] max-[600px]:text-[0.6rem] max-[475px]:text-[0.8rem] max-[475px]:text-center font-poppins text-black w-[45%] max-[475px]:w-full ">

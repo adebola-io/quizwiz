@@ -75,7 +75,7 @@ export function QuizStart(props: QuizStartProps) {
          )
          .then((questions) => {
             if (questions.length < 20) {
-               toast("Coming soon...");
+               toast("Hang on. This quiz is coming soon...");
             } else
                modal.setContent(
                   <QuizBox
@@ -101,8 +101,11 @@ export function QuizStart(props: QuizStartProps) {
             className="relative w-[--quiz-start-width] min-h-[--quiz-start-height] duration-[--modal-morph-duration] flex items-center justify-center flex-col"
          >
             {isLoading ? (
-               <div className="absolute w-full h-full flex items-center justify-center">
+               <div className="absolute w-full h-full font-poppins gap-3 flex flex-col items-center justify-center">
                   <Loader className="animate-pop" />
+                  <span className="animate-pop font-bold text-green-charcoal">
+                     Preparing your quiz...
+                  </span>
                </div>
             ) : (
                <></>
@@ -158,16 +161,12 @@ export function QuizStart(props: QuizStartProps) {
             </div>
             <p
                style={{ opacity: isLoading ? "0" : "1" }}
-               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem] max-[1024px]:text-[11pt] max-[475px]:text-[0.6rem] max-[1024px]:w-[80%]"
+               className="duration-300 text-center my-[0.62rem] font-poppins text-[1.03688rem] max-[1024px]:text-[10pt] max-[475px]:text-[0.6rem] max-[1024px]:w-[80%]"
             >
                <span className="block">{category.info}</span>
-               <span className="block">
-                  You have {levels[selectedLevel].timerValue} seconds for each
-                  question, and 20 questions in total.
-               </span>
-               <span className="block font-bold">
-                  Failing 2 questions in a row will result in a penalty.
-               </span>
+               You have <b>{levels[selectedLevel].timerValue}</b> seconds for
+               each question, and <b>20 questions in total.</b> Remember,
+               failing questions in a row could cost stars.
                <span className="block">Are you ready?</span>
             </p>
             <Button

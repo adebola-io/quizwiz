@@ -109,7 +109,7 @@ export default function Leaderboard() {
                   <span className="text-ellipsis w-[50%] overflow-hidden">
                      {index + 1}. {user.username}
                   </span>
-                  <div className="flex justify-start max-[475px]:justify-end">
+                  <div className="flex justify-start max-[475px]:justify-end max-[475px]:mr-2 max-[300px]:hidden">
                      <div className="flex items-center p-[0.56rem] max-[475px]:px-[5px] gap-[5%] mr-[0.56rem] max-[475px]:mr-0">
                         <span className="mr-[0.2rem]">
                            {user.quizzesPlayed}
@@ -162,7 +162,7 @@ export default function Leaderboard() {
                      </div>
                      <div className="flex items-center p-[0.56rem] max-[475px]:px-[5px]">
                         <span className="mr-[0.2rem]">
-                           {user.successRate.toFixed(2)}
+                           {user.successRate.toFixed(1)}
                         </span>
                         <img
                            src={

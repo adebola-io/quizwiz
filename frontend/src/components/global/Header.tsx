@@ -53,7 +53,7 @@ export function Header(props: HeaderProps) {
                         ? "translateX(0%)"
                         : "translateX(-100%)"
                   }}
-                  className="min-[913px]:hidden flex flex-col duration-500 items-center justify-between pt-[7vh] pb-[12vh] text-white text-[3.75rem] max-[768px]:text-[3rem] max-[540px]:text-[2rem] fixed left-0 top-0 mt-[--header-height] w-full h-screen bg-green-charcoal"
+                  className="min-[913px]:hidden font-poppins flex flex-col duration-500 items-center justify-between pt-[7vh] pb-[12vh] text-white text-[3.75rem] max-[768px]:text-[3rem] max-[540px]:text-[12pt] fixed left-0 top-0 mt-[--header-height] w-full h-screen bg-green-charcoal"
                >
                   <div className="flex flex-col text-center">
                      <Link to="/dashboard/home">
@@ -79,11 +79,18 @@ export function Header(props: HeaderProps) {
             </>
          )}
          <Icon className="h-[120%]" />
-         <div className="header_box border-l-4 h-full border-green-charcoal flex items-center justify-items-end pl-14">
+         <div className="header_box border-l-4 font-poppins h-full border-green-charcoal flex items-center justify-items-end pl-14">
             {props.loggedIn ? (
-               <div className="flex items-center justify-center text-white font-avenir-next-lt-pro-bold text-[80%] border-4 border-green-charcoal border-solid rounded-[50%] h-[2.925rem] max-[540px]:h-[2rem] aspect-square bg-green-feldgrau">
-                  {props.username[0].toUpperCase()}
-               </div>
+               <>
+                  <div className="flex items-center justify-center text-white font-avenir-next-lt-pro-bold text-[80%] border-4 border-green-charcoal border-solid rounded-[50%] h-[2.925rem] max-[540px]:h-[2rem] aspect-square bg-green-feldgrau">
+                     {props.username[0].toUpperCase()}
+                  </div>
+                  {props.username.length < 30 && (
+                     <span className="font-bold text-green-charcoal ml-3 text-[11pt]">
+                        {props.username}
+                     </span>
+                  )}
+               </>
             ) : (
                <Button size="okay" as="link" to="/auth/login">
                   Sign In

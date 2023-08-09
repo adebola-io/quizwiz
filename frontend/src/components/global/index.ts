@@ -7,5 +7,8 @@ export * from "./HomeIcon";
 export type Page = "home" | "leaderboard";
 
 export interface SidebarIconProps {
-   handler: [Page, React.Dispatch<React.SetStateAction<Page>>];
+   handlers: {
+      page: [Page, React.Dispatch<React.SetStateAction<Page>>];
+      expanded: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+   };
 }
