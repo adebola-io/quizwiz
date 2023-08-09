@@ -182,7 +182,7 @@ The success rate of a [user](#user) is defined as the average of all their [quiz
 
 The rank score of a user is defined as the sum of:
 
--  the number of quizzes played times the quiz weight (0.3)
+-  the number of quizzes played times the quiz weight (0.4)
 -  the number of stars times the stars weight (0.6)
 
 $Rank = (Quizzes _ 0.4) + (Stars _ 0.6)
