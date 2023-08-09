@@ -1,7 +1,31 @@
 {
    "title": "Algebra",
    "category": "Mathematics",
-   "level0": [],
+   "level0": [ {
+    "prompt": "What is the value of x in this eqn x + 5 = 20",
+    "options": ["12", "10", "15", "16"],
+    "correctAnswer": 2,
+    "level": 0
+  },
+       {
+    "prompt": "Simplify the expression 2m + 8 + 3m ",
+    "options": ["5m + 8", "6m", "6m + 8", "5m"],
+    "correctAnswer": 0,
+    "level": 0
+  },
+        {
+    "prompt": "Simplify the expression 2m + 8 + 3m ",
+    "options": ["5m + 8", "6m", "6m + 8", "5m"],
+    "correctAnswer": 0,
+    "level": 0
+  },
+        {
+    "prompt": "Given x = 2, what is the value of y in 4x + y =  11 ",
+    "options": ["5m + 8", "6m", "6m + 8", "5m"],
+    "correctAnswer": 0,
+    "level": 0
+  },
+   ],
    "level1": [],
    "level2": [
       [
